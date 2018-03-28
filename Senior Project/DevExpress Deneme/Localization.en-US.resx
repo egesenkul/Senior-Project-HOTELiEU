@@ -1,0 +1,780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnDestek" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="btnGiris" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="btnKapat" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btnKlavyeAc" xml:space="preserve">
+    <value>Show Keyboard</value>
+  </data>
+  <data name="chHatirla" xml:space="preserve">
+    <value>Remember my username and password</value>
+  </data>
+  <data name="lblDil" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="lblKullaniciAdi" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="lblSifre" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="LoginFormText" xml:space="preserve">
+    <value>Login Screen</value>
+  </data>
+  <data name="BlokDuzenlendi" xml:space="preserve">
+    <value>Blok successfully edited</value>
+  </data>
+  <data name="Blokeklendi" xml:space="preserve">
+    <value>Blok successfully added</value>
+  </data>
+  <data name="BlokismiBosOlamaz" xml:space="preserve">
+    <value>Blok name can not be empty</value>
+  </data>
+  <data name="BlokSilmeBasarili" xml:space="preserve">
+    <value>Succesfully deleted blok</value>
+  </data>
+  <data name="btnIptal" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnKaydet" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnSecenekler" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="btnTemizle" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Duzenle" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="DuzenlemekIcınBlokSec" xml:space="preserve">
+    <value>For edit any blok firstly please select it</value>
+  </data>
+  <data name="HataliKullaniciAdiSifre" xml:space="preserve">
+    <value>Username or password is valid</value>
+  </data>
+  <data name="Hoşgeldiniz" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="KullaniciAdiHata" xml:space="preserve">
+    <value>Username can not be empty</value>
+  </data>
+  <data name="KullaniciSifreHata" xml:space="preserve">
+    <value>User password can not be empty</value>
+  </data>
+  <data name="lblBlokAdi" xml:space="preserve">
+    <value>Name of the Blok</value>
+  </data>
+  <data name="lblBlokListesi" xml:space="preserve">
+    <value>List of Bloks</value>
+  </data>
+  <data name="lblKullaniciDepartman" xml:space="preserve">
+    <value>User Departmant</value>
+  </data>
+  <data name="lblKullanıcıListesi" xml:space="preserve">
+    <value>User List</value>
+  </data>
+  <data name="lblTanımlıYetki" xml:space="preserve">
+    <value>Defined Authority</value>
+  </data>
+  <data name="lblYetki" xml:space="preserve">
+    <value>Name of the Authority</value>
+  </data>
+  <data name="lblYetkiler" xml:space="preserve">
+    <value>Authorities</value>
+  </data>
+  <data name="ProgramCikisOnay" xml:space="preserve">
+    <value>Are you sure to exit from program?</value>
+  </data>
+  <data name="Sil" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="SilinecekBlokSec" xml:space="preserve">
+    <value>Please select the blok which you want to delete</value>
+  </data>
+  <data name="SilinenHavuzGeriAlindi" xml:space="preserve">
+    <value>The deleted pool has been succesfully recovered</value>
+  </data>
+  <data name="SilinmisKayitlariGeriAl" xml:space="preserve">
+    <value>Get back deleted entries</value>
+  </data>
+  <data name="SilinmisKayitlariGoster" xml:space="preserve">
+    <value>Show deleted entries</value>
+  </data>
+  <data name="SilinmisKayitlariGosterme" xml:space="preserve">
+    <value>Don't show the deleted entries</value>
+  </data>
+  <data name="YetkiGuncellemeBasarili" xml:space="preserve">
+    <value>Successfully updated staff authority</value>
+  </data>
+  <data name="btnKatEkle" xml:space="preserve">
+    <value>Add Floor</value>
+  </data>
+  <data name="DuzenlenecekHavuzSec" xml:space="preserve">
+    <value>Please first select the edited pool which you want</value>
+  </data>
+  <data name="DuzenlenecekKatSec" xml:space="preserve">
+    <value>Please first select the edited floor which you want</value>
+  </data>
+  <data name="HavuzAdiBosOlamaz" xml:space="preserve">
+    <value>Pool name can not be empty</value>
+  </data>
+  <data name="HavuzDuzenlendi" xml:space="preserve">
+    <value>Pool successfully edited</value>
+  </data>
+  <data name="HavuzEklendi" xml:space="preserve">
+    <value>Pool successfully added</value>
+  </data>
+  <data name="KatDuzenlemeBasarili" xml:space="preserve">
+    <value>Floor succesfull editted</value>
+  </data>
+  <data name="KatEklemeBasarili" xml:space="preserve">
+    <value>Floor succesfully added</value>
+  </data>
+  <data name="KatSilmeBasarili" xml:space="preserve">
+    <value>Floor successfully deleted</value>
+  </data>
+  <data name="lblBloktakiKatlar" xml:space="preserve">
+    <value>Blok Has That Floors</value>
+  </data>
+  <data name="lblBolumeAitKategori" xml:space="preserve">
+    <value>Section Has That Categories</value>
+  </data>
+  <data name="lblGuncellemeTarihi" xml:space="preserve">
+    <value>Update Time</value>
+  </data>
+  <data name="lblHavuzAdi" xml:space="preserve">
+    <value>Pool Name</value>
+  </data>
+  <data name="lblHavuzlar" xml:space="preserve">
+    <value>Pools</value>
+  </data>
+  <data name="lblKatAdi" xml:space="preserve">
+    <value>Floor Name</value>
+  </data>
+  <data name="lblKategoriAdi" xml:space="preserve">
+    <value>Category Name</value>
+  </data>
+  <data name="lblKategoriAitBolum" xml:space="preserve">
+    <value>Section Where Category Belongs</value>
+  </data>
+  <data name="SilinecekKatSec" xml:space="preserve">
+    <value>Please first select the deleted floor which you want</value>
+  </data>
+  <data name="btnFiltrele" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="btnGozat" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="duzenlenecekPersonelSec" xml:space="preserve">
+    <value>Please first select staff which you want to edit</value>
+  </data>
+  <data name="EksikEtkinlikBilgileri" xml:space="preserve">
+    <value>Please check the event informations which you entered.</value>
+  </data>
+  <data name="eMailHata" xml:space="preserve">
+    <value>Please enter a valid email address</value>
+  </data>
+  <data name="EtkinlikEklemeBasarili" xml:space="preserve">
+    <value>Event has been succesfully added to the system.</value>
+  </data>
+  <data name="GeriAlinacakEtkinlikSec" xml:space="preserve">
+    <value>Please first event which you want to recover</value>
+  </data>
+  <data name="KisiLimitiVar" xml:space="preserve">
+    <value>Has People Limit</value>
+  </data>
+  <data name="lblAciklama" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="lblAdres" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="lblAdveSoyad" xml:space="preserve">
+    <value>Name and Surname:</value>
+  </data>
+  <data name="lblEtkinlikismi" xml:space="preserve">
+    <value>Event Name:</value>
+  </data>
+  <data name="lblKisiLimiti" xml:space="preserve">
+    <value>Number of Limit</value>
+  </data>
+  <data name="lblMail" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="lblMusteriAdi" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="lblMusteriSoyadi" xml:space="preserve">
+    <value>Surname:</value>
+  </data>
+  <data name="lblOtelAdi" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="lblPersonelGrubu" xml:space="preserve">
+    <value>Group of Staff</value>
+  </data>
+  <data name="lblPersonelListesi" xml:space="preserve">
+    <value>List of Staff</value>
+  </data>
+  <data name="lblPersonelYetkisi" xml:space="preserve">
+    <value>Authority of Staff</value>
+  </data>
+  <data name="lblSalonAdi" xml:space="preserve">
+    <value>Name of the Saloon:</value>
+  </data>
+  <data name="lblSalonAdresi" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="lblSalonBulunduguBlok" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="lblSalonBulunduguKat" xml:space="preserve">
+    <value>Floor:</value>
+  </data>
+  <data name="lblSalonKategori" xml:space="preserve">
+    <value>Category of the Saloon:</value>
+  </data>
+  <data name="lblSalonSorumlusu" xml:space="preserve">
+    <value>Hall Manager:</value>
+  </data>
+  <data name="lblTarih" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="lblTelefon" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="lblToplantiKonusu" xml:space="preserve">
+    <value>Topic of the Meeting:</value>
+  </data>
+  <data name="lblToplantiSalonu" xml:space="preserve">
+    <value>Meeting Room:</value>
+  </data>
+  <data name="lblYetkiliKisiDegistirebilir" xml:space="preserve">
+    <value>This part can only changeble by authorized people</value>
+  </data>
+  <data name="MusterFaceVarHata" xml:space="preserve">
+    <value>This customer has already logged into the system with her Google or Facebook.</value>
+  </data>
+  <data name="MusteriAdi" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="MusteriGuncellemeBasarili" xml:space="preserve">
+    <value>The customer has been successfully updated.</value>
+  </data>
+  <data name="MusteriSistemeKayitliHata" xml:space="preserve">
+    <value>This customer has already been registered to the system.</value>
+  </data>
+  <data name="MusteriSoyadi" xml:space="preserve">
+    <value>Custormer Surname</value>
+  </data>
+  <data name="MusteriTanimlamaBasarili" xml:space="preserve">
+    <value>Customer has been successfully added to the system.</value>
+  </data>
+  <data name="MusteriTelefonNumarasi" xml:space="preserve">
+    <value>Customer Phone</value>
+  </data>
+  <data name="otelBilgileriEklemeBasarili" xml:space="preserve">
+    <value>Hotel information has been successfully added to the system.</value>
+  </data>
+  <data name="personelAdi" xml:space="preserve">
+    <value>Staff Name</value>
+  </data>
+  <data name="personelDepartman" xml:space="preserve">
+    <value>Staff Departmant</value>
+  </data>
+  <data name="PersonelGeriAlindi" xml:space="preserve">
+    <value>Succesfully recovered deleted staff</value>
+  </data>
+  <data name="personelSilmeBasarili" xml:space="preserve">
+    <value>Successfully deleted staff.</value>
+  </data>
+  <data name="personelSoyadi" xml:space="preserve">
+    <value>Staff Surname</value>
+  </data>
+  <data name="SalonEklemeBasarili" xml:space="preserve">
+    <value>Saloon has been successfully added.</value>
+  </data>
+  <data name="silinecekPersonelSec" xml:space="preserve">
+    <value>Please first select staff which you want to delete</value>
+  </data>
+  <data name="SilinenEtkinligiGeriAl" xml:space="preserve">
+    <value>Recover Deleted Event</value>
+  </data>
+  <data name="SilinenEtkinlikleriGoster" xml:space="preserve">
+    <value>Show deleted events</value>
+  </data>
+  <data name="silinmisPersoneliGeriAl" xml:space="preserve">
+    <value>Recover Deleted Staff</value>
+  </data>
+  <data name="silinmisPersonelleriGoster" xml:space="preserve">
+    <value>Show deleted staff</value>
+  </data>
+  <data name="tumBilgileriGoster" xml:space="preserve">
+    <value>Show all informations.</value>
+  </data>
+  <data name="btnGonder" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="chechBoxTümPersoneller" xml:space="preserve">
+    <value>Every Staff</value>
+  </data>
+  <data name="CheckBoxOzelGonderim" xml:space="preserve">
+    <value>Special Delivery</value>
+  </data>
+  <data name="DuyuruEklemeBasarili" xml:space="preserve">
+    <value>Successfully announcement added.</value>
+  </data>
+  <data name="DuyuruGerialmaBasarili" xml:space="preserve">
+    <value>Announcement successfully recovered.</value>
+  </data>
+  <data name="DuyuruGuncellemeBasarili" xml:space="preserve">
+    <value>Successfully announcement updated.</value>
+  </data>
+  <data name="DuyuruSilmeBasarili" xml:space="preserve">
+    <value>Announcement succesfully removed.</value>
+  </data>
+  <data name="DuzenlemekicinDuyuruSec" xml:space="preserve">
+    <value>Please first, select announcement which you want to edit.</value>
+  </data>
+  <data name="GeriAlinacakDuyuruSec" xml:space="preserve">
+    <value>Please first, select announcement which you want to recover.</value>
+  </data>
+  <data name="Kitle" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="KriterLabel" xml:space="preserve">
+    <value>Criteria:</value>
+  </data>
+  <data name="lblBaslik" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="lblDuyuruGrubu" xml:space="preserve">
+    <value>Group of Announcement:</value>
+  </data>
+  <data name="lbliCerik" xml:space="preserve">
+    <value>Content:</value>
+  </data>
+  <data name="lblToplantiTarihi" xml:space="preserve">
+    <value>Date of Meeting:</value>
+  </data>
+  <data name="MusteriAdLabel" xml:space="preserve">
+    <value>Customer Name:</value>
+  </data>
+  <data name="NoResult" xml:space="preserve">
+    <value>No Result</value>
+  </data>
+  <data name="OdaGrubu" xml:space="preserve">
+    <value>Room Group</value>
+  </data>
+  <data name="OdaGrupLabel" xml:space="preserve">
+    <value>Room Group:</value>
+  </data>
+  <data name="OzelMusteri" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Personel" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="Saat" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="silinmisDuyurulariGeriAl" xml:space="preserve">
+    <value>Recover Deleted Announcements</value>
+  </data>
+  <data name="silinmisDuyurulariGoster" xml:space="preserve">
+    <value>Show Deleted Announcements</value>
+  </data>
+  <data name="SilinmisDuyurulariGosterme" xml:space="preserve">
+    <value>Don't show deleted announcements</value>
+  </data>
+  <data name="SilmekicinDuyuruSec" xml:space="preserve">
+    <value>Please first, select announcement which you want to delete.</value>
+  </data>
+  <data name="ToplantiEklemeBasarili" xml:space="preserve">
+    <value>Successfully that meeting created.</value>
+  </data>
+  <data name="Tümü" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ArdunioBagliDegil" xml:space="preserve">
+    <value>Ardunio is not connected.</value>
+  </data>
+  <data name="tileAyarlar" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="tileDuyuru" xml:space="preserve">
+    <value>Announcement Operations</value>
+  </data>
+  <data name="tileEtkinlik" xml:space="preserve">
+    <value>Event Actions</value>
+  </data>
+  <data name="tileKullaniciTercihleri" xml:space="preserve">
+    <value>User Preferences</value>
+  </data>
+  <data name="tileLisans" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="tileMusteri" xml:space="preserve">
+    <value>Customer Actions</value>
+  </data>
+  <data name="tileOda" xml:space="preserve">
+    <value>Room Operations</value>
+  </data>
+  <data name="tilePersonel" xml:space="preserve">
+    <value>Staff Actions</value>
+  </data>
+  <data name="tileSicaklik" xml:space="preserve">
+    <value>Temperature Informations</value>
+  </data>
+  <data name="tileTemizlik" xml:space="preserve">
+    <value>Cleaning Operations</value>
+  </data>
+  <data name="tileToplanti" xml:space="preserve">
+    <value>Meeting Operations</value>
+  </data>
+  <data name="tileYemek" xml:space="preserve">
+    <value>Meal Actions</value>
+  </data>
+  <data name="tileYetki" xml:space="preserve">
+    <value>Authority</value>
+  </data>
+  <data name="tileBilgilendirmeFormu" xml:space="preserve">
+    <value>Information Forms</value>
+  </data>
+  <data name="tileGeceModu" xml:space="preserve">
+    <value>Auto Night Mode</value>
+  </data>
+  <data name="tileKategoriTanimlamalari" xml:space="preserve">
+    <value>Category Definitions</value>
+  </data>
+  <data name="tileKatEkle" xml:space="preserve">
+    <value>Add Floor</value>
+  </data>
+  <data name="tileOnayForm" xml:space="preserve">
+    <value>Confirmation Form</value>
+  </data>
+  <data name="tileOtelTanimlamalari" xml:space="preserve">
+    <value>About Hotel</value>
+  </data>
+  <data name="tileRenkDegistir" xml:space="preserve">
+    <value>Change Color</value>
+  </data>
+  <data name="tileSalonTanimlamalari" xml:space="preserve">
+    <value>Salon Decleration</value>
+  </data>
+  <data name="Yardim" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="duyuruEkle" xml:space="preserve">
+    <value>Add Announcement</value>
+  </data>
+  <data name="duyuruListesi" xml:space="preserve">
+    <value>Announcement List</value>
+  </data>
+  <data name="etkinlikEkle" xml:space="preserve">
+    <value>Add Event</value>
+  </data>
+  <data name="etkinlikListesi" xml:space="preserve">
+    <value>Event List</value>
+  </data>
+  <data name="musteriCheckin" xml:space="preserve">
+    <value>Customer Check-in</value>
+  </data>
+  <data name="musteriListesi" xml:space="preserve">
+    <value>Customer List</value>
+  </data>
+  <data name="musteriTanimlama" xml:space="preserve">
+    <value>Add Customer</value>
+  </data>
+  <data name="ogunEkle" xml:space="preserve">
+    <value>Add Repeatly Meal</value>
+  </data>
+  <data name="ozelYemekEkle" xml:space="preserve">
+    <value>Add Special Meal</value>
+  </data>
+  <data name="tileOdaCheckin" xml:space="preserve">
+    <value>Room Check-in</value>
+  </data>
+  <data name="tileOdaListesi" xml:space="preserve">
+    <value>Room List</value>
+  </data>
+  <data name="tileOdaRezerveEt" xml:space="preserve">
+    <value>Book Room</value>
+  </data>
+  <data name="tileOdaTanimlama" xml:space="preserve">
+    <value>Add Room</value>
+  </data>
+  <data name="tilePersonelListesi" xml:space="preserve">
+    <value>Staff List</value>
+  </data>
+  <data name="odaKontrol" xml:space="preserve">
+    <value>Room Control</value>
+  </data>
+  <data name="personelKontrol" xml:space="preserve">
+    <value>Staff Control</value>
+  </data>
+  <data name="temizlikYap" xml:space="preserve">
+    <value>Clean Room</value>
+  </data>
+  <data name="tilePersonelOlustur" xml:space="preserve">
+    <value>Add Stuff</value>
+  </data>
+  <data name="ArdunioSicaklinBaglanti" xml:space="preserve">
+    <value>Ardunio Temperature Connection</value>
+  </data>
+  <data name="tileBlokEkle" xml:space="preserve">
+    <value>Add Block</value>
+  </data>
+  <data name="tileHavuzEkle" xml:space="preserve">
+    <value>Add Pool</value>
+  </data>
+  <data name="duzenlemekIcınOdaSec" xml:space="preserve">
+    <value>Please select first a room which you want to edit</value>
+  </data>
+  <data name="ikiKisilikYatakSayisi" xml:space="preserve">
+    <value>Number of Two Sized Bed</value>
+  </data>
+  <data name="odaGeriAlmaBasarili" xml:space="preserve">
+    <value>Succesfully deleted room recovered.</value>
+  </data>
+  <data name="OdaNumarasi" xml:space="preserve">
+    <value>Room Name</value>
+  </data>
+  <data name="odaSilmeBasarili" xml:space="preserve">
+    <value>Succesfully room deleted.</value>
+  </data>
+  <data name="silinmisOdalariGoster" xml:space="preserve">
+    <value>Show deleted rooms</value>
+  </data>
+  <data name="silinmisOdalariGosterme" xml:space="preserve">
+    <value>Don't show deleted rooms</value>
+  </data>
+  <data name="silinmisOdayiGeriAl" xml:space="preserve">
+    <value>Recover deleted room</value>
+  </data>
+  <data name="silmekIcınOdaSec" xml:space="preserve">
+    <value>Please select first a room which you want to delete</value>
+  </data>
+  <data name="tekKisilikYatakSayisi" xml:space="preserve">
+    <value>Number of One Sized Bed</value>
+  </data>
+  <data name="temizlenmeTarihi" xml:space="preserve">
+    <value>Last Clean Date</value>
+  </data>
+  <data name="tileYemekListesi" xml:space="preserve">
+    <value>Meal List</value>
+  </data>
+  <data name="BosOdalar" xml:space="preserve">
+    <value>Free Rooms</value>
+  </data>
+  <data name="checkinYap" xml:space="preserve">
+    <value>Make Check-in</value>
+  </data>
+  <data name="CikisTarihi" xml:space="preserve">
+    <value>Exit Date</value>
+  </data>
+  <data name="GirisTarihi" xml:space="preserve">
+    <value>Enter Date</value>
+  </data>
+  <data name="Guncellenemedi" xml:space="preserve">
+    <value>Can not updated</value>
+  </data>
+  <data name="HavuzAdi" xml:space="preserve">
+    <value>Pool Name</value>
+  </data>
+  <data name="ListeGuncelle" xml:space="preserve">
+    <value>Update List</value>
+  </data>
+  <data name="Olculemedi" xml:space="preserve">
+    <value>Can not count</value>
+  </data>
+  <data name="RezerveEdilmisOdalar" xml:space="preserve">
+    <value>Reserved Rooms</value>
+  </data>
+  <data name="Sicaklik" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="tileToplantiListesi" xml:space="preserve">
+    <value>Meeting List</value>
+  </data>
+  <data name="tileToplantiOlustur" xml:space="preserve">
+    <value>Create Meeting</value>
+  </data>
+  <data name="BasariliCheckin" xml:space="preserve">
+    <value>Successfully check-ined</value>
+  </data>
+  <data name="CiftKisilikYatakSayisi" xml:space="preserve">
+    <value>Number of two size bed</value>
+  </data>
+  <data name="EksikCheckinBilgisi" xml:space="preserve">
+    <value>Please check informations</value>
+  </data>
+  <data name="EksikRezervasyonBilgisi" xml:space="preserve">
+    <value>Please check informations</value>
+  </data>
+  <data name="ikiKisilikRakamGir" xml:space="preserve">
+    <value>Please insert two sized bed area only number</value>
+  </data>
+  <data name="OdaBilgisiEksik" xml:space="preserve">
+    <value>Please check informations about room</value>
+  </data>
+  <data name="OdadanSorumluPersonel" xml:space="preserve">
+    <value>Responsible of room</value>
+  </data>
+  <data name="OdaDuzenlemeBasarili" xml:space="preserve">
+    <value>Succesfully eddited room</value>
+  </data>
+  <data name="OdaEklemeBasarili" xml:space="preserve">
+    <value>Succesfully room added</value>
+  </data>
+  <data name="ProgramCalisiyorHata" xml:space="preserve">
+    <value>The program is already running</value>
+  </data>
+  <data name="RezervasyonBasarili" xml:space="preserve">
+    <value>Room succesfully reserved</value>
+  </data>
+  <data name="RezervasyonIptal" xml:space="preserve">
+    <value>Reservation canceled</value>
+  </data>
+  <data name="RezervasyoniptalEt" xml:space="preserve">
+    <value>Cancel Reservation</value>
+  </data>
+  <data name="tekKisilikRakamGir" xml:space="preserve">
+    <value>Please insert one sized bed area only number</value>
+  </data>
+  <data name="rezerveOdalarBos" xml:space="preserve">
+    <value>There is no reserved rooms</value>
+  </data>
+  <data name="CheckoutBasarili" xml:space="preserve">
+    <value>Succesfully check-out completed</value>
+  </data>
+  <data name="TarihKontrol" xml:space="preserve">
+    <value>Please check the dates</value>
+  </data>
+</root>

@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63995617-36F6-4778-94CC-6B37CABD04E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Otel_Uygulamasi</RootNamespace>
+    <AssemblyName>Otel Uygulamasi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classlar\Ardunio.cs" />
+    <Compile Include="Classlar\DatabaseBaglanti.cs" />
+    <Compile Include="Classlar\HavuzJSON.cs" />
+    <Compile Include="Classlar\HavuzSicaklik.cs" />
+    <Compile Include="Classlar\Kullanici.cs" />
+    <Compile Include="Classlar\Musteri.cs" />
+    <Compile Include="Classlar\ortakFormIslemleri.cs" />
+    <Compile Include="Classlar\OtelBilgileri.cs" />
+    <Compile Include="Classlar\Sicaklik.cs" />
+    <Compile Include="Formlar\Ardunio\ArdunioBaglantiSicaklik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ardunio\ArdunioBaglantiSicaklik.Designer.cs">
+      <DependentUpon>ArdunioBaglantiSicaklik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\AyarlarYetki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\AyarlarYetki.Designer.cs">
+      <DependentUpon>AyarlarYetki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\blokEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\blokEkle.Designer.cs">
+      <DependentUpon>blokEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\HavuzEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\HavuzEkle.Designer.cs">
+      <DependentUpon>HavuzEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\KategoriTanimlamalari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\KategoriTanimlamalari.Designer.cs">
+      <DependentUpon>KategoriTanimlamalari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\KatEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\KatEkle.Designer.cs">
+      <DependentUpon>KatEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\KullaniciTercihleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\KullaniciTercihleri.Designer.cs">
+      <DependentUpon>KullaniciTercihleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\LisansIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\LisansIslemleri.Designer.cs">
+      <DependentUpon>LisansIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\OtelTanımlamaları.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\OtelTanımlamaları.Designer.cs">
+      <DependentUpon>OtelTanımlamaları.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\SalonTanimlamalari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\SalonTanimlamalari.Designer.cs">
+      <DependentUpon>SalonTanimlamalari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Duyuru Islemleri\DuyuruEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Duyuru Islemleri\DuyuruEkle.Designer.cs">
+      <DependentUpon>DuyuruEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Duyuru Islemleri\DuyuruIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Duyuru Islemleri\DuyuruIslemleri.Designer.cs">
+      <DependentUpon>DuyuruIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Duyuru Islemleri\DuyuruListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Duyuru Islemleri\DuyuruListesi.Designer.cs">
+      <DependentUpon>DuyuruListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\EtkinlikIslemleri\EtkinlikIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\EtkinlikIslemleri\EtkinlikIslemleri.Designer.cs">
+      <DependentUpon>EtkinlikIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\EtkinlikIslemleri\EtkinlikListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\EtkinlikIslemleri\EtkinlikListesi.Designer.cs">
+      <DependentUpon>EtkinlikListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\EtkinlikIslemleri\EtkinlikTanimlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\EtkinlikIslemleri\EtkinlikTanimlama.Designer.cs">
+      <DependentUpon>EtkinlikTanimlama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Genel\AnaEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Genel\AnaEkran.Designer.cs">
+      <DependentUpon>AnaEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\Ayarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ayarlar\Ayarlar.Designer.cs">
+      <DependentUpon>Ayarlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Genel\UyarıFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Genel\UyarıFormu.Designer.cs">
+      <DependentUpon>UyarıFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaCheckin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaCheckin.Designer.cs">
+      <DependentUpon>OdaCheckin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaRezerveEt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaRezerveEt.Designer.cs">
+      <DependentUpon>OdaRezerveEt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TemizlikIslemleri\TemizlikYap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\TemizlikIslemleri\TemizlikYap.Designer.cs">
+      <DependentUpon>TemizlikYap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\YemekIslemleri\YemekListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\YemekIslemleri\YemekListesi.Designer.cs">
+      <DependentUpon>YemekListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localization.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SıcaklıkBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SıcaklıkBilgileri.Designer.cs">
+      <DependentUpon>SıcaklıkBilgileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Genel\Destek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Genel\Destek.Designer.cs">
+      <DependentUpon>Destek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Genel\Guncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Genel\Guncelleme.Designer.cs">
+      <DependentUpon>Guncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Musteri Islemleri\MusteriIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Musteri Islemleri\MusteriIslemleri.Designer.cs">
+      <DependentUpon>MusteriIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Genel\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Genel\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Musteri Islemleri\MusteriListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Musteri Islemleri\MusteriListesi.Designer.cs">
+      <DependentUpon>MusteriListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Musteri Islemleri\MusteriTanimlamaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Musteri Islemleri\MusteriTanimlamaForm.Designer.cs">
+      <DependentUpon>MusteriTanimlamaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaIslemleri.Designer.cs">
+      <DependentUpon>OdaIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaTanimlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaTanimlama.Designer.cs">
+      <DependentUpon>OdaTanimlama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Personel Islemleri\PersonelIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Personel Islemleri\PersonelIslemleri.Designer.cs">
+      <DependentUpon>PersonelIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Personel Islemleri\PersonelListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Personel Islemleri\PersonelListesi.Designer.cs">
+      <DependentUpon>PersonelListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Personel Islemleri\PersonelOlusturma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Personel Islemleri\PersonelOlusturma.Designer.cs">
+      <DependentUpon>PersonelOlusturma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Toplantı Islemleri\ToplantiIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Toplantı Islemleri\ToplantiIslemleri.Designer.cs">
+      <DependentUpon>ToplantiIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Toplantı Islemleri\ToplantiListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Toplantı Islemleri\ToplantiListesi.Designer.cs">
+      <DependentUpon>ToplantiListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Toplantı Islemleri\ToplantiOlustur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Toplantı Islemleri\ToplantiOlustur.Designer.cs">
+      <DependentUpon>ToplantiOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TemizlikIslemleri\Form34.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\TemizlikIslemleri\Form34.Designer.cs">
+      <DependentUpon>Form34.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\OdaListesi.Designer.cs">
+      <DependentUpon>OdaListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TemizlikIslemleri\PersonelKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\TemizlikIslemleri\PersonelKontrol.Designer.cs">
+      <DependentUpon>PersonelKontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TemizlikIslemleri\TemizlikIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\TemizlikIslemleri\TemizlikIslemleri.Designer.cs">
+      <DependentUpon>TemizlikIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\YemekIslemleri\OgunTanimlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\YemekIslemleri\OgunTanimlama.Designer.cs">
+      <DependentUpon>OgunTanimlama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\YemekIslemleri\OzelYemek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\YemekIslemleri\OzelYemek.Designer.cs">
+      <DependentUpon>OzelYemek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\YemekIslemleri\YemekIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\YemekIslemleri\YemekIslemleri.Designer.cs">
+      <DependentUpon>YemekIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formlar\Ardunio\ArdunioBaglantiSicaklik.resx">
+      <DependentUpon>ArdunioBaglantiSicaklik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\AyarlarYetki.resx">
+      <DependentUpon>AyarlarYetki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\blokEkle.resx">
+      <DependentUpon>blokEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\HavuzEkle.resx">
+      <DependentUpon>HavuzEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\KategoriTanimlamalari.resx">
+      <DependentUpon>KategoriTanimlamalari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\KatEkle.resx">
+      <DependentUpon>KatEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\KullaniciTercihleri.resx">
+      <DependentUpon>KullaniciTercihleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\LisansIslemleri.resx">
+      <DependentUpon>LisansIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\OtelTanımlamaları.resx">
+      <DependentUpon>OtelTanımlamaları.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\SalonTanimlamalari.resx">
+      <DependentUpon>SalonTanimlamalari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Duyuru Islemleri\DuyuruEkle.resx">
+      <DependentUpon>DuyuruEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Duyuru Islemleri\DuyuruIslemleri.resx">
+      <DependentUpon>DuyuruIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Duyuru Islemleri\DuyuruListesi.resx">
+      <DependentUpon>DuyuruListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\EtkinlikIslemleri\EtkinlikIslemleri.resx">
+      <DependentUpon>EtkinlikIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\EtkinlikIslemleri\EtkinlikListesi.resx">
+      <DependentUpon>EtkinlikListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\EtkinlikIslemleri\EtkinlikTanimlama.resx">
+      <DependentUpon>EtkinlikTanimlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Genel\AnaEkran.resx">
+      <DependentUpon>AnaEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ayarlar\Ayarlar.resx">
+      <DependentUpon>Ayarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Genel\frmLogin.tr-TR.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Genel\UyarıFormu.resx">
+      <DependentUpon>UyarıFormu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\OdaCheckin.resx">
+      <DependentUpon>OdaCheckin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\OdaRezerveEt.resx">
+      <DependentUpon>OdaRezerveEt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\TemizlikIslemleri\TemizlikYap.resx">
+      <DependentUpon>TemizlikYap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\YemekIslemleri\YemekListesi.resx">
+      <DependentUpon>YemekListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SıcaklıkBilgileri.resx">
+      <DependentUpon>SıcaklıkBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Genel\Destek.resx">
+      <DependentUpon>Destek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Genel\Guncelleme.resx">
+      <DependentUpon>Guncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Musteri Islemleri\MusteriIslemleri.resx">
+      <DependentUpon>MusteriIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Genel\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Musteri Islemleri\MusteriListesi.resx">
+      <DependentUpon>MusteriListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Musteri Islemleri\MusteriTanimlamaForm.resx">
+      <DependentUpon>MusteriTanimlamaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\OdaIslemleri.resx">
+      <DependentUpon>OdaIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\OdaTanimlama.resx">
+      <DependentUpon>OdaTanimlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Personel Islemleri\PersonelIslemleri.resx">
+      <DependentUpon>PersonelIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Personel Islemleri\PersonelListesi.resx">
+      <DependentUpon>PersonelListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Personel Islemleri\PersonelOlusturma.resx">
+      <DependentUpon>PersonelOlusturma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Toplantı Islemleri\ToplantiIslemleri.resx">
+      <DependentUpon>ToplantiIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Toplantı Islemleri\ToplantiListesi.resx">
+      <DependentUpon>ToplantiListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Toplantı Islemleri\ToplantiOlustur.resx">
+      <DependentUpon>ToplantiOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\TemizlikIslemleri\Form34.resx">
+      <DependentUpon>Form34.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\OdaListesi.resx">
+      <DependentUpon>OdaListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\TemizlikIslemleri\PersonelKontrol.resx">
+      <DependentUpon>PersonelKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\TemizlikIslemleri\TemizlikIslemleri.resx">
+      <DependentUpon>TemizlikIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\YemekIslemleri\OgunTanimlama.resx">
+      <DependentUpon>OgunTanimlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\YemekIslemleri\OzelYemek.resx">
+      <DependentUpon>OzelYemek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\YemekIslemleri\YemekIslemleri.resx">
+      <DependentUpon>YemekIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\Otel Uygulamasi.vshost.exe.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DevExpress.Data.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Data.v15.1.xml" />
+    <Content Include="bin\Debug\DevExpress.Data.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Office.v15.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Office.v15.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Printing.v15.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Printing.v15.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Printing.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.RichEdit.v15.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.RichEdit.v15.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Sparkline.v15.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Sparkline.v15.1.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Sparkline.v17.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Utils.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Utils.v15.1.xml" />
+    <Content Include="bin\Debug\DevExpress.Utils.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraBars.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraBars.v15.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraBars.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v15.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v17.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v15.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraLayout.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraLayout.v15.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v15.1.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraTreeList.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraTreeList.v15.1.xml" />
+    <Content Include="bin\Debug\de\DevExpress.Data.v15.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Office.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Printing.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.RichEdit.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Sparkline.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.Utils.v15.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraBars.v15.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraEditors.v15.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraGrid.v15.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraLayout.v15.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraPrinting.v15.1.resources.dll" />
+    <Content Include="bin\Debug\de\DevExpress.XtraTreeList.v15.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Data.v15.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Office.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Printing.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.RichEdit.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Sparkline.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.Utils.v15.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraBars.v15.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraEditors.v15.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraGrid.v15.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraLayout.v15.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraPrinting.v15.1.resources.dll" />
+    <Content Include="bin\Debug\es\DevExpress.XtraTreeList.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Data.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Office.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Printing.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.RichEdit.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Sparkline.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.Utils.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraBars.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraEditors.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraGrid.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraLayout.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraPrinting.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ja\DevExpress.XtraTreeList.v15.1.resources.dll" />
+    <Content Include="bin\Debug\MetroFramework.Design.dll" />
+    <Content Include="bin\Debug\MetroFramework.dll" />
+    <Content Include="bin\Debug\MetroFramework.Fonts.dll" />
+    <Content Include="bin\Debug\Otel Uygulamasi.exe" />
+    <Content Include="bin\Debug\Otel Uygulamasi.pdb" />
+    <Content Include="bin\Debug\Otel Uygulamasi.vshost.exe" />
+    <Content Include="bin\Debug\ru\DevExpress.Data.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Office.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Printing.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.RichEdit.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Sparkline.v15.1.Core.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.Utils.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraBars.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraEditors.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraGrid.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraLayout.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraPrinting.v15.1.resources.dll" />
+    <Content Include="bin\Debug\ru\DevExpress.XtraTreeList.v15.1.resources.dll" />
+    <None Include="Resources\Euro.png" />
+    <EmbeddedResource Include="Localization\tr\MetroMessageBoxControl.xml" />
+    <EmbeddedResource Include="Localization\tr\MetroToggle.xml" />
+    <None Include="Resources\HoteliEU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
