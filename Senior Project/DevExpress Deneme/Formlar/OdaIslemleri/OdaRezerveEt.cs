@@ -208,7 +208,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private bool TarihKontrol()
         {
-            if((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue)))
+            if((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue) && (Convert.ToDateTime(dtGirisTarihi.EditValue) > DateTime.Now) && (Convert.ToDateTime(dtCikisTarihi.EditValue) > DateTime.Now)))
             {
                 return true;
             }

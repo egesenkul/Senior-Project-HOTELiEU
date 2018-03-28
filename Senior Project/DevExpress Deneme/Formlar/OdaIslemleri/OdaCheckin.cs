@@ -28,7 +28,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void MusteriListesiGetir()
         {
-            List<Musteri> musteriListesi = new List<Musteri>();
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
 
@@ -153,6 +152,33 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
             connection.Close();
             ortakFormIslemleri.cmbIlkDegerGetir(cmbOdaTipi);
+        }
+
+        private void MusteriActiveGuncelle()
+        {
+            //Rıza'nn mobil programda giriş kontrolü yapabilmesi için müşteri tablolarında bulunan müşteriactive column update et 
+            if (CheckinKontrol() && TarihKontrol())
+            {
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
+
+                string tempdatetime = DateTime.Now.ToString();
+
+                cmd.Connection = connection;
+                connection.Open();
+                if (string.Equals(musteriListesi[cmbMusteriAdi.SelectedIndex].tablo, "riza"))
+                {
+                    //DenemeMusteriler tablosunda update işlemi yap
+                    cmd.CommandText = "update DenemeMusteriler set musteriActive='1' where MusteriAdi='" + musteriListesi[cmbMusteriAdi.SelectedIndex].Isim + "' and MusteriSoyadi='" + musteriListesi[cmbMusteriAdi.SelectedIndex].soyIsim + "' and MusteriMail='" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "'";
+                }
+                else
+                {
+                    cmd.CommandText = "update Musteriler set musteriActive='1' where musteriAdi='" + musteriListesi[cmbMusteriAdi.SelectedIndex].Isim + "' and musteriSoyadi='" + musteriListesi[cmbMusteriAdi.SelectedIndex].soyIsim + "' and musteriMail='" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "'";
+                }
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+
         }
 
         private void OdaListesiGuncelle(string sorgu)
@@ -337,7 +363,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private bool TarihKontrol()
         {
-            if ((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue)))
+            if ((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue)) && (Convert.ToDateTime(dtGirisTarihi.EditValue)>DateTime.Now) && (Convert.ToDateTime(dtCikisTarihi.EditValue)>DateTime.Now))
             {
                 return true;
             }
@@ -374,10 +400,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
                 cmd.Connection = connection;
                 connection.Open();
-                cmd.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "','" + Convert.ToDateTime(dtGirisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','Check-in',0)";
+                cmd.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "','" + Convert.ToDateTime(dtGirisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','Check-in',0,"+ musteriListesi[cmbMusteriAdi.SelectedIndex].email + "')";;
 
                 cmd.ExecuteNonQuery();
                 connection.Close();
+                MusteriActiveGuncelle();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
                     MetroMessageBox.Show(this, "", Localization.BasariliCheckin, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -444,7 +471,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
                     cmd4.ExecuteNonQuery();
                     connection4.Close();
-
+                    MusteriActiveGuncelle();
                 }
                 catch (Exception ex) { }
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
