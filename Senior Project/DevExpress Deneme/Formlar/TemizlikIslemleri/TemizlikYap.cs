@@ -21,7 +21,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
         private void TemizlikciListesiDoldur()
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "Select * from Personel where personelDepartman='Temizlikçi'";
@@ -40,7 +40,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
         public void FiilComboboxBlok()
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "Select blokAdı from Blok";
@@ -92,7 +92,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
         {
             cmbKat.Items.Clear();
             cmbKat.Items.Add(Localization.Tümü);
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
 
             if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü))
@@ -126,7 +126,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
         {
             SqlDataReader Dr;
             ListeOdalar.BackColor = Color.White;
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
             ListeOdalar.Items.Clear();
             if(string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü))
@@ -161,12 +161,13 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             //Oda tablosunda son temizlenmeyi güncelleyecek ve temizlik hareket tablosuna kayıt atacak
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
+            // Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss")
             connection.Open();
-            cmd.CommandText = "update Oda set temizlikTarihi='"+DateTime.Now+"' where OdaNo='"+ListeOdalar.SelectedItems[0].Text+"'";
+            cmd.CommandText = "update Oda set temizlikTarihi='"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' where OdaNo='"+ListeOdalar.SelectedItems[0].Text+"'";
             cmd.ExecuteNonQuery();
             connection.Close();
             // isim ve soyisime göre kullanıcı adı bulmak
@@ -188,12 +189,10 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
             }
             connection.Close();
 
-
-
             SqlCommand cmd2 = new SqlCommand();
             cmd2.Connection = connection;
             connection.Open();
-            cmd2.CommandText = "insert into TemizlikHareket values ('" + ListeOdalar.SelectedItems[0].Text + "','" + kullaniciadiPersonel + "','" + DateTime.Now + "')";
+            cmd2.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + cmbTemizlikci.SelectedItem.ToString() + "', 'Temizlik', 0, '" + ortakFormIslemleri.PersonelMailGetir(parcalar[0], parcalar[1], "Temizlikçi") + "')";
             cmd2.ExecuteNonQuery();
             connection.Close();
 
@@ -202,6 +201,11 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
             {
                 MetroMessageBox.Show(this, "", "Başarılı bir şekilde oda temizlenmiştir.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ListeOdalar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

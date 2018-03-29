@@ -87,26 +87,14 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
                 ListeBos = false;
                 if (!ListeBos)
                 {
-                    metroGrid1.Columns[0].HeaderText = "Oda Numarası";
-                    metroGrid1.Columns[1].HeaderText = "Personel Kullanıcı Adı";
-                    metroGrid1.Columns[1].Visible = false;
-                    metroGrid1.Columns[2].HeaderText = "Temizlik Tarihi";
-                    metroGrid1.Columns[3].HeaderText = "Personel Adı";
-                    metroGrid1.Columns[4].HeaderText = "Personel Soyadı";
-                    metroGrid1.Columns[5].HeaderText = "Personel Telefonu";
+                    metroGrid1.Columns[0].Visible = false;
+                    metroGrid1.Columns[1].HeaderText = Localization.OdaNumarasi;
+                    metroGrid1.Columns[2].HeaderText = Localization.GirisTarihi;
+                    metroGrid1.Columns[3].HeaderText = Localization.CikisTarihi;
+                    metroGrid1.Columns[4].HeaderText = Localization.personelAdi;
                     metroGrid1.Columns[5].Visible = false;
-                    metroGrid1.Columns[6].HeaderText = "Oda Tipi";
                     metroGrid1.Columns[6].Visible = false;
                     metroGrid1.Columns[7].Visible = false;
-                    metroGrid1.Columns[8].Visible = false;
-                    metroGrid1.Columns[9].Visible = false;
-                    metroGrid1.Columns[10].Visible = false;
-                    metroGrid1.Columns[11].Visible = false;
-                    metroGrid1.Columns[12].Visible = false;
-                    metroGrid1.Columns[13].Visible = false;
-                    metroGrid1.Columns[14].Visible = false;
-                    metroGrid1.Columns[15].Visible = false;
-                    metroGrid1.Columns[16].Visible = false;
                 }
             }
             else
@@ -139,8 +127,9 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
                 kullaniciadiPersonel = (Dr["personelKullaniciAdi"]).ToString();
             }
             connection.Close();
-            FillDataGridView("SELECT * FROM TemizlikHareket, Personel WHERE TemizlikHareket.personelKullaniciAdi = Personel.personelKullaniciAdi AND(TemizlikHareket.TemizlikTarihi >= '" + metroDateTime1.Value.ToString() + "' and TemizlikHareket.TemizlikTarihi <= '" + metroDateTime2.Value.ToString() + "')");
-          
+            FillDataGridView("SELECT * FROM OdaHareket  WHERE musteriPersonel ='" + cmbPersonel.SelectedItem.ToString() + "'and islemTarihi1>='" + Convert.ToDateTime(metroDateTime1.Value).ToString("yyyy-MM-dd HH:mm:ss") + "'and islemTarihii2<='" + Convert.ToDateTime(metroDateTime2.Value).ToString("yyyy-MM-dd HH:mm:ss") + "'");
+
+
         }
     }
 }

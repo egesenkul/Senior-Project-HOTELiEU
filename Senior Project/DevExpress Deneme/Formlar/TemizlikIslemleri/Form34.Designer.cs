@@ -278,7 +278,6 @@
             this.ClientSize = new System.Drawing.Size(1032, 608);
             this.Controls.Add(this.metroPanel1);
             this.Name = "Form34";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.OdaKontrol_Load);
             this.metroPanel1.ResumeLayout(false);

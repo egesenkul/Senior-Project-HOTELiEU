@@ -199,6 +199,26 @@ namespace Otel_Uygulamasi.Classlar
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
         }
 
-        
+        public static string PersonelMailGetir(string PersonelAdi,string PersonelSoyadi,string Personeldepartman)
+        {
+            //Seçili personelin mail adresini döndürür
+            string mail = "";
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "Select personelMail from Personel where personelAdi='"+PersonelAdi+"' and personelSoyadi='"+PersonelSoyadi+"' and personelDepartman='"+Personeldepartman+"'";
+            cmd.Connection = connection;
+            cmd.CommandType = CommandType.Text;
+
+            SqlDataReader Dr;
+            connection.Open();
+            Dr = cmd.ExecuteReader();
+            while (Dr.Read())
+            {
+                mail=(Dr["personelMail"].ToString());
+            }
+            connection.Close();
+            return mail;
+        }
     }
 }

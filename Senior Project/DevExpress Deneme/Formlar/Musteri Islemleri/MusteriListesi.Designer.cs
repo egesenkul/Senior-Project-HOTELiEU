@@ -210,7 +210,7 @@
             this.düzenleToolStripMenuItem,
             this.tümBilgileriGösterToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 56);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 78);
             // 
             // düzenleToolStripMenuItem
             // 

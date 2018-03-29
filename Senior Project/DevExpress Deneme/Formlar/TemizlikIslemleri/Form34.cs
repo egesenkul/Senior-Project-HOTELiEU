@@ -24,6 +24,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         public void FiilComboboxOdaGrubu()
         {
+            cmbOdaTipi.Items.Add(Localization.Tümü);
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
 
@@ -44,6 +45,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         public void FiilComboboxBlok()
         {
+            cmbOdaBlok.Items.Add(Localization.Tümü);
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
 
@@ -79,36 +81,19 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             //GridView Column isimlerini değiştirmek için
             //datatable boş değilse bunları yapsın 
             ListeBos = true;
-            metroGrid1.DataSource = null;
             if (dtRecord.Rows.Count > 0)
             {
                 ListeBos = false;
                 if (!ListeBos)
                 {
-                    metroGrid1.Columns[0].HeaderText = "Oda Numarası";
-                    metroGrid1.Columns[1].HeaderText = "Temizleyen Personel";
-                    metroGrid1.Columns[1].Visible = false;
-                    metroGrid1.Columns[2].HeaderText = "Oda Adı";
-                    metroGrid1.Columns[2].Visible = false;
-                    metroGrid1.Columns[3].HeaderText = "Oda Adı";
-                    metroGrid1.Columns[3].Visible = false;
-                    metroGrid1.Columns[4].HeaderText = "İki Kişilik Yatak";
-                    metroGrid1.Columns[4].Visible = false;
-                    metroGrid1.Columns[5].HeaderText = "Tek Kişilik Yatak";
+                    metroGrid1.Columns[0].Visible = false;
+                    metroGrid1.Columns[1].HeaderText = Localization.OdaNumarasi;
+                    metroGrid1.Columns[2].HeaderText = Localization.GirisTarihi;
+                    metroGrid1.Columns[3].HeaderText = Localization.CikisTarihi;
+                    metroGrid1.Columns[4].HeaderText = Localization.personelAdi;
                     metroGrid1.Columns[5].Visible = false;
-                    metroGrid1.Columns[6].HeaderText = "Oda Tipi";
-                    metroGrid1.Columns[7].HeaderText = "Temizlik Tarihi";
-                    metroGrid1.Columns[8].HeaderText = "Blok";
-                    metroGrid1.Columns[9].HeaderText = "Kat";
-                    metroGrid1.Columns[10].HeaderText = "Görünür";
-                    metroGrid1.Columns[10].Visible = false;
-                    metroGrid1.Columns[11].HeaderText = "Oda Durumu";
-                    metroGrid1.Columns[11].Visible = false;
-                }
-                else
-                {
-                    metroGrid1.DataSource = null;
-                    MetroMessageBox.Show(this, "", "İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    metroGrid1.Columns[6].Visible = false;
+                    metroGrid1.Columns[7].Visible = false;
                 }
             }
             
@@ -146,11 +131,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         public void FiilComboboxKat()
         {
             cmbKat.Items.Clear();
-            cmbKat.Items.Add("Tümü");
+            cmbKat.Items.Add(Localization.Tümü);
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
 
-            if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü"))
+            if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü))
             {
                 cmd.CommandText = "Select KatNo from Kat";
             }
@@ -191,35 +176,35 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
-            if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü") && string.Equals(cmbKat.SelectedItem.ToString(), "Tümü") && string.Equals(cmbOdaTipi.SelectedItem.ToString(),"Tümü"))
+            if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbOdaTipi.SelectedItem.ToString(),Localization.Tümü))
             {
                 cmd.CommandText = "Select OdaNo from Oda where gorunur = 1";
             }
-            else if (!string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü") && string.Equals(cmbKat.SelectedItem.ToString(), "Tümü") && string.Equals(cmbOdaTipi.SelectedItem.ToString(), "Tümü"))
+            else if (!string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbOdaTipi.SelectedItem.ToString(), Localization.Tümü))
             {
                 cmd.CommandText = "Select OdaNo from Oda where gorunur = 1 and blok='" + cmbOdaBlok.SelectedItem.ToString()+"'";
             }
-            else if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü") && !string.Equals(cmbKat.SelectedItem.ToString(), "Tümü") && string.Equals(cmbOdaTipi.SelectedItem.ToString(), "Tümü"))
+            else if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbOdaTipi.SelectedItem.ToString(), Localization.Tümü))
             {
                 cmd.CommandText = "Select OdaNo from Oda where gorunur = 1 and katAdi='" + cmbKat.SelectedItem.ToString() + "'";
             }
-            else if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü") && string.Equals(cmbKat.SelectedItem.ToString(), "Tümü") && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), "Tümü"))
+            else if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), Localization.Tümü))
             {
                 cmd.CommandText = "Select OdaNo from Oda where gorunur = 1 and odaTip='" + cmbOdaTipi.SelectedItem.ToString() + "'";
             }
-            else if (!string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü") && !string.Equals(cmbKat.SelectedItem.ToString(), "Tümü") && string.Equals(cmbOdaTipi.SelectedItem.ToString(), "Tümü"))
+            else if (!string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbOdaTipi.SelectedItem.ToString(), Localization.Tümü))
             {
                 cmd.CommandText = "Select OdaNo from Oda where gorunur = 1 and katAdi='" + cmbKat.SelectedItem.ToString() + "'and blok='"+cmbOdaBlok.SelectedItem.ToString()+"'";
             }
-            else if (!string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü") && string.Equals(cmbKat.SelectedItem.ToString(), "Tümü") && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), "Tümü"))
+            else if (!string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), Localization.Tümü))
             {
                 cmd.CommandText = "Select OdaNo from Oda where gorunur = 1 and odaTip='" + cmbOdaTipi.SelectedItem.ToString() + "'and blok='" + cmbOdaBlok.SelectedItem.ToString() + "'";
             }
-            else if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü") && !string.Equals(cmbKat.SelectedItem.ToString(), "Tümü") && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), "Tümü"))
+            else if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), Localization.Tümü))
             {
                 cmd.CommandText = "Select OdaNo from Oda where gorunur = 1 and katAdi='" + cmbKat.SelectedItem.ToString() + "'and odaTip='" + cmbOdaTipi.SelectedItem.ToString() + "'";
             }
-            else if (!string.Equals(cmbOdaBlok.SelectedItem.ToString(), "Tümü") && !string.Equals(cmbKat.SelectedItem.ToString(), "Tümü") && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), "Tümü"))
+            else if (!string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), Localization.Tümü))
             {
                 cmd.CommandText = "Select OdaNo from Oda where gorunur = 1 and odaTip='" + cmbOdaTipi.SelectedItem.ToString() + "'and blok='" + cmbOdaBlok.SelectedItem.ToString() + "'and katAdi='"+cmbKat.SelectedItem.ToString()+"'";
             }
@@ -236,7 +221,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
             if (ListeBos)
             {
-                MetroMessageBox.Show(this, "", "İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MetroMessageBox.Show(this, "", "İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             connection.Close();
         }
@@ -244,7 +229,12 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             OdalarıGetir();
             foreach (string item in odalar) {
-                FillDataGridView("SELECT * FROM TemizlikHareket, Oda WHERE TemizlikHareket.OdaNo = Oda.OdaNo AND(TemizlikHareket.TemizlikTarihi >= '"+metroDateTime1.Value.ToString()+"' and TemizlikHareket.TemizlikTarihi <= '"+metroDateTime2.Value.ToString()+"')  AND(Oda.OdaNo = '"+item+"')");
-            } }
+                FillDataGridView("SELECT * FROM OdaHareket  WHERE OdaNo ='" + item + "'and islemTarihi1>='" + Convert.ToDateTime(metroDateTime1.Value).ToString("yyyy-MM-dd HH:mm:ss") + "'and islemTarihii2<='" + Convert.ToDateTime(metroDateTime2.Value).ToString("yyyy-MM-dd HH:mm:ss") + "' and islemTipi='Temizlik'");
+            }
+            if (metroGrid1.DataSource == null)
+            {
+                MetroMessageBox.Show(this, "", "İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
