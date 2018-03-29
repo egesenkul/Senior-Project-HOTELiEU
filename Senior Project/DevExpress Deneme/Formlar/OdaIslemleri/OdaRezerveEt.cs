@@ -180,7 +180,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             dtGirisTarihi.EditValue = DateTime.Now;
             dtGirisTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
             dtGirisTarihi.Properties.VistaEditTime = DefaultBoolean.True;
-            dtCikisTarihi.EditValue = DateTime.Now;
+            dtCikisTarihi.EditValue = DateTime.Now.AddDays(1);
             dtCikisTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
             dtCikisTarihi.Properties.VistaEditTime = DefaultBoolean.True;
             ortakFormIslemleri.cmbIlkDegerGetir(cmbKat, cmbMusteriAdi, cmbOdaBlok, cmbOdaTipi);
@@ -208,7 +208,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private bool TarihKontrol()
         {
-            if((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue) && (Convert.ToDateTime(dtGirisTarihi.EditValue) > DateTime.Now) && (Convert.ToDateTime(dtCikisTarihi.EditValue) > DateTime.Now)))
+            if((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue) && (Convert.ToDateTime(dtCikisTarihi.EditValue) > DateTime.Now)))
             {
                 return true;
             }
@@ -255,10 +255,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 }
                 connection2.Close();
 
-                foreach (string item in tumOdalar)
-                {
-                    ListeOdalar.Items.Add(item);
-                }
+            
                 ListeRezerveOdalar.Items.Clear();
 
                 //Rezerve odaları sildiğimiz gibi checkinli odaları da sileceğiz
@@ -278,7 +275,10 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     checkinOdalar.Add(Convert.ToInt32(Dr4["OdaHareketID"]));
                 }
                 connection4.Close();
-
+                foreach (string item in tumOdalar)
+                {
+                    ListeOdalar.Items.Add(item);
+                }
                 //Rezerve odaları kırmızı olacak şekilde ekle
                 foreach (int item in rezerveOdalar)
                 {
