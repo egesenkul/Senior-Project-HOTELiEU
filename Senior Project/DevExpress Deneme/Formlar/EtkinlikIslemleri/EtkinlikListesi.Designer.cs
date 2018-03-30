@@ -270,7 +270,6 @@
             this.Resizable = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Etkinlik Listesi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.EtkinlikListesi_Load);
             this.metroPanel1.ResumeLayout(false);

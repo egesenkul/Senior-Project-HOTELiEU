@@ -82,7 +82,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 Dr = cmd.ExecuteReader();
                 while (Dr.Read())
                 {
-                    txtEtkinlikAdı.Text = Dr["EtkinlikAdı"].ToString();
+                    txtEtkinlikAdı.Text = Dr["EtkinlikAdi"].ToString();
                     txtEtkinlikAciklama.Text = Dr["EtkinlikAciklama"].ToString();
                     dtEtkinlik.EditValue = Convert.ToDateTime(Dr["EtkinlikTarihi"]);
                     int limit = Convert.ToInt32(Dr["EtkinlikLimit"]);
@@ -147,12 +147,19 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                     cmd.CommandText = "Insert into Etkinlik values ('" + txtEtkinlikAdı.Text + "','" + txtEtkinlikAciklama.Text + "' , '" + Convert.ToDateTime(dtEtkinlik.EditValue).ToString("yyyy-MM-dd") + "'," + Convert.ToInt32(txtKisiLimiti.Text) + ",1) ";
                 }
                 else {
-                    cmd.CommandText = "update Etkinlik set EtkinlikAdı='" + txtEtkinlikAdı.Text + "' ,EtkinlikAciklama='" + txtEtkinlikAciklama.Text + "',EtkinlikTarihi='" + Convert.ToDateTime(dtEtkinlik.EditValue).ToString("yyyy-MM-dd") + "' ,EtkinlikLimit=" + Convert.ToInt32(txtKisiLimiti.Text) + " where Etkinlikno="+EtkinlikID;
+                    cmd.CommandText = "update Etkinlik set EtkinlikAdi='" + txtEtkinlikAdı.Text + "' ,EtkinlikAciklama='" + txtEtkinlikAciklama.Text + "',EtkinlikTarihi='" + Convert.ToDateTime(dtEtkinlik.EditValue).ToString("yyyy-MM-dd") + "' ,EtkinlikLimit=" + Convert.ToInt32(txtKisiLimiti.Text) + " where Etkinlikno="+EtkinlikID;
                         }
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                MetroMessageBox.Show(this, "", Localization.EtkinlikEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dtEtkinlik.EditValue = DateTime.Now;
+                if (string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
+                {
+                    MetroMessageBox.Show(this, "", Localization.EtkinlikEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (!string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
+                {
+                    MetroMessageBox.Show(this, "", Localization.EtkinlikGuncellemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                    dtEtkinlik.EditValue = DateTime.Now;
                 ortakFormIslemleri.textBoxTemizle(txtEtkinlikAciklama, txtEtkinlikAdı, txtKisiLimiti);
                 ortakFormIslemleri.checkboxTemizle(CheckBoxKisiLimiti);
             }

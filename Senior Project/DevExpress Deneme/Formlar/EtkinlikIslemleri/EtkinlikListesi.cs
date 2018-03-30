@@ -30,6 +30,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             düzenleToolStripMenuItem.Text = Localization.Duzenle;
             silinenEtkinlikleriGösterToolStripMenuItem.Text = Localization.SilinenEtkinlikleriGoster;
             silinenEtkinliğiGeriAlToolStripMenuItem.Text = Localization.SilinenEtkinligiGeriAl;
+            metroLabel6.Text = Localization.SilinenEtkinlikleriGoster;
         }
 
         private void EtkinlikListesi_Load(object sender, EventArgs e)

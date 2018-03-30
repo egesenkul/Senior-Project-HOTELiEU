@@ -359,7 +359,6 @@
             this.Resizable = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Etkinlik Tanımlama / Düzenleme";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.EtkinlikTanimlama_Load);
             this.metroPanel1.ResumeLayout(false);

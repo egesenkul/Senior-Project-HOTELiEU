@@ -777,4 +777,7 @@
   <data name="TarihKontrol" xml:space="preserve">
     <value>Please check the dates</value>
   </data>
+  <data name="EtkinlikGuncellemeBasarili" xml:space="preserve">
+    <value>Successfully event updated</value>
+  </data>
 </root>

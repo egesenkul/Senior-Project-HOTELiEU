@@ -475,6 +475,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Başarılı bir şekilde etkinlik güncellenmiştir.
+        /// </summary>
+        internal static string EtkinlikGuncellemeBasarili {
+            get {
+                return ResourceManager.GetString("EtkinlikGuncellemeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Etkinlik Listesi.
         /// </summary>
         internal static string etkinlikListesi {
