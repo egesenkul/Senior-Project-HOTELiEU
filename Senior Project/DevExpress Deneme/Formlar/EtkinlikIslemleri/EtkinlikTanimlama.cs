@@ -140,7 +140,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 }
                 else
                 {
-                    txtKisiLimiti.Text = "0";
+                    txtKisiLimiti.Text = "-1";
                 }
                 if (string.IsNullOrEmpty(EtkinlikID))
                 {
