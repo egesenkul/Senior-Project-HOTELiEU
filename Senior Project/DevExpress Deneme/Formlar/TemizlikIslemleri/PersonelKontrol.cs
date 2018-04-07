@@ -95,6 +95,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
                     metroGrid1.Columns[5].Visible = false;
                     metroGrid1.Columns[6].Visible = false;
                     metroGrid1.Columns[7].Visible = false;
+                    metroGrid1.Columns[8].HeaderText = Localization.OdaGrubu;
                 }
             }
             else

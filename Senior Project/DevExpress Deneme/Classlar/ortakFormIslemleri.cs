@@ -220,5 +220,26 @@ namespace Otel_Uygulamasi.Classlar
             connection.Close();
             return mail;
         }
+
+        public static string odaTipGetir(string odaAdi)
+        {
+            string odaTip = "";
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "Select odaTip from Oda where OdaNo='" + odaAdi+"'"; 
+            cmd.Connection = connection;
+            cmd.CommandType = CommandType.Text;
+
+            SqlDataReader Dr;
+            connection.Open();
+            Dr = cmd.ExecuteReader();
+            while (Dr.Read())
+            {
+                odaTip = (Dr["odaTip"].ToString());
+            }
+            connection.Close();
+            return odaTip;
+        }
     }
 }

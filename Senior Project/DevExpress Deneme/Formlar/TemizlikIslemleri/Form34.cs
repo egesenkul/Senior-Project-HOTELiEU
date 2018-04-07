@@ -83,9 +83,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             ListeBos = true;
             if (dtRecord.Rows.Count > 0)
             {
-                ListeBos = false;
-                if (!ListeBos)
-                {
+                
                     metroGrid1.Columns[0].Visible = false;
                     metroGrid1.Columns[1].HeaderText = Localization.OdaNumarasi;
                     metroGrid1.Columns[2].HeaderText = Localization.GirisTarihi;
@@ -94,7 +92,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     metroGrid1.Columns[5].Visible = false;
                     metroGrid1.Columns[6].Visible = false;
                     metroGrid1.Columns[7].Visible = false;
-                }
+                
             }
             
             //GridView yayılsın

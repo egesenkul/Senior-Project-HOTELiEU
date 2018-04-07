@@ -332,7 +332,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             dtGirisTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
             dtGirisTarihi.Properties.VistaEditTime = DefaultBoolean.True;
             dtGirisTarihi.Properties.Mask.EditMask = "yyyy-MM-dd hh-mm-ss";
-            dtCikisTarihi.EditValue = DateTime.Now;
+            dtCikisTarihi.EditValue = DateTime.Now.AddDays(1);
             dtCikisTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
             dtCikisTarihi.Properties.VistaEditTime = DefaultBoolean.True;
             dtCikisTarihi.Properties.Mask.EditMask = "yyyy-MM-dd hh-mm-ss";
@@ -363,7 +363,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private bool TarihKontrol()
         {
-            if ((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue)) && (Convert.ToDateTime(dtGirisTarihi.EditValue)>DateTime.Now) && (Convert.ToDateTime(dtCikisTarihi.EditValue)>DateTime.Now))
+            if ((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue)) &&  (Convert.ToDateTime(dtCikisTarihi.EditValue)>DateTime.Now))
             {
                 return true;
             }
@@ -400,7 +400,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
                 cmd.Connection = connection;
                 connection.Open();
-                cmd.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "','" + Convert.ToDateTime(dtGirisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','Check-in',0,"+ musteriListesi[cmbMusteriAdi.SelectedIndex].email + "')";;
+                cmd.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "','" + Convert.ToDateTime(dtGirisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','Check-in',0,'"+ musteriListesi[cmbMusteriAdi.SelectedIndex].email+ "','" + ortakFormIslemleri.odaTipGetir(ListeOdalar.SelectedItems[0].Text) + "')"; ;
 
                 cmd.ExecuteNonQuery();
                 connection.Close();
