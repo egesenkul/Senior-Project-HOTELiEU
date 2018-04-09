@@ -67,6 +67,8 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 metroGrid1.Columns[4].HeaderText = Localization.MusteriAdi;
                 metroGrid1.Columns[5].Visible = false;
                 metroGrid1.Columns[6].Visible = false;
+                metroGrid1.Columns[7].Visible = false;
+                metroGrid1.Columns[8].Visible = false;
             }
             //GridView yayılsın
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -88,6 +90,51 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             FillDataGridView("select * from OdaHareket where Onay=0 and islemTipi='Check-in' and musteriPersonel LIKE '%" + txtAd.Text + "%' and OdaNo LIKE '%" + txtOdaNumarasi.Text + "%'");
         }
 
+        private void musteriActiveGuncelle(string musteriMail,string Tablo)
+        {
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            if (string.Equals(Tablo, "ege"))
+            {
+                connection.Open(); cmd.CommandText = "update Musteriler set musteriActive=0" + " where musteriMail='" + musteriMail + "'";
+            }
+            else
+            {
+                connection.Open(); cmd.CommandText = "update DenemeMusteriler set MusteriActive=0" + "where MusteriMail='" + musteriMail + "'";
+            }
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        private string TabloKontrol(string mailAdresi)
+        {
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = connection;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "select * from Musteriler where musteriMail='"+mailAdresi+"'";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+
+            //GridView Column isimlerini değiştirmek için
+            //datatable boş değilse bunları yapsın 
+            if (dtRecord.Rows.Count > 0)
+            {
+                connection.Close();
+                return "ege";
+            }
+            else
+            {
+                connection.Close();
+                return "rıza";
+            }
+            return "";
+            }
+
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
@@ -95,6 +142,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             cmd.Connection = connection;
             connection.Open();
             //            cmd.CommandText = "update OdaHareket set islemTipi='Check-out', Onay=1, islemTarihii2='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where OdaNo='" + metroGrid1.SelectedCells[1].Value.ToString()+"' and musteriPersonel='"+metroGrid1.SelectedCells[4].Value.ToString()+"' and islemTipi='Check-in' and islemTarihi1='"+Convert.ToDateTime(metroGrid1.SelectedCells[2].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'";
+            musteriActiveGuncelle(metroGrid1.SelectedCells[7].Value.ToString(), TabloKontrol(metroGrid1.SelectedCells[7].Value.ToString()));
             cmd.CommandText = "update OdaHareket set islemTipi='Check-out', Onay=1, islemTarihii2='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where OdaNo='" + metroGrid1.SelectedCells[1].Value.ToString()+"' and musteriPersonel='"+metroGrid1.SelectedCells[4].Value.ToString()+"' and islemTipi='Check-in' and islemTarihi1='"+Convert.ToDateTime(metroGrid1.SelectedCells[2].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'";
             cmd.ExecuteNonQuery();
             connection.Close();
