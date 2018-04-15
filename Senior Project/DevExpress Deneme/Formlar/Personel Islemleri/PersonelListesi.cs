@@ -3,6 +3,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using MetroFramework;
 using Otel_Uygulamasi.Classlar;
 using Otel_Uygulamasi.Formlar.Duyuru_Islemleri;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -192,12 +193,12 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                 // Personel türünü Rıza'ya sor.
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                MetroMessageBox.Show(this, "Başarılı bir şekilde personel silinmiştir. ", "Personel Silindi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.personelSilmeBasarili,Localization.Tamam);
                 FillDataGridView("Select personelAdi, personelSoyadi, personelDepartman, personelKullaniciAdi from Personel where Sil =0");
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.personelSilmeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.personelSilmeBasarili,Localization.Tamam);
             }
         }
 
@@ -211,7 +212,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.duzenlenecekPersonelSec, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.duzenlenecekPersonelSec, Localization.Tamam);
             }
         }
 
@@ -269,7 +270,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             // Personel türünü Rıza'ya sor.
             cmd.ExecuteNonQuery();
             connection.Close();
-            MetroMessageBox.Show(this, "", Localization.PersonelGeriAlindi, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            HotelWarningForm.Show(Localization.PersonelGeriAlindi, Localization.Tamam);
             FillDataGridView("Select personelAdi, personelSoyadi, personelDepartman, personelKullaniciAdi from Personel where Sil =1");
             SilinmisKayitGosterButtonKontrol();
         }

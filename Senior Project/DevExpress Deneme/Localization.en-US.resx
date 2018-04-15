@@ -798,4 +798,28 @@
   <data name="SilinecekHavuzSeciniz" xml:space="preserve">
     <value>Please first select pool which you want to delete</value>
   </data>
+  <data name="duzenlenecekEtkinlikSecin" xml:space="preserve">
+    <value>Please first sellect event which you want to edit</value>
+  </data>
+  <data name="etkinlikGeriAlmaBasarili" xml:space="preserve">
+    <value>Event successfully recovered</value>
+  </data>
+  <data name="etkinlikSilinmistir" xml:space="preserve">
+    <value>Successfully event deleted</value>
+  </data>
+  <data name="geriAlinacakEtkinlikSeciniz" xml:space="preserve">
+    <value>Please first select event which you want to recover</value>
+  </data>
+  <data name="IstenilenKriterdeKayitYok" xml:space="preserve">
+    <value>There is no entry such like that</value>
+  </data>
+  <data name="KategoriEklemeBasarili" xml:space="preserve">
+    <value>Successfully added category</value>
+  </data>
+  <data name="KategoriIsmiBosGecilemez" xml:space="preserve">
+    <value>Category name can not be empty</value>
+  </data>
+  <data name="silinecekEtkinlikSecin" xml:space="preserve">
+    <value>Please first sellect event which you want to delete</value>
+  </data>
 </root>

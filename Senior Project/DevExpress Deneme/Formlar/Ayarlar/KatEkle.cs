@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,7 +95,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", Localization.KatEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.KatEklemeBasarili, Localization.Tamam);
                     }
                 }
             }
@@ -114,7 +115,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", Localization.KatDuzenlemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.KatDuzenlemeBasarili, Localization.Tamam);
                     }
                 }
             }
@@ -188,7 +189,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.DuzenlenecekKatSec, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.DuzenlenecekKatSec, Localization.Tamam);
             }
         }
 
@@ -208,13 +209,13 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.KatSilmeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.KatSilmeBasarili, Localization.Tamam);
                 }
                 ListeGuncelle();
             }
             else
             {
-                MetroMessageBox.Show(this, "", "Lütfen silinecek katı seçiniz.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.SilinecekKatSec,Localization.Tamam);
             }
         }
 

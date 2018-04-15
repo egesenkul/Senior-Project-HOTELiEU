@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -259,7 +260,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.duzenlemekIcınOdaSec, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.duzenlemekIcınOdaSec, Localization.Tamam);
             }
         }
 
@@ -293,7 +294,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             // Personel türünü Rıza'ya sor.
             cmd.ExecuteNonQuery();
             connection.Close();
-            MetroMessageBox.Show(this, "", Localization.odaGeriAlmaBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            HotelWarningForm.Show(Localization.odaGeriAlmaBasarili, Localization.Tamam);
             btnFiltrele.PerformClick();
         }
 
@@ -309,12 +310,12 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 // Personel türünü Rıza'ya sor.
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                MetroMessageBox.Show(this, "", Localization.odaSilmeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.odaSilmeBasarili,Localization.Tamam);
                 btnFiltrele.PerformClick();
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.silmekIcınOdaSec, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.silmekIcınOdaSec, Localization.Tamam);
             }
         }
 

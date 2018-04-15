@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -212,7 +213,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 return true;
             }
-            MessageBox.Show(Localization.TarihKontrol);
+            HotelWarningForm.Show(Localization.TarihKontrol,Localization.Tamam);
             return false;
         }
 
@@ -354,17 +355,13 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             ListeOdaGuncelle();
         }
-
-        private void ListeOdalar_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(ListeOdalar.SelectedItems[0].Text);
-        }
+        
 
         private bool RezerveKontrol()
         {
             if (Convert.ToDateTime(dtGirisTarihi.EditValue) >Convert.ToDateTime(dtCikisTarihi.EditValue) || ListeOdalar.SelectedItems.Count!=1)
             {
-                MetroMessageBox.Show(this, "", Localization.EksikRezervasyonBilgisi, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show( Localization.EksikRezervasyonBilgisi, Localization.Tamam);
                 return false;
             }
             else return true;
@@ -388,7 +385,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.RezervasyonBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.RezervasyonBasarili,Localization.Tamam);
                 }
                 ListeOdaGuncelle();
             }
@@ -426,7 +423,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                MetroMessageBox.Show(this, "", Localization.RezervasyonIptal, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.RezervasyonIptal, Localization.Tamam);
             }
             ListeOdaGuncelle();
         }

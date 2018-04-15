@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,7 +92,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             else
             {
                 metroGrid1.DataSource = null;
-                MetroMessageBox.Show(this, "", "İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam);
             }
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
           
@@ -132,7 +133,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             }
             else
             {
-                MetroMessageBox.Show(this, "", "Lütfen düzenlenecek etkinliği seçiniz.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.duzenlenecekEtkinlikSecin, Localization.Tamam);
             }
         }
 
@@ -147,12 +148,12 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 cmd.CommandText = "update Etkinlik set Gorunur=0 where Etkinlikno='" + Convert.ToInt32(metroGrid1.SelectedCells[0].Value)+ "'";
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                MetroMessageBox.Show(this, "", "Başarılı bir şekilde etkinlik silinmiştir. ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.etkinlikSilinmistir, Localization.Tamam);
                 btnFiltrele.PerformClick();
             }
             else
             {
-                MetroMessageBox.Show(this, "", "Lütfen silinecek etkinliği seçiniz.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.silinecekEtkinlikSecin, Localization.Tamam);
             }
         }
 
@@ -186,12 +187,12 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 cmd.CommandText = "update Etkinlik set Gorunur=1 where Etkinlikno='" + Convert.ToInt32(metroGrid1.SelectedCells[0].Value) + "'";
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                MetroMessageBox.Show(this, "", "Başarılı bir şekilde etkinlik geri alınmıştır. ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.etkinlikGeriAlmaBasarili, Localization.Tamam);
                 btnFiltrele.PerformClick();
             }
             else
             {
-                MetroMessageBox.Show(this, "", "Lütfen geri alınacak etkinliği seçiniz.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.GeriAlinacakEtkinlikSec, Localization.Tamam);
             }
         }
     }

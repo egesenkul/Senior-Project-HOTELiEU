@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,7 +122,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             }
             catch
             {
-                MetroMessageBox.Show(this, "", Localization.eMailHata, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.eMailHata, Localization.Tamam);
                 return false;
             }
         } // Girilen email adresinin geçerliliğini kontrol ediyor
@@ -148,7 +149,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.otelBilgileriEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.otelBilgileriEklemeBasarili, Localization.Tamam);
                 }
             }
         }

@@ -1,6 +1,7 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -215,7 +216,7 @@ namespace DevExpress_Deneme
                 return eMailKontrol(txtmail.Text);
                
             }
-            MetroMessageBox.Show(this, "", Localization.HataliKullaniciAdiSifre, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            HotelWarningForm.Show(Localization.HataliKullaniciAdiSifre, Localization.Tamam);
             return false;
         }
 
@@ -240,7 +241,7 @@ namespace DevExpress_Deneme
             {
                 connection.Close();
                 guncellemeYap = false;
-                MetroMessageBox.Show(this, "", Localization.MusterFaceVarHata, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.MusterFaceVarHata,Localization.Tamam);
                 return false;
             }
         }
@@ -266,7 +267,7 @@ namespace DevExpress_Deneme
             {
                 connection.Close();
                 guncellemeYap = false;
-                MetroMessageBox.Show(this, "", Localization.MusteriSistemeKayitliHata, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.MusteriSistemeKayitliHata, Localization.Tamam);
                 return false; }
         }
 
@@ -287,7 +288,7 @@ namespace DevExpress_Deneme
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", Localization.MusteriTanimlamaBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.MusteriTanimlamaBasarili,Localization.Tamam);
                     }
                 }
 
@@ -312,7 +313,7 @@ namespace DevExpress_Deneme
                         connection.Close();
                         if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                         {
-                            MetroMessageBox.Show(this, "", Localization.MusteriGuncellemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            HotelWarningForm.Show(Localization.MusteriGuncellemeBasarili, Localization.Tamam);
                         }
                     }
                 }
@@ -335,7 +336,7 @@ namespace DevExpress_Deneme
             }
             catch
             {
-                MetroMessageBox.Show(this, "",Localization.eMailHata, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.eMailHata, Localization.Tamam);
                 return false;
             }
         } // Girilen email adresinin geçerliliğini kontrol ediyor

@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -239,7 +240,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             }
             else
             {
-                MetroMessageBox.Show(this, "",Localization.NoResult, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.NoResult, Localization.Tamam);
             }
             //GridView yayılsın
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -264,13 +265,13 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.DuyuruSilmeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.DuyuruSilmeBasarili, Localization.Tamam);
                 }
                 btnFiltrele.PerformClick();
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.SilmekicinDuyuruSec, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.SilmekicinDuyuruSec, Localization.Tamam);
             }
         }
 
@@ -283,7 +284,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.DuzenlemekicinDuyuruSec, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.DuzenlemekicinDuyuruSec, Localization.Tamam);
             }
         }
 
@@ -412,7 +413,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 }
                 else
                 {
-                    MetroMessageBox.Show(this, "", Localization.NoResult, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.NoResult, Localization.Tamam);
                 }
                 //GridView yayılsın
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -441,13 +442,13 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.DuyuruGerialmaBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.DuyuruGerialmaBasarili, Localization.Tamam);
                 }
                 btnFiltrele.PerformClick();
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.GeriAlinacakDuyuruSec, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show( Localization.GeriAlinacakDuyuruSec, Localization.Tamam);
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,7 +88,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
             if (txtisim.Text == "")
             {
-                MetroMessageBox.Show(this, ".", "Kategori ismi boş geçilemez", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.KategoriIsmiBosGecilemez, Localization.Tamam);
                 txtisim.Focus();
                 connection.Close();
             }
@@ -101,7 +102,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "Kategori başarılı bir şekilde eklenmiştir.", "HoteliEU Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam);
                     }
                     ListViewGuncelleme();
                 }
@@ -113,7 +114,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "Kategori başarılı bir şekilde eklenmiştir.", "HoteliEU Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam);
                     }
                     ListViewGuncelleme();
                 }
@@ -125,7 +126,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "Kategori başarılı bir şekilde eklenmiştir.", "HoteliEU Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam);
                     }
                     ListViewGuncelleme();
                 }
@@ -137,8 +138,9 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", "Kategori başarılı bir şekilde eklenmiştir.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    } ListViewGuncelleme();
+                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam);
+                    }
+                    ListViewGuncelleme();
                 }
             }
         }

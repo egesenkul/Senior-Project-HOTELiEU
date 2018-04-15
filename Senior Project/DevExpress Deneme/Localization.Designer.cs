@@ -394,6 +394,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lütfen önce düzenlenecek etkinliği seçiniz.
+        /// </summary>
+        internal static string duzenlenecekEtkinlikSecin {
+            get {
+                return ResourceManager.GetString("duzenlenecekEtkinlikSecin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Düzenlenecek havuzu seçiniz.
         /// </summary>
         internal static string DuzenlenecekHavuzSec {
@@ -475,6 +484,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Etkinlik başarılı bir şekilde geri alınmıştır.
+        /// </summary>
+        internal static string etkinlikGeriAlmaBasarili {
+            get {
+                return ResourceManager.GetString("etkinlikGeriAlmaBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başarılı bir şekilde etkinlik güncellenmiştir.
         /// </summary>
         internal static string EtkinlikGuncellemeBasarili {
@@ -489,6 +507,15 @@ namespace Otel_Uygulamasi {
         internal static string etkinlikListesi {
             get {
                 return ResourceManager.GetString("etkinlikListesi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etkinlik başarılı bir şekilde silinmiştir.
+        /// </summary>
+        internal static string etkinlikSilinmistir {
+            get {
+                return ResourceManager.GetString("etkinlikSilinmistir", resourceCulture);
             }
         }
         
@@ -516,6 +543,15 @@ namespace Otel_Uygulamasi {
         internal static string GeriAlinacakEtkinlikSec {
             get {
                 return ResourceManager.GetString("GeriAlinacakEtkinlikSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lütfen önce geri almak istediğiniz etkinliği seçiniz.
+        /// </summary>
+        internal static string geriAlinacakEtkinlikSeciniz {
+            get {
+                return ResourceManager.GetString("geriAlinacakEtkinlikSeciniz", resourceCulture);
             }
         }
         
@@ -637,11 +673,38 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.
+        /// </summary>
+        internal static string IstenilenKriterdeKayitYok {
+            get {
+                return ResourceManager.GetString("IstenilenKriterdeKayitYok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kat başarılı bir şekilde düzenlenmiştir.
         /// </summary>
         internal static string KatDuzenlemeBasarili {
             get {
                 return ResourceManager.GetString("KatDuzenlemeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kategori başarılı bir şekilde eklenmiştir.
+        /// </summary>
+        internal static string KategoriEklemeBasarili {
+            get {
+                return ResourceManager.GetString("KategoriEklemeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kategori adı boş olamaz.
+        /// </summary>
+        internal static string KategoriIsmiBosGecilemez {
+            get {
+                return ResourceManager.GetString("KategoriIsmiBosGecilemez", resourceCulture);
             }
         }
         
@@ -1542,6 +1605,15 @@ namespace Otel_Uygulamasi {
         internal static string SilinecekBlokSec {
             get {
                 return ResourceManager.GetString("SilinecekBlokSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lütfen önce silinecek etkinliği seçiniz.
+        /// </summary>
+        internal static string silinecekEtkinlikSecin {
+            get {
+                return ResourceManager.GetString("silinecekEtkinlikSecin", resourceCulture);
             }
         }
         

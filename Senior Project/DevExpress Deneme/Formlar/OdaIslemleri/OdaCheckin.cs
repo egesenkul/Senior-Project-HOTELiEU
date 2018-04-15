@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -367,7 +368,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 return true;
             }
-            MessageBox.Show(Localization.TarihKontrol);
+            HotelWarningForm.Show(Localization.TarihKontrol,Localization.Tamam);
             return false;
         }
 
@@ -383,7 +384,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             if (Convert.ToDateTime(dtGirisTarihi.EditValue) > Convert.ToDateTime(dtCikisTarihi.EditValue) || ListeOdalar.SelectedItems.Count != 1)
             {
-                MetroMessageBox.Show(this, "",Localization.EksikCheckinBilgisi, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.EksikCheckinBilgisi,Localization.Tamam);
                 return false;
             }
             else return true;
@@ -407,7 +408,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 MusteriActiveGuncelle();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.BasariliCheckin, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show( Localization.BasariliCheckin, Localization.Tamam);
                 }
             }
         }
@@ -476,13 +477,13 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 catch (Exception ex) { }
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.BasariliCheckin, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.BasariliCheckin,Localization.Tamam);
                 }
                 ListeOdaGuncelle();
             }
             else
             {
-                MessageBox.Show(Localization.rezerveOdalarBos);
+                HotelWarningForm.Show(Localization.rezerveOdalarBos,Localization.Tamam);
             }
         }
         

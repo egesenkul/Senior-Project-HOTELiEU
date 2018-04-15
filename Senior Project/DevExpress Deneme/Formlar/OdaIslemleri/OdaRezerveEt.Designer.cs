@@ -318,7 +318,6 @@
             this.ListeOdalar.UseCustomForeColor = true;
             this.ListeOdalar.UseSelectable = true;
             this.ListeOdalar.View = System.Windows.Forms.View.Tile;
-            this.ListeOdalar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListeOdalar_MouseDoubleClick);
             // 
             // lblKat
             // 

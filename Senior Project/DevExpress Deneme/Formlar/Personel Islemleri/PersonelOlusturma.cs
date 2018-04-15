@@ -1,6 +1,7 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
 using Otel_Uygulamasi.Formlar.Ayarlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -195,7 +196,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             }
             catch
             {
-                MetroMessageBox.Show(this, "Lütfen geçerli bir e-mail adresi giriniz.", "HoteliEU Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.eMailHata,Localization.Tamam);
                 return false;
             }
         } // Girilen email adresinin geçerliliğini kontrol ediyor
@@ -207,7 +208,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                 return eMailKontrol(txtmail.Text);
 
             }
-            MetroMessageBox.Show(this, "Kullanıcı adı boş olamaz.", "HoteliEU Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam);
             return false;
         }
 

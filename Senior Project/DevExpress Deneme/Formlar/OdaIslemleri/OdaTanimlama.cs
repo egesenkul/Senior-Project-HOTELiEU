@@ -1,6 +1,7 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
 using Otel_Uygulamasi.Formlar.Ayarlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using Otel_Uygulamasi.Formlar.Personel_Islemleri;
 using System;
 using System.Collections.Generic;
@@ -230,7 +231,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", Localization.OdaEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.OdaEklemeBasarili, Localization.Tamam);
                     }
                     btnTemizle.PerformClick();
                 }
@@ -246,13 +247,13 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", Localization.OdaDuzenlemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.OdaDuzenlemeBasarili,Localization.Tamam);
                     }
                 }
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.OdaBilgisiEksik, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.OdaBilgisiEksik, Localization.Tamam);
             }
         }
 
@@ -272,7 +273,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&  (e.KeyChar != '.'))
             {
                 e.Handled = true;
-                MetroMessageBox.Show(this, "", Localization.tekKisilikRakamGir, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.tekKisilikRakamGir,Localization.Tamam);
                 txtTekKisilikYatakSayisi.Focus();
             }
         }
@@ -282,7 +283,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
-                MetroMessageBox.Show(this, "", Localization.ikiKisilikRakamGir, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.ikiKisilikRakamGir, Localization.Tamam);
                 txtCiftKisiYatakSayisi.Focus();
             }
         }

@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -148,7 +149,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                MetroMessageBox.Show(this, "", Localization.CheckoutBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.CheckoutBasarili, Localization.Tamam);
             }
             ortakFormIslemleri.textBoxTemizle(txtOdaNumarasi, txtAd);
             FillDataGridView("select * from OdaHareket where Onay=0 and islemTipi='Check-in'");

@@ -136,7 +136,7 @@ namespace DevExpress_Deneme
 
         private void tileItem2_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            MetroMessageBox.Show(this, "", "Programa "+Kullanici.isim+" "+Kullanici.soyisim+" olarak giriş yaptınız.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            HotelWarningForm.Show("Programa "+Kullanici.isim+" "+Kullanici.soyisim+" olarak giriş yaptınız.",Localization.Tamam);
         }
 
         private void tileItem11_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
@@ -163,13 +163,13 @@ namespace DevExpress_Deneme
         private void tileItem19_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             string tarih= Localization.Saat +" : "+DateTime.Now.ToShortTimeString(); ;
-            MetroMessageBox.Show(this, " ", tarih , MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            HotelWarningForm.Show(tarih ,Localization.Tamam);
         }
 
         private void tileItem7_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             string tarih = Localization.lblTarih + " : "+DateTime.Now.Date.ToString().Substring(0, 8);
-            MetroMessageBox.Show(this, " ", tarih, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            HotelWarningForm.Show(tarih, Localization.Tamam);
         }
 
         private void tileItem14_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
@@ -177,7 +177,7 @@ namespace DevExpress_Deneme
             if (Kullanici.OnayFormlari.Equals("True"))
             {
                 DialogResult sonuc;
-                sonuc = MetroMessageBox.Show(this, "", Localization.ProgramCikisOnay, MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                sonuc = HotelMessageBox.Show(Localization.ProgramCikisOnay, Localization.Evet, Localization.Hayır);
                 if (sonuc == DialogResult.No)
                 {
                     //MessageBox.Show("");// hiçbir işlem yaptırmıyorum

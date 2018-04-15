@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -122,7 +123,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             {
                 return true;
             }
-            MetroMessageBox.Show(this, "", Localization.EksikEtkinlikBilgileri, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            HotelWarningForm.Show(Localization.EksikEtkinlikBilgileri,Localization.Tamam);
             return false;
         }
         
@@ -153,11 +154,11 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 connection.Close();
                 if (string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.EtkinlikEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.EtkinlikEklemeBasarili, Localization.Tamam);
                 }
                 else if (!string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.EtkinlikGuncellemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.EtkinlikGuncellemeBasarili, Localization.Tamam);
                 }
                     dtEtkinlik.EditValue = DateTime.Now;
                 ortakFormIslemleri.textBoxTemizle(txtEtkinlikAciklama, txtEtkinlikAdı, txtKisiLimiti);

@@ -798,4 +798,28 @@
   <data name="SilinecekHavuzSeciniz" xml:space="preserve">
     <value>Lütfen silinecek havuzu seçiniz</value>
   </data>
+  <data name="duzenlenecekEtkinlikSecin" xml:space="preserve">
+    <value>Lütfen önce düzenlenecek etkinliği seçiniz</value>
+  </data>
+  <data name="etkinlikGeriAlmaBasarili" xml:space="preserve">
+    <value>Etkinlik başarılı bir şekilde geri alınmıştır</value>
+  </data>
+  <data name="etkinlikSilinmistir" xml:space="preserve">
+    <value>Etkinlik başarılı bir şekilde silinmiştir</value>
+  </data>
+  <data name="geriAlinacakEtkinlikSeciniz" xml:space="preserve">
+    <value>Lütfen önce geri almak istediğiniz etkinliği seçiniz</value>
+  </data>
+  <data name="IstenilenKriterdeKayitYok" xml:space="preserve">
+    <value>İstenilen kriterlerde herhangi bir kayıt bulunamamıştır</value>
+  </data>
+  <data name="KategoriEklemeBasarili" xml:space="preserve">
+    <value>Kategori başarılı bir şekilde eklenmiştir</value>
+  </data>
+  <data name="KategoriIsmiBosGecilemez" xml:space="preserve">
+    <value>Kategori adı boş olamaz</value>
+  </data>
+  <data name="silinecekEtkinlikSecin" xml:space="preserve">
+    <value>Lütfen önce silinecek etkinliği seçiniz</value>
+  </data>
 </root>

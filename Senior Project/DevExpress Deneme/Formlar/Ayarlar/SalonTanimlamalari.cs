@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -168,7 +169,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 txtisim.Clear();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.SalonEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.SalonEklemeBasarili, Localization.Tamam);
                 }
                 ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
                 ortakFormIslemleri.comboBoxTemizle(cmbSalonSorumlu, cmbSalonKategori, cmbSalonBlok, cmbKat);

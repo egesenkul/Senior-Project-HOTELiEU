@@ -1,6 +1,7 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
 using Otel_Uygulamasi.Formlar.Ayarlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -403,11 +404,11 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             {
                 if (mod == 0)
                 {
-                    MetroMessageBox.Show(this, "", Localization.DuyuruEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.DuyuruEklemeBasarili, Localization.Tamam);
                 }
                 else
                 {
-                    MetroMessageBox.Show(this, "", Localization.DuyuruGuncellemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.DuyuruGuncellemeBasarili, Localization.Tamam);
                 }
             }
             btnTemizle.PerformClick();
