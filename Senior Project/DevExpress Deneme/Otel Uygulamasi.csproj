@@ -80,6 +80,12 @@
     <Compile Include="Classlar\ortakFormIslemleri.cs" />
     <Compile Include="Classlar\OtelBilgileri.cs" />
     <Compile Include="Classlar\Sicaklik.cs" />
+    <Compile Include="CustomMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMsgBox.designer.cs">
+      <DependentUpon>CustomMsgBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Ardunio\ArdunioBaglantiSicaklik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,11 +194,17 @@
     <Compile Include="Formlar\Ayarlar\Ayarlar.Designer.cs">
       <DependentUpon>Ayarlar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\Genel\UyarıFormu.cs">
+    <Compile Include="Formlar\Genel\HotelMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\Genel\UyarıFormu.Designer.cs">
-      <DependentUpon>UyarıFormu.cs</DependentUpon>
+    <Compile Include="Formlar\Genel\HotelMessageBox.Designer.cs">
+      <DependentUpon>HotelMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Genel\HotelWarningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Genel\HotelWarningForm.Designer.cs">
+      <DependentUpon>HotelWarningForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Login.cs">
       <SubType>Form</SubType>
@@ -374,6 +386,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomMsgBox.resx">
+      <DependentUpon>CustomMsgBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Ardunio\ArdunioBaglantiSicaklik.resx">
       <DependentUpon>ArdunioBaglantiSicaklik.cs</DependentUpon>
     </EmbeddedResource>
@@ -431,8 +446,11 @@
     <EmbeddedResource Include="Formlar\Genel\frmLogin.tr-TR.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Genel\UyarıFormu.resx">
-      <DependentUpon>UyarıFormu.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\Genel\HotelMessageBox.resx">
+      <DependentUpon>HotelMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Genel\HotelWarningForm.resx">
+      <DependentUpon>HotelWarningForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

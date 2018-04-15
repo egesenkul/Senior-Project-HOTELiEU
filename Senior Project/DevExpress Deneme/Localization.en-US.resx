@@ -780,4 +780,13 @@
   <data name="EtkinlikGuncellemeBasarili" xml:space="preserve">
     <value>Successfully event updated</value>
   </data>
+  <data name="Evet" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Hayır" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Tamam" xml:space="preserve">
+    <value>Ok</value>
+  </data>
 </root>

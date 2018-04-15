@@ -17,6 +17,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using WindowsFormsApp2;
 
 namespace DevExpress_Deneme
 {
@@ -104,8 +105,7 @@ namespace DevExpress_Deneme
             }
             catch (Exception)
             {
-
-                MessageBox.Show(".", "İnternet Bağlantısı Sağlanamadı. Döviz Kurları Gücellenemedi.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                HotelWarningForm.Show("İnternet bağlantısı olmadığından programı kullanamazsınız.", Localization.Tamam);
             }
         }
 
@@ -164,7 +164,7 @@ namespace DevExpress_Deneme
             }
             else
             {
-                MessageBox.Show("İnternet bağlantısı olmadığından programı kullanamazsınız.");
+                HotelWarningForm.Show("İnternet bağlantısı olmadığından programı kullanamazsınız.", Localization.Tamam);
                 Environment.Exit(1);
             }
         }
@@ -174,12 +174,12 @@ namespace DevExpress_Deneme
         {
             if (string.IsNullOrEmpty(txtKullaniciAdi.Text))
             {
-                MetroMessageBox.Show(this, "", Localization.KullaniciAdiHata, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam);
                 txtKullaniciAdi.Focus();
             }
             if (string.IsNullOrEmpty(txtSifre.Text))
             {
-                MetroMessageBox.Show(this, "", Localization.KullaniciSifreHata, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.KullaniciSifreHata, Localization.Tamam);
                 txtSifre.Focus();
             }
         }
@@ -213,7 +213,7 @@ namespace DevExpress_Deneme
             connection.Close();
             if (!girisDogru)
             {
-                MetroMessageBox.Show(this, "", Localization.HataliKullaniciAdiSifre, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.HataliKullaniciAdiSifre, Localization.Tamam);
             }
             else
             {
@@ -232,7 +232,7 @@ namespace DevExpress_Deneme
         private void metroButton3_Click(object sender, EventArgs e)
         {
             DialogResult sonuc;
-            sonuc = MetroMessageBox.Show(this, " ", Localization.ProgramCikisOnay, MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            sonuc = HotelMessageBox.Show(Localization.ProgramCikisOnay, Localization.Evet, Localization.Hayır);
             if (sonuc == DialogResult.No)
             {
                 //MessageBox.Show("");// hiçbir işlem yaptırmıyorum
