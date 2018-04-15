@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,13 +104,13 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.BlokSilmeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.BlokSilmeBasarili, Localization.Tamam);
                 }
                 BlokListesiGuncelle();
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.SilinecekBlokSec, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.SilinecekBlokSec, Localization.Tamam);
             }
         }
 
@@ -130,7 +131,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.DuzenlemekIcınBlokSec, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.DuzenlemekIcınBlokSec, Localization.Tamam);
                 mod = 0;
             }
         }
@@ -182,7 +183,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                MetroMessageBox.Show(this, "", Localization.SilinenHavuzGeriAlindi, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.SilinenHavuzGeriAlindi, Localization.Tamam);
             }
             BlokListesiGuncelle();
         }
@@ -219,7 +220,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", Localization.Blokeklendi, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.Blokeklendi, Localization.Tamam);
                     }
                 }
                 else
@@ -235,14 +236,14 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", Localization.BlokDuzenlendi, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.BlokDuzenlendi, Localization.Tamam);
                     }
                     mod = 0;
                 }
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.BlokismiBosOlamaz, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.BlokismiBosOlamaz, Localization.Tamam);
                 txtBlokAdi.Focus();
             }
             BlokListesiGuncelle();

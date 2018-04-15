@@ -583,6 +583,24 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Silinen havuz başarılı bir şekilde geri alınmıştır.
+        /// </summary>
+        internal static string HavuzGeriAlmaBasarili {
+            get {
+                return ResourceManager.GetString("HavuzGeriAlmaBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Havuz başarılı bir şekilde silinmiştir.
+        /// </summary>
+        internal static string HavuzSilmeBasarili {
+            get {
+                return ResourceManager.GetString("HavuzSilmeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hayır.
         /// </summary>
         internal static string Hayır {
@@ -1524,6 +1542,15 @@ namespace Otel_Uygulamasi {
         internal static string SilinecekBlokSec {
             get {
                 return ResourceManager.GetString("SilinecekBlokSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lütfen silinecek havuzu seçiniz.
+        /// </summary>
+        internal static string SilinecekHavuzSeciniz {
+            get {
+                return ResourceManager.GetString("SilinecekHavuzSeciniz", resourceCulture);
             }
         }
         

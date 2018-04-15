@@ -789,4 +789,13 @@
   <data name="Tamam" xml:space="preserve">
     <value>Ok</value>
   </data>
+  <data name="HavuzGeriAlmaBasarili" xml:space="preserve">
+    <value>Pool succesfully recovered</value>
+  </data>
+  <data name="HavuzSilmeBasarili" xml:space="preserve">
+    <value>Succesfully pool deleted</value>
+  </data>
+  <data name="SilinecekHavuzSeciniz" xml:space="preserve">
+    <value>Please first select pool which you want to delete</value>
+  </data>
 </root>

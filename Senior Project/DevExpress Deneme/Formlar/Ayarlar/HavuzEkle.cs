@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -131,7 +132,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             {
                 if (txtisim.Text == "")
                 {
-                    MetroMessageBox.Show(this, "", Localization.HavuzAdiBosOlamaz, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    HotelWarningForm.Show(Localization.HavuzAdiBosOlamaz, Localization.Tamam);
                     txtisim.Focus();
                     connection.Close();
                 }
@@ -144,7 +145,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "", Localization.HavuzEklendi, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.HavuzEklendi, Localization.Tamam);
                     }
                     HavuzListesiGuncelleme();
                 }
@@ -159,7 +160,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 jsonUrl.Clear();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", Localization.HavuzDuzenlendi, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.HavuzDuzenlendi, Localization.Tamam);
                 }
                 HavuzListesiGuncelleme();
                 mod = 0;
@@ -177,7 +178,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             }
             else
             {
-                MetroMessageBox.Show(this, "", Localization.DuzenlenecekHavuzSec, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.DuzenlenecekHavuzSec, Localization.Tamam);
             }
         }
 
@@ -210,13 +211,13 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", "Kat başarılı bir şekilde silinmiştir.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.HavuzSilmeBasarili, Localization.Tamam);
                 }
                 HavuzListesiGuncelleme();
             }
             else
             {
-                MetroMessageBox.Show(this, "", "Lütfen silinecek havuzu seçin.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.SilinecekHavuzSeciniz, Localization.Tamam);
             }
         }
 
@@ -266,7 +267,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                MetroMessageBox.Show(this, "", "Silinen havuz başarılı bir şekilde geri alınmıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.HavuzGeriAlmaBasarili, Localization.Tamam);
             }
             HavuzListesiGuncelleme();
         }

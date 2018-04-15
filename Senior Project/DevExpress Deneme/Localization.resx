@@ -789,4 +789,13 @@
   <data name="Tamam" xml:space="preserve">
     <value>Tamam</value>
   </data>
+  <data name="HavuzGeriAlmaBasarili" xml:space="preserve">
+    <value>Silinen havuz başarılı bir şekilde geri alınmıştır</value>
+  </data>
+  <data name="HavuzSilmeBasarili" xml:space="preserve">
+    <value>Havuz başarılı bir şekilde silinmiştir</value>
+  </data>
+  <data name="SilinecekHavuzSeciniz" xml:space="preserve">
+    <value>Lütfen silinecek havuzu seçiniz</value>
+  </data>
 </root>

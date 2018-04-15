@@ -17,7 +17,6 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-using WindowsFormsApp2;
 
 namespace DevExpress_Deneme
 {

@@ -80,12 +80,6 @@
     <Compile Include="Classlar\ortakFormIslemleri.cs" />
     <Compile Include="Classlar\OtelBilgileri.cs" />
     <Compile Include="Classlar\Sicaklik.cs" />
-    <Compile Include="CustomMsgBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomMsgBox.designer.cs">
-      <DependentUpon>CustomMsgBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formlar\Ardunio\ArdunioBaglantiSicaklik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -386,9 +380,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CustomMsgBox.resx">
-      <DependentUpon>CustomMsgBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Ardunio\ArdunioBaglantiSicaklik.resx">
       <DependentUpon>ArdunioBaglantiSicaklik.cs</DependentUpon>
     </EmbeddedResource>
