@@ -2,6 +2,7 @@
 using MetroFramework;
 using Otel_Uygulamasi.Classlar;
 using Otel_Uygulamasi.Formlar.Ayarlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -174,7 +175,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                MetroMessageBox.Show(this, "", Localization.ToplantiEklemeBasarili, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.ToplantiEklemeBasarili, Localization.Tamam);
             }
             btnTemizle.PerformClick();
         }

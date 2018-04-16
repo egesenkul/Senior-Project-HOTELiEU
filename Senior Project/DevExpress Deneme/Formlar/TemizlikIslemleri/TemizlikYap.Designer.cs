@@ -100,7 +100,6 @@
             this.ListeOdalar.UseCompatibleStateImageBehavior = false;
             this.ListeOdalar.UseSelectable = true;
             this.ListeOdalar.View = System.Windows.Forms.View.Tile;
-            this.ListeOdalar.SelectedIndexChanged += new System.EventHandler(this.ListeOdalar_SelectedIndexChanged);
             // 
             // metroLabel3
             // 

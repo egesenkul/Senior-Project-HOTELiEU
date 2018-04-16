@@ -11,6 +11,7 @@ using DevExpress.Utils;
 using System.Data.SqlClient;
 using Otel_Uygulamasi.Classlar;
 using MetroFramework;
+using Otel_Uygulamasi.Formlar.Genel;
 
 namespace Otel_Uygulamasi.Formlar.YemekIslemleri
 {
@@ -226,19 +227,19 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             if (string.IsNullOrEmpty(txtOgunAdi.Text))
             {
-                MetroMessageBox.Show(this, "", "Öğün adı boş geçilemez.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.yemekAdiBosGecilemez, Localization.Tamam);
                 txtOgunAdi.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txtAciklama.Text))
             {
-                MetroMessageBox.Show(this, "", "Açıklama boş geçilemez.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.aciklamaBosGecilemez, Localization.Tamam);
                 txtAciklama.Focus();
                 return false;
             }
             if(dtOgunBas.EditValue.ToString() == dtOgunBit.EditValue.ToString())
             {
-                MetroMessageBox.Show(this, "", "Başlangıç ve bitiş tarihi aynı olamaz.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.TarihKontrol, Localization.Tamam);
                 dtOgunBit.Focus();
                 return false;
             }
@@ -275,7 +276,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 }
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", "Başarılı bir şekilde öğün eklenmiştir.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.yemekEklemeBasarili, Localization.Tamam);
                 }
                 btnTemizle.PerformClick();
             }

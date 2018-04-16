@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -199,13 +200,8 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                MetroMessageBox.Show(this, "", "Başarılı bir şekilde oda temizlenmiştir.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.temizlikBasarili, Localization.Tamam);
             }
-        }
-
-        private void ListeOdalar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

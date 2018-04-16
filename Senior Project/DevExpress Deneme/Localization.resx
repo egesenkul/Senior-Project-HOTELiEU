@@ -822,4 +822,16 @@
   <data name="silinecekEtkinlikSecin" xml:space="preserve">
     <value>Lütfen önce silinecek etkinliği seçiniz</value>
   </data>
+  <data name="aciklamaBosGecilemez" xml:space="preserve">
+    <value>Açıklama boş olamaz</value>
+  </data>
+  <data name="temizlikBasarili" xml:space="preserve">
+    <value>Başarılı bir şekilde oda temizlenmiştir</value>
+  </data>
+  <data name="yemekAdiBosGecilemez" xml:space="preserve">
+    <value>Yemek adı boş olamaz</value>
+  </data>
+  <data name="yemekEklemeBasarili" xml:space="preserve">
+    <value>Başarılı bir şekilde yemek eklenmiştir</value>
+  </data>
 </root>

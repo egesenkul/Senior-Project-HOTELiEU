@@ -61,6 +61,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Açıklama boş olamaz.
+        /// </summary>
+        internal static string aciklamaBosGecilemez {
+            get {
+                return ResourceManager.GetString("aciklamaBosGecilemez", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ardunio Bağlı Değil.
         /// </summary>
         internal static string ArdunioBagliDegil {
@@ -1834,6 +1843,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Başarılı bir şekilde oda temizlenmiştir.
+        /// </summary>
+        internal static string temizlikBasarili {
+            get {
+                return ResourceManager.GetString("temizlikBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Temizlik Yap.
         /// </summary>
         internal static string temizlikYap {
@@ -2163,6 +2181,24 @@ namespace Otel_Uygulamasi {
         internal static string Yardim {
             get {
                 return ResourceManager.GetString("Yardim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yemek adı boş olamaz.
+        /// </summary>
+        internal static string yemekAdiBosGecilemez {
+            get {
+                return ResourceManager.GetString("yemekAdiBosGecilemez", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başarılı bir şekilde yemek eklenmiştir.
+        /// </summary>
+        internal static string yemekEklemeBasarili {
+            get {
+                return ResourceManager.GetString("yemekEklemeBasarili", resourceCulture);
             }
         }
         

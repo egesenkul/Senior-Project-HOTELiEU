@@ -822,4 +822,16 @@
   <data name="silinecekEtkinlikSecin" xml:space="preserve">
     <value>Please first sellect event which you want to delete</value>
   </data>
+  <data name="aciklamaBosGecilemez" xml:space="preserve">
+    <value>Description can not be empty</value>
+  </data>
+  <data name="temizlikBasarili" xml:space="preserve">
+    <value>Successfully room cleaned</value>
+  </data>
+  <data name="yemekAdiBosGecilemez" xml:space="preserve">
+    <value>Food name can not be empty</value>
+  </data>
+  <data name="yemekEklemeBasarili" xml:space="preserve">
+    <value>Succesfully food added</value>
+  </data>
 </root>
