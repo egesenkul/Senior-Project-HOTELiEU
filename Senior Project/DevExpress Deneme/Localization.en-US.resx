@@ -834,4 +834,7 @@
   <data name="yemekEklemeBasarili" xml:space="preserve">
     <value>Succesfully food added</value>
   </data>
+  <data name="tileSureUzat" xml:space="preserve">
+    <value>Extend Time</value>
+  </data>
 </root>

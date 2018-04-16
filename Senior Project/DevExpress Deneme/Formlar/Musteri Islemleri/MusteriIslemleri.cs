@@ -35,6 +35,7 @@ namespace DevExpress_Deneme
             tileItemMusteriOdaIliskilendir.Text = Localization.musteriCheckin;
             tileItemMusteriListesi.Text = Localization.musteriListesi;
             tileItemKapat.Text = Localization.btnKapat;
+            tileSureUzat.Text = Localization.tileSureUzat;
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -69,6 +70,11 @@ namespace DevExpress_Deneme
         {
             MusteriListesi musteriListesi = new MusteriListesi();
             musteriListesi.Show();
+        }
+
+        private void tileSureUzat_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+
         }
     }
 }

@@ -34,6 +34,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileItemMusteriTanimlama = new DevExpress.XtraEditors.TileItem();
@@ -41,6 +42,7 @@
             this.tileItemMusteriOdaIliskilendir = new DevExpress.XtraEditors.TileItem();
             this.tileItemKapat = new DevExpress.XtraEditors.TileItem();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.tileSureUzat = new DevExpress.XtraEditors.TileItem();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,11 +50,10 @@
             // 
             this.tileControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl1.DragSize = new System.Drawing.Size(0, 0);
             this.tileControl1.Groups.Add(this.tileGroup2);
             this.tileControl1.ItemSize = 180;
             this.tileControl1.Location = new System.Drawing.Point(20, 60);
-            this.tileControl1.MaxId = 10;
+            this.tileControl1.MaxId = 11;
             this.tileControl1.Name = "tileControl1";
             this.tileControl1.Size = new System.Drawing.Size(898, 558);
             this.tileControl1.TabIndex = 0;
@@ -64,6 +65,7 @@
             this.tileGroup2.Items.Add(this.tileItemMusteriListesi);
             this.tileGroup2.Items.Add(this.tileItemMusteriOdaIliskilendir);
             this.tileGroup2.Items.Add(this.tileItemKapat);
+            this.tileGroup2.Items.Add(this.tileSureUzat);
             this.tileGroup2.Name = "tileGroup2";
             // 
             // tileItemMusteriTanimlama
@@ -146,6 +148,18 @@
             // 
             this.metroStyleManager1.Owner = null;
             // 
+            // tileSureUzat
+            // 
+            this.tileSureUzat.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.tileSureUzat.AppearanceItem.Normal.Options.UseFont = true;
+            tileItemElement5.Text = "Süre Uzat";
+            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileSureUzat.Elements.Add(tileItemElement5);
+            this.tileSureUzat.Id = 10;
+            this.tileSureUzat.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
+            this.tileSureUzat.Name = "tileSureUzat";
+            this.tileSureUzat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileSureUzat_ItemClick);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,5 +189,6 @@
         private DevExpress.XtraEditors.TileItem tileItemMusteriListesi;
         private DevExpress.XtraEditors.TileItem tileItemMusteriOdaIliskilendir;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
+        private DevExpress.XtraEditors.TileItem tileSureUzat;
     }
 }

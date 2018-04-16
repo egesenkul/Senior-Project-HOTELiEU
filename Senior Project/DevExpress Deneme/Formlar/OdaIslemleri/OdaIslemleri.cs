@@ -35,6 +35,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             tileItemOdaListesi.Text = Localization.tileOdaListesi;
             tileItemOdaRezerveEt.Text = Localization.tileOdaRezerveEt;
             tileItem7.Text = Localization.btnKapat;
+            tileSureUzat.Text = Localization.tileSureUzat;
         }
 
         private void OdaIslemleri_Load(object sender, EventArgs e)
@@ -86,6 +87,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             Checkout chout = new Checkout();
             chout.Show();
+        }
+
+        private void tileSureUzat_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+
         }
     }
 }

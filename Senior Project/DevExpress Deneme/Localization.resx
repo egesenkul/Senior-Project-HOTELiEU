@@ -834,4 +834,7 @@
   <data name="yemekEklemeBasarili" xml:space="preserve">
     <value>Başarılı bir şekilde yemek eklenmiştir</value>
   </data>
+  <data name="tileSureUzat" xml:space="preserve">
+    <value>Süre Uzat</value>
+  </data>
 </root>

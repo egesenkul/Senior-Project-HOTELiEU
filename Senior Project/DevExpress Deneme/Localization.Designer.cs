@@ -2086,6 +2086,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Süre Uzat.
+        /// </summary>
+        internal static string tileSureUzat {
+            get {
+                return ResourceManager.GetString("tileSureUzat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Temizlik İşlemleri.
         /// </summary>
         internal static string tileTemizlik {

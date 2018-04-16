@@ -32,10 +32,11 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileItemOdaTanimlama = new DevExpress.XtraEditors.TileItem();
@@ -47,6 +48,7 @@
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
             this.tileItem7 = new DevExpress.XtraEditors.TileItem();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.tileSureUzat = new DevExpress.XtraEditors.TileItem();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             this.tileControl1.Groups.Add(this.tileGroup3);
             this.tileControl1.ItemSize = 180;
             this.tileControl1.Location = new System.Drawing.Point(20, 60);
-            this.tileControl1.MaxId = 8;
+            this.tileControl1.MaxId = 9;
             this.tileControl1.Name = "tileControl1";
             this.tileControl1.Size = new System.Drawing.Size(1016, 608);
             this.tileControl1.TabIndex = 0;
@@ -69,6 +71,7 @@
             this.tileGroup2.Items.Add(this.tileItemOdaTanimlama);
             this.tileGroup2.Items.Add(this.tileItemOdaMusteriIliskilendir);
             this.tileGroup2.Items.Add(this.tileItemOdaListesi);
+            this.tileGroup2.Items.Add(this.tileSureUzat);
             this.tileGroup2.Name = "tileGroup2";
             // 
             // tileItemOdaTanimlama
@@ -139,9 +142,9 @@
             this.tileItemOdaRezerveEt.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItemOdaRezerveEt.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItemOdaRezerveEt.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement4.Text = "Oda Rezerve Et";
-            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItemOdaRezerveEt.Elements.Add(tileItemElement4);
+            tileItemElement5.Text = "Oda Rezerve Et";
+            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItemOdaRezerveEt.Elements.Add(tileItemElement5);
             this.tileItemOdaRezerveEt.Id = 2;
             this.tileItemOdaRezerveEt.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemOdaRezerveEt.Name = "tileItemOdaRezerveEt";
@@ -156,9 +159,9 @@
             this.tileItemKatPlani.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItemKatPlani.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItemKatPlani.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement5.Text = "Kat Planı";
-            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItemKatPlani.Elements.Add(tileItemElement5);
+            tileItemElement6.Text = "Kat Planı";
+            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItemKatPlani.Elements.Add(tileItemElement6);
             this.tileItemKatPlani.Id = 3;
             this.tileItemKatPlani.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemKatPlani.Name = "tileItemKatPlani";
@@ -169,9 +172,9 @@
             // 
             this.tileItem1.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
             this.tileItem1.AppearanceItem.Normal.Options.UseFont = true;
-            tileItemElement6.Text = "Check-Out";
-            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem1.Elements.Add(tileItemElement6);
+            tileItemElement7.Text = "Check-Out";
+            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem1.Elements.Add(tileItemElement7);
             this.tileItem1.Id = 7;
             this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem1.Name = "tileItem1";
@@ -193,9 +196,9 @@
             this.tileItem7.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItem7.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItem7.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement7.Text = "Kapat";
-            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem7.Elements.Add(tileItemElement7);
+            tileItemElement8.Text = "Kapat";
+            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem7.Elements.Add(tileItemElement8);
             this.tileItem7.Id = 6;
             this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem7.Name = "tileItem7";
@@ -204,6 +207,18 @@
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = null;
+            // 
+            // tileSureUzat
+            // 
+            this.tileSureUzat.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.tileSureUzat.AppearanceItem.Normal.Options.UseFont = true;
+            tileItemElement4.Text = "Süre Uzat";
+            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileSureUzat.Elements.Add(tileItemElement4);
+            this.tileSureUzat.Id = 8;
+            this.tileSureUzat.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
+            this.tileSureUzat.Name = "tileSureUzat";
+            this.tileSureUzat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileSureUzat_ItemClick);
             // 
             // OdaIslemleri
             // 
@@ -239,5 +254,6 @@
         private DevExpress.XtraEditors.TileItem tileItem7;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private DevExpress.XtraEditors.TileItem tileItem1;
+        private DevExpress.XtraEditors.TileItem tileSureUzat;
     }
 }
