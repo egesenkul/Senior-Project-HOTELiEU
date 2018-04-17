@@ -837,4 +837,7 @@
   <data name="tileSureUzat" xml:space="preserve">
     <value>Extend Time</value>
   </data>
+  <data name="yemekSilmeBasarili" xml:space="preserve">
+    <value>Meal succesfully deleted</value>
+  </data>
 </root>

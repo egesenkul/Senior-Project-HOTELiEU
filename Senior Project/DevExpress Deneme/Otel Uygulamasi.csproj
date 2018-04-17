@@ -647,8 +647,6 @@
     <Content Include="bin\Debug\ru\DevExpress.XtraPrinting.v15.1.resources.dll" />
     <Content Include="bin\Debug\ru\DevExpress.XtraTreeList.v15.1.resources.dll" />
     <None Include="Resources\Euro.png" />
-    <EmbeddedResource Include="Localization\tr\MetroMessageBoxControl.xml" />
-    <EmbeddedResource Include="Localization\tr\MetroToggle.xml" />
     <None Include="Resources\HoteliEU.png" />
   </ItemGroup>
   <ItemGroup>

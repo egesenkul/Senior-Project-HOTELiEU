@@ -2,6 +2,7 @@
 using MetroFramework;
 using Otel_Uygulamasi.Classlar;
 using Otel_Uygulamasi.Formlar.Ayarlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -290,7 +291,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             //içeriğini doldur
             if (string.IsNullOrEmpty(txtYemekIsmi.Text))
             {
-                MetroMessageBox.Show(this, "", "Yemek ismi boş geçilemez.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                HotelWarningForm.Show(Localization.yemekAdiBosGecilemez, Localization.Tamam);
                 txtYemekIsmi.Focus();
                 return false;
             }
@@ -326,7 +327,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    MetroMessageBox.Show(this, "", "Başarılı bir şekilde özel yemek eklenmiştir.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HotelWarningForm.Show(Localization.yemekEklemeBasarili, Localization.Tamam);
                 }
                 btnTemizle.PerformClick();
             }

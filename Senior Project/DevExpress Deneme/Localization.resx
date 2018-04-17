@@ -837,4 +837,7 @@
   <data name="tileSureUzat" xml:space="preserve">
     <value>Süre Uzat</value>
   </data>
+  <data name="yemekSilmeBasarili" xml:space="preserve">
+    <value>Başarılı bir şekilde yemek silinmiştir</value>
+  </data>
 </root>

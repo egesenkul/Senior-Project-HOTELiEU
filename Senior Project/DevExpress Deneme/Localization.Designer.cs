@@ -2212,6 +2212,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Başarılı bir şekilde yemek silinmiştir.
+        /// </summary>
+        internal static string yemekSilmeBasarili {
+            get {
+                return ResourceManager.GetString("yemekSilmeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başarılı bir şekilde personel yetkisi güncellenmiştir.
         /// </summary>
         internal static string YetkiGuncellemeBasarili {

@@ -1,5 +1,6 @@
 ﻿using MetroFramework;
 using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -190,7 +191,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             else
             {
                 metroGrid1.DataSource = null;
-                MetroMessageBox.Show(this, "", "İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam);
             }
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -295,7 +296,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
 
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                MetroMessageBox.Show(this, "", "Blok başarılı bir yemek / yemekler silinmiştir.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.yemekSilmeBasarili, Localization.Tamam);
             }
             metroButton1.PerformClick();
         }
@@ -382,7 +383,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                MetroMessageBox.Show(this, "", "Başarılı bir şekilde personel geri alınmıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HotelWarningForm.Show(Localization.PersonelGeriAlindi, Localization.Tamam);
             }
             metroButton1.PerformClick();
         }
@@ -421,7 +422,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             cmd.CommandText = "delete from PersonelYemekGorevli where YemekAdı='" + metroGrid1.SelectedCells[0].Value.ToString() + "' and YemekTarihi='" + metroGrid1.SelectedCells[2].Value.ToString() + "' and personel='"+ListeGörevliler.SelectedItems[0].Text+"'";
             cmd.ExecuteNonQuery();
             connection.Close();
-            MetroMessageBox.Show(this, "", "Başarılı bir şekilde görevli silinmiştir.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            HotelWarningForm.Show(Localization.personelSilmeBasarili, Localization.Tamam);
         }
 
         private void gorevliEkle_Click(object sender, EventArgs e)
