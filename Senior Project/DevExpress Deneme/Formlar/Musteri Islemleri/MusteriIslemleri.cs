@@ -46,7 +46,7 @@ namespace DevExpress_Deneme
             {
                 metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
             }
-            ortakFormIslemleri.tileRenkDegistir(tileItemMusteriListesi, tileItemMusteriOdaIliskilendir, tileItemMusteriTanimlama);
+            ortakFormIslemleri.tileRenkDegistir(tileItemMusteriListesi, tileItemMusteriOdaIliskilendir, tileItemMusteriTanimlama,tileSureUzat);
         }
 
         private void tileItem4_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
@@ -74,7 +74,8 @@ namespace DevExpress_Deneme
 
         private void tileSureUzat_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-
+            SureUzat sureUzat = new SureUzat();
+            sureUzat.Show();
         }
     }
 }

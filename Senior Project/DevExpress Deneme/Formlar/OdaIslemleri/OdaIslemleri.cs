@@ -46,7 +46,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
             }
-            ortakFormIslemleri.tileRenkDegistir(tileItemKatPlani, tileItemOdaListesi, tileItemOdaMusteriIliskilendir, tileItemOdaRezerveEt, tileItemOdaTanimlama,tileItem1);
+            ortakFormIslemleri.tileRenkDegistir(tileItemKatPlani, tileItemOdaListesi, tileItemOdaMusteriIliskilendir, tileItemOdaRezerveEt, tileItemOdaTanimlama,tileItem1,tileSureUzat);
             Yetki();
         }
 
@@ -91,7 +91,8 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void tileSureUzat_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-
+            SureUzat sureUzat = new SureUzat();
+            sureUzat.Show();
         }
     }
 }

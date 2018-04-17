@@ -224,6 +224,12 @@
     <Compile Include="Formlar\OdaIslemleri\OdaRezerveEt.Designer.cs">
       <DependentUpon>OdaRezerveEt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\OdaIslemleri\SureUzat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\SureUzat.Designer.cs">
+      <DependentUpon>SureUzat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\TemizlikIslemleri\TemizlikYap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -454,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\OdaIslemleri\OdaRezerveEt.resx">
       <DependentUpon>OdaRezerveEt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\SureUzat.resx">
+      <DependentUpon>SureUzat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\TemizlikIslemleri\TemizlikYap.resx">
       <DependentUpon>TemizlikYap.cs</DependentUpon>

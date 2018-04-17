@@ -840,4 +840,16 @@
   <data name="yemekSilmeBasarili" xml:space="preserve">
     <value>Başarılı bir şekilde yemek silinmiştir</value>
   </data>
+  <data name="GunSayisi" xml:space="preserve">
+    <value>Eklenecek Gün Sayısı</value>
+  </data>
+  <data name="gunEkle" xml:space="preserve">
+    <value>Gün Ekle</value>
+  </data>
+  <data name="eklenecekGunSayisiPozitifHata" xml:space="preserve">
+    <value>Eklenecek gün sayısı pozitif olmalıdır</value>
+  </data>
+  <data name="cikisTarihiUzatıldı" xml:space="preserve">
+    <value>Çıkış tarihi uzatıldı</value>
+  </data>
 </root>

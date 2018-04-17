@@ -313,6 +313,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Çıkış tarihi uzatıldı.
+        /// </summary>
+        internal static string cikisTarihiUzatıldı {
+            get {
+                return ResourceManager.GetString("cikisTarihiUzatıldı", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Duyuru Ekle.
         /// </summary>
         internal static string duyuruEkle {
@@ -435,6 +444,15 @@ namespace Otel_Uygulamasi {
         internal static string duzenlenecekPersonelSec {
             get {
                 return ResourceManager.GetString("duzenlenecekPersonelSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eklenecek gün sayısı pozitif olmalıdır.
+        /// </summary>
+        internal static string eklenecekGunSayisiPozitifHata {
+            get {
+                return ResourceManager.GetString("eklenecekGunSayisiPozitifHata", resourceCulture);
             }
         }
         
@@ -579,6 +597,24 @@ namespace Otel_Uygulamasi {
         internal static string Guncellenemedi {
             get {
                 return ResourceManager.GetString("Guncellenemedi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gün Ekle.
+        /// </summary>
+        internal static string gunEkle {
+            get {
+                return ResourceManager.GetString("gunEkle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eklenecek Gün Sayısı.
+        /// </summary>
+        internal static string GunSayisi {
+            get {
+                return ResourceManager.GetString("GunSayisi", resourceCulture);
             }
         }
         

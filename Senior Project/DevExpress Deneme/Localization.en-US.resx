@@ -840,4 +840,16 @@
   <data name="yemekSilmeBasarili" xml:space="preserve">
     <value>Meal succesfully deleted</value>
   </data>
+  <data name="GunSayisi" xml:space="preserve">
+    <value>Number of Days Added</value>
+  </data>
+  <data name="gunEkle" xml:space="preserve">
+    <value>Add Days</value>
+  </data>
+  <data name="eklenecekGunSayisiPozitifHata" xml:space="preserve">
+    <value>Number of days must be positive</value>
+  </data>
+  <data name="cikisTarihiUzatıldı" xml:space="preserve">
+    <value>Exit date extended</value>
+  </data>
 </root>
