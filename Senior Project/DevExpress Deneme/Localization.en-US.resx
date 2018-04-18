@@ -852,4 +852,7 @@
   <data name="cikisTarihiUzatıldı" xml:space="preserve">
     <value>Exit date extended</value>
   </data>
+  <data name="personelEklemeBasarili" xml:space="preserve">
+    <value>Successfully staff added</value>
+  </data>
 </root>

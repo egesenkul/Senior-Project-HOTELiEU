@@ -1510,11 +1510,29 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Başarılı bir şekilde personel eklenmiştir.
+        /// </summary>
+        internal static string personelEklemeBasarili {
+            get {
+                return ResourceManager.GetString("personelEklemeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başarılı bir şekilde silinen personel geri alındı..
         /// </summary>
         internal static string PersonelGeriAlindi {
             get {
                 return ResourceManager.GetString("PersonelGeriAlindi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başarılı bir şekilde personel güncellenmiştir.
+        /// </summary>
+        internal static string personelGuncellemeBasarili {
+            get {
+                return ResourceManager.GetString("personelGuncellemeBasarili", resourceCulture);
             }
         }
         

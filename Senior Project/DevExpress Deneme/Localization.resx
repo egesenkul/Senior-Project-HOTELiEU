@@ -852,4 +852,10 @@
   <data name="cikisTarihiUzatıldı" xml:space="preserve">
     <value>Çıkış tarihi uzatıldı</value>
   </data>
+  <data name="personelEklemeBasarili" xml:space="preserve">
+    <value>Başarılı bir şekilde personel eklenmiştir</value>
+  </data>
+  <data name="personelGuncellemeBasarili" xml:space="preserve">
+    <value>Başarılı bir şekilde personel güncellenmiştir</value>
+  </data>
 </root>

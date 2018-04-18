@@ -262,7 +262,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "Başarılı bir şekilde personel eklenmiştir. ", "Personel Tanımlanmıştır", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.personelEklemeBasarili, Localization.Tamam);
                     } }
                 else
                 {
@@ -276,7 +276,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        MetroMessageBox.Show(this, "Başarılı bir şekilde personel güncellenmiştir. ", "Personel Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        HotelWarningForm.Show(Localization.personelGuncellemeBasarili, Localization.Tamam);
                     } }
                 ortakFormIslemleri.comboBoxTemizle(cmbYetki, cmbPersonelGrubu);
                 ortakFormIslemleri.textBoxTemizle(txtadres, txtisim, txtKullaniciAdi, txtmail, txtSifre, txtsoyisim, txttelefon);
