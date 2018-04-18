@@ -136,7 +136,7 @@ namespace DevExpress_Deneme
 
         private void tileItem2_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            HotelWarningForm.Show("Programa "+Kullanici.isim+" "+Kullanici.soyisim+" olarak giriş yaptınız.",Localization.Tamam);
+            HotelWarningForm.Show("Programa "+Kullanici.isim+" "+Kullanici.soyisim+" olarak giriş yaptınız.",Localization.Tamam,2);
         }
 
         private void tileItem11_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
@@ -163,13 +163,13 @@ namespace DevExpress_Deneme
         private void tileItem19_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             string tarih= Localization.Saat +" : "+DateTime.Now.ToShortTimeString(); ;
-            HotelWarningForm.Show(tarih ,Localization.Tamam);
+            HotelWarningForm.Show(tarih ,Localization.Tamam,2);
         }
 
         private void tileItem7_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             string tarih = Localization.lblTarih + " : "+DateTime.Now.Date.ToString().Substring(0, 8);
-            HotelWarningForm.Show(tarih, Localization.Tamam);
+            HotelWarningForm.Show(tarih, Localization.Tamam,2);
         }
 
         private void tileItem14_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)

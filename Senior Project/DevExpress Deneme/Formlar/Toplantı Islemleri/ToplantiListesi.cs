@@ -104,7 +104,7 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
             else
             {
                 metroGrid1.DataSource = null;
-                HotelWarningForm.Show(Localization.NoResult, Localization.Tamam);
+                HotelWarningForm.Show(Localization.NoResult, Localization.Tamam,1);
             }
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -128,7 +128,7 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
         private void metroGrid1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-            HotelWarningForm.Show(metroGrid1.SelectedCells[4].Value.ToString(), Localization.Tamam);
+            HotelWarningForm.Show(metroGrid1.SelectedCells[4].Value.ToString(), Localization.Tamam,2);
         }
     }
 }

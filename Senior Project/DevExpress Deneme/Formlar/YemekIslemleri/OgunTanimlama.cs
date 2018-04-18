@@ -227,19 +227,19 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             if (string.IsNullOrEmpty(txtOgunAdi.Text))
             {
-                HotelWarningForm.Show(Localization.yemekAdiBosGecilemez, Localization.Tamam);
+                HotelWarningForm.Show(Localization.yemekAdiBosGecilemez, Localization.Tamam, 1);
                 txtOgunAdi.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txtAciklama.Text))
             {
-                HotelWarningForm.Show(Localization.aciklamaBosGecilemez, Localization.Tamam);
+                HotelWarningForm.Show(Localization.aciklamaBosGecilemez, Localization.Tamam,1);
                 txtAciklama.Focus();
                 return false;
             }
             if(dtOgunBas.EditValue.ToString() == dtOgunBit.EditValue.ToString())
             {
-                HotelWarningForm.Show(Localization.TarihKontrol, Localization.Tamam);
+                HotelWarningForm.Show(Localization.TarihKontrol, Localization.Tamam, 1);
                 dtOgunBit.Focus();
                 return false;
             }
@@ -276,7 +276,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 }
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.yemekEklemeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.yemekEklemeBasarili, Localization.Tamam,0);
                 }
                 btnTemizle.PerformClick();
             }

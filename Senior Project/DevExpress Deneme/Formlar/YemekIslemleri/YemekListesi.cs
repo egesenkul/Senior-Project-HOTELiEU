@@ -191,7 +191,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             else
             {
                 metroGrid1.DataSource = null;
-                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam);
+                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam,1);
             }
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -296,7 +296,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
 
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                HotelWarningForm.Show(Localization.yemekSilmeBasarili, Localization.Tamam);
+                HotelWarningForm.Show(Localization.yemekSilmeBasarili, Localization.Tamam,0);
             }
             metroButton1.PerformClick();
         }
@@ -383,7 +383,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                HotelWarningForm.Show(Localization.PersonelGeriAlindi, Localization.Tamam);
+                HotelWarningForm.Show(Localization.PersonelGeriAlindi, Localization.Tamam,0);
             }
             metroButton1.PerformClick();
         }
@@ -422,7 +422,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             cmd.CommandText = "delete from PersonelYemekGorevli where YemekAdı='" + metroGrid1.SelectedCells[0].Value.ToString() + "' and YemekTarihi='" + metroGrid1.SelectedCells[2].Value.ToString() + "' and personel='"+ListeGörevliler.SelectedItems[0].Text+"'";
             cmd.ExecuteNonQuery();
             connection.Close();
-            HotelWarningForm.Show(Localization.personelSilmeBasarili, Localization.Tamam);
+            HotelWarningForm.Show(Localization.personelSilmeBasarili, Localization.Tamam,0);
         }
 
         private void gorevliEkle_Click(object sender, EventArgs e)

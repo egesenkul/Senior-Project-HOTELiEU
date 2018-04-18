@@ -240,7 +240,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             }
             else
             {
-                HotelWarningForm.Show(Localization.NoResult, Localization.Tamam);
+                HotelWarningForm.Show(Localization.NoResult, Localization.Tamam,1);
             }
             //GridView yayılsın
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -265,13 +265,13 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.DuyuruSilmeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.DuyuruSilmeBasarili, Localization.Tamam,0);
                 }
                 btnFiltrele.PerformClick();
             }
             else
             {
-                HotelWarningForm.Show(Localization.SilmekicinDuyuruSec, Localization.Tamam);
+                HotelWarningForm.Show(Localization.SilmekicinDuyuruSec, Localization.Tamam,1);
             }
         }
 
@@ -284,7 +284,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             }
             else
             {
-                HotelWarningForm.Show(Localization.DuzenlemekicinDuyuruSec, Localization.Tamam);
+                HotelWarningForm.Show(Localization.DuzenlemekicinDuyuruSec, Localization.Tamam,1);
             }
         }
 
@@ -413,7 +413,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 }
                 else
                 {
-                    HotelWarningForm.Show(Localization.NoResult, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.NoResult, Localization.Tamam,1);
                 }
                 //GridView yayılsın
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -442,13 +442,13 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.DuyuruGerialmaBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.DuyuruGerialmaBasarili, Localization.Tamam,0);
                 }
                 btnFiltrele.PerformClick();
             }
             else
             {
-                HotelWarningForm.Show( Localization.GeriAlinacakDuyuruSec, Localization.Tamam);
+                HotelWarningForm.Show( Localization.GeriAlinacakDuyuruSec, Localization.Tamam,1);
             }
         }
     }

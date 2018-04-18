@@ -104,7 +104,7 @@ namespace DevExpress_Deneme
             }
             catch (Exception)
             {
-                HotelWarningForm.Show("İnternet bağlantısı olmadığından programı kullanamazsınız.", Localization.Tamam);
+                HotelWarningForm.Show(Localization.internetYok, Localization.Tamam,1);
             }
         }
 
@@ -163,7 +163,7 @@ namespace DevExpress_Deneme
             }
             else
             {
-                HotelWarningForm.Show("İnternet bağlantısı olmadığından programı kullanamazsınız.", Localization.Tamam);
+                HotelWarningForm.Show(Localization.internetYok, Localization.Tamam,1);
                 Environment.Exit(1);
             }
         }
@@ -173,12 +173,12 @@ namespace DevExpress_Deneme
         {
             if (string.IsNullOrEmpty(txtKullaniciAdi.Text))
             {
-                HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam);
+                HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam,1);
                 txtKullaniciAdi.Focus();
             }
             if (string.IsNullOrEmpty(txtSifre.Text))
             {
-                HotelWarningForm.Show(Localization.KullaniciSifreHata, Localization.Tamam);
+                HotelWarningForm.Show(Localization.KullaniciSifreHata, Localization.Tamam,1);
                 txtSifre.Focus();
             }
         }
@@ -212,7 +212,7 @@ namespace DevExpress_Deneme
             connection.Close();
             if (!girisDogru)
             {
-                HotelWarningForm.Show(Localization.HataliKullaniciAdiSifre, Localization.Tamam);
+                HotelWarningForm.Show(Localization.HataliKullaniciAdiSifre, Localization.Tamam,1);
             }
             else
             {

@@ -123,7 +123,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             {
                 return true;
             }
-            HotelWarningForm.Show(Localization.EksikEtkinlikBilgileri,Localization.Tamam);
+            HotelWarningForm.Show(Localization.EksikEtkinlikBilgileri,Localization.Tamam,2);
             return false;
         }
         
@@ -154,11 +154,11 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 connection.Close();
                 if (string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.EtkinlikEklemeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.EtkinlikEklemeBasarili, Localization.Tamam,0);
                 }
                 else if (!string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.EtkinlikGuncellemeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.EtkinlikGuncellemeBasarili, Localization.Tamam,0);
                 }
                     dtEtkinlik.EditValue = DateTime.Now;
                 ortakFormIslemleri.textBoxTemizle(txtEtkinlikAciklama, txtEtkinlikAdı, txtKisiLimiti);

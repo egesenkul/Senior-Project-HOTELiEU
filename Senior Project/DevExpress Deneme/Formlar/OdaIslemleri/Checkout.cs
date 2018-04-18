@@ -149,7 +149,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                HotelWarningForm.Show(Localization.CheckoutBasarili, Localization.Tamam);
+                HotelWarningForm.Show(Localization.CheckoutBasarili, Localization.Tamam,0);
             }
             ortakFormIslemleri.textBoxTemizle(txtOdaNumarasi, txtAd);
             FillDataGridView("select * from OdaHareket where Onay=0 and islemTipi='Check-in'");

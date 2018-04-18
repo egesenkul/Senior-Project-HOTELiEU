@@ -83,7 +83,6 @@
             this.Name = "HotelWarningForm";
             this.Resizable = false;
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.HotelWarningForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -88,7 +88,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
             if (txtisim.Text == "")
             {
-                HotelWarningForm.Show(Localization.KategoriIsmiBosGecilemez, Localization.Tamam);
+                HotelWarningForm.Show(Localization.KategoriIsmiBosGecilemez, Localization.Tamam,1);
                 txtisim.Focus();
                 connection.Close();
             }
@@ -102,7 +102,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam,0);
                     }
                     ListViewGuncelleme();
                 }
@@ -114,7 +114,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam,0);
                     }
                     ListViewGuncelleme();
                 }
@@ -126,7 +126,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam,0);
                     }
                     ListViewGuncelleme();
                 }
@@ -138,7 +138,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     txtisim.Clear();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam,0);
                     }
                     ListViewGuncelleme();
                 }

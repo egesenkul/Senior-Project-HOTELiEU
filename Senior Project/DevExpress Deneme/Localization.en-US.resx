@@ -855,4 +855,7 @@
   <data name="personelEklemeBasarili" xml:space="preserve">
     <value>Successfully staff added</value>
   </data>
+  <data name="internetYok" xml:space="preserve">
+    <value>There is no internet connection so that you can't use the program</value>
+  </data>
 </root>

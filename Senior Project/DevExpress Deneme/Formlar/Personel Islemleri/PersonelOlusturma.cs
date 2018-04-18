@@ -196,7 +196,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             }
             catch
             {
-                HotelWarningForm.Show(Localization.eMailHata,Localization.Tamam);
+                HotelWarningForm.Show(Localization.eMailHata,Localization.Tamam,1);
                 return false;
             }
         } // Girilen email adresinin geçerliliğini kontrol ediyor
@@ -208,7 +208,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                 return eMailKontrol(txtmail.Text);
 
             }
-            HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam);
+            HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam,1);
             return false;
         }
 
@@ -262,7 +262,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.personelEklemeBasarili, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.personelEklemeBasarili, Localization.Tamam,0);
                     } }
                 else
                 {
@@ -276,7 +276,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.personelGuncellemeBasarili, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.personelGuncellemeBasarili, Localization.Tamam,0);
                     } }
                 ortakFormIslemleri.comboBoxTemizle(cmbYetki, cmbPersonelGrubu);
                 ortakFormIslemleri.textBoxTemizle(txtadres, txtisim, txtKullaniciAdi, txtmail, txtSifre, txtsoyisim, txttelefon);

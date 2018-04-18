@@ -213,7 +213,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 return true;
             }
-            HotelWarningForm.Show(Localization.TarihKontrol,Localization.Tamam);
+            HotelWarningForm.Show(Localization.TarihKontrol,Localization.Tamam,1);
             return false;
         }
 
@@ -361,7 +361,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             if (Convert.ToDateTime(dtGirisTarihi.EditValue) >Convert.ToDateTime(dtCikisTarihi.EditValue) || ListeOdalar.SelectedItems.Count!=1)
             {
-                HotelWarningForm.Show( Localization.EksikRezervasyonBilgisi, Localization.Tamam);
+                HotelWarningForm.Show( Localization.EksikRezervasyonBilgisi, Localization.Tamam,1);
                 return false;
             }
             else return true;
@@ -385,7 +385,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.RezervasyonBasarili,Localization.Tamam);
+                    HotelWarningForm.Show(Localization.RezervasyonBasarili,Localization.Tamam,0);
                 }
                 ListeOdaGuncelle();
             }
@@ -423,7 +423,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                HotelWarningForm.Show(Localization.RezervasyonIptal, Localization.Tamam);
+                HotelWarningForm.Show(Localization.RezervasyonIptal, Localization.Tamam,0);
             }
             ListeOdaGuncelle();
         }

@@ -186,7 +186,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                HotelWarningForm.Show(Localization.YetkiGuncellemeBasarili, Localization.Tamam);
+                HotelWarningForm.Show(Localization.YetkiGuncellemeBasarili, Localization.Tamam,0);
             }
         }
 

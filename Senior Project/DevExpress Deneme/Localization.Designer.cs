@@ -718,6 +718,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İnternet bağlantısı olmadığından dolayı programı kullanamazsınız.
+        /// </summary>
+        internal static string internetYok {
+            get {
+                return ResourceManager.GetString("internetYok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.
         /// </summary>
         internal static string IstenilenKriterdeKayitYok {

@@ -232,7 +232,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
             if (metroGrid1.DataSource == null)
             {
-                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam);
+                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam,1);
             }
         }
     }

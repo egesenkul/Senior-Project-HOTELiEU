@@ -17,24 +17,36 @@ namespace Otel_Uygulamasi.Formlar.Genel
         }
         static HotelWarningForm MsgBox; static DialogResult result = DialogResult.No;
 
-        public static DialogResult Show(string Text, string btnOk)
+        public static DialogResult Show(string Text, string btnOk,int tip)
         {
             MsgBox = new HotelWarningForm();
             MsgBox.metrolbl.Text = Text;
             MsgBox.metroButton2.Text = btnOk;
+            if (tip==0)
+            {
+                MsgBox.label1.Text = "✔";
+                MsgBox.label1.ForeColor = Color.Green;
+            }
+            else if(tip==1)
+            {
+                MsgBox.label1.Text = "!";
+                MsgBox.label1.ForeColor = Color.Red;
+            }
+            else if (tip == 2)
+            {
+                MsgBox.label1.Text = "!";
+                MsgBox.label1.ForeColor = Color.Orange;
+            }
             result = DialogResult.No;
             MsgBox.ShowDialog();
             return result;
         }
-
-        private void HotelWarningForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
             result = DialogResult.Yes; MsgBox.Close();
         }
+        
     }
 }

@@ -92,7 +92,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             else
             {
                 metroGrid1.DataSource = null;
-                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam);
+                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam,1);
             }
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
           
@@ -133,7 +133,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             }
             else
             {
-                HotelWarningForm.Show(Localization.duzenlenecekEtkinlikSecin, Localization.Tamam);
+                HotelWarningForm.Show(Localization.duzenlenecekEtkinlikSecin, Localization.Tamam,1);
             }
         }
 
@@ -148,12 +148,12 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 cmd.CommandText = "update Etkinlik set Gorunur=0 where Etkinlikno='" + Convert.ToInt32(metroGrid1.SelectedCells[0].Value)+ "'";
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                HotelWarningForm.Show(Localization.etkinlikSilinmistir, Localization.Tamam);
+                HotelWarningForm.Show(Localization.etkinlikSilinmistir, Localization.Tamam,0);
                 btnFiltrele.PerformClick();
             }
             else
             {
-                HotelWarningForm.Show(Localization.silinecekEtkinlikSecin, Localization.Tamam);
+                HotelWarningForm.Show(Localization.silinecekEtkinlikSecin, Localization.Tamam,1);
             }
         }
 
@@ -187,12 +187,12 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 cmd.CommandText = "update Etkinlik set Gorunur=1 where Etkinlikno='" + Convert.ToInt32(metroGrid1.SelectedCells[0].Value) + "'";
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                HotelWarningForm.Show(Localization.etkinlikGeriAlmaBasarili, Localization.Tamam);
+                HotelWarningForm.Show(Localization.etkinlikGeriAlmaBasarili, Localization.Tamam,0);
                 btnFiltrele.PerformClick();
             }
             else
             {
-                HotelWarningForm.Show(Localization.GeriAlinacakEtkinlikSec, Localization.Tamam);
+                HotelWarningForm.Show(Localization.GeriAlinacakEtkinlikSec, Localization.Tamam,1);
             }
         }
     }

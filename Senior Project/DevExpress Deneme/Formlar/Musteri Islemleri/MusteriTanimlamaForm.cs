@@ -216,7 +216,7 @@ namespace DevExpress_Deneme
                 return eMailKontrol(txtmail.Text);
                
             }
-            HotelWarningForm.Show(Localization.HataliKullaniciAdiSifre, Localization.Tamam);
+            HotelWarningForm.Show(Localization.HataliKullaniciAdiSifre, Localization.Tamam,2);
             return false;
         }
 
@@ -241,7 +241,7 @@ namespace DevExpress_Deneme
             {
                 connection.Close();
                 guncellemeYap = false;
-                HotelWarningForm.Show(Localization.MusterFaceVarHata,Localization.Tamam);
+                HotelWarningForm.Show(Localization.MusterFaceVarHata,Localization.Tamam,1);
                 return false;
             }
         }
@@ -267,7 +267,7 @@ namespace DevExpress_Deneme
             {
                 connection.Close();
                 guncellemeYap = false;
-                HotelWarningForm.Show(Localization.MusteriSistemeKayitliHata, Localization.Tamam);
+                HotelWarningForm.Show(Localization.MusteriSistemeKayitliHata, Localization.Tamam,1);
                 return false; }
         }
 
@@ -288,7 +288,7 @@ namespace DevExpress_Deneme
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.MusteriTanimlamaBasarili,Localization.Tamam);
+                        HotelWarningForm.Show(Localization.MusteriTanimlamaBasarili,Localization.Tamam,0);
                     }
                 }
 
@@ -313,7 +313,7 @@ namespace DevExpress_Deneme
                         connection.Close();
                         if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                         {
-                            HotelWarningForm.Show(Localization.MusteriGuncellemeBasarili, Localization.Tamam);
+                            HotelWarningForm.Show(Localization.MusteriGuncellemeBasarili, Localization.Tamam,0);
                         }
                     }
                 }
@@ -336,7 +336,7 @@ namespace DevExpress_Deneme
             }
             catch
             {
-                HotelWarningForm.Show(Localization.eMailHata, Localization.Tamam);
+                HotelWarningForm.Show(Localization.eMailHata, Localization.Tamam,1);
                 return false;
             }
         } // Girilen email adresinin geçerliliğini kontrol ediyor

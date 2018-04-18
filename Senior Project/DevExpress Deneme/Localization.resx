@@ -858,4 +858,7 @@
   <data name="personelGuncellemeBasarili" xml:space="preserve">
     <value>Başarılı bir şekilde personel güncellenmiştir</value>
   </data>
+  <data name="internetYok" xml:space="preserve">
+    <value>İnternet bağlantısı olmadığından dolayı programı kullanamazsınız</value>
+  </data>
 </root>

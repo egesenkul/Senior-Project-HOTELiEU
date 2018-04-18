@@ -104,13 +104,13 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.BlokSilmeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.BlokSilmeBasarili, Localization.Tamam,0);
                 }
                 BlokListesiGuncelle();
             }
             else
             {
-                HotelWarningForm.Show(Localization.SilinecekBlokSec, Localization.Tamam);
+                HotelWarningForm.Show(Localization.SilinecekBlokSec, Localization.Tamam,1);
             }
         }
 
@@ -131,7 +131,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             }
             else
             {
-                HotelWarningForm.Show(Localization.DuzenlemekIcınBlokSec, Localization.Tamam);
+                HotelWarningForm.Show(Localization.DuzenlemekIcınBlokSec, Localization.Tamam,1);
                 mod = 0;
             }
         }
@@ -183,7 +183,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                HotelWarningForm.Show(Localization.SilinenHavuzGeriAlindi, Localization.Tamam);
+                HotelWarningForm.Show(Localization.SilinenHavuzGeriAlindi, Localization.Tamam,0);
             }
             BlokListesiGuncelle();
         }
@@ -220,7 +220,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.Blokeklendi, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.Blokeklendi, Localization.Tamam,0);
                     }
                 }
                 else
@@ -236,14 +236,14 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.BlokDuzenlendi, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.BlokDuzenlendi, Localization.Tamam,0);
                     }
                     mod = 0;
                 }
             }
             else
             {
-                HotelWarningForm.Show(Localization.BlokismiBosOlamaz, Localization.Tamam);
+                HotelWarningForm.Show(Localization.BlokismiBosOlamaz, Localization.Tamam,1);
                 txtBlokAdi.Focus();
             }
             BlokListesiGuncelle();

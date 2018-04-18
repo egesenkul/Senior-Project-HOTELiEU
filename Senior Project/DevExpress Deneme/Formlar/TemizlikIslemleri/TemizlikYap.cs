@@ -200,7 +200,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                HotelWarningForm.Show(Localization.temizlikBasarili, Localization.Tamam);
+                HotelWarningForm.Show(Localization.temizlikBasarili, Localization.Tamam,0);
             }
         }
     }

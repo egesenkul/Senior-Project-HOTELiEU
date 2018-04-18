@@ -291,7 +291,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             //içeriğini doldur
             if (string.IsNullOrEmpty(txtYemekIsmi.Text))
             {
-                HotelWarningForm.Show(Localization.yemekAdiBosGecilemez, Localization.Tamam);
+                HotelWarningForm.Show(Localization.yemekAdiBosGecilemez, Localization.Tamam,1);
                 txtYemekIsmi.Focus();
                 return false;
             }
@@ -327,7 +327,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.yemekEklemeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.yemekEklemeBasarili, Localization.Tamam,0);
                 }
                 btnTemizle.PerformClick();
             }

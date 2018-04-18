@@ -404,11 +404,11 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             {
                 if (mod == 0)
                 {
-                    HotelWarningForm.Show(Localization.DuyuruEklemeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.DuyuruEklemeBasarili, Localization.Tamam,0);
                 }
                 else
                 {
-                    HotelWarningForm.Show(Localization.DuyuruGuncellemeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.DuyuruGuncellemeBasarili, Localization.Tamam,0);
                 }
             }
             btnTemizle.PerformClick();

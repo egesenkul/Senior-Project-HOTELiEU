@@ -102,7 +102,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
             else
             {
                 metroGrid1.DataSource = null;
-                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam);
+                HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam,1);
             }
             //GridView yayılsın
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

@@ -146,14 +146,14 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.cikisTarihiUzatıldı, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.cikisTarihiUzatıldı, Localization.Tamam,0);
                 }
                 Filtrele();
                 txtGunSayisi.Text = "";
             }
             else
             {
-                HotelWarningForm.Show(Localization.eklenecekGunSayisiPozitifHata, Localization.Tamam);
+                HotelWarningForm.Show(Localization.eklenecekGunSayisiPozitifHata, Localization.Tamam,1);
                 txtGunSayisi.Focus();
             }
         }

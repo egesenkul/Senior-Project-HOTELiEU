@@ -260,7 +260,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
             else
             {
-                HotelWarningForm.Show(Localization.duzenlemekIcınOdaSec, Localization.Tamam);
+                HotelWarningForm.Show(Localization.duzenlemekIcınOdaSec, Localization.Tamam,1);
             }
         }
 
@@ -294,7 +294,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             // Personel türünü Rıza'ya sor.
             cmd.ExecuteNonQuery();
             connection.Close();
-            HotelWarningForm.Show(Localization.odaGeriAlmaBasarili, Localization.Tamam);
+            HotelWarningForm.Show(Localization.odaGeriAlmaBasarili, Localization.Tamam,0);
             btnFiltrele.PerformClick();
         }
 
@@ -310,12 +310,12 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 // Personel türünü Rıza'ya sor.
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                HotelWarningForm.Show(Localization.odaSilmeBasarili,Localization.Tamam);
+                HotelWarningForm.Show(Localization.odaSilmeBasarili,Localization.Tamam,0);
                 btnFiltrele.PerformClick();
             }
             else
             {
-                HotelWarningForm.Show(Localization.silmekIcınOdaSec, Localization.Tamam);
+                HotelWarningForm.Show(Localization.silmekIcınOdaSec, Localization.Tamam,1);
             }
         }
 

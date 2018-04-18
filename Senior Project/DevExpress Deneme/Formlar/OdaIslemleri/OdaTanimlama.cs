@@ -231,7 +231,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.OdaEklemeBasarili, Localization.Tamam);
+                        HotelWarningForm.Show(Localization.OdaEklemeBasarili, Localization.Tamam,0);
                     }
                     btnTemizle.PerformClick();
                 }
@@ -247,13 +247,13 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
-                        HotelWarningForm.Show(Localization.OdaDuzenlemeBasarili,Localization.Tamam);
+                        HotelWarningForm.Show(Localization.OdaDuzenlemeBasarili,Localization.Tamam,0);
                     }
                 }
             }
             else
             {
-                HotelWarningForm.Show(Localization.OdaBilgisiEksik, Localization.Tamam);
+                HotelWarningForm.Show(Localization.OdaBilgisiEksik, Localization.Tamam,1);
             }
         }
 
@@ -273,7 +273,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&  (e.KeyChar != '.'))
             {
                 e.Handled = true;
-                HotelWarningForm.Show(Localization.tekKisilikRakamGir,Localization.Tamam);
+                HotelWarningForm.Show(Localization.tekKisilikRakamGir,Localization.Tamam,1);
                 txtTekKisilikYatakSayisi.Focus();
             }
         }
@@ -283,7 +283,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
-                HotelWarningForm.Show(Localization.ikiKisilikRakamGir, Localization.Tamam);
+                HotelWarningForm.Show(Localization.ikiKisilikRakamGir, Localization.Tamam,1);
                 txtCiftKisiYatakSayisi.Focus();
             }
         }

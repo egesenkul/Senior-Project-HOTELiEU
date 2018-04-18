@@ -193,12 +193,12 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                 // Personel türünü Rıza'ya sor.
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                HotelWarningForm.Show(Localization.personelSilmeBasarili,Localization.Tamam);
+                HotelWarningForm.Show(Localization.personelSilmeBasarili,Localization.Tamam,0);
                 FillDataGridView("Select personelAdi, personelSoyadi, personelDepartman, personelKullaniciAdi from Personel where Sil =0");
             }
             else
             {
-                HotelWarningForm.Show(Localization.personelSilmeBasarili,Localization.Tamam);
+                HotelWarningForm.Show(Localization.personelSilmeBasarili,Localization.Tamam,0);
             }
         }
 
@@ -212,7 +212,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             }
             else
             {
-                HotelWarningForm.Show(Localization.duzenlenecekPersonelSec, Localization.Tamam);
+                HotelWarningForm.Show(Localization.duzenlenecekPersonelSec, Localization.Tamam,1);
             }
         }
 
@@ -270,7 +270,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             // Personel türünü Rıza'ya sor.
             cmd.ExecuteNonQuery();
             connection.Close();
-            HotelWarningForm.Show(Localization.PersonelGeriAlindi, Localization.Tamam);
+            HotelWarningForm.Show(Localization.PersonelGeriAlindi, Localization.Tamam,0);
             FillDataGridView("Select personelAdi, personelSoyadi, personelDepartman, personelKullaniciAdi from Personel where Sil =1");
             SilinmisKayitGosterButtonKontrol();
         }

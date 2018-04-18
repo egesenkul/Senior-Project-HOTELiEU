@@ -122,7 +122,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             }
             catch
             {
-                HotelWarningForm.Show(Localization.eMailHata, Localization.Tamam);
+                HotelWarningForm.Show(Localization.eMailHata, Localization.Tamam,1);
                 return false;
             }
         } // Girilen email adresinin geçerliliğini kontrol ediyor
@@ -149,7 +149,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.otelBilgileriEklemeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.otelBilgileriEklemeBasarili, Localization.Tamam,0);
                 }
             }
         }

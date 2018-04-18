@@ -175,7 +175,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             connection.Close();
             if (Kullanici.BilgilendirmeFormlari.Equals("True"))
             {
-                HotelWarningForm.Show(Localization.ToplantiEklemeBasarili, Localization.Tamam);
+                HotelWarningForm.Show(Localization.ToplantiEklemeBasarili, Localization.Tamam,0);
             }
             btnTemizle.PerformClick();
         }

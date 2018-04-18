@@ -169,7 +169,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 txtisim.Clear();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                 {
-                    HotelWarningForm.Show(Localization.SalonEklemeBasarili, Localization.Tamam);
+                    HotelWarningForm.Show(Localization.SalonEklemeBasarili, Localization.Tamam,0);
                 }
                 ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
                 ortakFormIslemleri.comboBoxTemizle(cmbSalonSorumlu, cmbSalonKategori, cmbSalonBlok, cmbKat);
