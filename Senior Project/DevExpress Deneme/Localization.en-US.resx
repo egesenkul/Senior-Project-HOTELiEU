@@ -861,4 +861,16 @@
   <data name="programaGirisYapanKullanici" xml:space="preserve">
     <value>Entered user:</value>
   </data>
+  <data name="blokIsmiBosGecilmez" xml:space="preserve">
+    <value>Please first select a blok</value>
+  </data>
+  <data name="onceKatEkleyiniz" xml:space="preserve">
+    <value>Please first add a floor to that blok or select a floor</value>
+  </data>
+  <data name="salonIsmiBosGecilemez" xml:space="preserve">
+    <value>Saloon name can not be empty</value>
+  </data>
+  <data name="salonSorumlusuSeciniz" xml:space="preserve">
+    <value>Please select hall responsible staff</value>
+  </data>
 </root>

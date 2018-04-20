@@ -137,42 +137,45 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-
-            string[] parcalar;
-            string kullaniciadiPersonel = "";
-            parcalar = cmbSalonSorumlu.SelectedItem.ToString().Split(' ');
-            SqlCommand cmd3 = new SqlCommand();
-
-            cmd3.CommandText = "select personelKullaniciAdi from Personel where personelAdi ='" + parcalar[0] + "' and personelSoyadi='" + parcalar[1] + "'";
-            cmd3.Connection = connection;
-            cmd3.CommandType = CommandType.Text;
-            SqlDataReader Dr;
-            connection.Open();
-            Dr = cmd3.ExecuteReader();
-            while (Dr.Read())
+            if (BilgiKontrol())
             {
-                kullaniciadiPersonel = (Dr["personelKullaniciAdi"]).ToString();
-            }
-            connection.Close();
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
+                string[] parcalar;
+                string kullaniciadiPersonel = "";
+                parcalar = cmbSalonSorumlu.SelectedItem.ToString().Split(' ');
+                SqlCommand cmd3 = new SqlCommand();
 
-            if (!String.IsNullOrEmpty(txtisim.Text))
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection;
+                cmd3.CommandText = "select personelKullaniciAdi from Personel where personelAdi ='" + parcalar[0] + "' and personelSoyadi='" + parcalar[1] + "'";
+                cmd3.Connection = connection;
+                cmd3.CommandType = CommandType.Text;
+                SqlDataReader Dr;
                 connection.Open();
-
-                cmd.CommandText = "Insert into Salon values('" + txtisim.Text + "','" + cmbSalonKategori.SelectedItem.ToString() +"','"+kullaniciadiPersonel+"','"+cmbSalonBlok.SelectedItem.ToString()+"','"+txtadres.Text+"','"+cmbKat.SelectedItem.ToString()+"')";
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                txtisim.Clear();
-                if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                Dr = cmd3.ExecuteReader();
+                while (Dr.Read())
                 {
-                    HotelWarningForm.Show(Localization.SalonEklemeBasarili, Localization.Tamam,0);
+                    kullaniciadiPersonel = (Dr["personelKullaniciAdi"]).ToString();
                 }
-                ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
-                ortakFormIslemleri.comboBoxTemizle(cmbSalonSorumlu, cmbSalonKategori, cmbSalonBlok, cmbKat);
+                connection.Close();
+
+
+                if (!String.IsNullOrEmpty(txtisim.Text))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection;
+                    connection.Open();
+
+                    cmd.CommandText = "Insert into Salon values('" + txtisim.Text + "','" + cmbSalonKategori.SelectedItem.ToString() + "','" + kullaniciadiPersonel + "','" + cmbSalonBlok.SelectedItem.ToString() + "','" + txtadres.Text + "','" + cmbKat.SelectedItem.ToString() + "')";
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    txtisim.Clear();
+                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    {
+                        HotelWarningForm.Show(Localization.SalonEklemeBasarili, Localization.Tamam, 0);
+                    }
+                    ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
+                    ortakFormIslemleri.comboBoxTemizle(cmbSalonSorumlu, cmbSalonKategori, cmbSalonBlok, cmbKat);
+                }
             }
         }
 
@@ -185,6 +188,31 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
             ortakFormIslemleri.comboBoxTemizle(cmbSalonBlok, cmbSalonKategori,cmbKat, cmbSalonSorumlu);
+        }
+
+        private bool BilgiKontrol()
+        {
+            if ((cmbKat.SelectedItem == null))
+            {
+                HotelWarningForm.Show(Localization.onceKatEkleyiniz, Localization.Tamam, 1);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtisim.Text))
+            {
+                HotelWarningForm.Show(Localization.salonIsmiBosGecilemez, Localization.Tamam, 1);
+                return false;
+            }
+            if ((cmbSalonSorumlu.SelectedItem == null))
+            {
+                HotelWarningForm.Show(Localization.salonSorumlusuSeciniz, Localization.Tamam, 1);
+                return false;
+            }
+            if ((cmbSalonBlok.SelectedItem == null))
+            {
+                HotelWarningForm.Show(Localization.blokIsmiBosGecilmez, Localization.Tamam, 1);
+                return false;
+            }
+            return true;
         }
 
         private void cmbSalonBlok_SelectedIndexChanged(object sender, EventArgs e)

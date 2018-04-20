@@ -115,6 +115,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lütfen bir blok seçiniz.
+        /// </summary>
+        internal static string blokIsmiBosGecilmez {
+            get {
+                return ResourceManager.GetString("blokIsmiBosGecilmez", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blok ismi boş geçilemez..
         /// </summary>
         internal static string BlokismiBosOlamaz {
@@ -1465,6 +1474,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lütfen salon eklemek istediğiniz bloğa önce kat ekleyin veya bir kat seçin.
+        /// </summary>
+        internal static string onceKatEkleyiniz {
+            get {
+                return ResourceManager.GetString("onceKatEkleyiniz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başarılı bir şekilde otel bilgileri sisteme eklenmiştir..
         /// </summary>
         internal static string otelBilgileriEklemeBasarili {
@@ -1659,6 +1677,24 @@ namespace Otel_Uygulamasi {
         internal static string SalonEklemeBasarili {
             get {
                 return ResourceManager.GetString("SalonEklemeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salon ismi boş olamaz.
+        /// </summary>
+        internal static string salonIsmiBosGecilemez {
+            get {
+                return ResourceManager.GetString("salonIsmiBosGecilemez", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lütfen salon sorumlusu seçiniz.
+        /// </summary>
+        internal static string salonSorumlusuSeciniz {
+            get {
+                return ResourceManager.GetString("salonSorumlusuSeciniz", resourceCulture);
             }
         }
         
