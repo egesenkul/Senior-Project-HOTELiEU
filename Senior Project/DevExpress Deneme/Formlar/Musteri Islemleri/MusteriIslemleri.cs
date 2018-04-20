@@ -36,6 +36,7 @@ namespace DevExpress_Deneme
             tileItemMusteriListesi.Text = Localization.musteriListesi;
             tileItemKapat.Text = Localization.btnKapat;
             tileSureUzat.Text = Localization.tileSureUzat;
+            tileItemMusteriTanimlama.Text = Localization.tileItemMusteriTanimlama;
         }
 
         private void Form4_Load(object sender, EventArgs e)

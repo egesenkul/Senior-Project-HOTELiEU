@@ -1465,6 +1465,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Öğün Tanımlama.
+        /// </summary>
+        internal static string ogunTanimlama {
+            get {
+                return ResourceManager.GetString("ogunTanimlama", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ölçülemedi.
         /// </summary>
         internal static string Olculemedi {
@@ -2028,6 +2037,15 @@ namespace Otel_Uygulamasi {
         internal static string tileHavuzEkle {
             get {
                 return ResourceManager.GetString("tileHavuzEkle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Müşteri tanımlama.
+        /// </summary>
+        internal static string tileItemMusteriTanimlama {
+            get {
+                return ResourceManager.GetString("tileItemMusteriTanimlama", resourceCulture);
             }
         }
         

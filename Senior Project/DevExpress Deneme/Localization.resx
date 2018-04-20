@@ -864,10 +864,22 @@
   <data name="programaGirisYapanKullanici" xml:space="preserve">
     <value>Programa giriş yapan kullanıcı :</value>
   </data>
+  <data name="blokIsmiBosGecilmez" xml:space="preserve">
+    <value>Lütfen bir blok seçiniz</value>
+  </data>
+  <data name="ogunTanimlama" xml:space="preserve">
+    <value>Öğün Tanımlama</value>
+  </data>
   <data name="onceKatEkleyiniz" xml:space="preserve">
     <value>Lütfen salon eklemek istediğiniz bloğa önce kat ekleyin veya bir kat seçin</value>
   </data>
   <data name="salonIsmiBosGecilemez" xml:space="preserve">
     <value>Salon ismi boş olamaz</value>
+  </data>
+  <data name="salonSorumlusuSeciniz" xml:space="preserve">
+    <value>Lütfen salon sorumlusu seçiniz</value>
+  </data>
+  <data name="tileItemMusteriTanimlama" xml:space="preserve">
+    <value>Müşteri tanımlama</value>
   </data>
 </root>

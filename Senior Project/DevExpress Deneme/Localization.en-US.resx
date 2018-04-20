@@ -864,6 +864,9 @@
   <data name="blokIsmiBosGecilmez" xml:space="preserve">
     <value>Please first select a blok</value>
   </data>
+  <data name="ogunTanimlama" xml:space="preserve">
+    <value>Create repeatly meal</value>
+  </data>
   <data name="onceKatEkleyiniz" xml:space="preserve">
     <value>Please first add a floor to that blok or select a floor</value>
   </data>
@@ -872,5 +875,8 @@
   </data>
   <data name="salonSorumlusuSeciniz" xml:space="preserve">
     <value>Please select hall responsible staff</value>
+  </data>
+  <data name="tileItemMusteriTanimlama" xml:space="preserve">
+    <value>Create Customer</value>
   </data>
 </root>
