@@ -858,4 +858,7 @@
   <data name="internetYok" xml:space="preserve">
     <value>There is no internet connection so that you can't use the program</value>
   </data>
+  <data name="programaGirisYapanKullanici" xml:space="preserve">
+    <value>Entered user:</value>
+  </data>
 </root>

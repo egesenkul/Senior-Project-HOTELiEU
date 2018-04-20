@@ -136,7 +136,7 @@ namespace DevExpress_Deneme
 
         private void tileItem2_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            HotelWarningForm.Show("Programa "+Kullanici.isim+" "+Kullanici.soyisim+" olarak giriş yaptınız.",Localization.Tamam,2);
+            HotelWarningForm.Show(Localization.programaGirisYapanKullanici + " " + Kullanici.isim + " " + Kullanici.soyisim,Localization.Tamam,2);
         }
 
         private void tileItem11_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)

@@ -1573,6 +1573,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Programa giriş yapan kullanıcı :.
+        /// </summary>
+        internal static string programaGirisYapanKullanici {
+            get {
+                return ResourceManager.GetString("programaGirisYapanKullanici", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bu program zaten çalışıyor.
         /// </summary>
         internal static string ProgramCalisiyorHata {

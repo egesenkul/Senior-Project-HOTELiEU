@@ -861,4 +861,7 @@
   <data name="internetYok" xml:space="preserve">
     <value>İnternet bağlantısı olmadığından dolayı programı kullanamazsınız</value>
   </data>
+  <data name="programaGirisYapanKullanici" xml:space="preserve">
+    <value>Programa giriş yapan kullanıcı :</value>
+  </data>
 </root>
