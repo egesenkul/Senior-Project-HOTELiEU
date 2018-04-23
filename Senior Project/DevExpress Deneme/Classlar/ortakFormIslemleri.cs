@@ -241,5 +241,47 @@ namespace Otel_Uygulamasi.Classlar
             connection.Close();
             return odaTip;
         }
+
+        public static string odaKatGetir(string odaAdi)
+        {
+            string kat = "";
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "Select katAdi from Oda where OdaNo='" + odaAdi + "'";
+            cmd.Connection = connection;
+            cmd.CommandType = CommandType.Text;
+
+            SqlDataReader Dr;
+            connection.Open();
+            Dr = cmd.ExecuteReader();
+            while (Dr.Read())
+            {
+                kat = (Dr["katAdi"].ToString());
+            }
+            connection.Close();
+            return kat;
+        }
+
+        public static string odaBlokGetir(string odaAdi)
+        {
+            string blok = "";
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "Select blok from Oda where OdaNo='" + odaAdi + "'";
+            cmd.Connection = connection;
+            cmd.CommandType = CommandType.Text;
+
+            SqlDataReader Dr;
+            connection.Open();
+            Dr = cmd.ExecuteReader();
+            while (Dr.Read())
+            {
+                blok = (Dr["blok"].ToString());
+            }
+            connection.Close();
+            return blok;
+        }
     }
 }
