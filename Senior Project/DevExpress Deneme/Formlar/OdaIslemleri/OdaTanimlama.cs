@@ -33,7 +33,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "Select personelAdi,personelSoyadi from Personel";
+            cmd.CommandText = "Select personelAdi,personelSoyadi from Personel where personelDepartman='Temizlikçi'";
             cmd.Connection = connection;
             cmd.CommandType = CommandType.Text;
 
@@ -131,6 +131,23 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     cmbKat.Text = Dr["katAdi"].ToString();
                 }
                 connection.Close();
+
+                //Odadan sorumlu personeli al 
+
+                SqlConnection connection2 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd2 = new SqlCommand();
+                cmd2.CommandText = "select Id from KatSorumluPersoneller where Blok='" + ortakFormIslemleri.odaBlokGetir(mevcutOdaNo) + "' and KatNo='" + ortakFormIslemleri.odaKatGetir(mevcutOdaNo) + "'";
+                cmd2.Connection = connection2;
+                cmd2.CommandType = CommandType.Text;
+                SqlDataReader Dr2;
+                connection2.Open();
+                Dr2 = cmd2.ExecuteReader();
+                while (Dr2.Read())
+                {
+                    cmbSorumluPersonel.SelectedIndex = Convert.ToInt32(Dr2["Id"]) - 1;
+                }
+                connection.Close();
+
             }
         }
 
@@ -209,7 +226,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private bool OdaOlusturKontrol()
         {
-            if (!string.IsNullOrEmpty(txtOdaNo.Text) && !string.IsNullOrEmpty(txtCiftKisiYatakSayisi.Text) && !string.IsNullOrEmpty(txtTekKisilikYatakSayisi.Text))
+            if (!string.IsNullOrEmpty(txtOdaNo.Text) && !string.IsNullOrEmpty(txtCiftKisiYatakSayisi.Text) && !string.IsNullOrEmpty(txtTekKisilikYatakSayisi.Text) && !string.IsNullOrEmpty(cmbBlok.SelectedItem.ToString()))
             {
                 return true;
             }
@@ -225,10 +242,24 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = connection;
-                    connection.Open(); //BLOK ID EKLE
+                    connection.Open(); 
                     cmd.CommandText = "insert into Oda values ('" + txtOdaNo.Text + "'," + txtCiftKisiYatakSayisi.Text + "," + txtTekKisilikYatakSayisi.Text + ",'" + cmbOdaTürü.SelectedItem.ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbBlok.SelectedItem.ToString() + "','" + cmbKat.SelectedItem.ToString() + "',1,'Boş')";
                     cmd.ExecuteNonQuery();
                     connection.Close();
+                    // Oda sorumlusu oluşturma işlemi
+
+                    string[] parcalar;
+                    parcalar = cmbSorumluPersonel.SelectedItem.ToString().Split(' ');
+
+                    SqlConnection connection2 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    SqlCommand cmd2 = new SqlCommand();
+                    cmd2.Connection = connection2;
+                    connection2.Open();
+                    cmd2.CommandText = "insert into KatSorumluPersoneller values ('" + parcalar[0] + "','"+ parcalar[1] + "','" + cmbBlok.SelectedItem.ToString() + "','" + cmbKat.SelectedItem.ToString() + "')";
+                    cmd2.ExecuteNonQuery();
+                    connection2.Close();
+
+
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
                         HotelWarningForm.Show(Localization.OdaEklemeBasarili, Localization.Tamam,0);
@@ -245,10 +276,24 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     cmd.CommandText = "Update Oda set OdaNo='" + txtOdaNo.Text + "',ikiKisilikYatak=" + txtCiftKisiYatakSayisi.Text + ",tekKisilikYatak=" + txtTekKisilikYatakSayisi.Text + ",odaTip='" + cmbOdaTürü.SelectedItem.ToString() + "',blok='"  + cmbBlok.SelectedItem.ToString() + "',katAdi='" + cmbKat.SelectedItem.ToString() + "'where OdaNo='"+mevcutOdaNo+"'";
                     cmd.ExecuteNonQuery();
                     connection.Close();
+
+
+                    string[] parcalar;
+                    parcalar = cmbSorumluPersonel.SelectedItem.ToString().Split(' ');
+
+                    SqlConnection connection2 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    SqlCommand cmd2 = new SqlCommand();
+                    cmd2.Connection = connection2;
+                    connection2.Open();
+                    cmd2.CommandText = "update KatSorumluPersoneller set PersonelAdi='" + parcalar[0] + "',PersonelSoyadi='" + parcalar[1] + "' where Blok='" + cmbBlok.SelectedItem.ToString() + "' and KatNo='" + cmbKat.SelectedItem.ToString() + "'";
+                    cmd2.ExecuteNonQuery();
+                    connection2.Close();
+
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                     {
                         HotelWarningForm.Show(Localization.OdaDuzenlemeBasarili,Localization.Tamam,0);
                     }
+                    this.Close();
                 }
             }
             else

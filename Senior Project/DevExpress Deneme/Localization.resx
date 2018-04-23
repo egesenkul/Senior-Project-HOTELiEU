@@ -882,4 +882,10 @@
   <data name="tileItemMusteriTanimlama" xml:space="preserve">
     <value>Müşteri tanımlama</value>
   </data>
+  <data name="lblSorumluBlok" xml:space="preserve">
+    <value>Sorumlu Olduğu Blok:</value>
+  </data>
+  <data name="lblSorumluKat" xml:space="preserve">
+    <value>Sorumlu Olduğu Kat:</value>
+  </data>
 </root>

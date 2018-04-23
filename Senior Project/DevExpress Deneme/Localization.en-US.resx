@@ -879,4 +879,10 @@
   <data name="tileItemMusteriTanimlama" xml:space="preserve">
     <value>Create Customer</value>
   </data>
+  <data name="lblSorumluBlok" xml:space="preserve">
+    <value>Responsible Blok</value>
+  </data>
+  <data name="lblSorumluKat" xml:space="preserve">
+    <value>Responsible Floor</value>
+  </data>
 </root>

@@ -1159,6 +1159,24 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sorumlu Olduğu Blok:.
+        /// </summary>
+        internal static string lblSorumluBlok {
+            get {
+                return ResourceManager.GetString("lblSorumluBlok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorumlu Olduğu Kat:.
+        /// </summary>
+        internal static string lblSorumluKat {
+            get {
+                return ResourceManager.GetString("lblSorumluKat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tanımlı Yetki.
         /// </summary>
         internal static string lblTanımlıYetki {
