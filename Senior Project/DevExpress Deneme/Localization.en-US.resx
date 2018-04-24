@@ -933,4 +933,7 @@
   <data name="geriAlinacakOdayiSecin" xml:space="preserve">
     <value>Please first select room which you want to recover</value>
   </data>
+  <data name="checkoutKayitSec" xml:space="preserve">
+    <value>Please first select entry which you want to check-out</value>
+  </data>
 </root>

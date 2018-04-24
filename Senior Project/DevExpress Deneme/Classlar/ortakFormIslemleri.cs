@@ -283,5 +283,15 @@ namespace Otel_Uygulamasi.Classlar
             connection.Close();
             return blok;
         }
+
+        public static bool TarihKontrol(DateTime girisTarihi, DateTime cikisTarihi)
+        {
+            if (cikisTarihi > girisTarihi)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

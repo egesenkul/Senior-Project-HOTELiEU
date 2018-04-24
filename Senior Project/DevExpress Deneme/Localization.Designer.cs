@@ -340,6 +340,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check-out işlemi için önce bir kayıt seçiniz.
+        /// </summary>
+        internal static string checkoutKayitSec {
+            get {
+                return ResourceManager.GetString("checkoutKayitSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kullanıcı adı ve şifremi hatırla.
         /// </summary>
         internal static string chHatirla {

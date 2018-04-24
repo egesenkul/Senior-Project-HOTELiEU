@@ -936,4 +936,7 @@
   <data name="geriAlinacakOdayiSecin" xml:space="preserve">
     <value>Lütfen önce geri alınacak odayı seçin</value>
   </data>
+  <data name="checkoutKayitSec" xml:space="preserve">
+    <value>Check-out işlemi için önce bir kayıt seçiniz</value>
+  </data>
 </root>

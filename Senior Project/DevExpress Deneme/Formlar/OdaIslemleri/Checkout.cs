@@ -57,10 +57,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             sqlDataAdap.Fill(dtRecord);
             metroGrid1.DataSource = dtRecord;
 
-            //GridView Column isimlerini değiştirmek için
-            //datatable boş değilse bunları yapsın 
-            if (dtRecord.Rows.Count > 0)
-            {
+
                 metroGrid1.Columns[0].Visible = false; 
                 metroGrid1.Columns[1].HeaderText = Localization.OdaNumarasi;
                 metroGrid1.Columns[2].HeaderText = Localization.GirisTarihi;
@@ -70,7 +67,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 metroGrid1.Columns[6].Visible = false;
                 metroGrid1.Columns[7].Visible = false;
                 metroGrid1.Columns[8].Visible = false;
-            }
+            
             //GridView yayılsın
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -138,21 +135,28 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = connection;
-            connection.Open();
-            //            cmd.CommandText = "update OdaHareket set islemTipi='Check-out', Onay=1, islemTarihii2='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where OdaNo='" + metroGrid1.SelectedCells[1].Value.ToString()+"' and musteriPersonel='"+metroGrid1.SelectedCells[4].Value.ToString()+"' and islemTipi='Check-in' and islemTarihi1='"+Convert.ToDateTime(metroGrid1.SelectedCells[2].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'";
-            musteriActiveGuncelle(metroGrid1.SelectedCells[7].Value.ToString(), TabloKontrol(metroGrid1.SelectedCells[7].Value.ToString()));
-            cmd.CommandText = "update OdaHareket set islemTipi='Check-out', Onay=1, islemTarihii2='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where OdaNo='" + metroGrid1.SelectedCells[1].Value.ToString()+"' and musteriPersonel='"+metroGrid1.SelectedCells[4].Value.ToString()+"' and islemTipi='Check-in' and islemTarihi1='"+Convert.ToDateTime(metroGrid1.SelectedCells[2].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'";
-            cmd.ExecuteNonQuery();
-            connection.Close();
-            if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+            if (metroGrid1.SelectedCells.Count > 0)
             {
-                HotelWarningForm.Show(Localization.CheckoutBasarili, Localization.Tamam,0);
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connection;
+                connection.Open();
+                //            cmd.CommandText = "update OdaHareket set islemTipi='Check-out', Onay=1, islemTarihii2='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where OdaNo='" + metroGrid1.SelectedCells[1].Value.ToString()+"' and musteriPersonel='"+metroGrid1.SelectedCells[4].Value.ToString()+"' and islemTipi='Check-in' and islemTarihi1='"+Convert.ToDateTime(metroGrid1.SelectedCells[2].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'";
+                musteriActiveGuncelle(metroGrid1.SelectedCells[7].Value.ToString(), TabloKontrol(metroGrid1.SelectedCells[7].Value.ToString()));
+                cmd.CommandText = "update OdaHareket set islemTipi='Check-out', Onay=1, islemTarihii2='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where OdaNo='" + metroGrid1.SelectedCells[1].Value.ToString() + "' and musteriPersonel='" + metroGrid1.SelectedCells[4].Value.ToString() + "' and islemTipi='Check-in' and islemTarihi1='" + Convert.ToDateTime(metroGrid1.SelectedCells[2].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'";
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                {
+                    HotelWarningForm.Show(Localization.CheckoutBasarili, Localization.Tamam, 0);
+                }
+                ortakFormIslemleri.textBoxTemizle(txtOdaNumarasi, txtAd);
+                FillDataGridView("select * from OdaHareket where Onay=0 and islemTipi='Check-in'");
             }
-            ortakFormIslemleri.textBoxTemizle(txtOdaNumarasi, txtAd);
-            FillDataGridView("select * from OdaHareket where Onay=0 and islemTipi='Check-in'");
+            else
+            {
+                HotelWarningForm.Show(Localization.checkoutKayitSec, Localization.Tamam, 1);
+            }
         }
     }
 }
