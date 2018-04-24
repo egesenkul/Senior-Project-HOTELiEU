@@ -912,6 +912,9 @@
   <data name="lblKatilacaklar" xml:space="preserve">
     <value>Katılacaklar</value>
   </data>
+  <data name="lblKatilimKriter" xml:space="preserve">
+    <value>Katılım Kriteri</value>
+  </data>
   <data name="personelGorevlendir" xml:space="preserve">
     <value>Personel Görevlendir</value>
   </data>
