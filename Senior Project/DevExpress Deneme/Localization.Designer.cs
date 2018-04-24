@@ -637,6 +637,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lütfen önce geri alınacak odayı seçin.
+        /// </summary>
+        internal static string geriAlinacakOdayiSecin {
+            get {
+                return ResourceManager.GetString("geriAlinacakOdayiSecin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Giriş Tarihi.
         /// </summary>
         internal static string GirisTarihi {

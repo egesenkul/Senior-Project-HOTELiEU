@@ -930,4 +930,7 @@
   <data name="yemekTuru" xml:space="preserve">
     <value>Meal Type</value>
   </data>
+  <data name="geriAlinacakOdayiSecin" xml:space="preserve">
+    <value>Please first select room which you want to recover</value>
+  </data>
 </root>

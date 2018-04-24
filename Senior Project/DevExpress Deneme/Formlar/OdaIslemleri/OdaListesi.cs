@@ -75,7 +75,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             btnSecenekler.Text = Localization.btnSecenekler;
             btnTemizle.Text = Localization.btnTemizle;
             silinmişOdalarıGösterToolStripMenuItem.Text = Localization.silinmisOdalariGoster;
-            silinmişOdayıGeriAlToolStripMenuItem.Text = Localization.silinmisOdalariGoster;
+            silinmişOdayıGeriAlToolStripMenuItem.Text = Localization.silinmisOdayiGeriAl;
             düzenleToolStripMenuItem.Text = Localization.Duzenle;
         }
 
@@ -181,8 +181,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
             //GridView Column isimlerini değiştirmek için
             //datatable boş değilse bunları yapsın 
-            if (dtRecord.Rows.Count > 0)
-            {
+            
                 metroGrid1.Columns[0].HeaderText = Localization.OdaNumarasi;
                 metroGrid1.Columns[1].HeaderText = Localization.ikiKisilikYatakSayisi;
                 metroGrid1.Columns[2].HeaderText = Localization.tekKisilikYatakSayisi;
@@ -196,7 +195,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 metroGrid1.Columns[7].HeaderText = "Oda Durumu";
                 metroGrid1.Columns[7].Visible = false;
                 metroGrid1.Columns[8].Visible = false;
-            }
             //GridView yayılsın
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -286,16 +284,23 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         private void silinmişOdayıGeriAlToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Veri tabanına göster bölümü ekle
-            SqlCommand cmd = new SqlCommand();
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            cmd.Connection = connection;
-            connection.Open();
-            cmd.CommandText = "update Oda set Gorunur=1 where OdaNo='" + metroGrid1.SelectedCells[0].Value.ToString() + "'";
-            // Personel türünü Rıza'ya sor.
-            cmd.ExecuteNonQuery();
-            connection.Close();
-            HotelWarningForm.Show(Localization.odaGeriAlmaBasarili, Localization.Tamam,0);
-            btnFiltrele.PerformClick();
+            if (metroGrid1.SelectedCells.Count > 0)
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                cmd.Connection = connection;
+                connection.Open();
+                cmd.CommandText = "update Oda set Gorunur=1 where OdaNo='" + metroGrid1.SelectedCells[0].Value.ToString() + "'";
+                // Personel türünü Rıza'ya sor.
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                HotelWarningForm.Show(Localization.odaGeriAlmaBasarili, Localization.Tamam, 0);
+                btnFiltrele.PerformClick();
+            }
+            else
+            {
+                HotelWarningForm.Show(Localization.geriAlinacakOdayiSecin, Localization.Tamam, 1);
+            }
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)

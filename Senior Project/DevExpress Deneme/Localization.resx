@@ -933,4 +933,7 @@
   <data name="yemekTuru" xml:space="preserve">
     <value>Yemek Türü</value>
   </data>
+  <data name="geriAlinacakOdayiSecin" xml:space="preserve">
+    <value>Lütfen önce geri alınacak odayı seçin</value>
+  </data>
 </root>
