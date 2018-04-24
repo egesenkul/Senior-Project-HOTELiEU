@@ -193,7 +193,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
             SqlCommand cmd2 = new SqlCommand();
             cmd2.Connection = connection;
             connection.Open();
-            cmd2.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + cmbTemizlikci.SelectedItem.ToString() + "', 'Temizlik', 0, '" + ortakFormIslemleri.PersonelMailGetir(parcalar[0], parcalar[1], "Temizlikçi")+"','" + ortakFormIslemleri.odaTipGetir(ListeOdalar.SelectedItems[0].Text)+"')";
+            cmd2.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + cmbTemizlikci.SelectedItem.ToString() + "', 'Temizlik', 0, '" + ortakFormIslemleri.PersonelMailGetir(parcalar[0], parcalar[1], "Temizlikçi")+"','" + ortakFormIslemleri.odaTipGetir(ListeOdalar.SelectedItems[0].Text)+ "','"+ortakFormIslemleri.odaBlokGetir(ListeOdalar.SelectedItems[0].Text) + "','"+ortakFormIslemleri.odaKatGetir(ListeOdalar.SelectedItems[0].Text)+"')";
             cmd2.ExecuteNonQuery();
             connection.Close();
 

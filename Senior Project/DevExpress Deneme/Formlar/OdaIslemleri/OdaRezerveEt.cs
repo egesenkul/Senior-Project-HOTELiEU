@@ -379,7 +379,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 cmd.Connection = connection;
                 connection.Open();
                 // müşteri mail adresini ekle
-                cmd.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "','" + Convert.ToDateTime(dtGirisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','Rezervasyon',0,'" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "','"+ortakFormIslemleri.odaTipGetir(ListeOdalar.SelectedItems[0].Text)+"')";
+                cmd.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "','" + Convert.ToDateTime(dtGirisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','Rezervasyon',0,'" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "','"+ortakFormIslemleri.odaTipGetir(ListeOdalar.SelectedItems[0].Text)+ "','" + ortakFormIslemleri.odaBlokGetir(ListeOdalar.SelectedItems[0].Text) + "','" + ortakFormIslemleri.odaKatGetir(ListeOdalar.SelectedItems[0].Text) + "')";
 
                 cmd.ExecuteNonQuery();
                 connection.Close();
