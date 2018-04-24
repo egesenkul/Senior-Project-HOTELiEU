@@ -97,6 +97,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Başlangıç Zamanı.
+        /// </summary>
+        internal static string baslangicZamani {
+            get {
+                return ResourceManager.GetString("baslangicZamani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blok başarılı bir şekilde düzenlenmiştir..
         /// </summary>
         internal static string BlokDuzenlendi {
@@ -160,6 +169,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ekle.
+        /// </summary>
+        internal static string btnEkle {
+            get {
+                return ResourceManager.GetString("btnEkle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filtrele.
         /// </summary>
         internal static string btnFiltrele {
@@ -183,6 +201,24 @@ namespace Otel_Uygulamasi {
         internal static string btnGonder {
             get {
                 return ResourceManager.GetString("btnGonder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Görevlendir.
+        /// </summary>
+        internal static string btnGorevlendir {
+            get {
+                return ResourceManager.GetString("btnGorevlendir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Görevlendirme.
+        /// </summary>
+        internal static string btnGorevlendirme {
+            get {
+                return ResourceManager.GetString("btnGorevlendirme", resourceCulture);
             }
         }
         
@@ -237,6 +273,15 @@ namespace Otel_Uygulamasi {
         internal static string btnKlavyeAc {
             get {
                 return ResourceManager.GetString("btnKlavyeAc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Onayla.
+        /// </summary>
+        internal static string btnOnayla {
+            get {
+                return ResourceManager.GetString("btnOnayla", resourceCulture);
             }
         }
         
@@ -871,6 +916,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitiş Zamanı.
+        /// </summary>
+        internal static string lblBitisZamani {
+            get {
+                return ResourceManager.GetString("lblBitisZamani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blok Adı.
         /// </summary>
         internal static string lblBlokAdi {
@@ -934,6 +988,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Görevli Personeller.
+        /// </summary>
+        internal static string lblGorevliPersoneller {
+            get {
+                return ResourceManager.GetString("lblGorevliPersoneller", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Güncelleme Tarihi:.
         /// </summary>
         internal static string lblGuncellemeTarihi {
@@ -993,6 +1056,24 @@ namespace Otel_Uygulamasi {
         internal static string lblKategoriAitBolum {
             get {
                 return ResourceManager.GetString("lblKategoriAitBolum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Katılacaklar.
+        /// </summary>
+        internal static string lblKatilacaklar {
+            get {
+                return ResourceManager.GetString("lblKatilacaklar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Katılım Kriteri.
+        /// </summary>
+        internal static string lblKatilimKriter {
+            get {
+                return ResourceManager.GetString("lblKatilimKriter", resourceCulture);
             }
         }
         
@@ -1582,6 +1663,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personel Görevlendir.
+        /// </summary>
+        internal static string personelGorevlendir {
+            get {
+                return ResourceManager.GetString("personelGorevlendir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başarılı bir şekilde personel güncellenmiştir.
         /// </summary>
         internal static string personelGuncellemeBasarili {
@@ -1596,6 +1686,15 @@ namespace Otel_Uygulamasi {
         internal static string personelKontrol {
             get {
                 return ResourceManager.GetString("personelKontrol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personel Seç.
+        /// </summary>
+        internal static string personelSecimi {
+            get {
+                return ResourceManager.GetString("personelSecimi", resourceCulture);
             }
         }
         
@@ -1929,6 +2028,15 @@ namespace Otel_Uygulamasi {
         internal static string silmekIcınOdaSec {
             get {
                 return ResourceManager.GetString("silmekIcınOdaSec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Son Gün.
+        /// </summary>
+        internal static string sonGun {
+            get {
+                return ResourceManager.GetString("sonGun", resourceCulture);
             }
         }
         
@@ -2338,6 +2446,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yemek Adı.
+        /// </summary>
+        internal static string yemekAdi {
+            get {
+                return ResourceManager.GetString("yemekAdi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yemek adı boş olamaz.
         /// </summary>
         internal static string yemekAdiBosGecilemez {
@@ -2356,11 +2473,29 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yemek Salonu.
+        /// </summary>
+        internal static string yemekSalonu {
+            get {
+                return ResourceManager.GetString("yemekSalonu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başarılı bir şekilde yemek silinmiştir.
         /// </summary>
         internal static string yemekSilmeBasarili {
             get {
                 return ResourceManager.GetString("yemekSilmeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yemek Türü.
+        /// </summary>
+        internal static string yemekTuru {
+            get {
+                return ResourceManager.GetString("yemekTuru", resourceCulture);
             }
         }
         

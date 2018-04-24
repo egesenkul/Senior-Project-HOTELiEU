@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.dtSonGun = new DevExpress.XtraEditors.DateEdit();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.lblOgunSonGunu = new MetroFramework.Controls.MetroLabel();
             this.dtOgunBit = new DevExpress.XtraEditors.DateEdit();
             this.btnGorevlendirme = new MetroFramework.Controls.MetroButton();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.lblGorevliPersoneller = new MetroFramework.Controls.MetroLabel();
+            this.lblPersonelSecimi = new MetroFramework.Controls.MetroLabel();
             this.listeGorevliler = new MetroFramework.Controls.MetroListView();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.lblPersonelKategorisi = new MetroFramework.Controls.MetroLabel();
             this.btnGorevlendir = new MetroFramework.Controls.MetroButton();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.lblPersonelGorevlendir = new MetroFramework.Controls.MetroLabel();
             this.cmbPersonelKategorisi = new MetroFramework.Controls.MetroComboBox();
             this.listePersonel = new MetroFramework.Controls.MetroListView();
             this.dtOgunBas = new DevExpress.XtraEditors.DateEdit();
@@ -47,41 +47,41 @@
             this.btnYemekSalonuEkle = new MetroFramework.Controls.MetroButton();
             this.txtAciklama = new MetroFramework.Controls.MetroTextBox();
             this.cmbYemekTürü = new MetroFramework.Controls.MetroComboBox();
-            this.Açıklama = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.lblAciklama = new MetroFramework.Controls.MetroLabel();
+            this.lblYemekTuru = new MetroFramework.Controls.MetroLabel();
+            this.lblBitisZamani = new MetroFramework.Controls.MetroLabel();
+            this.lbBaslangicZamani = new MetroFramework.Controls.MetroLabel();
             this.btnTemizle = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnKlavyeAc = new MetroFramework.Controls.MetroButton();
+            this.btnKapat = new MetroFramework.Controls.MetroButton();
+            this.btnKaydet = new MetroFramework.Controls.MetroButton();
             this.cmbYemekSalonu = new MetroFramework.Controls.MetroComboBox();
             this.txtOgunAdi = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblYemekSalonu = new MetroFramework.Controls.MetroLabel();
+            this.lblOgunAdi = new MetroFramework.Controls.MetroLabel();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtSonGun.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtSonGun.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtOgunBit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtSonGun.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtOgunBit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtOgunBas.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtOgunBit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtOgunBas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtOgunBas.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
             this.metroPanel1.Controls.Add(this.dtSonGun);
-            this.metroPanel1.Controls.Add(this.metroLabel2);
+            this.metroPanel1.Controls.Add(this.lblOgunSonGunu);
             this.metroPanel1.Controls.Add(this.dtOgunBit);
             this.metroPanel1.Controls.Add(this.btnGorevlendirme);
-            this.metroPanel1.Controls.Add(this.metroLabel10);
-            this.metroPanel1.Controls.Add(this.metroLabel9);
+            this.metroPanel1.Controls.Add(this.lblGorevliPersoneller);
+            this.metroPanel1.Controls.Add(this.lblPersonelSecimi);
             this.metroPanel1.Controls.Add(this.listeGorevliler);
-            this.metroPanel1.Controls.Add(this.metroLabel8);
+            this.metroPanel1.Controls.Add(this.lblPersonelKategorisi);
             this.metroPanel1.Controls.Add(this.btnGorevlendir);
-            this.metroPanel1.Controls.Add(this.metroLabel6);
+            this.metroPanel1.Controls.Add(this.lblPersonelGorevlendir);
             this.metroPanel1.Controls.Add(this.cmbPersonelKategorisi);
             this.metroPanel1.Controls.Add(this.listePersonel);
             this.metroPanel1.Controls.Add(this.dtOgunBas);
@@ -89,25 +89,25 @@
             this.metroPanel1.Controls.Add(this.btnYemekSalonuEkle);
             this.metroPanel1.Controls.Add(this.txtAciklama);
             this.metroPanel1.Controls.Add(this.cmbYemekTürü);
-            this.metroPanel1.Controls.Add(this.Açıklama);
-            this.metroPanel1.Controls.Add(this.metroLabel7);
-            this.metroPanel1.Controls.Add(this.metroLabel4);
-            this.metroPanel1.Controls.Add(this.metroLabel5);
+            this.metroPanel1.Controls.Add(this.lblAciklama);
+            this.metroPanel1.Controls.Add(this.lblYemekTuru);
+            this.metroPanel1.Controls.Add(this.lblBitisZamani);
+            this.metroPanel1.Controls.Add(this.lbBaslangicZamani);
             this.metroPanel1.Controls.Add(this.btnTemizle);
-            this.metroPanel1.Controls.Add(this.metroButton3);
-            this.metroPanel1.Controls.Add(this.metroButton2);
-            this.metroPanel1.Controls.Add(this.metroButton1);
+            this.metroPanel1.Controls.Add(this.btnKlavyeAc);
+            this.metroPanel1.Controls.Add(this.btnKapat);
+            this.metroPanel1.Controls.Add(this.btnKaydet);
             this.metroPanel1.Controls.Add(this.cmbYemekSalonu);
             this.metroPanel1.Controls.Add(this.txtOgunAdi);
-            this.metroPanel1.Controls.Add(this.metroLabel3);
-            this.metroPanel1.Controls.Add(this.metroLabel1);
+            this.metroPanel1.Controls.Add(this.lblYemekSalonu);
+            this.metroPanel1.Controls.Add(this.lblOgunAdi);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(792, 700);
+            this.metroPanel1.Size = new System.Drawing.Size(1144, 700);
             this.metroPanel1.TabIndex = 1;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.UseCustomForeColor = true;
@@ -119,13 +119,19 @@
             // 
             this.dtSonGun.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtSonGun.EditValue = new System.DateTime(2018, 3, 22, 0, 0, 0, 0);
-            this.dtSonGun.Location = new System.Drawing.Point(695, 63);
+            this.dtSonGun.Location = new System.Drawing.Point(871, 63);
             this.dtSonGun.Margin = new System.Windows.Forms.Padding(2);
             this.dtSonGun.Name = "dtSonGun";
+            // 
+            // 
+            // 
             this.dtSonGun.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtSonGun.Properties.Appearance.Options.UseFont = true;
             this.dtSonGun.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            // 
+            // 
+            // 
             this.dtSonGun.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtSonGun.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -142,31 +148,37 @@
             this.dtSonGun.Size = new System.Drawing.Size(164, 26);
             this.dtSonGun.TabIndex = 46;
             // 
-            // metroLabel2
+            // lblOgunSonGunu
             // 
-            this.metroLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(489, 66);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(149, 25);
-            this.metroLabel2.TabIndex = 45;
-            this.metroLabel2.Text = "Öğün Son Günü :";
-            this.metroLabel2.UseCustomBackColor = true;
-            this.metroLabel2.UseCustomForeColor = true;
+            this.lblOgunSonGunu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblOgunSonGunu.AutoSize = true;
+            this.lblOgunSonGunu.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblOgunSonGunu.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblOgunSonGunu.Location = new System.Drawing.Point(665, 66);
+            this.lblOgunSonGunu.Name = "lblOgunSonGunu";
+            this.lblOgunSonGunu.Size = new System.Drawing.Size(149, 25);
+            this.lblOgunSonGunu.TabIndex = 45;
+            this.lblOgunSonGunu.Text = "Öğün Son Günü :";
+            this.lblOgunSonGunu.UseCustomBackColor = true;
+            this.lblOgunSonGunu.UseCustomForeColor = true;
             // 
             // dtOgunBit
             // 
             this.dtOgunBit.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtOgunBit.EditValue = new System.DateTime(2018, 3, 22, 0, 0, 0, 0);
-            this.dtOgunBit.Location = new System.Drawing.Point(695, 21);
+            this.dtOgunBit.Location = new System.Drawing.Point(871, 21);
             this.dtOgunBit.Margin = new System.Windows.Forms.Padding(2);
             this.dtOgunBit.Name = "dtOgunBit";
+            // 
+            // 
+            // 
             this.dtOgunBit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtOgunBit.Properties.Appearance.Options.UseFont = true;
             this.dtOgunBit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            // 
+            // 
+            // 
             this.dtOgunBit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtOgunBit.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -187,7 +199,7 @@
             // 
             this.btnGorevlendirme.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnGorevlendirme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGorevlendirme.Location = new System.Drawing.Point(372, 482);
+            this.btnGorevlendirme.Location = new System.Drawing.Point(548, 482);
             this.btnGorevlendirme.Name = "btnGorevlendirme";
             this.btnGorevlendirme.Size = new System.Drawing.Size(125, 40);
             this.btnGorevlendirme.TabIndex = 43;
@@ -197,33 +209,33 @@
             this.btnGorevlendirme.UseSelectable = true;
             this.btnGorevlendirme.Click += new System.EventHandler(this.metroButton5_Click);
             // 
-            // metroLabel10
+            // lblGorevliPersoneller
             // 
-            this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel10.Location = new System.Drawing.Point(578, 335);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(214, 25);
-            this.metroLabel10.TabIndex = 42;
-            this.metroLabel10.Text = "GÖREVLİ PERSONELLER";
-            this.metroLabel10.UseCustomBackColor = true;
-            this.metroLabel10.UseCustomForeColor = true;
+            this.lblGorevliPersoneller.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblGorevliPersoneller.AutoSize = true;
+            this.lblGorevliPersoneller.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblGorevliPersoneller.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblGorevliPersoneller.Location = new System.Drawing.Point(754, 335);
+            this.lblGorevliPersoneller.Name = "lblGorevliPersoneller";
+            this.lblGorevliPersoneller.Size = new System.Drawing.Size(214, 25);
+            this.lblGorevliPersoneller.TabIndex = 42;
+            this.lblGorevliPersoneller.Text = "GÖREVLİ PERSONELLER";
+            this.lblGorevliPersoneller.UseCustomBackColor = true;
+            this.lblGorevliPersoneller.UseCustomForeColor = true;
             // 
-            // metroLabel9
+            // lblPersonelSecimi
             // 
-            this.metroLabel9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel9.Location = new System.Drawing.Point(92, 335);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(167, 25);
-            this.metroLabel9.TabIndex = 41;
-            this.metroLabel9.Text = "PERSONEL SEÇİMİ";
-            this.metroLabel9.UseCustomBackColor = true;
-            this.metroLabel9.UseCustomForeColor = true;
+            this.lblPersonelSecimi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblPersonelSecimi.AutoSize = true;
+            this.lblPersonelSecimi.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblPersonelSecimi.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblPersonelSecimi.Location = new System.Drawing.Point(268, 335);
+            this.lblPersonelSecimi.Name = "lblPersonelSecimi";
+            this.lblPersonelSecimi.Size = new System.Drawing.Size(167, 25);
+            this.lblPersonelSecimi.TabIndex = 41;
+            this.lblPersonelSecimi.Text = "PERSONEL SEÇİMİ";
+            this.lblPersonelSecimi.UseCustomBackColor = true;
+            this.lblPersonelSecimi.UseCustomForeColor = true;
             // 
             // listeGorevliler
             // 
@@ -231,7 +243,7 @@
             this.listeGorevliler.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listeGorevliler.FullRowSelect = true;
             this.listeGorevliler.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listeGorevliler.Location = new System.Drawing.Point(540, 364);
+            this.listeGorevliler.Location = new System.Drawing.Point(716, 364);
             this.listeGorevliler.MultiSelect = false;
             this.listeGorevliler.Name = "listeGorevliler";
             this.listeGorevliler.OwnerDraw = true;
@@ -246,25 +258,25 @@
             this.listeGorevliler.ItemsRemoved += new System.Action<MetroFramework.Controls.MetroListView>(this.listeGorevliler_ItemsRemoved);
             this.listeGorevliler.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listeGorevliler_MouseDoubleClick);
             // 
-            // metroLabel8
+            // lblPersonelKategorisi
             // 
-            this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(-106, 383);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(171, 25);
-            this.metroLabel8.TabIndex = 39;
-            this.metroLabel8.Text = "Personel Kategorisi :";
-            this.metroLabel8.UseCustomBackColor = true;
-            this.metroLabel8.UseCustomForeColor = true;
+            this.lblPersonelKategorisi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblPersonelKategorisi.AutoSize = true;
+            this.lblPersonelKategorisi.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblPersonelKategorisi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblPersonelKategorisi.Location = new System.Drawing.Point(70, 383);
+            this.lblPersonelKategorisi.Name = "lblPersonelKategorisi";
+            this.lblPersonelKategorisi.Size = new System.Drawing.Size(171, 25);
+            this.lblPersonelKategorisi.TabIndex = 39;
+            this.lblPersonelKategorisi.Text = "Personel Kategorisi :";
+            this.lblPersonelKategorisi.UseCustomBackColor = true;
+            this.lblPersonelKategorisi.UseCustomForeColor = true;
             // 
             // btnGorevlendir
             // 
             this.btnGorevlendir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnGorevlendir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGorevlendir.Location = new System.Drawing.Point(372, 425);
+            this.btnGorevlendir.Location = new System.Drawing.Point(548, 425);
             this.btnGorevlendir.Name = "btnGorevlendir";
             this.btnGorevlendir.Size = new System.Drawing.Size(125, 40);
             this.btnGorevlendir.TabIndex = 39;
@@ -272,19 +284,19 @@
             this.btnGorevlendir.UseSelectable = true;
             this.btnGorevlendir.Click += new System.EventHandler(this.btnGorevlendir_Click);
             // 
-            // metroLabel6
+            // lblPersonelGorevlendir
             // 
-            this.metroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel6.Location = new System.Drawing.Point(313, 289);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(232, 25);
-            this.metroLabel6.TabIndex = 38;
-            this.metroLabel6.Text = "PERSONEL GÖREVLENDİR";
-            this.metroLabel6.UseCustomBackColor = true;
-            this.metroLabel6.UseCustomForeColor = true;
+            this.lblPersonelGorevlendir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblPersonelGorevlendir.AutoSize = true;
+            this.lblPersonelGorevlendir.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblPersonelGorevlendir.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblPersonelGorevlendir.Location = new System.Drawing.Point(489, 289);
+            this.lblPersonelGorevlendir.Name = "lblPersonelGorevlendir";
+            this.lblPersonelGorevlendir.Size = new System.Drawing.Size(232, 25);
+            this.lblPersonelGorevlendir.TabIndex = 38;
+            this.lblPersonelGorevlendir.Text = "PERSONEL GÖREVLENDİR";
+            this.lblPersonelGorevlendir.UseCustomBackColor = true;
+            this.lblPersonelGorevlendir.UseCustomForeColor = true;
             // 
             // cmbPersonelKategorisi
             // 
@@ -292,7 +304,7 @@
             this.cmbPersonelKategorisi.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbPersonelKategorisi.FormattingEnabled = true;
             this.cmbPersonelKategorisi.ItemHeight = 29;
-            this.cmbPersonelKategorisi.Location = new System.Drawing.Point(92, 373);
+            this.cmbPersonelKategorisi.Location = new System.Drawing.Point(268, 373);
             this.cmbPersonelKategorisi.Name = "cmbPersonelKategorisi";
             this.cmbPersonelKategorisi.Size = new System.Drawing.Size(238, 35);
             this.cmbPersonelKategorisi.TabIndex = 37;
@@ -307,7 +319,7 @@
             this.listePersonel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listePersonel.FullRowSelect = true;
             this.listePersonel.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listePersonel.Location = new System.Drawing.Point(0, 425);
+            this.listePersonel.Location = new System.Drawing.Point(176, 425);
             this.listePersonel.Name = "listePersonel";
             this.listePersonel.OwnerDraw = true;
             this.listePersonel.Size = new System.Drawing.Size(330, 163);
@@ -323,13 +335,19 @@
             // 
             this.dtOgunBas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtOgunBas.EditValue = new System.DateTime(2018, 3, 22, 0, 0, 0, 0);
-            this.dtOgunBas.Location = new System.Drawing.Point(170, 65);
+            this.dtOgunBas.Location = new System.Drawing.Point(346, 65);
             this.dtOgunBas.Margin = new System.Windows.Forms.Padding(2);
             this.dtOgunBas.Name = "dtOgunBas";
+            // 
+            // 
+            // 
             this.dtOgunBas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtOgunBas.Properties.Appearance.Options.UseFont = true;
             this.dtOgunBas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            // 
+            // 
+            // 
             this.dtOgunBas.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtOgunBas.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -349,7 +367,7 @@
             // btnYemekTuruEkle
             // 
             this.btnYemekTuruEkle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnYemekTuruEkle.Location = new System.Drawing.Point(881, 116);
+            this.btnYemekTuruEkle.Location = new System.Drawing.Point(1057, 116);
             this.btnYemekTuruEkle.Name = "btnYemekTuruEkle";
             this.btnYemekTuruEkle.Size = new System.Drawing.Size(35, 35);
             this.btnYemekTuruEkle.TabIndex = 34;
@@ -360,7 +378,7 @@
             // btnYemekSalonuEkle
             // 
             this.btnYemekSalonuEkle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnYemekSalonuEkle.Location = new System.Drawing.Point(356, 106);
+            this.btnYemekSalonuEkle.Location = new System.Drawing.Point(532, 106);
             this.btnYemekSalonuEkle.Name = "btnYemekSalonuEkle";
             this.btnYemekSalonuEkle.Size = new System.Drawing.Size(35, 35);
             this.btnYemekSalonuEkle.TabIndex = 33;
@@ -375,9 +393,9 @@
             // 
             // 
             this.txtAciklama.CustomButton.Image = null;
-            this.txtAciklama.CustomButton.Location = new System.Drawing.Point(545, 2);
+            this.txtAciklama.CustomButton.Location = new System.Drawing.Point(571, 2);
             this.txtAciklama.CustomButton.Name = "";
-            this.txtAciklama.CustomButton.Size = new System.Drawing.Size(95, 95);
+            this.txtAciklama.CustomButton.Size = new System.Drawing.Size(69, 69);
             this.txtAciklama.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtAciklama.CustomButton.TabIndex = 1;
             this.txtAciklama.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -386,7 +404,7 @@
             this.txtAciklama.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtAciklama.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtAciklama.Lines = new string[0];
-            this.txtAciklama.Location = new System.Drawing.Point(170, 162);
+            this.txtAciklama.Location = new System.Drawing.Point(346, 162);
             this.txtAciklama.MaxLength = 32767;
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
@@ -413,7 +431,7 @@
             this.cmbYemekTürü.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbYemekTürü.FormattingEnabled = true;
             this.cmbYemekTürü.ItemHeight = 29;
-            this.cmbYemekTürü.Location = new System.Drawing.Point(695, 116);
+            this.cmbYemekTürü.Location = new System.Drawing.Point(871, 116);
             this.cmbYemekTürü.Name = "cmbYemekTürü";
             this.cmbYemekTürü.Size = new System.Drawing.Size(164, 35);
             this.cmbYemekTürü.TabIndex = 31;
@@ -421,110 +439,110 @@
             this.cmbYemekTürü.UseCustomForeColor = true;
             this.cmbYemekTürü.UseSelectable = true;
             // 
-            // Açıklama
+            // lblAciklama
             // 
-            this.Açıklama.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Açıklama.AutoSize = true;
-            this.Açıklama.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Açıklama.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Açıklama.Location = new System.Drawing.Point(-36, 174);
-            this.Açıklama.Name = "Açıklama";
-            this.Açıklama.Size = new System.Drawing.Size(92, 25);
-            this.Açıklama.TabIndex = 30;
-            this.Açıklama.Text = "Açıklama :";
-            this.Açıklama.UseCustomBackColor = true;
-            this.Açıklama.UseCustomForeColor = true;
+            this.lblAciklama.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblAciklama.AutoSize = true;
+            this.lblAciklama.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblAciklama.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblAciklama.Location = new System.Drawing.Point(140, 174);
+            this.lblAciklama.Name = "lblAciklama";
+            this.lblAciklama.Size = new System.Drawing.Size(92, 25);
+            this.lblAciklama.TabIndex = 30;
+            this.lblAciklama.Text = "Açıklama :";
+            this.lblAciklama.UseCustomBackColor = true;
+            this.lblAciklama.UseCustomForeColor = true;
             // 
-            // metroLabel7
+            // lblYemekTuru
             // 
-            this.metroLabel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(489, 116);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(114, 25);
-            this.metroLabel7.TabIndex = 29;
-            this.metroLabel7.Text = "Yemek Türü :";
-            this.metroLabel7.UseCustomBackColor = true;
-            this.metroLabel7.UseCustomForeColor = true;
+            this.lblYemekTuru.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblYemekTuru.AutoSize = true;
+            this.lblYemekTuru.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblYemekTuru.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblYemekTuru.Location = new System.Drawing.Point(665, 116);
+            this.lblYemekTuru.Name = "lblYemekTuru";
+            this.lblYemekTuru.Size = new System.Drawing.Size(114, 25);
+            this.lblYemekTuru.TabIndex = 29;
+            this.lblYemekTuru.Text = "Yemek Türü :";
+            this.lblYemekTuru.UseCustomBackColor = true;
+            this.lblYemekTuru.UseCustomForeColor = true;
             // 
-            // metroLabel4
+            // lblBitisZamani
             // 
-            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(489, 24);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(116, 25);
-            this.metroLabel4.TabIndex = 26;
-            this.metroLabel4.Text = "Bitiş Zamanı :";
-            this.metroLabel4.UseCustomBackColor = true;
-            this.metroLabel4.UseCustomForeColor = true;
+            this.lblBitisZamani.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblBitisZamani.AutoSize = true;
+            this.lblBitisZamani.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblBitisZamani.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBitisZamani.Location = new System.Drawing.Point(665, 24);
+            this.lblBitisZamani.Name = "lblBitisZamani";
+            this.lblBitisZamani.Size = new System.Drawing.Size(116, 25);
+            this.lblBitisZamani.TabIndex = 26;
+            this.lblBitisZamani.Text = "Bitiş Zamanı :";
+            this.lblBitisZamani.UseCustomBackColor = true;
+            this.lblBitisZamani.UseCustomForeColor = true;
             // 
-            // metroLabel5
+            // lbBaslangicZamani
             // 
-            this.metroLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(-36, 66);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(157, 25);
-            this.metroLabel5.TabIndex = 25;
-            this.metroLabel5.Text = "Başlangıç Zamanı :";
-            this.metroLabel5.UseCustomBackColor = true;
-            this.metroLabel5.UseCustomForeColor = true;
+            this.lbBaslangicZamani.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbBaslangicZamani.AutoSize = true;
+            this.lbBaslangicZamani.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lbBaslangicZamani.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lbBaslangicZamani.Location = new System.Drawing.Point(140, 66);
+            this.lbBaslangicZamani.Name = "lbBaslangicZamani";
+            this.lbBaslangicZamani.Size = new System.Drawing.Size(157, 25);
+            this.lbBaslangicZamani.TabIndex = 25;
+            this.lbBaslangicZamani.Text = "Başlangıç Zamanı :";
+            this.lbBaslangicZamani.UseCustomBackColor = true;
+            this.lbBaslangicZamani.UseCustomForeColor = true;
             // 
             // btnTemizle
             // 
             this.btnTemizle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnTemizle.Location = new System.Drawing.Point(357, 649);
+            this.btnTemizle.Location = new System.Drawing.Point(533, 649);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(125, 40);
             this.btnTemizle.TabIndex = 23;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseSelectable = true;
             // 
-            // metroButton3
+            // btnKlavyeAc
             // 
-            this.metroButton3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.metroButton3.Location = new System.Drawing.Point(235, 594);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(370, 36);
-            this.metroButton3.TabIndex = 22;
-            this.metroButton3.Text = "Klavye Aç";
-            this.metroButton3.UseCustomBackColor = true;
-            this.metroButton3.UseSelectable = true;
-            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            this.btnKlavyeAc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnKlavyeAc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnKlavyeAc.Location = new System.Drawing.Point(411, 594);
+            this.btnKlavyeAc.Name = "btnKlavyeAc";
+            this.btnKlavyeAc.Size = new System.Drawing.Size(370, 36);
+            this.btnKlavyeAc.TabIndex = 22;
+            this.btnKlavyeAc.Text = "Klavye Aç";
+            this.btnKlavyeAc.UseCustomBackColor = true;
+            this.btnKlavyeAc.UseSelectable = true;
+            this.btnKlavyeAc.Click += new System.EventHandler(this.metroButton3_Click);
             // 
-            // metroButton2
+            // btnKapat
             // 
-            this.metroButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroButton2.BackColor = System.Drawing.Color.Red;
-            this.metroButton2.Location = new System.Drawing.Point(480, 649);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(125, 40);
-            this.metroButton2.TabIndex = 21;
-            this.metroButton2.Text = "İptal";
-            this.metroButton2.UseCustomBackColor = true;
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.btnKapat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnKapat.BackColor = System.Drawing.Color.Red;
+            this.btnKapat.Location = new System.Drawing.Point(656, 649);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(125, 40);
+            this.btnKapat.TabIndex = 21;
+            this.btnKapat.Text = "İptal";
+            this.btnKapat.UseCustomBackColor = true;
+            this.btnKapat.UseSelectable = true;
+            this.btnKapat.Click += new System.EventHandler(this.metroButton2_Click);
             // 
-            // metroButton1
+            // btnKaydet
             // 
-            this.metroButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.metroButton1.Location = new System.Drawing.Point(235, 649);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(125, 40);
-            this.metroButton1.TabIndex = 20;
-            this.metroButton1.Text = "Kaydet";
-            this.metroButton1.UseCustomBackColor = true;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnKaydet.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnKaydet.Location = new System.Drawing.Point(411, 649);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(125, 40);
+            this.btnKaydet.TabIndex = 20;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseCustomBackColor = true;
+            this.btnKaydet.UseSelectable = true;
+            this.btnKaydet.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // cmbYemekSalonu
             // 
@@ -532,7 +550,7 @@
             this.cmbYemekSalonu.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbYemekSalonu.FormattingEnabled = true;
             this.cmbYemekSalonu.ItemHeight = 29;
-            this.cmbYemekSalonu.Location = new System.Drawing.Point(170, 106);
+            this.cmbYemekSalonu.Location = new System.Drawing.Point(346, 106);
             this.cmbYemekSalonu.Name = "cmbYemekSalonu";
             this.cmbYemekSalonu.Size = new System.Drawing.Size(164, 35);
             this.cmbYemekSalonu.TabIndex = 9;
@@ -558,7 +576,7 @@
             this.txtOgunAdi.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtOgunAdi.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtOgunAdi.Lines = new string[0];
-            this.txtOgunAdi.Location = new System.Drawing.Point(170, 17);
+            this.txtOgunAdi.Location = new System.Drawing.Point(346, 17);
             this.txtOgunAdi.MaxLength = 32767;
             this.txtOgunAdi.Name = "txtOgunAdi";
             this.txtOgunAdi.PasswordChar = '\0';
@@ -576,33 +594,33 @@
             this.txtOgunAdi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtOgunAdi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel3
+            // lblYemekSalonu
             // 
-            this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(-36, 116);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(133, 25);
-            this.metroLabel3.TabIndex = 4;
-            this.metroLabel3.Text = "Yemek Salonu :";
-            this.metroLabel3.UseCustomBackColor = true;
-            this.metroLabel3.UseCustomForeColor = true;
+            this.lblYemekSalonu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblYemekSalonu.AutoSize = true;
+            this.lblYemekSalonu.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblYemekSalonu.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblYemekSalonu.Location = new System.Drawing.Point(140, 116);
+            this.lblYemekSalonu.Name = "lblYemekSalonu";
+            this.lblYemekSalonu.Size = new System.Drawing.Size(133, 25);
+            this.lblYemekSalonu.TabIndex = 4;
+            this.lblYemekSalonu.Text = "Yemek Salonu :";
+            this.lblYemekSalonu.UseCustomBackColor = true;
+            this.lblYemekSalonu.UseCustomForeColor = true;
             // 
-            // metroLabel1
+            // lblOgunAdi
             // 
-            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(-36, 17);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(104, 25);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Öğün İsmi :";
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseCustomForeColor = true;
+            this.lblOgunAdi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblOgunAdi.AutoSize = true;
+            this.lblOgunAdi.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblOgunAdi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblOgunAdi.Location = new System.Drawing.Point(140, 17);
+            this.lblOgunAdi.Name = "lblOgunAdi";
+            this.lblOgunAdi.Size = new System.Drawing.Size(104, 25);
+            this.lblOgunAdi.TabIndex = 2;
+            this.lblOgunAdi.Text = "Öğün İsmi :";
+            this.lblOgunAdi.UseCustomBackColor = true;
+            this.lblOgunAdi.UseCustomForeColor = true;
             // 
             // metroStyleManager1
             // 
@@ -612,7 +630,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 780);
+            this.ClientSize = new System.Drawing.Size(1184, 780);
             this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -640,34 +658,34 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton btnTemizle;
-        private MetroFramework.Controls.MetroButton metroButton3;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btnKlavyeAc;
+        private MetroFramework.Controls.MetroButton btnKapat;
+        private MetroFramework.Controls.MetroButton btnKaydet;
         private MetroFramework.Controls.MetroComboBox cmbYemekSalonu;
         private MetroFramework.Controls.MetroTextBox txtOgunAdi;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel lblYemekSalonu;
+        private MetroFramework.Controls.MetroLabel lblOgunAdi;
+        private MetroFramework.Controls.MetroLabel lblBitisZamani;
+        private MetroFramework.Controls.MetroLabel lbBaslangicZamani;
         private MetroFramework.Controls.MetroTextBox txtAciklama;
         private MetroFramework.Controls.MetroComboBox cmbYemekTürü;
-        private MetroFramework.Controls.MetroLabel Açıklama;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel lblAciklama;
+        private MetroFramework.Controls.MetroLabel lblYemekTuru;
         private MetroFramework.Controls.MetroButton btnYemekTuruEkle;
         private MetroFramework.Controls.MetroButton btnYemekSalonuEkle;
         private DevExpress.XtraEditors.DateEdit dtOgunBas;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel lblGorevliPersoneller;
+        private MetroFramework.Controls.MetroLabel lblPersonelSecimi;
         private MetroFramework.Controls.MetroListView listeGorevliler;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel lblPersonelKategorisi;
         private MetroFramework.Controls.MetroButton btnGorevlendir;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel lblPersonelGorevlendir;
         private MetroFramework.Controls.MetroComboBox cmbPersonelKategorisi;
         private MetroFramework.Controls.MetroListView listePersonel;
         private MetroFramework.Controls.MetroButton btnGorevlendirme;
         private DevExpress.XtraEditors.DateEdit dtOgunBit;
         private DevExpress.XtraEditors.DateEdit dtSonGun;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel lblOgunSonGunu;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }

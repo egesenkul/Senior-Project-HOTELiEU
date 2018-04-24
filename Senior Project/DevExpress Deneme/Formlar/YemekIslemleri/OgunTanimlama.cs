@@ -62,8 +62,30 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             ortakFormIslemleri.cmbIlkDegerGetir(cmbYemekTürü);
         }
 
+        private void MultiLanguage()
+        {
+            lblAciklama.Text = Localization.lblAciklama;
+            lblBitisZamani.Text = Localization.lblBitisZamani;
+            lblGorevliPersoneller.Text = Localization.lblGorevliPersoneller;
+            lblOgunAdi.Text = Localization.yemekAdi;
+            lblOgunSonGunu.Text = Localization.sonGun;
+            lblPersonelGorevlendir.Text = Localization.personelGorevlendir;
+            lblPersonelKategorisi.Text = Localization.lblPersonelGrubu;
+            lblPersonelSecimi.Text = Localization.personelSecimi;
+            lblYemekSalonu.Text = Localization.yemekSalonu;
+            lblYemekTuru.Text = Localization.yemekTuru;
+            lbBaslangicZamani.Text = Localization.baslangicZamani;
+            btnGorevlendir.Text = Localization.btnGorevlendir;
+            btnGorevlendirme.Text = Localization.btnGorevlendirme;
+            btnTemizle.Text = Localization.btnTemizle;
+            btnKlavyeAc.Text = Localization.btnKlavyeAc;
+            btnKaydet.Text = Localization.btnKaydet;
+            btnKapat.Text = Localization.btnKapat;
+        }
+
         private void OgunTanimlama_Load(object sender, EventArgs e)
         {
+            MultiLanguage();
             btnGorevlendirme.Visible = false;
             dtOgunBas.EditValue = DateTime.Now;
             dtOgunBas.Properties.VistaDisplayMode = DefaultBoolean.True;
@@ -81,7 +103,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
             {
                 metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, metroLabel1, metroLabel2, metroLabel3, metroLabel4, metroLabel5, metroLabel6, metroLabel7, metroLabel8, metroLabel9,metroLabel10);
+                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblOgunAdi, lblOgunSonGunu, lblYemekSalonu, lblBitisZamani, lbBaslangicZamani, lblPersonelGorevlendir, lblYemekTuru, lblPersonelKategorisi, lblPersonelSecimi,lblGorevliPersoneller);
                 ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtAciklama, txtOgunAdi);
                 ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbPersonelKategorisi, cmbYemekSalonu,cmbYemekTürü);
                 ortakFormIslemleri.DateEditRenkDegistir(Color.Gray, dtOgunBas, dtOgunBit, dtSonGun);

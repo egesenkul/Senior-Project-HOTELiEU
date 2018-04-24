@@ -34,6 +34,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             tileItem4.Text = Localization.tileYemekListesi;
             tileOgunTanimla.Text = Localization.ogunTanimlama;
             tileOzelYemekTanimla.Text = Localization.ozelYemekEkle;
+            tileKapat.Text = Localization.btnKapat;
         }
 
         private void YemekIslemleri_Load(object sender, EventArgs e)

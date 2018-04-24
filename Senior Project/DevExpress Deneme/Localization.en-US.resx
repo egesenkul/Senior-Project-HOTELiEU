@@ -885,4 +885,46 @@
   <data name="lblSorumluKat" xml:space="preserve">
     <value>Responsible Floor</value>
   </data>
+  <data name="baslangicZamani" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="btnEkle" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnGorevlendir" xml:space="preserve">
+    <value>Appoint</value>
+  </data>
+  <data name="btnGorevlendirme" xml:space="preserve">
+    <value>Don't Appoint</value>
+  </data>
+  <data name="btnOnayla" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="lblBitisZamani" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="lblGorevliPersoneller" xml:space="preserve">
+    <value>Responsible Employees</value>
+  </data>
+  <data name="lblKatilacaklar" xml:space="preserve">
+    <value>Joined</value>
+  </data>
+  <data name="personelGorevlendir" xml:space="preserve">
+    <value>Appoint Staff</value>
+  </data>
+  <data name="personelSecimi" xml:space="preserve">
+    <value>Select Staff</value>
+  </data>
+  <data name="sonGun" xml:space="preserve">
+    <value>Last Day</value>
+  </data>
+  <data name="yemekAdi" xml:space="preserve">
+    <value>Meal Name</value>
+  </data>
+  <data name="yemekSalonu" xml:space="preserve">
+    <value>Dining Hall</value>
+  </data>
+  <data name="yemekTuru" xml:space="preserve">
+    <value>Meal Type</value>
+  </data>
 </root>

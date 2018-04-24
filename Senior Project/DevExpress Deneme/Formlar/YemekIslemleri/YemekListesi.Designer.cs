@@ -45,17 +45,17 @@
             this.cmbPersonelKategorisi = new MetroFramework.Controls.MetroComboBox();
             this.listePersonel = new MetroFramework.Controls.MetroListView();
             this.ListeGörevliler = new MetroFramework.Controls.MetroListView();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblYemekTuru = new MetroFramework.Controls.MetroLabel();
             this.cmbYemekTur = new MetroFramework.Controls.MetroComboBox();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.btnSecenekler = new MetroFramework.Controls.MetroButton();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.lblYemekSalonu = new MetroFramework.Controls.MetroLabel();
             this.cmbYemekSalonu = new MetroFramework.Controls.MetroComboBox();
             this.btnTemizle = new MetroFramework.Controls.MetroButton();
             this.btnKapat = new MetroFramework.Controls.MetroButton();
             this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnFiltrele = new MetroFramework.Controls.MetroButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,17 +86,17 @@
             this.metroPanel1.Controls.Add(this.cmbPersonelKategorisi);
             this.metroPanel1.Controls.Add(this.listePersonel);
             this.metroPanel1.Controls.Add(this.ListeGörevliler);
-            this.metroPanel1.Controls.Add(this.metroLabel1);
+            this.metroPanel1.Controls.Add(this.lblYemekTuru);
             this.metroPanel1.Controls.Add(this.cmbYemekTur);
-            this.metroPanel1.Controls.Add(this.metroButton2);
+            this.metroPanel1.Controls.Add(this.btnSecenekler);
             this.metroPanel1.Controls.Add(this.metroGrid1);
-            this.metroPanel1.Controls.Add(this.metroLabel2);
+            this.metroPanel1.Controls.Add(this.lblYemekSalonu);
             this.metroPanel1.Controls.Add(this.cmbYemekSalonu);
             this.metroPanel1.Controls.Add(this.btnTemizle);
             this.metroPanel1.Controls.Add(this.btnKapat);
             this.metroPanel1.Controls.Add(this.metroDateTime2);
             this.metroPanel1.Controls.Add(this.metroDateTime1);
-            this.metroPanel1.Controls.Add(this.metroButton1);
+            this.metroPanel1.Controls.Add(this.btnFiltrele);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
@@ -277,18 +277,18 @@
             this.ListeGörevliler.View = System.Windows.Forms.View.Tile;
             this.ListeGörevliler.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListeGörevliler_MouseClick);
             // 
-            // metroLabel1
+            // lblYemekTuru
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(498, 21);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(126, 25);
-            this.metroLabel1.TabIndex = 20;
-            this.metroLabel1.Text = "YEMEK TÜRÜ";
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseCustomForeColor = true;
+            this.lblYemekTuru.AutoSize = true;
+            this.lblYemekTuru.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblYemekTuru.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblYemekTuru.Location = new System.Drawing.Point(498, 21);
+            this.lblYemekTuru.Name = "lblYemekTuru";
+            this.lblYemekTuru.Size = new System.Drawing.Size(126, 25);
+            this.lblYemekTuru.TabIndex = 20;
+            this.lblYemekTuru.Text = "YEMEK TÜRÜ";
+            this.lblYemekTuru.UseCustomBackColor = true;
+            this.lblYemekTuru.UseCustomForeColor = true;
             // 
             // cmbYemekTur
             // 
@@ -302,17 +302,17 @@
             this.cmbYemekTur.UseCustomForeColor = true;
             this.cmbYemekTur.UseSelectable = true;
             // 
-            // metroButton2
+            // btnSecenekler
             // 
-            this.metroButton2.BackColor = System.Drawing.Color.SandyBrown;
-            this.metroButton2.Location = new System.Drawing.Point(813, 17);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(120, 70);
-            this.metroButton2.TabIndex = 18;
-            this.metroButton2.Text = "SEÇENKLER";
-            this.metroButton2.UseCustomBackColor = true;
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.btnSecenekler.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnSecenekler.Location = new System.Drawing.Point(813, 17);
+            this.btnSecenekler.Name = "btnSecenekler";
+            this.btnSecenekler.Size = new System.Drawing.Size(120, 70);
+            this.btnSecenekler.TabIndex = 18;
+            this.btnSecenekler.Text = "SEÇENKLER";
+            this.btnSecenekler.UseCustomBackColor = true;
+            this.btnSecenekler.UseSelectable = true;
+            this.btnSecenekler.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroGrid1
             // 
@@ -375,18 +375,18 @@
             this.metroGrid1.UseStyleColors = true;
             this.metroGrid1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.metroGrid1_MouseClick);
             // 
-            // metroLabel2
+            // lblYemekSalonu
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(272, 21);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(150, 25);
-            this.metroLabel2.TabIndex = 13;
-            this.metroLabel2.Text = "YEMEK SALONU";
-            this.metroLabel2.UseCustomBackColor = true;
-            this.metroLabel2.UseCustomForeColor = true;
+            this.lblYemekSalonu.AutoSize = true;
+            this.lblYemekSalonu.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblYemekSalonu.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblYemekSalonu.Location = new System.Drawing.Point(272, 21);
+            this.lblYemekSalonu.Name = "lblYemekSalonu";
+            this.lblYemekSalonu.Size = new System.Drawing.Size(150, 25);
+            this.lblYemekSalonu.TabIndex = 13;
+            this.lblYemekSalonu.Text = "YEMEK SALONU";
+            this.lblYemekSalonu.UseCustomBackColor = true;
+            this.lblYemekSalonu.UseCustomForeColor = true;
             // 
             // cmbYemekSalonu
             // 
@@ -443,17 +443,17 @@
             this.metroDateTime1.UseCustomBackColor = true;
             this.metroDateTime1.UseCustomForeColor = true;
             // 
-            // metroButton1
+            // btnFiltrele
             // 
-            this.metroButton1.BackColor = System.Drawing.Color.Silver;
-            this.metroButton1.Location = new System.Drawing.Point(678, 17);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(120, 70);
-            this.metroButton1.TabIndex = 3;
-            this.metroButton1.Text = "FİLTRELE";
-            this.metroButton1.UseCustomBackColor = true;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnFiltrele.BackColor = System.Drawing.Color.Silver;
+            this.btnFiltrele.Location = new System.Drawing.Point(678, 17);
+            this.btnFiltrele.Name = "btnFiltrele";
+            this.btnFiltrele.Size = new System.Drawing.Size(120, 70);
+            this.btnFiltrele.TabIndex = 3;
+            this.btnFiltrele.Text = "FİLTRELE";
+            this.btnFiltrele.UseCustomBackColor = true;
+            this.btnFiltrele.UseSelectable = true;
+            this.btnFiltrele.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // contextMenuStrip1
             // 
@@ -558,15 +558,15 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroGrid metroGrid1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel lblYemekSalonu;
         private MetroFramework.Controls.MetroComboBox cmbYemekSalonu;
         private MetroFramework.Controls.MetroButton btnTemizle;
         private MetroFramework.Controls.MetroButton btnKapat;
         private MetroFramework.Controls.MetroDateTime metroDateTime2;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton btnFiltrele;
+        private MetroFramework.Controls.MetroButton btnSecenekler;
+        private MetroFramework.Controls.MetroLabel lblYemekTuru;
         private MetroFramework.Controls.MetroComboBox cmbYemekTur;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;

@@ -888,4 +888,46 @@
   <data name="lblSorumluKat" xml:space="preserve">
     <value>Sorumlu Olduğu Kat:</value>
   </data>
+  <data name="baslangicZamani" xml:space="preserve">
+    <value>Başlangıç Zamanı</value>
+  </data>
+  <data name="btnEkle" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnGorevlendir" xml:space="preserve">
+    <value>Görevlendir</value>
+  </data>
+  <data name="btnGorevlendirme" xml:space="preserve">
+    <value>Görevlendirme</value>
+  </data>
+  <data name="btnOnayla" xml:space="preserve">
+    <value>Onayla</value>
+  </data>
+  <data name="lblBitisZamani" xml:space="preserve">
+    <value>Bitiş Zamanı</value>
+  </data>
+  <data name="lblGorevliPersoneller" xml:space="preserve">
+    <value>Görevli Personeller</value>
+  </data>
+  <data name="lblKatilacaklar" xml:space="preserve">
+    <value>Katılacaklar</value>
+  </data>
+  <data name="personelGorevlendir" xml:space="preserve">
+    <value>Personel Görevlendir</value>
+  </data>
+  <data name="personelSecimi" xml:space="preserve">
+    <value>Personel Seç</value>
+  </data>
+  <data name="sonGun" xml:space="preserve">
+    <value>Son Gün</value>
+  </data>
+  <data name="yemekAdi" xml:space="preserve">
+    <value>Yemek Adı</value>
+  </data>
+  <data name="yemekSalonu" xml:space="preserve">
+    <value>Yemek Salonu</value>
+  </data>
+  <data name="yemekTuru" xml:space="preserve">
+    <value>Yemek Türü</value>
+  </data>
 </root>

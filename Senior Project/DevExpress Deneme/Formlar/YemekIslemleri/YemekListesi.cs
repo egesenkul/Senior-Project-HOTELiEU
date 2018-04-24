@@ -78,8 +78,26 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             }
         }
 
+        private void MultiLanguage()
+        {
+            lblGorevliPersoneller.Text = Localization.lblGorevliPersoneller;
+            lblPersonelGorevlendir.Text = Localization.personelGorevlendir;
+            lblPersonelKategorisi.Text = Localization.lblPersonelGrubu;
+            lblPersonelSecimi.Text = Localization.personelSecimi;
+            lblYemekSalonu.Text = Localization.yemekSalonu;
+            lblYemekTuru.Text = Localization.yemekTuru;
+            btnFiltrele.Text = Localization.btnFiltrele;
+            btnGorevlendir.Text = Localization.btnGorevlendir;
+            btnGorevlendirme.Text = Localization.btnGorevlendirme;
+            btnTemizle.Text = Localization.btnTemizle;
+            btnKapat.Text = Localization.btnKapat;
+            btnSecenekler.Text = Localization.btnSecenekler;
+            btnOnayla.Text = Localization.btnOnayla;
+        }
+
         private void YemekListesi_Load(object sender, EventArgs e)
         {
+            MultiLanguage();
             FiilYemekSalonu();
             FiilYemekTuru();
             silinmişPersoneliGeriAlToolStripMenuItem.Visible = false;
@@ -109,7 +127,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
             {
                 metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, metroLabel1, metroLabel2, lblGorevliPersoneller,lblPersonelGorevlendir,lblPersonelKategorisi,lblPersonelSecimi);
+                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblYemekTuru, lblYemekSalonu, lblGorevliPersoneller,lblPersonelGorevlendir,lblPersonelKategorisi,lblPersonelSecimi);
                 ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbPersonelKategorisi, cmbYemekSalonu,cmbYemekTur);
                 ortakFormIslemleri.ListViewRenkDegistir(Color.Black, listeGorevlenecekler, ListeGörevliler, listePersonel);
             }
@@ -298,7 +316,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             {
                 HotelWarningForm.Show(Localization.yemekSilmeBasarili, Localization.Tamam,0);
             }
-            metroButton1.PerformClick();
+            btnFiltrele.PerformClick();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -385,7 +403,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             {
                 HotelWarningForm.Show(Localization.PersonelGeriAlindi, Localization.Tamam,0);
             }
-            metroButton1.PerformClick();
+            btnFiltrele.PerformClick();
         }
 
         private void tümBilgileriGösterToolStripMenuItem_Click(object sender, EventArgs e)

@@ -124,10 +124,36 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             ortakFormIslemleri.cmbIlkDegerGetir(cmbPersonelKategorisi);
         }
 
+        private void MultiLanguage()
+        {
+            btnEkle.Text = Localization.btnEkle;
+            btnGorevlendir.Text = Localization.btnGorevlendir;
+            btnGorevlendirme.Text = Localization.btnGorevlendirme;
+            btnKapat.Text = Localization.btnKapat;
+            btnKaydet.Text = Localization.btnKaydet;
+            btnKlavyeAc.Text = Localization.btnKlavyeAc;
+            btnTemizle.Text = Localization.btnTemizle;
+            btnVazgec.Text = Localization.btnKapat;
+            lblAciklama.Text = Localization.lblAciklama;
+            lblGorevliPersoneller.Text = Localization.lblGorevliPersoneller;
+            lblGruplar.Text = Localization.lblPersonelGrubu;
+            lblKatilacaklar.Text = Localization.lblKatilacaklar;
+            lblPersoenlKategori.Text = Localization.lblPersonelGrubu;
+            lblPersoenlSecimi.Text = Localization.personelSecimi;
+            lblPersonelGorevlendir.Text = Localization.personelGorevlendir;
+            lblYemekAdi.Text = Localization.yemekAdi;
+            lblYemekSalonu.Text = Localization.yemekSalonu;
+            lblYemekTuru.Text = Localization.yemekTuru;
+            lblKatilimKriter.Text = Localization.lblKatilimKriter;
+            lblYemekTarihi.Text = Localization.lblTarih;
+            lblBitisTarihi.Text = Localization.lblBitisZamani;
+        }
+
         private void OzelYemek_Load(object sender, EventArgs e)
         {
-            cmbKatilimKriter.Items.Add("Personel");
-            cmbKatilimKriter.Items.Add("Oda Türü");
+            MultiLanguage();
+            cmbKatilimKriter.Items.Add(Localization.Personel);
+            cmbKatilimKriter.Items.Add(Localization.OdaGrubu);
             cmbKatilimKriter.SelectedIndex = 0;
             dtYemekTarihi.EditValue = DateTime.Now;
             dtYemekTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
@@ -142,7 +168,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
             {
                 metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, metroLabel1, metroLabel2, metroLabel3, metroLabel4, metroLabel5, metroLabel6, metroLabel7, metroLabel8, metroLabel9, metroLabel10,metroLabel11,metroLabel12);
+                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblYemekAdi, lblGruplar, lblKatilimKriter, lblKatilacaklar, lblYemekTarihi, lblPersonelGorevlendir, lblYemekTuru, lblPersoenlKategori, lblPersoenlSecimi, lblGorevliPersoneller,lblBitisTarihi,lblYemekSalonu);
                 ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtAciklama, txtYemekIsmi);
                 ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbPersonelKategorisi, cmbYemekSalonu, cmbYemekTürü,cmbKatilimKriter);
                 ortakFormIslemleri.DateEditRenkDegistir(Color.Gray, dtYemekBitis, dtYemekTarihi);
