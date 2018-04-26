@@ -91,7 +91,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(1660, 555);
+            this.metroPanel1.Size = new System.Drawing.Size(1330, 555);
             this.metroPanel1.TabIndex = 2;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -249,7 +249,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(18, 113);
+            this.metroGrid1.Location = new System.Drawing.Point(18, 225);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.ReadOnly = true;
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -268,7 +268,7 @@
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.ShowEditingIcon = false;
             this.metroGrid1.ShowRowErrors = false;
-            this.metroGrid1.Size = new System.Drawing.Size(1642, 444);
+            this.metroGrid1.Size = new System.Drawing.Size(1312, 332);
             this.metroGrid1.TabIndex = 14;
             this.metroGrid1.UseCustomBackColor = true;
             this.metroGrid1.UseCustomForeColor = true;
@@ -278,7 +278,7 @@
             // btnSecenekler
             // 
             this.btnSecenekler.BackColor = System.Drawing.Color.Silver;
-            this.btnSecenekler.Location = new System.Drawing.Point(1240, 26);
+            this.btnSecenekler.Location = new System.Drawing.Point(918, 128);
             this.btnSecenekler.Name = "btnSecenekler";
             this.btnSecenekler.Size = new System.Drawing.Size(120, 70);
             this.btnSecenekler.TabIndex = 4;
@@ -290,7 +290,7 @@
             // metroButton3
             // 
             this.metroButton3.BackColor = System.Drawing.Color.Red;
-            this.metroButton3.Location = new System.Drawing.Point(1380, 26);
+            this.metroButton3.Location = new System.Drawing.Point(1058, 128);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(120, 70);
             this.metroButton3.TabIndex = 5;
@@ -301,7 +301,7 @@
             // metroButton2
             // 
             this.metroButton2.BackColor = System.Drawing.Color.Red;
-            this.metroButton2.Location = new System.Drawing.Point(1516, 26);
+            this.metroButton2.Location = new System.Drawing.Point(1194, 128);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(120, 70);
             this.metroButton2.TabIndex = 6;
@@ -350,7 +350,7 @@
             // btnFiltrele
             // 
             this.btnFiltrele.BackColor = System.Drawing.Color.Silver;
-            this.btnFiltrele.Location = new System.Drawing.Point(1097, 26);
+            this.btnFiltrele.Location = new System.Drawing.Point(775, 128);
             this.btnFiltrele.Name = "btnFiltrele";
             this.btnFiltrele.Size = new System.Drawing.Size(120, 70);
             this.btnFiltrele.TabIndex = 3;
@@ -411,7 +411,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1700, 635);
+            this.ClientSize = new System.Drawing.Size(1370, 635);
             this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

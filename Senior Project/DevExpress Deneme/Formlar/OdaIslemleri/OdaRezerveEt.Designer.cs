@@ -54,10 +54,10 @@
             this.btnKaydet = new MetroFramework.Controls.MetroButton();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCikisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCikisTarihi.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGirisTarihi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCikisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGirisTarihi.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGirisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +91,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(967, 713);
+            this.metroPanel1.Size = new System.Drawing.Size(967, 692);
             this.metroPanel1.TabIndex = 1;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.UseCustomForeColor = true;
@@ -167,19 +167,13 @@
             // 
             this.dtCikisTarihi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtCikisTarihi.EditValue = new System.DateTime(2018, 3, 18, 0, 0, 0, 0);
-            this.dtCikisTarihi.Location = new System.Drawing.Point(409, 540);
+            this.dtCikisTarihi.Location = new System.Drawing.Point(410, 513);
             this.dtCikisTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtCikisTarihi.Name = "dtCikisTarihi";
-            // 
-            // 
-            // 
             this.dtCikisTarihi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtCikisTarihi.Properties.Appearance.Options.UseFont = true;
             this.dtCikisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtCikisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtCikisTarihi.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -200,19 +194,13 @@
             // 
             this.dtGirisTarihi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtGirisTarihi.EditValue = new System.DateTime(2018, 3, 18, 0, 0, 0, 0);
-            this.dtGirisTarihi.Location = new System.Drawing.Point(409, 494);
+            this.dtGirisTarihi.Location = new System.Drawing.Point(410, 467);
             this.dtGirisTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtGirisTarihi.Name = "dtGirisTarihi";
-            // 
-            // 
-            // 
             this.dtGirisTarihi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtGirisTarihi.Properties.Appearance.Options.UseFont = true;
             this.dtGirisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtGirisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtGirisTarihi.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -235,7 +223,7 @@
             this.lblCikisTarihi.AutoSize = true;
             this.lblCikisTarihi.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblCikisTarihi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblCikisTarihi.Location = new System.Drawing.Point(245, 543);
+            this.lblCikisTarihi.Location = new System.Drawing.Point(246, 516);
             this.lblCikisTarihi.Name = "lblCikisTarihi";
             this.lblCikisTarihi.Size = new System.Drawing.Size(104, 25);
             this.lblCikisTarihi.TabIndex = 46;
@@ -249,7 +237,7 @@
             this.lblGirisTarihi.AutoSize = true;
             this.lblGirisTarihi.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblGirisTarihi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblGirisTarihi.Location = new System.Drawing.Point(245, 497);
+            this.lblGirisTarihi.Location = new System.Drawing.Point(246, 470);
             this.lblGirisTarihi.Name = "lblGirisTarihi";
             this.lblGirisTarihi.Size = new System.Drawing.Size(102, 25);
             this.lblGirisTarihi.TabIndex = 45;
@@ -262,7 +250,7 @@
             this.cmbMusteriAdi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbMusteriAdi.FormattingEnabled = true;
             this.cmbMusteriAdi.ItemHeight = 23;
-            this.cmbMusteriAdi.Location = new System.Drawing.Point(409, 442);
+            this.cmbMusteriAdi.Location = new System.Drawing.Point(410, 415);
             this.cmbMusteriAdi.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.cmbMusteriAdi.Name = "cmbMusteriAdi";
             this.cmbMusteriAdi.Size = new System.Drawing.Size(271, 29);
@@ -277,7 +265,7 @@
             this.MusteriAdLabel.AutoSize = true;
             this.MusteriAdLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.MusteriAdLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.MusteriAdLabel.Location = new System.Drawing.Point(245, 446);
+            this.MusteriAdLabel.Location = new System.Drawing.Point(246, 419);
             this.MusteriAdLabel.Name = "MusteriAdLabel";
             this.MusteriAdLabel.Size = new System.Drawing.Size(112, 25);
             this.MusteriAdLabel.TabIndex = 42;
@@ -327,7 +315,7 @@
             this.lblKat.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblKat.Location = new System.Drawing.Point(455, 76);
             this.lblKat.Name = "lblKat";
-            this.lblKat.Size = new System.Drawing.Size(48, 25);
+            this.lblKat.Size = new System.Drawing.Size(47, 25);
             this.lblKat.TabIndex = 38;
             this.lblKat.Text = "KAT";
             this.lblKat.UseCustomBackColor = true;
@@ -406,7 +394,7 @@
             // btnTemizle
             // 
             this.btnTemizle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnTemizle.Location = new System.Drawing.Point(433, 651);
+            this.btnTemizle.Location = new System.Drawing.Point(433, 630);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(125, 40);
             this.btnTemizle.TabIndex = 23;
@@ -417,7 +405,7 @@
             // 
             this.btnKlavye.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnKlavye.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnKlavye.Location = new System.Drawing.Point(310, 593);
+            this.btnKlavye.Location = new System.Drawing.Point(310, 588);
             this.btnKlavye.Name = "btnKlavye";
             this.btnKlavye.Size = new System.Drawing.Size(370, 36);
             this.btnKlavye.TabIndex = 22;
@@ -429,7 +417,7 @@
             // 
             this.btnKapat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnKapat.BackColor = System.Drawing.Color.Red;
-            this.btnKapat.Location = new System.Drawing.Point(556, 651);
+            this.btnKapat.Location = new System.Drawing.Point(556, 630);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(125, 40);
             this.btnKapat.TabIndex = 21;
@@ -442,7 +430,7 @@
             // 
             this.btnKaydet.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnKaydet.Location = new System.Drawing.Point(310, 651);
+            this.btnKaydet.Location = new System.Drawing.Point(310, 630);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(125, 40);
             this.btnKaydet.TabIndex = 20;
@@ -459,7 +447,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 793);
+            this.ClientSize = new System.Drawing.Size(1007, 772);
             this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

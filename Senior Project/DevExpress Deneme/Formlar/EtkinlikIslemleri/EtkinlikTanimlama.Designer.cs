@@ -45,8 +45,8 @@
             this.lblEtkinlikismi = new MetroFramework.Controls.MetroLabel();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtEtkinlik.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEtkinlik.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEtkinlik.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +71,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(20, 60);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(829, 754);
+            this.metroPanel1.Size = new System.Drawing.Size(829, 692);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.UseCustomForeColor = true;
@@ -83,19 +83,13 @@
             // 
             this.dtEtkinlik.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtEtkinlik.EditValue = new System.DateTime(2018, 3, 2, 0, 0, 0, 0);
-            this.dtEtkinlik.Location = new System.Drawing.Point(499, 508);
+            this.dtEtkinlik.Location = new System.Drawing.Point(431, 377);
             this.dtEtkinlik.Margin = new System.Windows.Forms.Padding(2);
             this.dtEtkinlik.Name = "dtEtkinlik";
-            // 
-            // 
-            // 
             this.dtEtkinlik.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtEtkinlik.Properties.Appearance.Options.UseFont = true;
             this.dtEtkinlik.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtEtkinlik.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtEtkinlik.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
@@ -127,7 +121,7 @@
             this.txtKisiLimiti.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtKisiLimiti.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtKisiLimiti.Lines = new string[0];
-            this.txtKisiLimiti.Location = new System.Drawing.Point(439, 455);
+            this.txtKisiLimiti.Location = new System.Drawing.Point(431, 328);
             this.txtKisiLimiti.MaxLength = 32767;
             this.txtKisiLimiti.Name = "txtKisiLimiti";
             this.txtKisiLimiti.PasswordChar = '\0';
@@ -152,7 +146,7 @@
             this.CheckBoxKisiLimiti.Checked = true;
             this.CheckBoxKisiLimiti.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBoxKisiLimiti.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
-            this.CheckBoxKisiLimiti.Location = new System.Drawing.Point(232, 412);
+            this.CheckBoxKisiLimiti.Location = new System.Drawing.Point(224, 285);
             this.CheckBoxKisiLimiti.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
             this.CheckBoxKisiLimiti.Name = "CheckBoxKisiLimiti";
             this.CheckBoxKisiLimiti.Size = new System.Drawing.Size(132, 25);
@@ -166,7 +160,7 @@
             // btnTemizle
             // 
             this.btnTemizle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTemizle.Location = new System.Drawing.Point(355, 630);
+            this.btnTemizle.Location = new System.Drawing.Point(347, 503);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(125, 40);
             this.btnTemizle.TabIndex = 23;
@@ -178,7 +172,7 @@
             // 
             this.btnKlavye.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnKlavye.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnKlavye.Location = new System.Drawing.Point(232, 579);
+            this.btnKlavye.Location = new System.Drawing.Point(224, 452);
             this.btnKlavye.Name = "btnKlavye";
             this.btnKlavye.Size = new System.Drawing.Size(370, 36);
             this.btnKlavye.TabIndex = 22;
@@ -191,7 +185,7 @@
             // 
             this.btnIptal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnIptal.BackColor = System.Drawing.Color.Red;
-            this.btnIptal.Location = new System.Drawing.Point(478, 630);
+            this.btnIptal.Location = new System.Drawing.Point(470, 503);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(125, 40);
             this.btnIptal.TabIndex = 21;
@@ -204,7 +198,7 @@
             // 
             this.btnKaydet.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnKaydet.Location = new System.Drawing.Point(232, 630);
+            this.btnKaydet.Location = new System.Drawing.Point(224, 503);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(125, 40);
             this.btnKaydet.TabIndex = 20;
@@ -231,7 +225,7 @@
             this.txtEtkinlikAciklama.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtEtkinlikAciklama.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtEtkinlikAciklama.Lines = new string[0];
-            this.txtEtkinlikAciklama.Location = new System.Drawing.Point(439, 280);
+            this.txtEtkinlikAciklama.Location = new System.Drawing.Point(431, 153);
             this.txtEtkinlikAciklama.MaxLength = 32767;
             this.txtEtkinlikAciklama.Multiline = true;
             this.txtEtkinlikAciklama.Name = "txtEtkinlikAciklama";
@@ -268,7 +262,7 @@
             this.txtEtkinlikAdı.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtEtkinlikAdı.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtEtkinlikAdı.Lines = new string[0];
-            this.txtEtkinlikAdı.Location = new System.Drawing.Point(439, 232);
+            this.txtEtkinlikAdı.Location = new System.Drawing.Point(431, 105);
             this.txtEtkinlikAdı.MaxLength = 32767;
             this.txtEtkinlikAdı.Name = "txtEtkinlikAdı";
             this.txtEtkinlikAdı.PasswordChar = '\0';
@@ -292,7 +286,7 @@
             this.lblTarih.AutoSize = true;
             this.lblTarih.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblTarih.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblTarih.Location = new System.Drawing.Point(232, 505);
+            this.lblTarih.Location = new System.Drawing.Point(224, 378);
             this.lblTarih.Name = "lblTarih";
             this.lblTarih.Size = new System.Drawing.Size(59, 25);
             this.lblTarih.TabIndex = 5;
@@ -306,7 +300,7 @@
             this.lblKisiLimit.AutoSize = true;
             this.lblKisiLimit.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblKisiLimit.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblKisiLimit.Location = new System.Drawing.Point(232, 455);
+            this.lblKisiLimit.Location = new System.Drawing.Point(224, 328);
             this.lblKisiLimit.Name = "lblKisiLimit";
             this.lblKisiLimit.Size = new System.Drawing.Size(94, 25);
             this.lblKisiLimit.TabIndex = 4;
@@ -320,7 +314,7 @@
             this.lblAciklama.AutoSize = true;
             this.lblAciklama.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblAciklama.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblAciklama.Location = new System.Drawing.Point(232, 280);
+            this.lblAciklama.Location = new System.Drawing.Point(224, 153);
             this.lblAciklama.Name = "lblAciklama";
             this.lblAciklama.Size = new System.Drawing.Size(104, 25);
             this.lblAciklama.TabIndex = 3;
@@ -334,7 +328,7 @@
             this.lblEtkinlikismi.AutoSize = true;
             this.lblEtkinlikismi.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblEtkinlikismi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblEtkinlikismi.Location = new System.Drawing.Point(232, 232);
+            this.lblEtkinlikismi.Location = new System.Drawing.Point(224, 105);
             this.lblEtkinlikismi.Name = "lblEtkinlikismi";
             this.lblEtkinlikismi.Size = new System.Drawing.Size(114, 25);
             this.lblEtkinlikismi.TabIndex = 2;
@@ -350,7 +344,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 834);
+            this.ClientSize = new System.Drawing.Size(869, 772);
             this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
