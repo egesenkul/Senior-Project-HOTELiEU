@@ -100,6 +100,7 @@
             this.ListeOdalar.UseCompatibleStateImageBehavior = false;
             this.ListeOdalar.UseSelectable = true;
             this.ListeOdalar.View = System.Windows.Forms.View.Tile;
+            this.ListeOdalar.SelectedIndexChanged += new System.EventHandler(this.ListeOdalar_SelectedIndexChanged);
             // 
             // metroLabel3
             // 
@@ -237,6 +238,7 @@
             this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "TemizlikYap";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.TemizlikYap_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();

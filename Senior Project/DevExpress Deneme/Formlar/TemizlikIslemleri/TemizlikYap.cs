@@ -203,5 +203,39 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
                 HotelWarningForm.Show(Localization.temizlikBasarili, Localization.Tamam,0);
             }
         }
+
+        private void ListeOdalar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Seçili odanın kat ve blok bilgisini al
+            //KatSorumluPersoneller tablosunda eğer bu 2 bilgiye ait kişi varsa onu getir
+            //yoksa direk 0ı getir
+            try {
+                string kat = ortakFormIslemleri.odaKatGetir(ListeOdalar.SelectedItems[0].Text);
+                string blok = ortakFormIslemleri.odaBlokGetir(ListeOdalar.SelectedItems[0].Text);
+                string kisi = "";
+
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+
+                SqlCommand cmd3 = new SqlCommand();
+
+                cmd3.CommandText = "select PersonelAdi,PersonelSoyadi from KatSorumluPersoneller where Blok ='" + blok + "' and KatNo='" + kat + "'";
+                cmd3.Connection = connection;
+                cmd3.CommandType = CommandType.Text;
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd3.ExecuteReader();
+                while (Dr.Read())
+                {
+                    kisi = (Dr["PersonelAdi"]).ToString() + " " + (Dr["PersonelSoyadi"]).ToString();
+                }
+                connection.Close();
+
+                cmbTemizlikci.SelectedItem = kisi;
+            }
+            catch(Exception)
+            {
+
+            }
+            }
     }
 }
