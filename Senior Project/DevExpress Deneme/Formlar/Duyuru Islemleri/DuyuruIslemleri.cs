@@ -1,4 +1,5 @@
 ﻿using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,41 +20,76 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
 
         private void Yetki()
         {
-            if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+            try
             {
-                tileDuyuruEkle.Visible = false;
+                if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+                {
+                    tileDuyuruEkle.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
-        
+
         private void MultiLanguage()
         {
-            tileDuyuruEkle.Text = Localization.duyuruEkle;
-            tileDuyuruListesi.Text = Localization.duyuruListesi;
-            tileKapat.Text = Localization.btnKapat;
+            try
+            {
+                tileDuyuruEkle.Text = Localization.duyuruEkle;
+                tileDuyuruListesi.Text = Localization.duyuruListesi;
+                tileKapat.Text = Localization.btnKapat;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void DuyuruIslemleri_Load(object sender, EventArgs e)
         {
-            MultiLanguage();
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                MultiLanguage();
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                }
+                ortakFormIslemleri.tileRenkDegistir(tileDuyuruEkle, tileDuyuruListesi);
+                Yetki();
             }
-            ortakFormIslemleri.tileRenkDegistir(tileDuyuruEkle, tileDuyuruListesi);
-            Yetki();
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void tileItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            DuyuruEkle duyuruekle = new DuyuruEkle();
-            duyuruekle.Show();
+            try
+            {
+                DuyuruEkle duyuruekle = new DuyuruEkle();
+                duyuruekle.Show();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void tileItem2_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            DuyuruListesi duyuruListesi = new DuyuruListesi();
-            duyuruListesi.Show();
+            try
+            {
+                DuyuruListesi duyuruListesi = new DuyuruListesi();
+                duyuruListesi.Show();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void tileItem3_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)

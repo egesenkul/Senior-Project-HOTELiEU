@@ -1,4 +1,5 @@
 ﻿using Otel_Uygulamasi.Classlar;
+using Otel_Uygulamasi.Formlar.Genel;
 using Otel_Uygulamasi.Formlar.Personel_Islemleri;
 using System;
 using System.Collections.Generic;
@@ -20,21 +21,34 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         private void Yetki()
         {
+            try { 
             if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
             {
                 tileItemToplantiOlustur.Visible = false;
+            }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private void MultiLanguage()
         {
+            try { 
             tileItemToplantiOlustur.Text = Localization.tileToplantiOlustur;
             tileItemToplantiListesi.Text = Localization.tileToplantiListesi;
             tileItemKapat.Text = Localization.btnKapat;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void ToplantiIslemleri_Load(object sender, EventArgs e)
         {
+            try { 
             this.StyleManager = metroStyleManager1;
             if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
             {
@@ -43,6 +57,11 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
             ortakFormIslemleri.tileRenkDegistir(tileItemToplantiListesi, tileItemToplantiOlustur);
             Yetki();
             MultiLanguage();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void tileItem3_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
@@ -52,14 +71,26 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         private void tileItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
+            try { 
             ToplantiOlustur toplantiOlustur = new ToplantiOlustur();
             toplantiOlustur.Show();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void tileItemToplantiListesi_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
+            try { 
             ToplantiListesi toplantiListesi = new ToplantiListesi();
             toplantiListesi.Show();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
     }
 }

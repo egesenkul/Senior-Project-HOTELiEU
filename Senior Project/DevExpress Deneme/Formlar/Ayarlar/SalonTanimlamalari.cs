@@ -30,104 +30,138 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         public void FiilComboboxSorumlu()
         {
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "Select personelAdi,personelSoyadi from Personel";
-            cmd.Connection = connection;
-            cmd.CommandType = CommandType.Text;
-
-            SqlDataReader Dr;
-            connection.Open();
-            Dr = cmd.ExecuteReader();
-            while (Dr.Read())
+            try
             {
-                cmbSalonSorumlu.Items.Add(Dr["personelAdi"]+" "+ Dr["personelSoyadi"]);
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "Select personelAdi,personelSoyadi from Personel";
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd.ExecuteReader();
+                while (Dr.Read())
+                {
+                    cmbSalonSorumlu.Items.Add(Dr["personelAdi"] + " " + Dr["personelSoyadi"]);
+                }
+                connection.Close();
             }
-            connection.Close();
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
-    
         public void FiilComboboxBlok()
         {
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "Select blokAdı from Blok";
-            cmd.Connection = connection;
-            cmd.CommandType = CommandType.Text;
-
-            SqlDataReader Dr;
-            connection.Open();
-            Dr = cmd.ExecuteReader();
-            while (Dr.Read())
+            try
             {
-                cmbSalonBlok.Items.Add(Dr["blokAdı"]);
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "Select blokAdı from Blok";
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd.ExecuteReader();
+                while (Dr.Read())
+                {
+                    cmbSalonBlok.Items.Add(Dr["blokAdı"]);
+                }
+                connection.Close();
             }
-            connection.Close();
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         public void FiilComboboxKat()
         {
-            cmbKat.Items.Clear();
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "Select KatNo from Kat where blokAdı='" + cmbSalonBlok.SelectedItem.ToString() + "'";
-            
-            cmd.Connection = connection;
-            cmd.CommandType = CommandType.Text;
-
-            SqlDataReader Dr;
-            connection.Open();
-            Dr = cmd.ExecuteReader();
-            while (Dr.Read())
+            try
             {
-                cmbKat.Items.Add(Dr["KatNo"]);
+                cmbKat.Items.Clear();
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "Select KatNo from Kat where blokAdı='" + cmbSalonBlok.SelectedItem.ToString() + "'";
+
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd.ExecuteReader();
+                while (Dr.Read())
+                {
+                    cmbKat.Items.Add(Dr["KatNo"]);
+                }
+                connection.Close();
+                ortakFormIslemleri.cmbIlkDegerGetir(cmbKat);
             }
-            connection.Close();
-            ortakFormIslemleri.cmbIlkDegerGetir(cmbKat);
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void MultiLanguage()
         {
-            lblSalonAdi.Text = Localization.lblSalonAdi;
-            lblSalonAdresi.Text = Localization.lblSalonAdresi;
-            lblSalonBulunduguBlok.Text = Localization.lblSalonBulunduguBlok;
-            btnKlavye.Text = Localization.btnKlavyeAc;
-            btnTemizle.Text = Localization.btnTemizle;
-            btnIptal.Text = Localization.btnIptal;
-            btnKaydet.Text = Localization.btnKaydet;
-            lblSalonBulunduguKat.Text = Localization.lblSalonBulunduguKat;
-            lblSalonKategori.Text = Localization.lblSalonKategori;
-            lblSalonSorumlusu.Text = Localization.lblSalonSorumlusu;
+            try
+            {
+                lblSalonAdi.Text = Localization.lblSalonAdi;
+                lblSalonAdresi.Text = Localization.lblSalonAdresi;
+                lblSalonBulunduguBlok.Text = Localization.lblSalonBulunduguBlok;
+                btnKlavye.Text = Localization.btnKlavyeAc;
+                btnTemizle.Text = Localization.btnTemizle;
+                btnIptal.Text = Localization.btnIptal;
+                btnKaydet.Text = Localization.btnKaydet;
+                lblSalonBulunduguKat.Text = Localization.lblSalonBulunduguKat;
+                lblSalonKategori.Text = Localization.lblSalonKategori;
+                lblSalonSorumlusu.Text = Localization.lblSalonSorumlusu;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void SalonTanimlamalari_Load(object sender, EventArgs e)
         {
-            MultiLanguage();
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblSalonAdi, lblSalonKategori, lblSalonSorumlusu, lblSalonAdresi, lblSalonBulunduguBlok, lblSalonBulunduguKat);
-                ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtadres, txtisim);
-                ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbKat, cmbSalonBlok, cmbSalonKategori, cmbSalonSorumlu);
+                MultiLanguage();
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblSalonAdi, lblSalonKategori, lblSalonSorumlusu, lblSalonAdresi, lblSalonBulunduguBlok, lblSalonBulunduguKat);
+                    ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtadres, txtisim);
+                    ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbKat, cmbSalonBlok, cmbSalonKategori, cmbSalonSorumlu);
+                }
+                FiilComboboxBlok();
+                FiilComboboxSorumlu();
+                cmbSalonKategori.Items.Add("Yemek Salonu");
+                cmbSalonKategori.Items.Add("Toplantı Salonu");
+                ortakFormIslemleri.comboBoxTemizle(cmbSalonBlok, cmbSalonKategori, cmbSalonSorumlu);
+                if (SalonKategoriMod == 0)
+                {
+                    cmbSalonKategori.SelectedIndex = 0;
+                }
+                else { cmbSalonKategori.SelectedIndex = 1; }
+                if (Kullanici.klavye.Equals("True"))
+                {
+                    btnKlavye.Visible = true;
+                }
+                else btnKlavye.Visible = false;
             }
-            FiilComboboxBlok();
-            FiilComboboxSorumlu();
-            cmbSalonKategori.Items.Add("Yemek Salonu");
-            cmbSalonKategori.Items.Add("Toplantı Salonu");
-            ortakFormIslemleri.comboBoxTemizle(cmbSalonBlok, cmbSalonKategori, cmbSalonSorumlu);
-            if(SalonKategoriMod==0)
+            catch (Exception ex)
             {
-                cmbSalonKategori.SelectedIndex = 0;
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-            else { cmbSalonKategori.SelectedIndex = 1; }
-            if (Kullanici.klavye.Equals("True"))
-            {
-                btnKlavye.Visible = true;
-            }
-            else btnKlavye.Visible = false;
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -137,45 +171,52 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (BilgiKontrol())
+            try
             {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-
-                string[] parcalar;
-                string kullaniciadiPersonel = "";
-                parcalar = cmbSalonSorumlu.SelectedItem.ToString().Split(' ');
-                SqlCommand cmd3 = new SqlCommand();
-
-                cmd3.CommandText = "select personelKullaniciAdi from Personel where personelAdi ='" + parcalar[0] + "' and personelSoyadi='" + parcalar[1] + "'";
-                cmd3.Connection = connection;
-                cmd3.CommandType = CommandType.Text;
-                SqlDataReader Dr;
-                connection.Open();
-                Dr = cmd3.ExecuteReader();
-                while (Dr.Read())
+                if (BilgiKontrol())
                 {
-                    kullaniciadiPersonel = (Dr["personelKullaniciAdi"]).ToString();
-                }
-                connection.Close();
+                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
+                    string[] parcalar;
+                    string kullaniciadiPersonel = "";
+                    parcalar = cmbSalonSorumlu.SelectedItem.ToString().Split(' ');
+                    SqlCommand cmd3 = new SqlCommand();
 
-                if (!String.IsNullOrEmpty(txtisim.Text))
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = connection;
+                    cmd3.CommandText = "select personelKullaniciAdi from Personel where personelAdi ='" + parcalar[0] + "' and personelSoyadi='" + parcalar[1] + "'";
+                    cmd3.Connection = connection;
+                    cmd3.CommandType = CommandType.Text;
+                    SqlDataReader Dr;
                     connection.Open();
-
-                    cmd.CommandText = "Insert into Salon values('" + txtisim.Text + "','" + cmbSalonKategori.SelectedItem.ToString() + "','" + kullaniciadiPersonel + "','" + cmbSalonBlok.SelectedItem.ToString() + "','" + txtadres.Text + "','" + cmbKat.SelectedItem.ToString() + "')";
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    txtisim.Clear();
-                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    Dr = cmd3.ExecuteReader();
+                    while (Dr.Read())
                     {
-                        HotelWarningForm.Show(Localization.SalonEklemeBasarili, Localization.Tamam, 0);
+                        kullaniciadiPersonel = (Dr["personelKullaniciAdi"]).ToString();
                     }
-                    ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
-                    ortakFormIslemleri.comboBoxTemizle(cmbSalonSorumlu, cmbSalonKategori, cmbSalonBlok, cmbKat);
+                    connection.Close();
+
+
+                    if (!String.IsNullOrEmpty(txtisim.Text))
+                    {
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = connection;
+                        connection.Open();
+
+                        cmd.CommandText = "Insert into Salon values('" + txtisim.Text + "','" + cmbSalonKategori.SelectedItem.ToString() + "','" + kullaniciadiPersonel + "','" + cmbSalonBlok.SelectedItem.ToString() + "','" + txtadres.Text + "','" + cmbKat.SelectedItem.ToString() + "')";
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        txtisim.Clear();
+                        if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        {
+                            HotelWarningForm.Show(Localization.SalonEklemeBasarili, Localization.Tamam, 0);
+                        }
+                        ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
+                        ortakFormIslemleri.comboBoxTemizle(cmbSalonSorumlu, cmbSalonKategori, cmbSalonBlok, cmbKat);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
@@ -186,38 +227,60 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
-            ortakFormIslemleri.comboBoxTemizle(cmbSalonBlok, cmbSalonKategori,cmbKat, cmbSalonSorumlu);
+            try
+            {
+                ortakFormIslemleri.textBoxTemizle(txtadres, txtisim);
+                ortakFormIslemleri.comboBoxTemizle(cmbSalonBlok, cmbSalonKategori, cmbKat, cmbSalonSorumlu);
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private bool BilgiKontrol()
         {
-            if ((cmbKat.SelectedItem == null))
+            try
             {
-                HotelWarningForm.Show(Localization.onceKatEkleyiniz, Localization.Tamam, 1);
-                return false;
+                if ((cmbKat.SelectedItem == null))
+                {
+                    HotelWarningForm.Show(Localization.onceKatEkleyiniz, Localization.Tamam, 1);
+                    return false;
+                }
+                if (string.IsNullOrEmpty(txtisim.Text))
+                {
+                    HotelWarningForm.Show(Localization.salonIsmiBosGecilemez, Localization.Tamam, 1);
+                    return false;
+                }
+                if ((cmbSalonSorumlu.SelectedItem == null))
+                {
+                    HotelWarningForm.Show(Localization.salonSorumlusuSeciniz, Localization.Tamam, 1);
+                    return false;
+                }
+                if ((cmbSalonBlok.SelectedItem == null))
+                {
+                    HotelWarningForm.Show(Localization.blokIsmiBosGecilmez, Localization.Tamam, 1);
+                    return false;
+                }
+                return true;
             }
-            if (string.IsNullOrEmpty(txtisim.Text))
+            catch (Exception ex)
             {
-                HotelWarningForm.Show(Localization.salonIsmiBosGecilemez, Localization.Tamam, 1);
-                return false;
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-            if ((cmbSalonSorumlu.SelectedItem == null))
-            {
-                HotelWarningForm.Show(Localization.salonSorumlusuSeciniz, Localization.Tamam, 1);
-                return false;
-            }
-            if ((cmbSalonBlok.SelectedItem == null))
-            {
-                HotelWarningForm.Show(Localization.blokIsmiBosGecilmez, Localization.Tamam, 1);
-                return false;
-            }
-            return true;
+            return false;
         }
 
         private void cmbSalonBlok_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FiilComboboxKat();
+            try
+            {
+                FiilComboboxKat();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
     }
 }

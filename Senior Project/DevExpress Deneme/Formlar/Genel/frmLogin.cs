@@ -31,16 +31,23 @@ namespace DevExpress_Deneme
 
         private void KullaniciAdiSifreOku()
         {
+            try { 
             txtKullaniciAdi.Text = Otel_Uygulamasi.Properties.Settings.Default.KullaniciAdi;
             txtSifre.Text = Otel_Uygulamasi.Properties.Settings.Default.KullaniciSifre;
             if (string.IsNullOrEmpty(txtKullaniciAdi.Text))
             {
                 chHatirla.Checked = false;
             }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void KullaniciAdiSifreKaydet()
         {
+            try { 
             Otel_Uygulamasi.Properties.Settings.Default.CheckDurum = chHatirla.Checked;
             Otel_Uygulamasi.Properties.Settings.Default.Save();
             if (chHatirla.Checked)
@@ -57,10 +64,16 @@ namespace DevExpress_Deneme
                 Otel_Uygulamasi.Properties.Settings.Default.KullaniciSifre = "";
                 Otel_Uygulamasi.Properties.Settings.Default.Save();
             }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void MultiLanguage()
         {
+            try { 
             lblKullaniciAdi.Text = Localization.lblKullaniciAdi;
             lblSifre.Text = Localization.lblSifre;
             lblDil.Text = Localization.lblDil;
@@ -70,7 +83,11 @@ namespace DevExpress_Deneme
             btnKapat.Text = Localization.btnKapat;
             btnKlavyeAc.Text = Localization.btnKlavyeAc;
             chHatirla.Text = Localization.chHatirla;
-            
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         public void DovizKuruGetir()
@@ -128,6 +145,7 @@ namespace DevExpress_Deneme
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            try { 
             if (CheckForInternetConnection())
             {
                 DovizKuruGetir();
@@ -166,11 +184,17 @@ namespace DevExpress_Deneme
                 HotelWarningForm.Show(Localization.internetYok, Localization.Tamam,1);
                 Environment.Exit(1);
             }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
         
 
         private void GirisKontrol()
         {
+            try { 
             if (string.IsNullOrEmpty(txtKullaniciAdi.Text))
             {
                 HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam,1);
@@ -182,9 +206,15 @@ namespace DevExpress_Deneme
                 txtSifre.Focus();
             }
         }
+            catch(Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+}
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
+            try { 
             //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
             SqlConnection connection= new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
@@ -226,10 +256,16 @@ namespace DevExpress_Deneme
                 anaEkran.Show();
                 
             }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
+            try { 
             DialogResult sonuc;
             sonuc = HotelMessageBox.Show(Localization.ProgramCikisOnay, Localization.Evet, Localization.Hayır);
             if (sonuc == DialogResult.No)
@@ -241,6 +277,11 @@ namespace DevExpress_Deneme
                 this.Close();
                 Application.Exit();
             }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -250,41 +291,66 @@ namespace DevExpress_Deneme
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
+            try { 
             Destek destek = new Destek();
             destek.Show();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try { 
             if (e.KeyChar.Equals(Convert.ToChar(13)))
             {
                 btnGiris.PerformClick();
             }
         }
+            catch(Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+}
 
         private void txtSifre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            try { 
             if (e.KeyChar.Equals(Convert.ToChar(13)))
             {
                 btnGiris.PerformClick();
+            }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private void cmbDil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbDil.SelectedIndex == 0)
+            try
             {
-                Localization.Culture = new CultureInfo("");
-                Settings.Default.dil = "Türkçe";
-                Settings.Default.Save();
+                if (cmbDil.SelectedIndex == 0)
+                {
+                    Localization.Culture = new CultureInfo("");
+                    Settings.Default.dil = "Türkçe";
+                    Settings.Default.Save();
+                }
+                else if (cmbDil.SelectedIndex == 1)
+                {
+                    Localization.Culture = new CultureInfo("en-US");
+                    Settings.Default.dil = "İngilizce";
+                    Settings.Default.Save();
+                }
+                MultiLanguage();
             }
-            else if (cmbDil.SelectedIndex == 1)
+            catch(Exception ex)
             {
-                Localization.Culture = new CultureInfo("en-US");
-                Settings.Default.dil = "İngilizce";
-                Settings.Default.Save();
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-            MultiLanguage();
-        }
+}
     }
 }

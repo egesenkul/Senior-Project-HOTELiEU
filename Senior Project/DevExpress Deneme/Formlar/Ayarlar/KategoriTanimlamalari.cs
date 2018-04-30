@@ -30,46 +30,60 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void MultiLanguage()
         {
-            lblBolumeAitKategori.Text = Localization.lblKatAdi;
-            lblKategoriAdi.Text = Localization.lblKategoriAdi;
-            btnKlavye.Text = Localization.btnKlavyeAc;
-            lblKategoriAitBolum.Text = Localization.lblKategoriAitBolum;
-            btnTemizle.Text = Localization.btnTemizle;
-            btnIptal.Text = Localization.btnIptal;
-            btnKaydet.Text = Localization.btnKaydet;
-              }
+            try
+            {
+                lblBolumeAitKategori.Text = Localization.lblKatAdi;
+                lblKategoriAdi.Text = Localization.lblKategoriAdi;
+                btnKlavye.Text = Localization.btnKlavyeAc;
+                lblKategoriAitBolum.Text = Localization.lblKategoriAitBolum;
+                btnTemizle.Text = Localization.btnTemizle;
+                btnIptal.Text = Localization.btnIptal;
+                btnKaydet.Text = Localization.btnKaydet;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+        }
 
         private void KategoriTanimlamalari_Load(object sender, EventArgs e)
         {
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblKategoriAdi, lblKategoriAitBolum, lblBolumeAitKategori);
-                ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtisim);
-                ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbKategoriBolum);
-                ortakFormIslemleri.ListViewRenkDegistir(Color.Black, metroListView1);
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblKategoriAdi, lblKategoriAitBolum, lblBolumeAitKategori);
+                    ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtisim);
+                    ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbKategoriBolum);
+                    ortakFormIslemleri.ListViewRenkDegistir(Color.Black, metroListView1);
 
-            }
+                }
 
-            cmbKategoriBolum.Items.Add("Personel");
-            cmbKategoriBolum.Items.Add("Yemek Türü");
-            cmbKategoriBolum.Items.Add("Oda");
-            cmbKategoriBolum.Items.Add("Duyuru");
-            if (KategoriMod == 0)
-            {
-                cmbKategoriBolum.SelectedIndex = 0;
+                cmbKategoriBolum.Items.Add("Personel");
+                cmbKategoriBolum.Items.Add("Yemek Türü");
+                cmbKategoriBolum.Items.Add("Oda");
+                cmbKategoriBolum.Items.Add("Duyuru");
+                if (KategoriMod == 0)
+                {
+                    cmbKategoriBolum.SelectedIndex = 0;
+                }
+                else if (KategoriMod == 1) { cmbKategoriBolum.SelectedIndex = 1; }
+                else if (KategoriMod == 2) { cmbKategoriBolum.SelectedIndex = 2; }
+                else if (KategoriMod == 3) { cmbKategoriBolum.SelectedIndex = 3; }
+                ListViewGuncelleme();
+                if (Kullanici.klavye.Equals("True"))
+                {
+                    btnKlavye.Visible = true;
+                }
+                else btnKlavye.Visible = false;
+                MultiLanguage();
             }
-            else if (KategoriMod == 1) { cmbKategoriBolum.SelectedIndex = 1; }
-            else if (KategoriMod == 2) { cmbKategoriBolum.SelectedIndex = 2; }
-            else if (KategoriMod == 3) { cmbKategoriBolum.SelectedIndex = 3; }
-            ListViewGuncelleme();
-            if (Kullanici.klavye.Equals("True"))
+            catch (Exception ex)
             {
-                btnKlavye.Visible = true;
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-            else btnKlavye.Visible = false;
-            MultiLanguage();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -79,167 +93,202 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = connection;
-            connection.Open();
-
-            if (txtisim.Text == "")
+            try
             {
-                HotelWarningForm.Show(Localization.KategoriIsmiBosGecilemez, Localization.Tamam,1);
-                txtisim.Focus();
-                connection.Close();
+                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connection;
+                connection.Open();
+
+                if (txtisim.Text == "")
+                {
+                    HotelWarningForm.Show(Localization.KategoriIsmiBosGecilemez, Localization.Tamam, 1);
+                    txtisim.Focus();
+                    connection.Close();
+                }
+                else
+                {
+                    if (cmbKategoriBolum.SelectedIndex == 0)
+                    {
+                        cmd.CommandText = "Insert into PeronelKategori values('" + txtisim.Text + "')";
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        txtisim.Clear();
+                        if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        {
+                            HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam, 0);
+                        }
+                        ListViewGuncelleme();
+                    }
+                    else if (cmbKategoriBolum.SelectedIndex == 1)
+                    {
+                        cmd.CommandText = "Insert into YemekTuru values('" + txtisim.Text + "')";
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        txtisim.Clear();
+                        if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        {
+                            HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam, 0);
+                        }
+                        ListViewGuncelleme();
+                    }
+                    else if (cmbKategoriBolum.SelectedIndex == 2)
+                    {
+                        cmd.CommandText = "Insert into OdaKategori values('" + txtisim.Text + "')";
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        txtisim.Clear();
+                        if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        {
+                            HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam, 0);
+                        }
+                        ListViewGuncelleme();
+                    }
+                    else if (cmbKategoriBolum.SelectedIndex == 3)
+                    {
+                        cmd.CommandText = "Insert into DuyuruKategori values('" + txtisim.Text + "')";
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        txtisim.Clear();
+                        if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        {
+                            HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam, 0);
+                        }
+                        ListViewGuncelleme();
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                if (cmbKategoriBolum.SelectedIndex == 0)
-                {
-                    cmd.CommandText = "Insert into PeronelKategori values('" + txtisim.Text + "')";
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    txtisim.Clear();
-                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
-                    {
-                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam,0);
-                    }
-                    ListViewGuncelleme();
-                }
-                else if (cmbKategoriBolum.SelectedIndex == 1)
-                {
-                    cmd.CommandText = "Insert into YemekTuru values('" + txtisim.Text + "')";
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    txtisim.Clear();
-                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
-                    {
-                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam,0);
-                    }
-                    ListViewGuncelleme();
-                }
-                else if (cmbKategoriBolum.SelectedIndex == 2)
-                {
-                    cmd.CommandText = "Insert into OdaKategori values('" + txtisim.Text + "')";
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    txtisim.Clear();
-                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
-                    {
-                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam,0);
-                    }
-                    ListViewGuncelleme();
-                }
-                else if (cmbKategoriBolum.SelectedIndex == 3)
-                {
-                    cmd.CommandText = "Insert into DuyuruKategori values('" + txtisim.Text + "')";
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    txtisim.Clear();
-                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
-                    {
-                        HotelWarningForm.Show(Localization.KategoriEklemeBasarili, Localization.Tamam,0);
-                    }
-                    ListViewGuncelleme();
-                }
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
-        private void ListViewGuncelleme() {
-            //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-
-            SqlCommand cmd = new SqlCommand();
-
-            string tablename = "";
-            string tablecolumnname = "";
-
-            metroListView1.Items.Clear();
-
-            if (cmbKategoriBolum.SelectedIndex == 0)
+        private void ListViewGuncelleme()
+        {
+            try
             {
-                metroListView1.Items.Clear();
-                tablename = "PeronelKategori";
-                tablecolumnname = "KategoriAciklama";
-                cmd.CommandText = "Select * from " + tablename + "";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
+                SqlCommand cmd = new SqlCommand();
+
+                string tablename = "";
+                string tablecolumnname = "";
+
+                metroListView1.Items.Clear();
+
+                if (cmbKategoriBolum.SelectedIndex == 0)
                 {
-                    metroListView1.Items.Add(Dr[tablecolumnname].ToString());
+                    metroListView1.Items.Clear();
+                    tablename = "PeronelKategori";
+                    tablecolumnname = "KategoriAciklama";
+                    cmd.CommandText = "Select * from " + tablename + "";
+                    cmd.Connection = connection;
+                    cmd.CommandType = CommandType.Text;
+
+                    connection.Open();
+                    Dr = cmd.ExecuteReader();
+                    while (Dr.Read())
+                    {
+                        metroListView1.Items.Add(Dr[tablecolumnname].ToString());
+                    }
+                    connection.Close();
                 }
-                connection.Close();
+                else if (cmbKategoriBolum.SelectedIndex == 1)
+                {
+                    metroListView1.Items.Clear();
+                    tablename = "YemekTuru";
+                    tablecolumnname = "TurAciklama";
+                    cmd.CommandText = "Select * from " + tablename + "";
+                    cmd.Connection = connection;
+                    cmd.CommandType = CommandType.Text;
+
+                    connection.Open();
+                    Dr = cmd.ExecuteReader();
+                    while (Dr.Read())
+                    {
+                        metroListView1.Items.Add(Dr[tablecolumnname].ToString());
+                    }
+                    connection.Close();
+                }
+                else if (cmbKategoriBolum.SelectedIndex == 2)
+                {
+                    metroListView1.Items.Clear();
+                    tablename = "OdaKategori";
+                    tablecolumnname = "OdaKategoriAciklama";
+                    cmd.CommandText = "Select * from " + tablename + "";
+                    cmd.Connection = connection;
+                    cmd.CommandType = CommandType.Text;
+
+                    connection.Open();
+                    Dr = cmd.ExecuteReader();
+                    while (Dr.Read())
+                    {
+                        metroListView1.Items.Add(Dr[tablecolumnname].ToString());
+                    }
+                    connection.Close();
+                }
+                else if (cmbKategoriBolum.SelectedIndex == 3)
+                {
+                    metroListView1.Items.Clear();
+                    tablename = "DuyuruKategori";
+                    tablecolumnname = "DuyuruKategoriAciklama";
+                    cmd.CommandText = "Select * from " + tablename + "";
+                    cmd.Connection = connection;
+                    cmd.CommandType = CommandType.Text;
+
+                    connection.Open();
+                    Dr = cmd.ExecuteReader();
+                    while (Dr.Read())
+                    {
+                        metroListView1.Items.Add(Dr[tablecolumnname].ToString());
+                    }
+                    connection.Close();
+                }
             }
-            else if (cmbKategoriBolum.SelectedIndex == 1)
+            catch (Exception ex)
             {
-                metroListView1.Items.Clear();
-                tablename = "YemekTuru";
-                tablecolumnname = "TurAciklama";
-                cmd.CommandText = "Select * from " + tablename + "";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
-                {
-                    metroListView1.Items.Add(Dr[tablecolumnname].ToString());
-                }
-                connection.Close();
-            }
-            else if (cmbKategoriBolum.SelectedIndex == 2)
-            {
-                metroListView1.Items.Clear();
-                tablename = "OdaKategori";
-                tablecolumnname = "OdaKategoriAciklama";
-                cmd.CommandText = "Select * from " + tablename + "";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
-                {
-                    metroListView1.Items.Add(Dr[tablecolumnname].ToString());
-                }
-                connection.Close();
-            }
-            else if (cmbKategoriBolum.SelectedIndex == 3)
-            {
-                metroListView1.Items.Clear();
-                tablename = "DuyuruKategori";
-                tablecolumnname = "DuyuruKategoriAciklama";
-                cmd.CommandText = "Select * from " + tablename + "";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
-                {
-                    metroListView1.Items.Add(Dr[tablecolumnname].ToString());
-                }
-                connection.Close();
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private void cmbKategoriBolum_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListViewGuncelleme();
+            try
+            {
+                ListViewGuncelleme();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            ortakFormIslemleri.textBoxTemizle(txtisim);
-            ortakFormIslemleri.comboBoxTemizle(cmbKategoriBolum);
+            try
+            {
+                ortakFormIslemleri.textBoxTemizle(txtisim);
+                ortakFormIslemleri.comboBoxTemizle(cmbKategoriBolum);
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void btnKlavye_Click(object sender, EventArgs e)
         {
-            ortakFormIslemleri.KlavyeAc();
+            try
+            {
+                ortakFormIslemleri.KlavyeAc();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
     }
 }
