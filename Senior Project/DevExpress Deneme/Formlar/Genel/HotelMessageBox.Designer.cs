@@ -45,6 +45,7 @@
             this.metrolbl.Size = new System.Drawing.Size(163, 25);
             this.metrolbl.TabIndex = 18;
             this.metrolbl.Text = "X (XXX) XXX XX XX";
+            this.metrolbl.WrapToLine = true;
             // 
             // metroButton1
             // 
