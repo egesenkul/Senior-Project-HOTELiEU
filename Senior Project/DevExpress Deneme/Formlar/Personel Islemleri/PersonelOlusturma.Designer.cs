@@ -149,6 +149,7 @@
             this.cmbPersonelGrubu.UseCustomBackColor = true;
             this.cmbPersonelGrubu.UseCustomForeColor = true;
             this.cmbPersonelGrubu.UseSelectable = true;
+            this.cmbPersonelGrubu.Click += new System.EventHandler(this.cmbPersonelGrubu_Click);
             // 
             // lblPersonelGrubu
             // 
