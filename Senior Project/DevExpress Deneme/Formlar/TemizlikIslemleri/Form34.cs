@@ -147,6 +147,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             FiilComboboxOdaGrubu();
             FiilComboboxBlok();
             FiilComboboxKat();
+                metroDateTime1.Value = DateTime.Now.AddDays(-1);
             }
             catch (Exception ex)
             {
