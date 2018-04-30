@@ -27,6 +27,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         public void FiilComboboxOdaGrubu()
         {
+            try { 
             cmbOdaTipi.Items.Add(Localization.Tümü);
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
@@ -45,9 +46,15 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             connection.Close();
             cmbOdaTipi.SelectedIndex = 0;
         }
+            catch(Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+}
 
         public void FiilComboboxBlok()
         {
+            try { 
             cmbOdaBlok.Items.Add(Localization.Tümü);
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
@@ -65,10 +72,16 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
             connection.Close();
             ortakFormIslemleri.cmbIlkDegerGetir(cmbOdaBlok);
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         public void FillDataGridView(string sorgu)
         {
+            try { 
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
             SqlCommand sqlCmd = new SqlCommand();
@@ -97,21 +110,32 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             
             //GridView yayılsın
             metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void MultiLanguage()
         {
+            try { 
             lblBlok.Text = Localization.lblBlokAdi;
             lblKat.Text = Localization.lblKatAdi;
             lblOdaTipi.Text = Localization.OdaGrupLabel;
             btnFiltrele.Text = Localization.btnFiltrele;
             btnKapat.Text = Localization.btnKapat;
             btnTemizle.Text = Localization.btnTemizle;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void OdaKontrol_Load(object sender, EventArgs e)
         {
-            //Oda Kontrol
+            try { 
             MultiLanguage();
             this.StyleManager = metroStyleManager1;
             if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
@@ -123,11 +147,16 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             FiilComboboxOdaGrubu();
             FiilComboboxBlok();
             FiilComboboxKat();
-
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         public void FiilComboboxKat()
         {
+            try { 
             cmbKat.Items.Clear();
             cmbKat.Items.Add(Localization.Tümü);
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
@@ -153,6 +182,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
             connection.Close();
             ortakFormIslemleri.cmbIlkDegerGetir(cmbKat);
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -172,6 +206,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void OdalarıGetir()
         {
+            try { 
             SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
             SqlCommand cmd = new SqlCommand();
             if (string.Equals(cmbOdaBlok.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbOdaTipi.SelectedItem.ToString(),Localization.Tümü))
@@ -222,9 +257,16 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 //MetroMessageBox.Show(this, "", "İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             connection.Close();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            try { 
             OdalarıGetir();
             foreach (string item in odalar) {
                 FillDataGridView("SELECT * FROM OdaHareket  WHERE OdaNo ='" + item + "'and islemTarihi1>='" + Convert.ToDateTime(metroDateTime1.Value).ToString("yyyy-MM-dd HH:mm:ss") + "'and islemTarihii2<='" + Convert.ToDateTime(metroDateTime2.Value).ToString("yyyy-MM-dd HH:mm:ss") + "' and islemTipi='Temizlik'");
@@ -232,6 +274,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             if (metroGrid1.DataSource == null)
             {
                 HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam,1);
+            }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
     }
