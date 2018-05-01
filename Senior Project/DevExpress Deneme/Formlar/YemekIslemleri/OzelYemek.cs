@@ -179,7 +179,6 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 if (!string.IsNullOrEmpty(yemekAdi))
                 {
                     BilgiDoldur();
-                    string[] liste;
                     for (int i = 0; i < listeKatilacaklar.Items.Count; i++)
                     {
                         //ListeGrupUyeleri.ControlRemoved()

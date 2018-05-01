@@ -175,7 +175,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     connection.Close();
                     return "rıza";
                 }
-                return "";
             }
             catch (Exception ex)
             {

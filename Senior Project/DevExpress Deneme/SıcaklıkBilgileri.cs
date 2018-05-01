@@ -11,7 +11,6 @@ using System.Text;
 using System.Windows.Forms;
 using Sıcaklık;
 using Newtonsoft.Json;
-using Otel_Uygulamasi.Classlar;
 using Otel_Uygulamasi;
 
 namespace DevExpress_Deneme
