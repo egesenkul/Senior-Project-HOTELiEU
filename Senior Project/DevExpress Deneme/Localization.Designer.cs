@@ -1654,6 +1654,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personel daha önceden tanımlanmış.
+        /// </summary>
+        internal static string personelDahaOncedenTanimlanmis {
+            get {
+                return ResourceManager.GetString("personelDahaOncedenTanimlanmis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personel Departmanı.
         /// </summary>
         internal static string personelDepartman {

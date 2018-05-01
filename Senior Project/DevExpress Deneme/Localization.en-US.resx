@@ -460,7 +460,7 @@
     <value>Announcement succesfully removed.</value>
   </data>
   <data name="DuzenlemekicinDuyuruSec" xml:space="preserve">
-    <value>Please first, select announcement which you want to edit.</value>
+    <value>Please first, select announcement which you {0}want to edit.</value>
   </data>
   <data name="GeriAlinacakDuyuruSec" xml:space="preserve">
     <value>Please first, select announcement which you want to recover.</value>
@@ -935,5 +935,8 @@
   </data>
   <data name="checkoutKayitSec" xml:space="preserve">
     <value>Please first select entry which you want to check-out</value>
+  </data>
+  <data name="personelDahaOncedenTanimlanmis" xml:space="preserve">
+    <value>Staff already defined</value>
   </data>
 </root>

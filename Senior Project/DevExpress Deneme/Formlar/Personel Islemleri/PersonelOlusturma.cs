@@ -255,20 +255,48 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
 
         private bool PersonelOlusturKontrol()
         { // müşteri oluşturmak için gerekli kontrol işlemlerini yap
-            if (!String.IsNullOrEmpty(txtKullaniciAdi.Text) && !String.IsNullOrEmpty(txtSifre.Text))
+            if (!String.IsNullOrEmpty(txtKullaniciAdi.Text) && !String.IsNullOrEmpty(txtSifre.Text) && !personelEkliMi())
             {
                 return eMailKontrol(txtmail.Text);
-
             }
-            HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam, 1);
-            return false;
+            else
+            {
+                HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam, 1);
+                return false;
+            }
         }
 
         private bool personelEkliMi()
         { //Personel daha önceden veri tabanına eklenmiş mi
+            bool var = false;
+            try
+            {
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
 
+                cmd.CommandText = "select * from Personel where personelMail='"+mail+"'";
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.Text;
 
-            return false;
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd.ExecuteReader();
+                if (Dr.Read())
+                {
+                    HotelWarningForm.Show(Localization.personelDahaOncedenTanimlanmis, Localization.Tamam, 1);
+                    var = true;
+                }
+                else
+                {
+                    var = false;
+                }
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+            return var;
         }
 
         private void txtsoyisim_TextChanged(object sender, EventArgs e)
@@ -286,6 +314,8 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             System.Diagnostics.Process.Start("osk.exe");
         }
 
+        public string mail;
+
         private void btnPersonelGrupEkle_Click(object sender, EventArgs e)
         {
             KategoriTanimlamalari PersonelGrup = new KategoriTanimlamalari(0);
@@ -301,6 +331,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
         {
             try
             {
+                mail = txtmail.Text;
                 if (PersonelOlusturKontrol())
                 {
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");

@@ -939,4 +939,7 @@
   <data name="checkoutKayitSec" xml:space="preserve">
     <value>Check-out işlemi için önce bir kayıt seçiniz</value>
   </data>
+  <data name="personelDahaOncedenTanimlanmis" xml:space="preserve">
+    <value>Personel daha önceden tanımlanmış</value>
+  </data>
 </root>
