@@ -91,7 +91,6 @@
             // 
             this.tileControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl1.DragSize = new System.Drawing.Size(0, 0);
             this.tileControl1.Groups.Add(this.tileGroup2);
             this.tileControl1.Groups.Add(this.tileGroup3);
             this.tileControl1.Groups.Add(this.tileGroup6);
@@ -452,7 +451,6 @@
             // 
             this.tileControl2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tileControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tileControl2.DragSize = new System.Drawing.Size(0, 0);
             this.tileControl2.Groups.Add(this.tileGroup5);
             this.tileControl2.Groups.Add(this.tileGroup8);
             this.tileControl2.Location = new System.Drawing.Point(20, 541);
@@ -561,6 +559,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.tileControl2);
             this.Controls.Add(this.tileControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "AnaEkran";

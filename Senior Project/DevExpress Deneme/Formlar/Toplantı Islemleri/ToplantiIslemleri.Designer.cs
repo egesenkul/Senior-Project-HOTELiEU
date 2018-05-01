@@ -45,7 +45,6 @@
             // tileControl1
             // 
             this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl1.DragSize = new System.Drawing.Size(0, 0);
             this.tileControl1.Groups.Add(this.tileGroup2);
             this.tileControl1.ItemSize = 180;
             this.tileControl1.Location = new System.Drawing.Point(13, 60);
@@ -117,6 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 471);
             this.Controls.Add(this.tileControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

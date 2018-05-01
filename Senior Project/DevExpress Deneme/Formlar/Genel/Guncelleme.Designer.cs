@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Guncelleme));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -170,7 +171,7 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.Location = new System.Drawing.Point(109, 30);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(183, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(184, 25);
             this.metroLabel3.TabIndex = 11;
             this.metroLabel3.Text = "OTEL LOGOSU / ADI";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,6 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 650);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(420, 650);
             this.MinimizeBox = false;

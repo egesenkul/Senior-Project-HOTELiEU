@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HavuzEkle));
             this.ListeHavuzlar = new MetroFramework.Controls.MetroListView();
             this.lblHavuzlar = new MetroFramework.Controls.MetroLabel();
             this.btnTemizle = new MetroFramework.Controls.MetroButton();
@@ -313,6 +314,7 @@
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnKlavye);
             this.Controls.Add(this.btnIptal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

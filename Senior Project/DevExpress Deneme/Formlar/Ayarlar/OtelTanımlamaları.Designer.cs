@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OtelTanımlamaları));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.txtAciklama = new MetroFramework.Controls.MetroTextBox();
             this.lblAciklama = new MetroFramework.Controls.MetroLabel();
@@ -365,7 +366,7 @@
             this.lblYetkiliKisiDegistirebilir.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblYetkiliKisiDegistirebilir.Location = new System.Drawing.Point(387, 484);
             this.lblYetkiliKisiDegistirebilir.Name = "lblYetkiliKisiDegistirebilir";
-            this.lblYetkiliKisiDegistirebilir.Size = new System.Drawing.Size(487, 25);
+            this.lblYetkiliKisiDegistirebilir.Size = new System.Drawing.Size(488, 25);
             this.lblYetkiliKisiDegistirebilir.TabIndex = 7;
             this.lblYetkiliKisiDegistirebilir.Text = "Bu alan sadece yetkili kişiler tarafından değiştirilebilinir.";
             this.lblYetkiliKisiDegistirebilir.UseCustomBackColor = true;
@@ -433,6 +434,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1207, 780);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

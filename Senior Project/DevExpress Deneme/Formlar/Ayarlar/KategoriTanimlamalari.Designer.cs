@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KategoriTanimlamalari));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroListView1 = new MetroFramework.Controls.MetroListView();
             this.cmbKategoriBolum = new MetroFramework.Controls.MetroComboBox();
@@ -229,6 +230,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 619);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

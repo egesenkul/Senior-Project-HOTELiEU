@@ -493,5 +493,18 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
+
+        private void btnKatEkle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                KatEkle ke = new KatEkle();
+                ke.Show();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+        }
     }
 }

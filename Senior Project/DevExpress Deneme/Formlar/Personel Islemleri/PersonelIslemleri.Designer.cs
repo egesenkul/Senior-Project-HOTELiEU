@@ -46,7 +46,6 @@
             // tileControl1
             // 
             this.tileControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl1.DragSize = new System.Drawing.Size(0, 0);
             this.tileControl1.Location = new System.Drawing.Point(20, 60);
             this.tileControl1.Name = "tileControl1";
             this.tileControl1.Size = new System.Drawing.Size(757, 427);
@@ -57,7 +56,6 @@
             // 
             this.tileControl2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tileControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl2.DragSize = new System.Drawing.Size(0, 0);
             this.tileControl2.Groups.Add(this.tileGroup2);
             this.tileControl2.ItemSize = 180;
             this.tileControl2.Location = new System.Drawing.Point(20, 60);
@@ -144,6 +142,7 @@
             this.ClientSize = new System.Drawing.Size(797, 507);
             this.Controls.Add(this.tileControl2);
             this.Controls.Add(this.tileControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

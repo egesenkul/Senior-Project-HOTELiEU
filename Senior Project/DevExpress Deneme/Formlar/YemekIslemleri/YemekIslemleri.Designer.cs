@@ -37,6 +37,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YemekIslemleri));
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileOgunTanimla = new DevExpress.XtraEditors.TileItem();
@@ -60,7 +61,6 @@
             this.tileControl1.Location = new System.Drawing.Point(20, 60);
             this.tileControl1.MaxId = 4;
             this.tileControl1.Name = "tileControl1";
-            this.tileControl1.Position = 323;
             this.tileControl1.Size = new System.Drawing.Size(833, 530);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
@@ -216,6 +216,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 610);
             this.Controls.Add(this.tileControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

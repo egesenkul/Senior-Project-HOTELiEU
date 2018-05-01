@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EtkinlikTanimlama));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.dtEtkinlik = new DevExpress.XtraEditors.DateEdit();
             this.txtKisiLimiti = new MetroFramework.Controls.MetroTextBox();
@@ -45,8 +46,8 @@
             this.lblEtkinlikismi = new MetroFramework.Controls.MetroLabel();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtEtkinlik.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEtkinlik.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEtkinlik.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,10 +87,16 @@
             this.dtEtkinlik.Location = new System.Drawing.Point(431, 377);
             this.dtEtkinlik.Margin = new System.Windows.Forms.Padding(2);
             this.dtEtkinlik.Name = "dtEtkinlik";
+            // 
+            // 
+            // 
             this.dtEtkinlik.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtEtkinlik.Properties.Appearance.Options.UseFont = true;
             this.dtEtkinlik.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            // 
+            // 
+            // 
             this.dtEtkinlik.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtEtkinlik.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
@@ -346,6 +353,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 772);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

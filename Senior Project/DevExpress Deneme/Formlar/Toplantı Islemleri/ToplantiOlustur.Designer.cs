@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToplantiOlustur));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.dtToplantiTarihSaat = new DevExpress.XtraEditors.DateEdit();
             this.chechBoxTümPersoneller = new MetroFramework.Controls.MetroCheckBox();
@@ -379,6 +380,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 705);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Movable = false;
             this.Name = "ToplantiOlustur";

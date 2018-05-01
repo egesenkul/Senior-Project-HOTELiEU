@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OzelYemek));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.lblGruplar = new MetroFramework.Controls.MetroLabel();
             this.btnYemekSalonuEkle = new MetroFramework.Controls.MetroButton();
@@ -542,6 +543,7 @@
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.PasswordChar = '\0';
+            this.txtAciklama.PromptText = "Yemek ile ilgili notlar";
             this.txtAciklama.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAciklama.SelectedText = "";
             this.txtAciklama.SelectionLength = 0;
@@ -708,6 +710,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 780);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(blokEkle));
             this.btnSecenekler = new MetroFramework.Controls.MetroButton();
             this.lblBlokListesi = new MetroFramework.Controls.MetroLabel();
             this.metroListView1 = new MetroFramework.Controls.MetroListView();
@@ -249,6 +250,7 @@
             this.Controls.Add(this.metroListView1);
             this.Controls.Add(this.txtBlokAdi);
             this.Controls.Add(this.lblBlokAdı);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

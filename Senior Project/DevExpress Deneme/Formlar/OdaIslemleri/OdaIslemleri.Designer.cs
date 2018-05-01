@@ -32,23 +32,24 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OdaIslemleri));
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileItemOdaTanimlama = new DevExpress.XtraEditors.TileItem();
             this.tileItemOdaMusteriIliskilendir = new DevExpress.XtraEditors.TileItem();
             this.tileItemOdaListesi = new DevExpress.XtraEditors.TileItem();
+            this.tileSureUzat = new DevExpress.XtraEditors.TileItem();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
             this.tileItemOdaRezerveEt = new DevExpress.XtraEditors.TileItem();
             this.tileItemKatPlani = new DevExpress.XtraEditors.TileItem();
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
             this.tileItem7 = new DevExpress.XtraEditors.TileItem();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.tileSureUzat = new DevExpress.XtraEditors.TileItem();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,6 +125,18 @@
             this.tileItemOdaListesi.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemOdaListesi.Name = "tileItemOdaListesi";
             this.tileItemOdaListesi.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem1_ItemClick);
+            // 
+            // tileSureUzat
+            // 
+            this.tileSureUzat.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.tileSureUzat.AppearanceItem.Normal.Options.UseFont = true;
+            tileItemElement4.Text = "Süre Uzat";
+            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileSureUzat.Elements.Add(tileItemElement4);
+            this.tileSureUzat.Id = 8;
+            this.tileSureUzat.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
+            this.tileSureUzat.Name = "tileSureUzat";
+            this.tileSureUzat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileSureUzat_ItemClick);
             // 
             // tileGroup3
             // 
@@ -208,24 +221,13 @@
             // 
             this.metroStyleManager1.Owner = null;
             // 
-            // tileSureUzat
-            // 
-            this.tileSureUzat.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.tileSureUzat.AppearanceItem.Normal.Options.UseFont = true;
-            tileItemElement4.Text = "Süre Uzat";
-            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileSureUzat.Elements.Add(tileItemElement4);
-            this.tileSureUzat.Id = 8;
-            this.tileSureUzat.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
-            this.tileSureUzat.Name = "tileSureUzat";
-            this.tileSureUzat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileSureUzat_ItemClick);
-            // 
             // OdaIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 688);
             this.Controls.Add(this.tileControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

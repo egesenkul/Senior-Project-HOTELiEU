@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalonTanimlamalari));
             this.lblSalonAdi = new MetroFramework.Controls.MetroLabel();
             this.lblSalonKategori = new MetroFramework.Controls.MetroLabel();
             this.lblSalonSorumlusu = new MetroFramework.Controls.MetroLabel();
@@ -355,6 +356,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 681);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

@@ -154,7 +154,7 @@ namespace DevExpress_Deneme
             try
             {
                 Form2 ayarlar = new Form2();
-                ayarlar.Show();
+                ayarlar.ShowDialog();
             }
             catch (Exception ex)
             {

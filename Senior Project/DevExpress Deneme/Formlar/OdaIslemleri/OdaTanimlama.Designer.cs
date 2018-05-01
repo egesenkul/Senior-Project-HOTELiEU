@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OdaTanimlama));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.btnKatEkle = new MetroFramework.Controls.MetroButton();
             this.btnCiftKisilikYatakAzalt = new MetroFramework.Controls.MetroButton();
             this.btnCiftKisilikYatakArttır = new MetroFramework.Controls.MetroButton();
             this.btnTekKisiYatakAzalt = new MetroFramework.Controls.MetroButton();
@@ -62,6 +64,7 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.btnKatEkle);
             this.metroPanel1.Controls.Add(this.btnCiftKisilikYatakAzalt);
             this.metroPanel1.Controls.Add(this.btnCiftKisilikYatakArttır);
             this.metroPanel1.Controls.Add(this.btnTekKisiYatakAzalt);
@@ -100,6 +103,17 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // btnKatEkle
+            // 
+            this.btnKatEkle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnKatEkle.Location = new System.Drawing.Point(705, 207);
+            this.btnKatEkle.Name = "btnKatEkle";
+            this.btnKatEkle.Size = new System.Drawing.Size(35, 35);
+            this.btnKatEkle.TabIndex = 40;
+            this.btnKatEkle.Text = "+";
+            this.btnKatEkle.UseSelectable = true;
+            this.btnKatEkle.Click += new System.EventHandler(this.btnKatEkle_Click);
             // 
             // btnCiftKisilikYatakAzalt
             // 
@@ -503,6 +517,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 670);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
@@ -546,5 +561,6 @@
         private MetroFramework.Controls.MetroButton btnTekKisiYatakAzalt;
         private MetroFramework.Controls.MetroButton btnTekKisilikYatakArttır;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
+        private MetroFramework.Controls.MetroButton btnKatEkle;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OgunTanimlama));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.dtSonGun = new DevExpress.XtraEditors.DateEdit();
             this.lblOgunSonGunu = new MetroFramework.Controls.MetroLabel();
@@ -630,6 +631,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 780);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

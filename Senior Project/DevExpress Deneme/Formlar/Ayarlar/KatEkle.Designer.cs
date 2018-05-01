@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KatEkle));
             this.txtKatAdi = new MetroFramework.Controls.MetroTextBox();
             this.lblKatAdi = new MetroFramework.Controls.MetroLabel();
             this.btnKlavye = new MetroFramework.Controls.MetroButton();
@@ -277,6 +278,7 @@
             this.Controls.Add(this.btnKlavye);
             this.Controls.Add(this.txtKatAdi);
             this.Controls.Add(this.lblKatAdi);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

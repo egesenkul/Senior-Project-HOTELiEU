@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AyarlarYetki));
             this.lblKullanıcıListesi = new MetroFramework.Controls.MetroLabel();
             this.ListeKullanicilar = new MetroFramework.Controls.MetroListView();
             this.lblKullaniciDepartman = new MetroFramework.Controls.MetroLabel();
@@ -129,7 +130,7 @@
             this.lblYetki.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblYetki.Location = new System.Drawing.Point(840, 214);
             this.lblYetki.Name = "lblYetki";
-            this.lblYetki.Size = new System.Drawing.Size(87, 25);
+            this.lblYetki.Size = new System.Drawing.Size(89, 25);
             this.lblYetki.TabIndex = 34;
             this.lblYetki.Text = "Yetki Adı";
             this.lblYetki.UseCustomBackColor = true;
@@ -238,6 +239,7 @@
             this.Controls.Add(this.lblKullaniciDepartman);
             this.Controls.Add(this.lblKullanıcıListesi);
             this.Controls.Add(this.ListeKullanicilar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

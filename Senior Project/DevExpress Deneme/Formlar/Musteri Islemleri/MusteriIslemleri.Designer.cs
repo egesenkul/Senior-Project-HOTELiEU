@@ -41,8 +41,8 @@
             this.tileItemMusteriListesi = new DevExpress.XtraEditors.TileItem();
             this.tileItemMusteriOdaIliskilendir = new DevExpress.XtraEditors.TileItem();
             this.tileItemKapat = new DevExpress.XtraEditors.TileItem();
-            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.tileSureUzat = new DevExpress.XtraEditors.TileItem();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,10 +144,6 @@
             this.tileItemKapat.Name = "tileItemKapat";
             this.tileItemKapat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem4_ItemClick);
             // 
-            // metroStyleManager1
-            // 
-            this.metroStyleManager1.Owner = null;
-            // 
             // tileSureUzat
             // 
             this.tileSureUzat.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -160,12 +156,17 @@
             this.tileSureUzat.Name = "tileSureUzat";
             this.tileSureUzat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileSureUzat_ItemClick);
             // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = null;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 638);
             this.Controls.Add(this.tileControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

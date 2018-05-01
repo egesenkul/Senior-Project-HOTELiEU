@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KullaniciTercihleri));
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileRenkSec = new DevExpress.XtraEditors.TileGroup();
             this.tileOnayForm = new DevExpress.XtraEditors.TileItem();
@@ -63,7 +63,6 @@
             this.tileControl1.MaxId = 9;
             this.tileControl1.Name = "tileControl1";
             this.tileControl1.Padding = new System.Windows.Forms.Padding(12);
-            this.tileControl1.Position = 732;
             this.tileControl1.Size = new System.Drawing.Size(1045, 515);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
@@ -88,9 +87,9 @@
             this.tileOnayForm.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.GreenYellow;
             this.tileOnayForm.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileOnayForm.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement8.Text = "Onay Formları";
-            tileItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileOnayForm.Elements.Add(tileItemElement8);
+            tileItemElement1.Text = "Onay Formları";
+            tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileOnayForm.Elements.Add(tileItemElement1);
             this.tileOnayForm.Id = 2;
             this.tileOnayForm.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileOnayForm.Name = "tileOnayForm";
@@ -108,9 +107,9 @@
             this.tileGeceModu.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileGeceModu.AppearanceItem.Pressed.Options.UseBorderColor = true;
             this.tileGeceModu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileGeceModu.BackgroundImage")));
-            tileItemElement9.Text = "Otomatik Gece Modu";
-            tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileGeceModu.Elements.Add(tileItemElement9);
+            tileItemElement2.Text = "Otomatik Gece Modu";
+            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileGeceModu.Elements.Add(tileItemElement2);
             this.tileGeceModu.Id = 6;
             this.tileGeceModu.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileGeceModu.Name = "tileGeceModu";
@@ -126,9 +125,9 @@
             this.tileBilgilendirmeFormu.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.GreenYellow;
             this.tileBilgilendirmeFormu.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileBilgilendirmeFormu.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement10.Text = "Bilgilendirme Formları";
-            tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBilgilendirmeFormu.Elements.Add(tileItemElement10);
+            tileItemElement3.Text = "Bilgilendirme Formları";
+            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBilgilendirmeFormu.Elements.Add(tileItemElement3);
             this.tileBilgilendirmeFormu.Id = 3;
             this.tileBilgilendirmeFormu.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileBilgilendirmeFormu.Name = "tileBilgilendirmeFormu";
@@ -140,9 +139,9 @@
             this.tileKlavye.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
             this.tileKlavye.AppearanceItem.Normal.Options.UseFont = true;
             this.tileKlavye.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileKlavye.BackgroundImage")));
-            tileItemElement11.Text = "Klavye Butonu";
-            tileItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileKlavye.Elements.Add(tileItemElement11);
+            tileItemElement4.Text = "Klavye Butonu";
+            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileKlavye.Elements.Add(tileItemElement4);
             this.tileKlavye.Id = 7;
             this.tileKlavye.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileKlavye.Name = "tileKlavye";
@@ -161,9 +160,9 @@
             this.tileRenkDeğistir.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileRenkDeğistir.AppearanceItem.Pressed.Options.UseBorderColor = true;
             this.tileRenkDeğistir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileRenkDeğistir.BackgroundImage")));
-            tileItemElement12.Text = "Renk Seçimi";
-            tileItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileRenkDeğistir.Elements.Add(tileItemElement12);
+            tileItemElement5.Text = "Renk Seçimi";
+            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileRenkDeğistir.Elements.Add(tileItemElement5);
             this.tileRenkDeğistir.Id = 8;
             this.tileRenkDeğistir.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileRenkDeğistir.Name = "tileRenkDeğistir";
@@ -179,9 +178,9 @@
             this.tileYardim.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileYardim.AppearanceItem.Pressed.Options.UseBorderColor = true;
             this.tileYardim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileYardim.BackgroundImage")));
-            tileItemElement13.Text = "Yardım";
-            tileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileYardim.Elements.Add(tileItemElement13);
+            tileItemElement6.Text = "Yardım";
+            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileYardim.Elements.Add(tileItemElement6);
             this.tileYardim.Id = 4;
             this.tileYardim.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileYardim.Name = "tileYardim";
@@ -200,9 +199,9 @@
             this.tileKapat.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.GreenYellow;
             this.tileKapat.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileKapat.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement14.Text = "Kapat";
-            tileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileKapat.Elements.Add(tileItemElement14);
+            tileItemElement7.Text = "Kapat";
+            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileKapat.Elements.Add(tileItemElement7);
             this.tileKapat.Id = 5;
             this.tileKapat.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileKapat.Name = "tileKapat";
@@ -218,6 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 588);
             this.Controls.Add(this.tileControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

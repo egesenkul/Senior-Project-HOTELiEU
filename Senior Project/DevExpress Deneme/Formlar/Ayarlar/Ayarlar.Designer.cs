@@ -73,7 +73,6 @@
             this.tileControl1.Location = new System.Drawing.Point(20, 60);
             this.tileControl1.MaxId = 14;
             this.tileControl1.Name = "tileControl1";
-            this.tileControl1.Position = 1456;
             this.tileControl1.Size = new System.Drawing.Size(1160, 577);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
@@ -306,6 +305,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 657);
             this.Controls.Add(this.tileControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

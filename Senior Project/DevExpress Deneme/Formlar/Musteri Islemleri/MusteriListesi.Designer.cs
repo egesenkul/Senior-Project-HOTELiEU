@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusteriListesi));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.lblAdveSoyad = new MetroFramework.Controls.MetroLabel();
             this.txtAd = new MetroFramework.Controls.MetroTextBox();
@@ -210,7 +211,7 @@
             this.düzenleToolStripMenuItem,
             this.tümBilgileriGösterToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 78);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 56);
             // 
             // düzenleToolStripMenuItem
             // 
@@ -236,6 +237,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 599);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;

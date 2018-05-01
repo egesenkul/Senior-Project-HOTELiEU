@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LisansIslemleri));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -40,7 +42,6 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +70,17 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.BackColor = System.Drawing.Color.SandyBrown;
+            this.metroButton2.Location = new System.Drawing.Point(50, 187);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(293, 67);
+            this.metroButton2.TabIndex = 24;
+            this.metroButton2.Text = "Lisans Ver";
+            this.metroButton2.UseCustomBackColor = true;
+            this.metroButton2.UseSelectable = true;
             // 
             // metroLabel8
             // 
@@ -192,23 +204,13 @@
             this.metroLabel3.Text = "OTEL LOGOSU / ADI";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // metroButton2
-            // 
-            this.metroButton2.BackColor = System.Drawing.Color.SandyBrown;
-            this.metroButton2.Location = new System.Drawing.Point(50, 187);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(293, 67);
-            this.metroButton2.TabIndex = 24;
-            this.metroButton2.Text = "Lisans Ver";
-            this.metroButton2.UseCustomBackColor = true;
-            this.metroButton2.UseSelectable = true;
-            // 
             // LisansIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 650);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
