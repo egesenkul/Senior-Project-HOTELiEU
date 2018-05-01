@@ -329,32 +329,39 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void OdaCheckin_Load(object sender, EventArgs e)
         {
-            dtGirisTarihi.EditValue = DateTime.Now;
-            dtGirisTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
-            dtGirisTarihi.Properties.VistaEditTime = DefaultBoolean.True;
-            dtGirisTarihi.Properties.Mask.EditMask = "yyyy-MM-dd hh-mm-ss";
-            dtCikisTarihi.EditValue = DateTime.Now.AddDays(1);
-            dtCikisTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
-            dtCikisTarihi.Properties.VistaEditTime = DefaultBoolean.True;
-            dtCikisTarihi.Properties.Mask.EditMask = "yyyy-MM-dd hh-mm-ss";
-            cmbOdaTipi.Items.Add(Localization.Tümü);
-            cmbKat.Items.Add(Localization.Tümü);
-            cmbOdaBlok.Items.Add(Localization.Tümü);
-            FiilCombobox();
-            //FiilComboboxMusteriAdi();
-            MusteriListesiGetir();
-            FiilComboboxBlok();
-            FiilComboboxKat();
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblCikisTarihi, lblRezerveEdilmisOdalar, lblKat, lblOdaTipi, lblGirisTarihi, lblBosOdalar);
-                ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbMusteriAdi, cmbKat, cmbOdaBlok, cmbOdaTipi);
-                ortakFormIslemleri.ListViewRenkDegistir(Color.Black, ListeOdalar, ListeRezerveOdalar);
-                ortakFormIslemleri.DateEditRenkDegistir(Color.Black,dtCikisTarihi, dtGirisTarihi);
+                dtGirisTarihi.EditValue = DateTime.Now;
+                dtGirisTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
+                dtGirisTarihi.Properties.VistaEditTime = DefaultBoolean.True;
+                dtGirisTarihi.Properties.Mask.EditMask = "yyyy-MM-dd hh-mm-ss";
+                dtCikisTarihi.EditValue = DateTime.Now.AddDays(1);
+                dtCikisTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
+                dtCikisTarihi.Properties.VistaEditTime = DefaultBoolean.True;
+                dtCikisTarihi.Properties.Mask.EditMask = "yyyy-MM-dd hh-mm-ss";
+                cmbOdaTipi.Items.Add(Localization.Tümü);
+                cmbKat.Items.Add(Localization.Tümü);
+                cmbOdaBlok.Items.Add(Localization.Tümü);
+                FiilCombobox();
+                //FiilComboboxMusteriAdi();
+                MusteriListesiGetir();
+                FiilComboboxBlok();
+                FiilComboboxKat();
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblCikisTarihi, lblRezerveEdilmisOdalar, lblKat, lblOdaTipi, lblGirisTarihi, lblBosOdalar);
+                    ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbMusteriAdi, cmbKat, cmbOdaBlok, cmbOdaTipi);
+                    ortakFormIslemleri.ListViewRenkDegistir(Color.Black, ListeOdalar, ListeRezerveOdalar);
+                    ortakFormIslemleri.DateEditRenkDegistir(Color.Black, dtCikisTarihi, dtGirisTarihi);
+                }
+                MultiLanguage();
             }
-            MultiLanguage();
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -364,68 +371,97 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private bool TarihKontrol()
         {
-            if ((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue)) &&  (Convert.ToDateTime(dtCikisTarihi.EditValue)>DateTime.Now))
+            try
             {
-                return true;
+                if ((Convert.ToDateTime(dtCikisTarihi.EditValue) > Convert.ToDateTime(dtGirisTarihi.EditValue)) && (Convert.ToDateTime(dtCikisTarihi.EditValue) > DateTime.Now))
+                {
+                    return true;
+                }
+                HotelWarningForm.Show(Localization.TarihKontrol, Localization.Tamam, 1);
+                return false;
             }
-            HotelWarningForm.Show(Localization.TarihKontrol,Localization.Tamam,1);
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
             return false;
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            if (TarihKontrol())
+            try
             {
-                ListeOdaGuncelle();
+                if (TarihKontrol())
+                {
+                    ListeOdaGuncelle();
+                }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private bool CheckinKontrol()
         {
-            if (Convert.ToDateTime(dtGirisTarihi.EditValue) > Convert.ToDateTime(dtCikisTarihi.EditValue) || ListeOdalar.SelectedItems.Count != 1)
+            try
             {
-                HotelWarningForm.Show(Localization.EksikCheckinBilgisi,Localization.Tamam,1);
-                return false;
+                if (Convert.ToDateTime(dtGirisTarihi.EditValue) > Convert.ToDateTime(dtCikisTarihi.EditValue) || ListeOdalar.SelectedItems.Count != 1)
+                {
+                    HotelWarningForm.Show(Localization.EksikCheckinBilgisi, Localization.Tamam, 1);
+                    return false;
+                }
+                else return true;
             }
-            else return true;
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+            return false;
         }
 
         private void metroButton5_Click(object sender, EventArgs e)
         {
-            if (CheckinKontrol() && TarihKontrol())
+            try
             {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-
-                string tempdatetime = DateTime.Now.ToString();
-
-                cmd.Connection = connection;
-                connection.Open();
-                cmd.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "','" + Convert.ToDateTime(dtGirisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','Check-in',0,'"+ musteriListesi[cmbMusteriAdi.SelectedIndex].email+ "','" + ortakFormIslemleri.odaTipGetir(ListeOdalar.SelectedItems[0].Text) + "','" + ortakFormIslemleri.odaBlokGetir(ListeOdalar.SelectedItems[0].Text) + "','" + ortakFormIslemleri.odaKatGetir(ListeOdalar.SelectedItems[0].Text) + "')";
-
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                MusteriActiveGuncelle();
-                if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                if (CheckinKontrol() && TarihKontrol())
                 {
-                    HotelWarningForm.Show( Localization.BasariliCheckin, Localization.Tamam,0);
+                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    SqlCommand cmd = new SqlCommand();
+
+                    string tempdatetime = DateTime.Now.ToString();
+
+                    cmd.Connection = connection;
+                    connection.Open();
+                    cmd.CommandText = "insert into OdaHareket values('" + ListeOdalar.SelectedItems[0].Text + "','" + Convert.ToDateTime(dtGirisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + Convert.ToDateTime(dtCikisTarihi.EditValue).ToString("yyyy-MM-dd HH:mm:ss") + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','Check-in',0,'" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "','" + ortakFormIslemleri.odaTipGetir(ListeOdalar.SelectedItems[0].Text) + "','" + ortakFormIslemleri.odaBlokGetir(ListeOdalar.SelectedItems[0].Text) + "','" + ortakFormIslemleri.odaKatGetir(ListeOdalar.SelectedItems[0].Text) + "')";
+
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MusteriActiveGuncelle();
+                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    {
+                        HotelWarningForm.Show(Localization.BasariliCheckin, Localization.Tamam, 0);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (ListeRezerveOdalar.Items.Count > 0 && TarihKontrol())
+            try
             {
-                try
+                if (ListeRezerveOdalar.Items.Count > 0 && TarihKontrol())
                 {
+
                     string[] parcalar;
                     parcalar = ListeRezerveOdalar.SelectedItems[0].Text.Split(' ');
                     //parcalar[0]=oda bilgisi
                     //parcalar[1]=müşteri adı
                     //parcalar[2]=müşteri soyadı
-
-
 
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                     SqlCommand cmd = new SqlCommand();
@@ -473,17 +509,21 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     cmd4.ExecuteNonQuery();
                     connection4.Close();
                     MusteriActiveGuncelle();
+
+                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    {
+                        HotelWarningForm.Show(Localization.BasariliCheckin, Localization.Tamam, 0);
+                    }
+                    ListeOdaGuncelle();
                 }
-                catch (Exception ex) { }
-                if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                else
                 {
-                    HotelWarningForm.Show(Localization.BasariliCheckin,Localization.Tamam,0);
+                    HotelWarningForm.Show(Localization.rezerveOdalarBos, Localization.Tamam, 2);
                 }
-                ListeOdaGuncelle();
             }
-            else
+            catch (Exception ex)
             {
-                HotelWarningForm.Show(Localization.rezerveOdalarBos,Localization.Tamam,2);
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
         

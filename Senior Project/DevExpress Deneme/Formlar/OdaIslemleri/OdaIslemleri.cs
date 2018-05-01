@@ -21,13 +21,14 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void Yetki()
         {
-            try { 
-            if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+            try
             {
-                tileItemOdaMusteriIliskilendir.Visible = false;
-                tileItemOdaRezerveEt.Visible = false;
-                tileItemOdaTanimlama.Visible = false;
-            }
+                if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+                {
+                    tileItemOdaMusteriIliskilendir.Visible = false;
+                    tileItemOdaRezerveEt.Visible = false;
+                    tileItemOdaTanimlama.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -37,13 +38,14 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void MultiLanguage()
         {
-            try { 
-            tileItemOdaTanimlama.Text = Localization.tileOdaTanimlama;
-            tileItemOdaMusteriIliskilendir.Text = Localization.tileOdaCheckin;
-            tileItemOdaListesi.Text = Localization.tileOdaListesi;
-            tileItemOdaRezerveEt.Text = Localization.tileOdaRezerveEt;
-            tileItem7.Text = Localization.btnKapat;
-            tileSureUzat.Text = Localization.tileSureUzat;
+            try
+            {
+                tileItemOdaTanimlama.Text = Localization.tileOdaTanimlama;
+                tileItemOdaMusteriIliskilendir.Text = Localization.tileOdaCheckin;
+                tileItemOdaListesi.Text = Localization.tileOdaListesi;
+                tileItemOdaRezerveEt.Text = Localization.tileOdaRezerveEt;
+                tileItem7.Text = Localization.btnKapat;
+                tileSureUzat.Text = Localization.tileSureUzat;
             }
             catch (Exception ex)
             {
@@ -53,15 +55,16 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void OdaIslemleri_Load(object sender, EventArgs e)
         {
-            try { 
-            MultiLanguage();
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            }
-            ortakFormIslemleri.tileRenkDegistir(tileItemKatPlani, tileItemOdaListesi, tileItemOdaMusteriIliskilendir, tileItemOdaRezerveEt, tileItemOdaTanimlama,tileItem1,tileSureUzat);
-            Yetki();
+                MultiLanguage();
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                }
+                ortakFormIslemleri.tileRenkDegistir(tileItemKatPlani, tileItemOdaListesi, tileItemOdaMusteriIliskilendir, tileItemOdaRezerveEt, tileItemOdaTanimlama, tileItem1, tileSureUzat);
+                Yetki();
             }
             catch (Exception ex)
             {
@@ -71,9 +74,10 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void tileItem3_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            OdaRezerveEt odaRezerve = new OdaRezerveEt();
-            odaRezerve.Show();
+            try
+            {
+                OdaRezerveEt odaRezerve = new OdaRezerveEt();
+                odaRezerve.Show();
             }
             catch (Exception ex)
             {
@@ -83,9 +87,10 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void tileItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            OdaListesi odaListesi = new OdaListesi();
-            odaListesi.Show();
+            try
+            {
+                OdaListesi odaListesi = new OdaListesi();
+                odaListesi.Show();
             }
             catch (Exception ex)
             {
@@ -104,9 +109,10 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void tileItem6_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            OdaTanimlama odatanimlama = new OdaTanimlama();
-            odatanimlama.Show();
+            try
+            {
+                OdaTanimlama odatanimlama = new OdaTanimlama();
+                odatanimlama.Show();
             }
             catch (Exception ex)
             {
@@ -116,9 +122,10 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void tileItem2_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            OdaCheckin iliskilendir = new OdaCheckin();
-            iliskilendir.Show();
+            try
+            {
+                OdaCheckin iliskilendir = new OdaCheckin();
+                iliskilendir.Show();
             }
             catch (Exception ex)
             {
@@ -128,9 +135,10 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void tileItem1_ItemClick_1(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            Checkout chout = new Checkout();
-            chout.Show();
+            try
+            {
+                Checkout chout = new Checkout();
+                chout.Show();
             }
             catch (Exception ex)
             {
@@ -140,9 +148,10 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void tileSureUzat_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            SureUzat sureUzat = new SureUzat();
-            sureUzat.Show();
+            try
+            {
+                SureUzat sureUzat = new SureUzat();
+                sureUzat.Show();
             }
             catch (Exception ex)
             {

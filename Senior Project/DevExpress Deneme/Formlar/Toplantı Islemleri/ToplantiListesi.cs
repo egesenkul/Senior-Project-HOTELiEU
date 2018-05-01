@@ -54,15 +54,29 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         private void ToplantiListesi_Load(object sender, EventArgs e)
         {
-            Multilanguage();
-            FiilToplantiSalonu();
+            try
+            {
+                Multilanguage();
+                FiilToplantiSalonu();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            ortakFormIslemleri.comboBoxTemizle(cmbToplantiSalonu);
-            ortakFormIslemleri.dateTimeTemizle(metroDateTime1, metroDateTime2);
-            ortakFormIslemleri.metroGridTemizle(metroGrid1);
+            try
+            {
+                ortakFormIslemleri.comboBoxTemizle(cmbToplantiSalonu);
+                ortakFormIslemleri.dateTimeTemizle(metroDateTime1, metroDateTime2);
+                ortakFormIslemleri.metroGridTemizle(metroGrid1);
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -72,63 +86,82 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         public void FillDataGridView(string sorgu)
         {
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.Connection = connection;
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = sorgu;
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
-            DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
-            metroGrid1.DataSource = null;
-            metroGrid1.DataSource = dtRecord;
-
-            //GridView Column isimlerini değiştirmek için
-            //datatable boş değilse bunları yapsın 
-            ListeBos = true;
-            if (dtRecord.Rows.Count > 0)
+            try
             {
-                ListeBos = false;
-                if (!ListeBos)
-                {
-                    metroGrid1.Columns[0].HeaderText = Localization.lblToplantiKonusu;
-                    metroGrid1.Columns[1].HeaderText = Localization.lblToplantiSalonu;
-                    metroGrid1.Columns[2].HeaderText = Localization.lblToplantiTarihi;
-                    metroGrid1.Columns[3].HeaderText = Localization.Kitle;
-                    metroGrid1.Columns[4].HeaderText = Localization.lblAciklama;
-                    metroGrid1.Columns[5].Visible = false;
-                }
-            }
-            else
-            {
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = connection;
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.CommandText = sorgu;
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+                DataTable dtRecord = new DataTable();
+                sqlDataAdap.Fill(dtRecord);
                 metroGrid1.DataSource = null;
-                HotelWarningForm.Show(Localization.NoResult, Localization.Tamam,1);
-            }
-            metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                metroGrid1.DataSource = dtRecord;
 
+                //GridView Column isimlerini değiştirmek için
+                //datatable boş değilse bunları yapsın 
+                ListeBos = true;
+                if (dtRecord.Rows.Count > 0)
+                {
+                    ListeBos = false;
+                    if (!ListeBos)
+                    {
+                        metroGrid1.Columns[0].HeaderText = Localization.lblToplantiKonusu;
+                        metroGrid1.Columns[1].HeaderText = Localization.lblToplantiSalonu;
+                        metroGrid1.Columns[2].HeaderText = Localization.lblToplantiTarihi;
+                        metroGrid1.Columns[3].HeaderText = Localization.Kitle;
+                        metroGrid1.Columns[4].HeaderText = Localization.lblAciklama;
+                        metroGrid1.Columns[5].Visible = false;
+                    }
+                }
+                else
+                {
+                    metroGrid1.DataSource = null;
+                    HotelWarningForm.Show(Localization.NoResult, Localization.Tamam, 1);
+                }
+                metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            string tarih = Convert.ToDateTime(metroDateTime1.Value).ToString("yyyy-MM-dd");
-            string tarih2 = Convert.ToDateTime(metroDateTime2.Value).ToString("yyyy-MM-dd");
+            try
+            {
+                string tarih = Convert.ToDateTime(metroDateTime1.Value).ToString("yyyy-MM-dd");
+                string tarih2 = Convert.ToDateTime(metroDateTime2.Value).ToString("yyyy-MM-dd");
 
-            if (cmbToplantiSalonu.SelectedIndex != 0)
-            {
-                FillDataGridView("select * from Toplanti where ToplantiTarihi >= '" + tarih + "' and ToplantiTarihi <= '" + tarih2 + "' and ToplantiSalonu='" + cmbToplantiSalonu.SelectedItem.ToString() + "'");
+                if (cmbToplantiSalonu.SelectedIndex != 0)
+                {
+                    FillDataGridView("select * from Toplanti where ToplantiTarihi >= '" + tarih + "' and ToplantiTarihi <= '" + tarih2 + "' and ToplantiSalonu='" + cmbToplantiSalonu.SelectedItem.ToString() + "'");
+                }
+                else
+                {
+                    FillDataGridView("select * from Toplanti where ToplantiTarihi >= '" + tarih + "' and ToplantiTarihi <= '" + tarih2 + "'");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                FillDataGridView("select * from Toplanti where ToplantiTarihi >= '" + tarih + "' and ToplantiTarihi <= '" + tarih2 +  "'");
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private void metroGrid1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
-            HotelWarningForm.Show(metroGrid1.SelectedCells[4].Value.ToString(), Localization.Tamam,2);
+            try
+            {
+                HotelWarningForm.Show(metroGrid1.SelectedCells[4].Value.ToString(), Localization.Tamam, 2);
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
     }
 }

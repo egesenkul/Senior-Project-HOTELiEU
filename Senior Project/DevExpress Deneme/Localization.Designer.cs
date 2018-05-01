@@ -457,7 +457,7 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lütfen Önce Düzenlemek İstediğiniz Duyuruyu Seçiniz.
+        ///   Looks up a localized string similar to Lütfen önce düzenlemek {0}istediğiniz duyuruyu seçiniz.
         /// </summary>
         internal static string DuzenlemekicinDuyuruSec {
             get {

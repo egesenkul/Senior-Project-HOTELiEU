@@ -17,14 +17,14 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
     public partial class PersonelOlusturma : MetroFramework.Forms.MetroForm
     {
         string MevcutPersonelKadi = "";
-        int mod=0;
+        int mod = 0;
 
         public PersonelOlusturma()
         {
             InitializeComponent();
         }
 
-        public PersonelOlusturma(string personelKullaniciAdi,int m)
+        public PersonelOlusturma(string personelKullaniciAdi, int m)
         { //Personel Listesinden Tüm Bilgileri Göster Dediği Zaman Form Bu Şekilde Açılsın
             InitializeComponent();
             MevcutPersonelKadi = personelKullaniciAdi;
@@ -65,16 +65,17 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             }
             return data;
         } // Türkçe karakterleri İngilizce karaktere çevirebilmek için
-        
+
         private void KullaniciAdiOlustur()
         {
-            try { 
-            if (!String.IsNullOrWhiteSpace(txtsoyisim.Text) && !String.IsNullOrWhiteSpace(txtisim.Text))
+            try
             {
-                txtKullaniciAdi.Text = txtisim.Text.ToLower() + "." + txtsoyisim.Text.ToLower();
-                txtKullaniciAdi.Text = TurkceIngilizceCevir(txtKullaniciAdi.Text);
-            }
-            else { txtKullaniciAdi.Text = ""; }
+                if (!String.IsNullOrWhiteSpace(txtsoyisim.Text) && !String.IsNullOrWhiteSpace(txtisim.Text))
+                {
+                    txtKullaniciAdi.Text = txtisim.Text.ToLower() + "." + txtsoyisim.Text.ToLower();
+                    txtKullaniciAdi.Text = TurkceIngilizceCevir(txtKullaniciAdi.Text);
+                }
+                else { txtKullaniciAdi.Text = ""; }
             }
             catch (Exception ex)
             {
@@ -100,24 +101,25 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
 
         public void FiilComboBoxYetkiler()
         {
-            try { 
-            cmbYetki.Items.Clear();
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "select yetkiAdı from Yetki";
-            cmd.Connection = connection;
-            cmd.CommandType = CommandType.Text;
-
-            SqlDataReader Dr;
-            connection.Open();
-            Dr = cmd.ExecuteReader();
-            while (Dr.Read())
+            try
             {
+                cmbYetki.Items.Clear();
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "select yetkiAdı from Yetki";
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd.ExecuteReader();
+                while (Dr.Read())
+                {
                     cmbYetki.Items.Add(Dr["yetkiAdı"]);
-            }
-            connection.Close();
-            ortakFormIslemleri.cmbIlkDegerGetir(cmbYetki);
+                }
+                connection.Close();
+                ortakFormIslemleri.cmbIlkDegerGetir(cmbYetki);
             }
             catch (Exception ex)
             {
@@ -152,28 +154,29 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
 
         private void PersonelOlusturma_Load(object sender, EventArgs e)
         {
-            try { 
-            MultiLanguage();
-            FiilCombobox();
-            BilgiDoldur();
-            EnableFalse();
-            FiilComboBoxYetkiler();
-
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblAd, lblSoyad, lblTelefon, lblAdres, lblMail, lblKullaniciAdi, lblSifre, lblPersonelGrubu, lblPersonelYetkisi);
-                ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtadres, txtisim, txtKullaniciAdi, txtmail, txtSifre, txtsoyisim, txttelefon);
-                ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbPersonelGrubu, cmbYetki);
-            }
-            
+                MultiLanguage();
+                FiilCombobox();
+                BilgiDoldur();
+                EnableFalse();
+                FiilComboBoxYetkiler();
 
-            if (Kullanici.klavye.Equals("True"))
-            {
-                btnKlavye.Visible = true;
-            }
-            else btnKlavye.Visible = false;
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblAd, lblSoyad, lblTelefon, lblAdres, lblMail, lblKullaniciAdi, lblSifre, lblPersonelGrubu, lblPersonelYetkisi);
+                    ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtadres, txtisim, txtKullaniciAdi, txtmail, txtSifre, txtsoyisim, txttelefon);
+                    ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbPersonelGrubu, cmbYetki);
+                }
+
+
+                if (Kullanici.klavye.Equals("True"))
+                {
+                    btnKlavye.Visible = true;
+                }
+                else btnKlavye.Visible = false;
             }
             catch (Exception ex)
             {
@@ -183,18 +186,19 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
 
         private void EnableFalse()
         { // Eğer bu form personel bilgilerini görüntüle denilerek açıldıysa değişiklik yapamasın
-            try { 
-            if (mod==1)
+            try
             {
-                txtadres.Enabled = false;
-                txtisim.Enabled = false;
-                txtKullaniciAdi.Enabled = false;
-                txtmail.Enabled = false;
-                txtSifre.Enabled = false;
-                txtsoyisim.Enabled = false;
-                txttelefon.Enabled = false;
-                cmbPersonelGrubu.Enabled = false;
-            }
+                if (mod == 1)
+                {
+                    txtadres.Enabled = false;
+                    txtisim.Enabled = false;
+                    txtKullaniciAdi.Enabled = false;
+                    txtmail.Enabled = false;
+                    txtSifre.Enabled = false;
+                    txtsoyisim.Enabled = false;
+                    txttelefon.Enabled = false;
+                    cmbPersonelGrubu.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -224,7 +228,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                 connection.Close();
                 cmbPersonelGrubu.SelectedIndex = 0;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
@@ -244,7 +248,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             }
             catch
             {
-                HotelWarningForm.Show(Localization.eMailHata,Localization.Tamam,1);
+                HotelWarningForm.Show(Localization.eMailHata, Localization.Tamam, 1);
                 return false;
             }
         } // Girilen email adresinin geçerliliğini kontrol ediyor
@@ -256,7 +260,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                 return eMailKontrol(txtmail.Text);
 
             }
-            HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam,1);
+            HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam, 1);
             return false;
         }
 
@@ -264,7 +268,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
         { //Personel daha önceden veri tabanına eklenmiş mi
 
 
-            return  false ;
+            return false;
         }
 
         private void txtsoyisim_TextChanged(object sender, EventArgs e)
@@ -295,75 +299,79 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            try { 
-            if (PersonelOlusturKontrol())
+            try
             {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                if (string.IsNullOrWhiteSpace(MevcutPersonelKadi))
+                if (PersonelOlusturKontrol())
                 {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = connection;
-                    connection.Open();
-                    cmd.CommandText = "Insert into Personel values ('" + txtisim.Text + "','" + txtsoyisim.Text + "' , '" + txttelefon.Text + "' , '" + cmbPersonelGrubu.SelectedItem.ToString() + "' , '" + txtmail.Text + "' , '" + txtKullaniciAdi.Text + "' , '" + txtSifre.Text + "','"+txtadres.Text+"',1,1,1,1,'Green',0,'"+cmbYetki.SelectedItem.ToString()+"') ";
-                    // Personel türünü Rıza'ya sor.
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    if (string.IsNullOrWhiteSpace(MevcutPersonelKadi))
                     {
-                        HotelWarningForm.Show(Localization.personelEklemeBasarili, Localization.Tamam,0);
-                    } }
-                else
-                {
-                    //güncelleme işlemi olacak 
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = connection;
-                    connection.Open();
-                    cmd.CommandText = "update Personel set personelAdi='" + txtisim.Text + "',personelSoyadi='" + txtsoyisim.Text + "',personelTelefon='" + txttelefon.Text + "',personelDepartman='" + cmbPersonelGrubu.SelectedItem.ToString() + "',personelMail='" + txtmail.Text + "',personelSifre='" + txtSifre.Text + "',personelAdresi='" + txtadres.Text + "' where personelKullaniciAdi='" + txtKullaniciAdi.Text + "' and personelSifre='"+txtSifre.Text+"'";
-                    // Personel türünü Rıza'ya sor.
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = connection;
+                        connection.Open();
+                        cmd.CommandText = "Insert into Personel values ('" + txtisim.Text + "','" + txtsoyisim.Text + "' , '" + txttelefon.Text + "' , '" + cmbPersonelGrubu.SelectedItem.ToString() + "' , '" + txtmail.Text + "' , '" + txtKullaniciAdi.Text + "' , '" + txtSifre.Text + "','" + txtadres.Text + "',1,1,1,1,'Green',0,'" + cmbYetki.SelectedItem.ToString() + "') ";
+                        // Personel türünü Rıza'ya sor.
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        {
+                            HotelWarningForm.Show(Localization.personelEklemeBasarili, Localization.Tamam, 0);
+                        }
+                    }
+                    else
                     {
-                        HotelWarningForm.Show(Localization.personelGuncellemeBasarili, Localization.Tamam,0);
-                    } }
-                ortakFormIslemleri.comboBoxTemizle(cmbYetki, cmbPersonelGrubu);
-                ortakFormIslemleri.textBoxTemizle(txtadres, txtisim, txtKullaniciAdi, txtmail, txtSifre, txtsoyisim, txttelefon);
+                        //güncelleme işlemi olacak 
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = connection;
+                        connection.Open();
+                        cmd.CommandText = "update Personel set personelAdi='" + txtisim.Text + "',personelSoyadi='" + txtsoyisim.Text + "',personelTelefon='" + txttelefon.Text + "',personelDepartman='" + cmbPersonelGrubu.SelectedItem.ToString() + "',personelMail='" + txtmail.Text + "',personelSifre='" + txtSifre.Text + "',personelAdresi='" + txtadres.Text + "' where personelKullaniciAdi='" + txtKullaniciAdi.Text + "' and personelSifre='" + txtSifre.Text + "'";
+                        // Personel türünü Rıza'ya sor.
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        {
+                            HotelWarningForm.Show(Localization.personelGuncellemeBasarili, Localization.Tamam, 0);
+                        }
+                    }
+                    ortakFormIslemleri.comboBoxTemizle(cmbYetki, cmbPersonelGrubu);
+                    ortakFormIslemleri.textBoxTemizle(txtadres, txtisim, txtKullaniciAdi, txtmail, txtSifre, txtsoyisim, txttelefon);
+                }
             }
-        }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-}
+        }
 
         private void BilgiDoldur()
         { // Form mevcut kullanıcı ile ilgili açıldı ise bu kullanıcıya ait bilgileri ilgili yerlere yazar
-            try { 
-            if (!String.IsNullOrEmpty(MevcutPersonelKadi))
+            try
             {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-
-                cmd.CommandText = "select * from Personel where personelKullaniciAdi ='"+MevcutPersonelKadi+"'";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                SqlDataReader Dr;
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
+                if (!String.IsNullOrEmpty(MevcutPersonelKadi))
                 {
-                    txtisim.Text = Dr["personelAdi"].ToString();
-                    txtsoyisim.Text = Dr["personelSoyadi"].ToString();
-                    txttelefon.Text = Dr["personelTelefon"].ToString();
-                    cmbPersonelGrubu.SelectedItem = Dr["personelDepartman"].ToString();
-                    txtmail.Text = Dr["personelMail"].ToString();
-                    txtKullaniciAdi.Text = Dr["personelKullaniciAdi"].ToString();
-                    txtSifre.Text = Dr["personelSifre"].ToString();
-                    txtadres.Text = Dr["personelAdresi"].ToString();
+                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    SqlCommand cmd = new SqlCommand();
+
+                    cmd.CommandText = "select * from Personel where personelKullaniciAdi ='" + MevcutPersonelKadi + "'";
+                    cmd.Connection = connection;
+                    cmd.CommandType = CommandType.Text;
+
+                    SqlDataReader Dr;
+                    connection.Open();
+                    Dr = cmd.ExecuteReader();
+                    while (Dr.Read())
+                    {
+                        txtisim.Text = Dr["personelAdi"].ToString();
+                        txtsoyisim.Text = Dr["personelSoyadi"].ToString();
+                        txttelefon.Text = Dr["personelTelefon"].ToString();
+                        cmbPersonelGrubu.SelectedItem = Dr["personelDepartman"].ToString();
+                        txtmail.Text = Dr["personelMail"].ToString();
+                        txtKullaniciAdi.Text = Dr["personelKullaniciAdi"].ToString();
+                        txtSifre.Text = Dr["personelSifre"].ToString();
+                        txtadres.Text = Dr["personelAdresi"].ToString();
+                    }
+                    connection.Close();
                 }
-                connection.Close();
-            }
             }
             catch (Exception ex)
             {
@@ -373,9 +381,10 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            try { 
-            ortakFormIslemleri.textBoxTemizle(txtadres, txtisim, txtKullaniciAdi, txtmail, txtSifre, txtsoyisim, txttelefon);
-            ortakFormIslemleri.comboBoxTemizle(cmbPersonelGrubu,cmbYetki);
+            try
+            {
+                ortakFormIslemleri.textBoxTemizle(txtadres, txtisim, txtKullaniciAdi, txtmail, txtSifre, txtsoyisim, txttelefon);
+                ortakFormIslemleri.comboBoxTemizle(cmbPersonelGrubu, cmbYetki);
             }
             catch (Exception ex)
             {

@@ -22,11 +22,12 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
         private void MultiLanguage()
         {
-            try { 
-            tileItemOdaKontrol.Text = Localization.odaKontrol;
-            tileItemPersonelKontrol.Text = Localization.personelKontrol;
-            tileItemKapat.Text = Localization.btnKapat;
-            tileItem1.Text = Localization.temizlikYap;
+            try
+            {
+                tileItemOdaKontrol.Text = Localization.odaKontrol;
+                tileItemPersonelKontrol.Text = Localization.personelKontrol;
+                tileItemKapat.Text = Localization.btnKapat;
+                tileItem1.Text = Localization.temizlikYap;
             }
             catch (Exception ex)
             {
@@ -36,14 +37,15 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
         private void TemizlikIslemleri_Load(object sender, EventArgs e)
         {
-            try { 
-            MultiLanguage();
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            }
-            ortakFormIslemleri.tileRenkDegistir(tileItemOdaKontrol, tileItemPersonelKontrol);
+                MultiLanguage();
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                }
+                ortakFormIslemleri.tileRenkDegistir(tileItemOdaKontrol, tileItemPersonelKontrol);
             }
             catch (Exception ex)
             {
@@ -53,21 +55,23 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
         private void tileItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            Form34 odakontrol = new Form34();
-            odakontrol.Show();
-        }
-            catch(Exception ex)
+            try
+            {
+                Form34 odakontrol = new Form34();
+                odakontrol.Show();
+            }
+            catch (Exception ex)
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-}
+        }
 
         private void tileItem2_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            PersonelKontrol personelkontrol = new PersonelKontrol();
-            personelkontrol.Show();
+            try
+            {
+                PersonelKontrol personelkontrol = new PersonelKontrol();
+                personelkontrol.Show();
             }
             catch (Exception ex)
             {
@@ -82,9 +86,10 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 
         private void tileItem1_ItemClick_1(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            TemizlikYap temizlikYap = new TemizlikYap();
-            temizlikYap.Show();
+            try
+            {
+                TemizlikYap temizlikYap = new TemizlikYap();
+                temizlikYap.Show();
             }
             catch (Exception ex)
             {

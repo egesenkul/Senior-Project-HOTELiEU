@@ -21,11 +21,12 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         private void Yetki()
         {
-            try { 
-            if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+            try
             {
-                tileItemToplantiOlustur.Visible = false;
-            }
+                if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+                {
+                    tileItemToplantiOlustur.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -35,10 +36,11 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         private void MultiLanguage()
         {
-            try { 
-            tileItemToplantiOlustur.Text = Localization.tileToplantiOlustur;
-            tileItemToplantiListesi.Text = Localization.tileToplantiListesi;
-            tileItemKapat.Text = Localization.btnKapat;
+            try
+            {
+                tileItemToplantiOlustur.Text = Localization.tileToplantiOlustur;
+                tileItemToplantiListesi.Text = Localization.tileToplantiListesi;
+                tileItemKapat.Text = Localization.btnKapat;
             }
             catch (Exception ex)
             {
@@ -48,15 +50,16 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         private void ToplantiIslemleri_Load(object sender, EventArgs e)
         {
-            try { 
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            }
-            ortakFormIslemleri.tileRenkDegistir(tileItemToplantiListesi, tileItemToplantiOlustur);
-            Yetki();
-            MultiLanguage();
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                }
+                ortakFormIslemleri.tileRenkDegistir(tileItemToplantiListesi, tileItemToplantiOlustur);
+                Yetki();
+                MultiLanguage();
             }
             catch (Exception ex)
             {
@@ -71,9 +74,10 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         private void tileItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            ToplantiOlustur toplantiOlustur = new ToplantiOlustur();
-            toplantiOlustur.Show();
+            try
+            {
+                ToplantiOlustur toplantiOlustur = new ToplantiOlustur();
+                toplantiOlustur.Show();
             }
             catch (Exception ex)
             {
@@ -83,9 +87,10 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
         private void tileItemToplantiListesi_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            try { 
-            ToplantiListesi toplantiListesi = new ToplantiListesi();
-            toplantiListesi.Show();
+            try
+            {
+                ToplantiListesi toplantiListesi = new ToplantiListesi();
+                toplantiListesi.Show();
             }
             catch (Exception ex)
             {

@@ -16,10 +16,17 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
     {
         private void MultiLanguage()
         {
-            lblAdveSoyad.Text = Localization.lblAdveSoyad;
-            btnKapat.Text = Localization.btnKapat;
-            lblGunSayisi.Text = Localization.GunSayisi;
-            btnSureUzat.Text = Localization.gunEkle;
+            try
+            {
+                lblAdveSoyad.Text = Localization.lblAdveSoyad;
+                btnKapat.Text = Localization.btnKapat;
+                lblGunSayisi.Text = Localization.GunSayisi;
+                btnSureUzat.Text = Localization.gunEkle;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         public SureUzat()
@@ -29,19 +36,21 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void GridGuncelle(string kosul)
         {
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            try
+            {
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
-            SqlCommand sqlCmd = new SqlCommand();
-            sqlCmd.Connection = connection;
-            sqlCmd.CommandType = CommandType.Text;
-            string tarih = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd");
-            sqlCmd.CommandText = "select * from OdaHareket where islemTipi='Check-in' and islemTarihii2>'" + tarih  + "'"+kosul;
-            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = connection;
+                sqlCmd.CommandType = CommandType.Text;
+                string tarih = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd");
+                sqlCmd.CommandText = "select * from OdaHareket where islemTipi='Check-in' and islemTarihii2>'" + tarih + "'" + kosul;
+                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
 
-            DataTable dtRecord = new DataTable();
-            sqlDataAdap.Fill(dtRecord);
-            metroGrid1.DataSource = dtRecord;
-            
+                DataTable dtRecord = new DataTable();
+                sqlDataAdap.Fill(dtRecord);
+                metroGrid1.DataSource = dtRecord;
+
                 metroGrid1.Columns[0].Visible = false;
                 metroGrid1.Columns[1].HeaderText = Localization.OdaNumarasi;
                 metroGrid1.Columns[2].HeaderText = Localization.GirisTarihi;
@@ -52,38 +61,57 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 metroGrid1.Columns[7].Visible = false;
                 metroGrid1.Columns[8].Visible = false;
 
-            metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void SureUzat_Load(object sender, EventArgs e)
         {
-            MultiLanguage();
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            try
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblAdveSoyad);
-                ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtAd);
+                MultiLanguage();
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblAdveSoyad);
+                    ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtAd);
+                }
+                lblGunSayisi.Visible = false;
+                btnSureUzat.Visible = false;
+                txtGunSayisi.Visible = false;
+                GridGuncelle("");
             }
-            lblGunSayisi.Visible = false;
-            btnSureUzat.Visible = false;
-            txtGunSayisi.Visible = false;
-            GridGuncelle("");
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)
         {
-            if(metroGrid1.SelectedCells.Count > 0)
+            try
             {
-                lblGunSayisi.Visible = true;
-                btnSureUzat.Visible = true;
-                txtGunSayisi.Visible = true;
+                if (metroGrid1.SelectedCells.Count > 0)
+                {
+                    lblGunSayisi.Visible = true;
+                    btnSureUzat.Visible = true;
+                    txtGunSayisi.Visible = true;
+                }
+                else
+                {
+                    lblGunSayisi.Visible = false;
+                    btnSureUzat.Visible = false;
+                    txtGunSayisi.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblGunSayisi.Visible = false;
-                btnSureUzat.Visible = false;
-                txtGunSayisi.Visible = false;
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
@@ -94,13 +122,20 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void Filtrele()
         {
-            if (string.IsNullOrEmpty(txtAd.Text))
+            try
             {
-                GridGuncelle("");
+                if (string.IsNullOrEmpty(txtAd.Text))
+                {
+                    GridGuncelle("");
+                }
+                else
+                {
+                    GridGuncelle("and musteriPersonel='" + txtAd.Text + "'");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                GridGuncelle("and musteriPersonel='" + txtAd.Text + "'");
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
@@ -111,58 +146,79 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private DateTime TarihAl()
         {
-            DateTime value=DateTime.Now;
-
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "select islemTarihii2 from OdaHareket where OdaHareketID='" + metroGrid1.SelectedCells[0].Value.ToString()+"'";
-            cmd.Connection = connection;
-            cmd.CommandType = CommandType.Text;
-
-            SqlDataReader Dr;
-            connection.Open();
-            Dr = cmd.ExecuteReader();
-            while (Dr.Read())
+            try
             {
-                value=Convert.ToDateTime(Dr["islemTarihii2"].ToString());
+                DateTime value = DateTime.Now;
+
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "select islemTarihii2 from OdaHareket where OdaHareketID='" + metroGrid1.SelectedCells[0].Value.ToString() + "'";
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd.ExecuteReader();
+                while (Dr.Read())
+                {
+                    value = Convert.ToDateTime(Dr["islemTarihii2"].ToString());
+                }
+                connection.Close();
+                return value;
             }
-            connection.Close();
-            return value;
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+            return DateTime.Now;
         }
 
         private void btnSureUzat_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(txtGunSayisi.Text) > 0)
+            try
             {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection;
-                connection.Open();
-                string tarih = Convert.ToDateTime(TarihAl().AddDays(Convert.ToDouble(txtGunSayisi.Text))).ToString("yyyy-MM-dd");
-                cmd.CommandText = "update OdaHareket set islemTarihii2='" + tarih + "'where OdaHareketID="+ metroGrid1.SelectedCells[0].Value.ToString();
-                // Personel türünü Rıza'ya sor.
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                if (Convert.ToInt32(txtGunSayisi.Text) > 0)
                 {
-                    HotelWarningForm.Show(Localization.cikisTarihiUzatıldı, Localization.Tamam,0);
+                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection;
+                    connection.Open();
+                    string tarih = Convert.ToDateTime(TarihAl().AddDays(Convert.ToDouble(txtGunSayisi.Text))).ToString("yyyy-MM-dd");
+                    cmd.CommandText = "update OdaHareket set islemTarihii2='" + tarih + "'where OdaHareketID=" + metroGrid1.SelectedCells[0].Value.ToString();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    {
+                        HotelWarningForm.Show(Localization.cikisTarihiUzatıldı, Localization.Tamam, 0);
+                    }
+                    Filtrele();
+                    txtGunSayisi.Text = "";
                 }
-                Filtrele();
-                txtGunSayisi.Text = "";
+                else
+                {
+                    HotelWarningForm.Show(Localization.eklenecekGunSayisiPozitifHata, Localization.Tamam, 1);
+                    txtGunSayisi.Focus();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                HotelWarningForm.Show(Localization.eklenecekGunSayisiPozitifHata, Localization.Tamam,1);
-                txtGunSayisi.Focus();
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private void txtGunSayisi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            try
             {
-                btnSureUzat.PerformClick();
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    btnSureUzat.PerformClick();
+                }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
     }

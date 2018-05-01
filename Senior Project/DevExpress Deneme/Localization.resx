@@ -457,7 +457,7 @@
     <value>Başarılı bir şekilde duyuru silinmiştir.</value>
   </data>
   <data name="DuzenlemekicinDuyuruSec" xml:space="preserve">
-    <value>Lütfen Önce Düzenlemek İstediğiniz Duyuruyu Seçiniz</value>
+    <value>Lütfen önce düzenlemek {0}istediğiniz duyuruyu seçiniz</value>
   </data>
   <data name="GeriAlinacakDuyuruSec" xml:space="preserve">
     <value>Lütfen geri alınacak duyuruyu seçiniz.</value>

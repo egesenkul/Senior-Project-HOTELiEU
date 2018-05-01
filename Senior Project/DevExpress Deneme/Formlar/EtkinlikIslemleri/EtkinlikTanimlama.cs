@@ -30,74 +30,95 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
 
         private void MultiLanguage()
         {
-            btnIptal.Text = Localization.btnIptal;
-            btnKaydet.Text = Localization.btnKaydet;
-            btnKlavye.Text = Localization.btnKlavyeAc;
-            btnTemizle.Text = Localization.btnTemizle;
-            lblAciklama.Text = Localization.lblAciklama;
-            lblEtkinlikismi.Text = Localization.lblEtkinlikismi;
-            lblKisiLimit.Text = Localization.lblKisiLimiti;
-            lblTarih.Text = Localization.lblTarih;
-            CheckBoxKisiLimiti.Text = Localization.KisiLimitiVar;
+            try
+            {
+                btnIptal.Text = Localization.btnIptal;
+                btnKaydet.Text = Localization.btnKaydet;
+                btnKlavye.Text = Localization.btnKlavyeAc;
+                btnTemizle.Text = Localization.btnTemizle;
+                lblAciklama.Text = Localization.lblAciklama;
+                lblEtkinlikismi.Text = Localization.lblEtkinlikismi;
+                lblKisiLimit.Text = Localization.lblKisiLimiti;
+                lblTarih.Text = Localization.lblTarih;
+                CheckBoxKisiLimiti.Text = Localization.KisiLimitiVar;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void EtkinlikTanimlama_Load(object sender, EventArgs e)
         {
-            MultiLanguage();
-            if (Kullanici.klavye.Equals("True"))
+            try
             {
-                btnKlavye.Visible = true;
+                MultiLanguage();
+                if (Kullanici.klavye.Equals("True"))
+                {
+                    btnKlavye.Visible = true;
+                }
+                else btnKlavye.Visible = false;
+                dtEtkinlik.EditValue = DateTime.Now;
+                dtEtkinlik.Properties.VistaDisplayMode = DefaultBoolean.True;
+                dtEtkinlik.Properties.VistaEditTime = DefaultBoolean.True;
+                this.StyleManager = metroStyleManager1;
+                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+                {
+                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblEtkinlikismi, lblAciklama, lblKisiLimit, lblTarih);
+                    ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtEtkinlikAciklama, txtEtkinlikAdı, txtKisiLimiti);
+                    ortakFormIslemleri.CheckBoxRenkDegistir(Color.White, CheckBoxKisiLimiti);
+                    ortakFormIslemleri.DateEditRenkDegistir(Color.Gray, dtEtkinlik);
+                }
+                if (!string.IsNullOrEmpty(EtkinlikID))
+                {
+                    BilgiDoldur();
+                }
             }
-            else btnKlavye.Visible = false;
-            dtEtkinlik.EditValue = DateTime.Now;
-            dtEtkinlik.Properties.VistaDisplayMode = DefaultBoolean.True;
-            dtEtkinlik.Properties.VistaEditTime = DefaultBoolean.True;
-            this.StyleManager = metroStyleManager1;
-            if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
+            catch (Exception ex)
             {
-                metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                ortakFormIslemleri.LabelRenkDegistir(Color.White, lblEtkinlikismi, lblAciklama, lblKisiLimit,lblTarih);
-                ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtEtkinlikAciklama, txtEtkinlikAdı,txtKisiLimiti);
-                ortakFormIslemleri.CheckBoxRenkDegistir(Color.White, CheckBoxKisiLimiti);
-                ortakFormIslemleri.DateEditRenkDegistir(Color.Gray, dtEtkinlik);
-            }
-            if (!string.IsNullOrEmpty(EtkinlikID))
-            {
-                BilgiDoldur();
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private void BilgiDoldur()
         { // Form mevcut kullanıcı ile ilgili açıldı ise bu kullanıcıya ait bilgileri ilgili yerlere yazar
-            if (!String.IsNullOrEmpty(EtkinlikID))
+            try
             {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-
-                cmd.CommandText = "select * from Etkinlik where Etkinlikno ='" + EtkinlikID + "'";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                SqlDataReader Dr;
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
+                if (!String.IsNullOrEmpty(EtkinlikID))
                 {
-                    txtEtkinlikAdı.Text = Dr["EtkinlikAdi"].ToString();
-                    txtEtkinlikAciklama.Text = Dr["EtkinlikAciklama"].ToString();
-                    dtEtkinlik.EditValue = Convert.ToDateTime(Dr["EtkinlikTarihi"]);
-                    int limit = Convert.ToInt32(Dr["EtkinlikLimit"]);
-                    if (limit != 0)
+                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    SqlCommand cmd = new SqlCommand();
+
+                    cmd.CommandText = "select * from Etkinlik where Etkinlikno ='" + EtkinlikID + "'";
+                    cmd.Connection = connection;
+                    cmd.CommandType = CommandType.Text;
+
+                    SqlDataReader Dr;
+                    connection.Open();
+                    Dr = cmd.ExecuteReader();
+                    while (Dr.Read())
                     {
-                        CheckBoxKisiLimiti.Checked = true;
-                        txtKisiLimiti.Text = limit.ToString();
+                        txtEtkinlikAdı.Text = Dr["EtkinlikAdi"].ToString();
+                        txtEtkinlikAciklama.Text = Dr["EtkinlikAciklama"].ToString();
+                        dtEtkinlik.EditValue = Convert.ToDateTime(Dr["EtkinlikTarihi"]);
+                        int limit = Convert.ToInt32(Dr["EtkinlikLimit"]);
+                        if (limit != 0)
+                        {
+                            CheckBoxKisiLimiti.Checked = true;
+                            txtKisiLimiti.Text = limit.ToString();
+                        }
+                        else
+                        {
+                            CheckBoxKisiLimiti.Checked = false;
+                        }
                     }
-                    else
-                    {
-                        CheckBoxKisiLimiti.Checked = false;
-                    }
+                    connection.Close();
                 }
-                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
@@ -108,79 +129,117 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("osk.exe");
+            try
+            {
+                System.Diagnostics.Process.Start("osk.exe");
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            ortakFormIslemleri.checkboxTemizle(CheckBoxKisiLimiti);
-            ortakFormIslemleri.textBoxTemizle(txtEtkinlikAciklama, txtEtkinlikAdı, txtKisiLimiti);
+            try
+            {
+                ortakFormIslemleri.checkboxTemizle(CheckBoxKisiLimiti);
+                ortakFormIslemleri.textBoxTemizle(txtEtkinlikAciklama, txtEtkinlikAdı, txtKisiLimiti);
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private bool EtkinlikEkleKontrol()
         {
-            if(!String.IsNullOrEmpty(txtEtkinlikAdı.Text)&& !String.IsNullOrEmpty(txtEtkinlikAciklama.Text) && Convert.ToDateTime(dtEtkinlik.EditValue)>DateTime.Now.AddMilliseconds(-1))
+            try
             {
-                return true;
+                if (!String.IsNullOrEmpty(txtEtkinlikAdı.Text) && !String.IsNullOrEmpty(txtEtkinlikAciklama.Text) && Convert.ToDateTime(dtEtkinlik.EditValue) > DateTime.Now.AddMilliseconds(-1))
+                {
+                    return true;
+                }
+                HotelWarningForm.Show(Localization.EksikEtkinlikBilgileri, Localization.Tamam, 2);
+                return false;
             }
-            HotelWarningForm.Show(Localization.EksikEtkinlikBilgileri,Localization.Tamam,2);
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
             return false;
         }
         
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (EtkinlikEkleKontrol())
+            try
             {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection;
-                connection.Open();
-                int limit = 0;
-                if (CheckBoxKisiLimiti.Checked==true) {
-                    limit = Convert.ToInt32(txtKisiLimiti.Text);
-                }
-                else
+                if (EtkinlikEkleKontrol())
                 {
-                    txtKisiLimiti.Text = "-1";
-                }
-                if (string.IsNullOrEmpty(EtkinlikID))
-                {
-                    cmd.CommandText = "Insert into Etkinlik values ('" + txtEtkinlikAdı.Text + "','" + txtEtkinlikAciklama.Text + "' , '" + Convert.ToDateTime(dtEtkinlik.EditValue).ToString("yyyy-MM-dd") + "'," + Convert.ToInt32(txtKisiLimiti.Text) + ",1) ";
-                }
-                else {
-                    cmd.CommandText = "update Etkinlik set EtkinlikAdi='" + txtEtkinlikAdı.Text + "' ,EtkinlikAciklama='" + txtEtkinlikAciklama.Text + "',EtkinlikTarihi='" + Convert.ToDateTime(dtEtkinlik.EditValue).ToString("yyyy-MM-dd") + "' ,EtkinlikLimit=" + Convert.ToInt32(txtKisiLimiti.Text) + " where Etkinlikno="+EtkinlikID;
-                        }
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                if (string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
-                {
-                    HotelWarningForm.Show(Localization.EtkinlikEklemeBasarili, Localization.Tamam,0);
-                }
-                else if (!string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
-                {
-                    HotelWarningForm.Show(Localization.EtkinlikGuncellemeBasarili, Localization.Tamam,0);
-                }
+                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection;
+                    connection.Open();
+                    int limit = 0;
+                    if (CheckBoxKisiLimiti.Checked == true)
+                    {
+                        limit = Convert.ToInt32(txtKisiLimiti.Text);
+                    }
+                    else
+                    {
+                        txtKisiLimiti.Text = "-1";
+                    }
+                    if (string.IsNullOrEmpty(EtkinlikID))
+                    {
+                        cmd.CommandText = "Insert into Etkinlik values ('" + txtEtkinlikAdı.Text + "','" + txtEtkinlikAciklama.Text + "' , '" + Convert.ToDateTime(dtEtkinlik.EditValue).ToString("yyyy-MM-dd") + "'," + Convert.ToInt32(txtKisiLimiti.Text) + ",1) ";
+                    }
+                    else
+                    {
+                        cmd.CommandText = "update Etkinlik set EtkinlikAdi='" + txtEtkinlikAdı.Text + "' ,EtkinlikAciklama='" + txtEtkinlikAciklama.Text + "',EtkinlikTarihi='" + Convert.ToDateTime(dtEtkinlik.EditValue).ToString("yyyy-MM-dd") + "' ,EtkinlikLimit=" + Convert.ToInt32(txtKisiLimiti.Text) + " where Etkinlikno=" + EtkinlikID;
+                    }
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    if (string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    {
+                        HotelWarningForm.Show(Localization.EtkinlikEklemeBasarili, Localization.Tamam, 0);
+                    }
+                    else if (!string.IsNullOrEmpty(EtkinlikID) && Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    {
+                        HotelWarningForm.Show(Localization.EtkinlikGuncellemeBasarili, Localization.Tamam, 0);
+                    }
                     dtEtkinlik.EditValue = DateTime.Now;
-                ortakFormIslemleri.textBoxTemizle(txtEtkinlikAciklama, txtEtkinlikAdı, txtKisiLimiti);
-                ortakFormIslemleri.checkboxTemizle(CheckBoxKisiLimiti);
+                    ortakFormIslemleri.textBoxTemizle(txtEtkinlikAciklama, txtEtkinlikAdı, txtKisiLimiti);
+                    ortakFormIslemleri.checkboxTemizle(CheckBoxKisiLimiti);
+                }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
 
         private void CheckBoxOzelGonderim_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckBoxKisiLimiti.Checked == true)
+            try
             {
-                lblKisiLimit.Enabled = true;
-                lblKisiLimit.Visible = true;
-                txtKisiLimiti.Enabled = true;
-                txtKisiLimiti.Visible = true;
+                if (CheckBoxKisiLimiti.Checked == true)
+                {
+                    lblKisiLimit.Enabled = true;
+                    lblKisiLimit.Visible = true;
+                    txtKisiLimiti.Enabled = true;
+                    txtKisiLimiti.Visible = true;
+                }
+                else
+                {
+                    lblKisiLimit.Enabled = false;
+                    lblKisiLimit.Visible = false;
+                    txtKisiLimiti.Enabled = false;
+                    txtKisiLimiti.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblKisiLimit.Enabled = false;
-                lblKisiLimit.Visible = false;
-                txtKisiLimiti.Enabled = false;
-                txtKisiLimiti.Visible = false;
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
     }
