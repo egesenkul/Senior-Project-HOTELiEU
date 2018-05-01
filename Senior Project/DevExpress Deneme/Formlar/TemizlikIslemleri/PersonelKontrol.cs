@@ -150,7 +150,6 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
                 cmd3.CommandText = "select personelKullaniciAdi from Personel where personelAdi ='" + parcalar[0] + "' and personelSoyadi='" + parcalar[1] + "'";
                 cmd3.Connection = connection;
                 cmd3.CommandType = CommandType.Text;
-                //kullanıcı adı boş geliyor
                 SqlDataReader Dr;
                 connection.Open();
                 Dr = cmd3.ExecuteReader();
