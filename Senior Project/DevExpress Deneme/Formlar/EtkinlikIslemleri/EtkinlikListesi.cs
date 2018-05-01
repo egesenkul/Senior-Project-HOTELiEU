@@ -15,7 +15,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
 {
     public partial class EtkinlikListesi : MetroFramework.Forms.MetroForm
     {
-        public bool ListeBos = false;
+        public bool ilkAcilis = true;
 
         public EtkinlikListesi()
         {
@@ -54,6 +54,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
                     ortakFormIslemleri.LabelRenkDegistir(Color.White, metroLabel6);
                 }
+                btnFiltrele.PerformClick();
             }
             catch (Exception ex)
             {
@@ -83,29 +84,23 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 metroGrid1.DataSource = null;
                 metroGrid1.DataSource = dtRecord;
 
-                //GridView Column isimlerini değiştirmek için
-                //datatable boş değilse bunları yapsın 
-                ListeBos = true;
-                if (dtRecord.Rows.Count > 0)
-                {
-                    ListeBos = false;
-                    if (!ListeBos)
-                    {
-                        metroGrid1.Columns[0].HeaderText = "Etkinlik ID";
-                        metroGrid1.Columns[0].Visible = false;
-                        metroGrid1.Columns[1].HeaderText = "Etkinlik Adı";
-                        metroGrid1.Columns[2].HeaderText = "Etkinlik Açıklaması";
-                        metroGrid1.Columns[3].HeaderText = "Etkinlik Tarihi";
-                        metroGrid1.Columns[4].HeaderText = "Kişi Limiti";
-                        metroGrid1.Columns[5].Visible = false;
-                    }
-                }
-                else
-                {
-                    metroGrid1.DataSource = null;
-                    HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
-                }
+                metroGrid1.Columns[0].HeaderText = "Etkinlik ID";
+                metroGrid1.Columns[0].Visible = false;
+                metroGrid1.Columns[1].HeaderText = "Etkinlik Adı";
+                metroGrid1.Columns[2].HeaderText = "Etkinlik Açıklaması";
+                metroGrid1.Columns[3].HeaderText = "Etkinlik Tarihi";
+                metroGrid1.Columns[4].HeaderText = "Kişi Limiti";
+                metroGrid1.Columns[5].Visible = false;
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                if (dtRecord.Rows.Count == 0)
+                {
+                    if (!ilkAcilis)
+                    {
+                        HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
+                    }
+                    ilkAcilis = false;
+                }
             }
             catch (Exception ex)
             {

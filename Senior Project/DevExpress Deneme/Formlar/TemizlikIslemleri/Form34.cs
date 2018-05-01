@@ -17,7 +17,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
     {
         public DataTable dtRecord = new DataTable();
 
-        public bool ListeBos = false;
+        public bool ilkAcilis = true;
 
         public List<String> odalar = new List<string>();
         public Form34()
@@ -95,10 +95,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
                 sqlDataAdap.Fill(dtRecord);
                 metroGrid1.DataSource = dtRecord;
-
-                //GridView Column isimlerini değiştirmek için
-                //datatable boş değilse bunları yapsın 
-
                 metroGrid1.Columns[0].Visible = false;
                 metroGrid1.Columns[1].HeaderText = Localization.OdaNumarasi;
                 metroGrid1.Columns[2].HeaderText = Localization.temizlenmeTarihi;
@@ -110,9 +106,15 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 metroGrid1.Columns[8].Visible = false;
                 metroGrid1.Columns[9].Visible = false;
                 metroGrid1.Columns[10].Visible = false;
-
-                //GridView yayılsın
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                if (dtRecord.Rows.Count == 0)
+                {
+                    if (!ilkAcilis)
+                    {
+                        HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
+                    }
+                    ilkAcilis = false;
+                }
             }
             catch (Exception ex)
             {
@@ -153,6 +155,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 FiilComboboxBlok();
                 FiilComboboxKat();
                 metroDateTime1.Value = DateTime.Now.AddDays(-1);
+                btnFiltrele.PerformClick();
             }
             catch (Exception ex)
             {

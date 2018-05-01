@@ -15,8 +15,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
 {
     public partial class YemekListesi : MetroFramework.Forms.MetroForm
     {
-
-        public bool ListeBos = false;
+        public bool ilkAcilis = true;
 
         public YemekListesi()
         {
@@ -154,6 +153,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                     ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbPersonelKategorisi, cmbYemekSalonu, cmbYemekTur);
                     ortakFormIslemleri.ListViewRenkDegistir(Color.Black, listeGorevlenecekler, ListeGörevliler, listePersonel);
                 }
+                btnFiltrele.PerformClick();
             }
             catch (Exception ex)
             {
@@ -212,7 +212,6 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             try
             {
-                //varchar hatası datetime ekle buraya
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                 SqlCommand sqlCmd = new SqlCommand();
@@ -226,35 +225,28 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 metroGrid1.DataSource = null;
                 metroGrid1.DataSource = dtRecord;
 
-                //GridView Column isimlerini değiştirmek için
-                //datatable boş değilse bunları yapsın 
-                ListeBos = true;
-                if (dtRecord.Rows.Count > 0)
-                {
-                    ListeBos = false;
-                    if (!ListeBos)
-                    {
-                        metroGrid1.Columns[0].HeaderText = "Yemek Adı";
-                        metroGrid1.Columns[1].HeaderText = "Yemek Açıklaması";
-                        metroGrid1.Columns[2].HeaderText = "Yemek Tarihi";
-                        metroGrid1.Columns[3].HeaderText = "Yemek Tarihi2";
-                        metroGrid1.Columns[3].Visible = false;
-                        metroGrid1.Columns[4].HeaderText = "Sil";
-                        metroGrid1.Columns[4].Visible = false;
-                        metroGrid1.Columns[5].HeaderText = "Yemek Salonu";
-                        metroGrid1.Columns[6].HeaderText = "Yemek Türü";
-                        metroGrid1.Columns[7].Visible = false;
-                        metroGrid1.Columns[8].Visible = false;
-                        metroGrid1.Columns[9].Visible = false;
-                    }
-                }
-                else
-                {
-                    metroGrid1.DataSource = null;
-                    HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
-                }
+                metroGrid1.Columns[0].HeaderText = "Yemek Adı";
+                metroGrid1.Columns[1].HeaderText = "Yemek Açıklaması";
+                metroGrid1.Columns[2].HeaderText = "Yemek Tarihi";
+                metroGrid1.Columns[3].HeaderText = "Yemek Tarihi2";
+                metroGrid1.Columns[3].Visible = false;
+                metroGrid1.Columns[4].HeaderText = "Sil";
+                metroGrid1.Columns[4].Visible = false;
+                metroGrid1.Columns[5].HeaderText = "Yemek Salonu";
+                metroGrid1.Columns[6].HeaderText = "Yemek Türü";
+                metroGrid1.Columns[7].Visible = false;
+                metroGrid1.Columns[8].Visible = false;
+                metroGrid1.Columns[9].Visible = false;
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+                if (dtRecord.Rows.Count == 0)
+                {
+                    if (!ilkAcilis)
+                    {
+                        HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
+                    }
+                    ilkAcilis = false;
+                }
             }
             catch (Exception ex)
             {

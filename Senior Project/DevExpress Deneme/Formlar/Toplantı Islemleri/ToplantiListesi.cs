@@ -15,7 +15,7 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 {
     public partial class ToplantiListesi : MetroFramework.Forms.MetroForm
     {
-        public bool ListeBos = false;
+        public bool ilkAcilis = true;
 
         public ToplantiListesi()
         {
@@ -58,6 +58,7 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
             {
                 Multilanguage();
                 FiilToplantiSalonu();
+                btnFiltrele.PerformClick();
             }
             catch (Exception ex)
             {
@@ -103,27 +104,24 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
 
                 //GridView Column isimlerini değiştirmek için
                 //datatable boş değilse bunları yapsın 
-                ListeBos = true;
-                if (dtRecord.Rows.Count > 0)
-                {
-                    ListeBos = false;
-                    if (!ListeBos)
-                    {
-                        metroGrid1.Columns[0].HeaderText = Localization.lblToplantiKonusu;
-                        metroGrid1.Columns[1].HeaderText = Localization.lblToplantiSalonu;
-                        metroGrid1.Columns[2].HeaderText = Localization.lblToplantiTarihi;
-                        metroGrid1.Columns[3].HeaderText = Localization.Kitle;
-                        metroGrid1.Columns[4].HeaderText = Localization.lblAciklama;
-                        metroGrid1.Columns[5].Visible = false;
-                    }
-                }
-                else
-                {
-                    metroGrid1.DataSource = null;
-                    HotelWarningForm.Show(Localization.NoResult, Localization.Tamam, 1);
-                }
+
+                metroGrid1.Columns[0].HeaderText = Localization.lblToplantiKonusu;
+                metroGrid1.Columns[1].HeaderText = Localization.lblToplantiSalonu;
+                metroGrid1.Columns[2].HeaderText = Localization.lblToplantiTarihi;
+                metroGrid1.Columns[3].HeaderText = Localization.Kitle;
+                metroGrid1.Columns[4].HeaderText = Localization.lblAciklama;
+                metroGrid1.Columns[5].Visible = false;
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                if (dtRecord.Rows.Count == 0)
+                {
+                    if (!ilkAcilis)
+                    {
+                        HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
+                    }
+                    ilkAcilis = false;
+                }
             }
+
             catch (Exception ex)
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);

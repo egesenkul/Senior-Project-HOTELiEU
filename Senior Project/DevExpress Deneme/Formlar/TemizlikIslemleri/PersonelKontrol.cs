@@ -15,7 +15,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
 {
     public partial class PersonelKontrol : MetroFramework.Forms.MetroForm
     {
-        public bool ListeBos = true;
+        public bool ilkAcilis = true;
 
         public PersonelKontrol()
         {
@@ -68,9 +68,9 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
             try
             {
                 MultiLanguage();
-                //personel kontrol
                 TemizlikciListesiDoldur();
                 ortakFormIslemleri.cmbIlkDegerGetir(cmbPersonel);
+                btnFiltrele.PerformClick();
             }
             catch (Exception ex)
             {
@@ -104,31 +104,25 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
                 sqlDataAdap.Fill(dtRecord);
                 metroGrid1.DataSource = dtRecord;
 
-                //GridView Column isimlerini değiştirmek için
-                //datatable boş değilse bunları yapsın 
-                if (dtRecord.Rows.Count > 0)
-                {
-                    ListeBos = false;
-                    if (!ListeBos)
-                    {
-                        metroGrid1.Columns[0].Visible = false;
-                        metroGrid1.Columns[1].HeaderText = Localization.OdaNumarasi;
-                        metroGrid1.Columns[2].HeaderText = Localization.GirisTarihi;
-                        metroGrid1.Columns[3].HeaderText = Localization.CikisTarihi;
-                        metroGrid1.Columns[4].HeaderText = Localization.personelAdi;
-                        metroGrid1.Columns[5].Visible = false;
-                        metroGrid1.Columns[6].Visible = false;
-                        metroGrid1.Columns[7].Visible = false;
-                        metroGrid1.Columns[8].HeaderText = Localization.OdaGrubu;
-                    }
-                }
-                else
-                {
-                    metroGrid1.DataSource = null;
-                    HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
-                }
-                //GridView yayılsın
+                metroGrid1.Columns[0].Visible = false;
+                metroGrid1.Columns[1].HeaderText = Localization.OdaNumarasi;
+                metroGrid1.Columns[2].HeaderText = Localization.GirisTarihi;
+                metroGrid1.Columns[3].HeaderText = Localization.CikisTarihi;
+                metroGrid1.Columns[4].HeaderText = Localization.personelAdi;
+                metroGrid1.Columns[5].Visible = false;
+                metroGrid1.Columns[6].Visible = false;
+                metroGrid1.Columns[7].Visible = false;
+                metroGrid1.Columns[8].HeaderText = Localization.OdaGrubu;
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                if (dtRecord.Rows.Count == 0)
+                {
+                    if (!ilkAcilis)
+                    {
+                        HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
+                    }
+                    ilkAcilis = false;
+                }
             }
             catch (Exception ex)
             {
