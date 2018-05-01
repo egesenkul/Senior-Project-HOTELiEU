@@ -810,9 +810,6 @@
   <data name="geriAlinacakEtkinlikSeciniz" xml:space="preserve">
     <value>Please first select event which you want to recover</value>
   </data>
-  <data name="IstenilenKriterdeKayitYok" xml:space="preserve">
-    <value>There is no entry such like that</value>
-  </data>
   <data name="KategoriEklemeBasarili" xml:space="preserve">
     <value>Successfully added category</value>
   </data>

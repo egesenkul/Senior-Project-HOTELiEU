@@ -111,7 +111,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 {
                     if (!ilkAcilis)
                     {
-                        HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
+                        HotelWarningForm.Show(String.Format(Localization.NoResult, "\n"), Localization.Tamam, 1);
                     }
                     ilkAcilis = false;
                 }
@@ -286,7 +286,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 }
                 if (metroGrid1.DataSource == null)
                 {
-                    HotelWarningForm.Show(Localization.IstenilenKriterdeKayitYok, Localization.Tamam, 1);
+                    HotelWarningForm.Show(String.Format(Localization.NoResult, "\n"), Localization.Tamam, 1);
                 }
             }
             catch (Exception ex)

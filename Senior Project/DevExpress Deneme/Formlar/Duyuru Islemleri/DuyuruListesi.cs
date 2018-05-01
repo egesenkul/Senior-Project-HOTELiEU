@@ -511,7 +511,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                     }
                     else
                     {
-                        HotelWarningForm.Show(Localization.NoResult, Localization.Tamam, 1);
+                        HotelWarningForm.Show(String.Format(Localization.NoResult,"\n"), Localization.Tamam, 1);
                     }
                     //GridView yayılsın
                     metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

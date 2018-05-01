@@ -799,15 +799,6 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.
-        /// </summary>
-        internal static string IstenilenKriterdeKayitYok {
-            get {
-                return ResourceManager.GetString("IstenilenKriterdeKayitYok", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Kat başarılı bir şekilde düzenlenmiştir.
         /// </summary>
         internal static string KatDuzenlemeBasarili {
@@ -1474,7 +1465,7 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to İstenilen kriterlerde herhangi bir kayıt bulunamamıştır..
+        ///   Looks up a localized string similar to İstenilen kriterlerde herhangi bir {0}kayıt bulunamamıştır..
         /// </summary>
         internal static string NoResult {
             get {

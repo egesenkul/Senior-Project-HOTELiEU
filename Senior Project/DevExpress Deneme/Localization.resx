@@ -484,7 +484,7 @@
     <value>Müşteri Adı:</value>
   </data>
   <data name="NoResult" xml:space="preserve">
-    <value>İstenilen kriterlerde herhangi bir kayıt bulunamamıştır.</value>
+    <value>İstenilen kriterlerde herhangi bir {0}kayıt bulunamamıştır.</value>
   </data>
   <data name="OdaGrubu" xml:space="preserve">
     <value>Oda Grubu</value>
@@ -809,9 +809,6 @@
   </data>
   <data name="geriAlinacakEtkinlikSeciniz" xml:space="preserve">
     <value>Lütfen önce geri almak istediğiniz etkinliği seçiniz</value>
-  </data>
-  <data name="IstenilenKriterdeKayitYok" xml:space="preserve">
-    <value>İstenilen kriterlerde herhangi bir kayıt bulunamamıştır</value>
   </data>
   <data name="KategoriEklemeBasarili" xml:space="preserve">
     <value>Kategori başarılı bir şekilde eklenmiştir</value>
