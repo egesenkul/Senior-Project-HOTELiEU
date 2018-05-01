@@ -77,8 +77,6 @@ namespace DevExpress_Deneme
             lblKullaniciAdi.Text = Localization.lblKullaniciAdi;
             lblSifre.Text = Localization.lblSifre;
             lblDil.Text = Localization.lblDil;
-            //frmLogin.Text = Localization.LoginFormText;
-            btnDestek.Text = Localization.btnDestek;
             btnGiris.Text = Localization.btnGiris;
             btnKapat.Text = Localization.btnKapat;
             btnKlavyeAc.Text = Localization.btnKlavyeAc;
@@ -158,8 +156,6 @@ namespace DevExpress_Deneme
                     ortakFormIslemleri.LabelRenkDegistir(Color.White, lblKullaniciAdi, lblSifre);
                     ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtKullaniciAdi, txtSifre);
                     ortakFormIslemleri.CheckBoxRenkDegistir(Color.White, chHatirla);
-                    btnDestek.BackColor = Color.Black;
-                    btnDestek.ForeColor = Color.Red;
                 }
                 else
                 {
@@ -287,18 +283,6 @@ namespace DevExpress_Deneme
         private void metroButton1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("osk.exe");
-        }
-
-        private void metroButton4_Click(object sender, EventArgs e)
-        {
-            try { 
-            Destek destek = new Destek();
-            destek.Show();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
         }
 
         private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)

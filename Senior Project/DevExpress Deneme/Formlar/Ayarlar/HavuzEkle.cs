@@ -69,7 +69,14 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void btnKlavye_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("osk.exe");
+            try
+            {
+                ortakFormIslemleri.KlavyeAc();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void btnIptal_Click(object sender, EventArgs e)
@@ -131,7 +138,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 {
                     ListeHavuzlar.BackColor = Color.White;
                 }
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                 SqlCommand cmd = new SqlCommand();
@@ -175,7 +181,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     else
                     {
                         cmd.CommandText = "Insert into Havuzlar values('" + txtisim.Text + "''" + DateTime.Now + "',1,'" + jsonUrl.Text + "')";
-                        //bu sorguya json eklemesini de ekle
                         cmd.ExecuteNonQuery();
                         connection.Close();
                         txtisim.Clear();
@@ -189,7 +194,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 else
                 {
                     cmd.CommandText = "update Havuzlar set havuzAdi ='" + txtisim.Text + "',url='" + jsonUrl.Text + "' where havuzAdi='" + havuzEskiAdi + "'";
-                    //bu sorguya json güncellemesini de ekle
                     cmd.ExecuteNonQuery();
                     connection.Close();
                     txtisim.Clear();
@@ -263,14 +267,12 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             {
                 if (ListeHavuzlar.SelectedItems.Count > 0)
                 {
-                    //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = connection;
                     connection.Open();
                     cmd.CommandText = "update Havuzlar set gorunur=0 where havuzAdi='" + ListeHavuzlar.SelectedItems[0].Text + "'";
-                    //where ekle
                     cmd.ExecuteNonQuery();
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
@@ -297,7 +299,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 if (silinmişKayıtlarıGösterToolStripMenuItem.Text == "Silinmiş Kayıtları Göster")
                 {
                     silinmişKaydıGeriAlToolStripMenuItem.Visible = true;
-                    //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                     SqlCommand cmd = new SqlCommand();
@@ -333,14 +334,12 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = connection;
                 connection.Open();
                 cmd.CommandText = "update Havuzlar set gorunur=1 where havuzAdi='" + ListeHavuzlar.SelectedItems[0].Text + "'";
-                //where ekle
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 if (Kullanici.BilgilendirmeFormlari.Equals("True"))

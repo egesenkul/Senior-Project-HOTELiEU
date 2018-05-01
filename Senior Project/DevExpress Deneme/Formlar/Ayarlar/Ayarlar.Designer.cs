@@ -44,7 +44,6 @@
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileKullaniciTercihleri = new DevExpress.XtraEditors.TileItem();
-            this.tileLisansIslemleri = new DevExpress.XtraEditors.TileItem();
             this.tileYetki = new DevExpress.XtraEditors.TileItem();
             this.tileKapat = new DevExpress.XtraEditors.TileItem();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
@@ -80,7 +79,6 @@
             // tileGroup2
             // 
             this.tileGroup2.Items.Add(this.tileKullaniciTercihleri);
-            this.tileGroup2.Items.Add(this.tileLisansIslemleri);
             this.tileGroup2.Items.Add(this.tileYetki);
             this.tileGroup2.Items.Add(this.tileKapat);
             this.tileGroup2.Name = "tileGroup2";
@@ -102,25 +100,6 @@
             this.tileKullaniciTercihleri.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileKullaniciTercihleri.Name = "tileKullaniciTercihleri";
             this.tileKullaniciTercihleri.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem7_ItemClick);
-            // 
-            // tileLisansIslemleri
-            // 
-            this.tileLisansIslemleri.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.tileLisansIslemleri.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileLisansIslemleri.AppearanceItem.Pressed.BackColor = System.Drawing.Color.YellowGreen;
-            this.tileLisansIslemleri.AppearanceItem.Pressed.BackColor2 = System.Drawing.Color.YellowGreen;
-            this.tileLisansIslemleri.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
-            this.tileLisansIslemleri.AppearanceItem.Pressed.Options.UseBackColor = true;
-            this.tileLisansIslemleri.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            this.tileLisansIslemleri.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileLisansIslemleri.BackgroundImage")));
-            tileItemElement2.Text = "Lisans İşlemleri";
-            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileLisansIslemleri.Elements.Add(tileItemElement2);
-            this.tileLisansIslemleri.Id = 6;
-            this.tileLisansIslemleri.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileLisansIslemleri.Name = "tileLisansIslemleri";
-            this.tileLisansIslemleri.Visible = false;
-            this.tileLisansIslemleri.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem6_ItemClick);
             // 
             // tileYetki
             // 
@@ -328,7 +307,6 @@
         private DevExpress.XtraEditors.TileGroup tileGroup3;
         private DevExpress.XtraEditors.TileItem tileKategoriTanimlamari;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
-        private DevExpress.XtraEditors.TileItem tileLisansIslemleri;
         private DevExpress.XtraEditors.TileItem tileKullaniciTercihleri;
         private DevExpress.XtraEditors.TileGroup tileGroup4;
         private DevExpress.XtraEditors.TileItem tileBlokEkle;

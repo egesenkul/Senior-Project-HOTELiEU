@@ -35,7 +35,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 {
                     metroListView1.BackColor = Color.White;
                 }
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                 SqlCommand cmd = new SqlCommand();
@@ -107,7 +106,14 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void btnSecenekler_Click(object sender, EventArgs e)
         {
-            contextMenuStrip1.Show(Cursor.Position);
+            try
+            {
+                contextMenuStrip1.Show(Cursor.Position);
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,7 +122,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             {
                 if (metroListView1.SelectedItems.Count > 0)
                 {
-                    //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                     SqlCommand cmd = new SqlCommand();
@@ -222,7 +227,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                 SqlCommand cmd = new SqlCommand();
@@ -246,7 +250,14 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void btnKlavye_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("osk.exe");
+            try
+            {
+                ortakFormIslemleri.KlavyeAc();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton2_Click_1(object sender, EventArgs e)
@@ -274,7 +285,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 {
                     if (mod == 0)
                     {
-                        //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                         SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                         SqlCommand cmd = new SqlCommand();
@@ -290,7 +300,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     }
                     else
                     {
-                        //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                         SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                         SqlCommand cmd = new SqlCommand();

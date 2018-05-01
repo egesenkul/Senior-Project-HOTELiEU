@@ -122,12 +122,6 @@
     <Compile Include="Formlar\Ayarlar\KullaniciTercihleri.Designer.cs">
       <DependentUpon>KullaniciTercihleri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\Ayarlar\LisansIslemleri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\Ayarlar\LisansIslemleri.Designer.cs">
-      <DependentUpon>LisansIslemleri.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formlar\Ayarlar\OtelTanımlamaları.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,18 +245,6 @@
     </Compile>
     <Compile Include="SıcaklıkBilgileri.Designer.cs">
       <DependentUpon>SıcaklıkBilgileri.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\Genel\Destek.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\Genel\Destek.Designer.cs">
-      <DependentUpon>Destek.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\Genel\Guncelleme.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\Genel\Guncelleme.Designer.cs">
-      <DependentUpon>Guncelleme.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Musteri Islemleri\MusteriIslemleri.cs">
       <SubType>Form</SubType>
@@ -401,9 +383,6 @@
     <EmbeddedResource Include="Formlar\Ayarlar\KullaniciTercihleri.resx">
       <DependentUpon>KullaniciTercihleri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Ayarlar\LisansIslemleri.resx">
-      <DependentUpon>LisansIslemleri.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Ayarlar\OtelTanımlamaları.resx">
       <DependentUpon>OtelTanımlamaları.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,12 +450,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SıcaklıkBilgileri.resx">
       <DependentUpon>SıcaklıkBilgileri.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Genel\Destek.resx">
-      <DependentUpon>Destek.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Genel\Guncelleme.resx">
-      <DependentUpon>Guncelleme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Musteri Islemleri\MusteriIslemleri.resx">
       <DependentUpon>MusteriIslemleri.cs</DependentUpon>

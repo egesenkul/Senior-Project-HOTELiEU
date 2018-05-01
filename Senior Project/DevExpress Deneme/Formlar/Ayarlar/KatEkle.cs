@@ -74,7 +74,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                 SqlCommand cmd = new SqlCommand();
@@ -107,7 +106,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 {
                     if (!String.IsNullOrEmpty(txtKatAdi.Text))
                     {
-                        //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                         SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                         SqlCommand cmd = new SqlCommand();
@@ -124,10 +122,8 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 }
                 else
                 {
-                    //
                     if (!String.IsNullOrEmpty(txtKatAdi.Text))
                     {
-                        //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                         SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                         SqlCommand cmd = new SqlCommand();
@@ -177,7 +173,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 {
                     metroListView1.BackColor = Color.White;
                 }
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                 SqlCommand cmd = new SqlCommand();
@@ -302,7 +297,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 {
                     metroListView1.Clear();
                     metroListView1.BackColor = Color.YellowGreen;
-                    //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                     SqlCommand cmd = new SqlCommand();
@@ -327,6 +321,18 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 {
                     ListeGuncelle();
                 }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+        }
+
+        private void btnKlavye_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ortakFormIslemleri.KlavyeAc();
             }
             catch (Exception ex)
             {

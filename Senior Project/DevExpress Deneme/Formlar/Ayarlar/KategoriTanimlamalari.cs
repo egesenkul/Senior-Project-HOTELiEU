@@ -58,7 +58,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtisim);
                     ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbKategoriBolum);
                     ortakFormIslemleri.ListViewRenkDegistir(Color.Black, metroListView1);
-
                 }
 
                 cmbKategoriBolum.Items.Add("Personel");
@@ -95,7 +94,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                 SqlCommand cmd = new SqlCommand();

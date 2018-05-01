@@ -375,48 +375,8 @@
             // 
             // tileGroup7
             // 
-            this.tileGroup7.Items.Add(this.tileGuncelleme);
-            this.tileGroup7.Items.Add(this.tileDestek);
             this.tileGroup7.Items.Add(this.tileKapat);
             this.tileGroup7.Name = "tileGroup7";
-            // 
-            // tileGuncelleme
-            // 
-            this.tileGuncelleme.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.tileGuncelleme.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileGuncelleme.AppearanceItem.Pressed.BackColor = System.Drawing.Color.YellowGreen;
-            this.tileGuncelleme.AppearanceItem.Pressed.BackColor2 = System.Drawing.Color.YellowGreen;
-            this.tileGuncelleme.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
-            this.tileGuncelleme.AppearanceItem.Pressed.Options.UseBackColor = true;
-            this.tileGuncelleme.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            this.tileGuncelleme.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileGuncelleme.BackgroundImage")));
-            tileItemElement14.Text = "Güncelleme";
-            tileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileGuncelleme.Elements.Add(tileItemElement14);
-            this.tileGuncelleme.Id = 8;
-            this.tileGuncelleme.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileGuncelleme.Name = "tileGuncelleme";
-            this.tileGuncelleme.Visible = false;
-            this.tileGuncelleme.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem9_ItemClick);
-            // 
-            // tileDestek
-            // 
-            this.tileDestek.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.tileDestek.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileDestek.AppearanceItem.Pressed.BackColor = System.Drawing.Color.YellowGreen;
-            this.tileDestek.AppearanceItem.Pressed.BackColor2 = System.Drawing.Color.YellowGreen;
-            this.tileDestek.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
-            this.tileDestek.AppearanceItem.Pressed.Options.UseBackColor = true;
-            this.tileDestek.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            this.tileDestek.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileDestek.BackgroundImage")));
-            tileItemElement15.Text = "Destek";
-            tileItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileDestek.Elements.Add(tileItemElement15);
-            this.tileDestek.Id = 9;
-            this.tileDestek.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileDestek.Name = "tileDestek";
-            this.tileDestek.Visible = false;
-            this.tileDestek.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem10_ItemClick);
             // 
             // tileKapat
             // 

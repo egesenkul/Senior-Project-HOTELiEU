@@ -222,7 +222,14 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
         private void btnKlavye_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("osk.exe");
+            try
+            {
+                ortakFormIslemleri.KlavyeAc();
+            } 
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void metroButton4_Click(object sender, EventArgs e)

@@ -453,33 +453,6 @@
   <data name="&gt;&gt;btnGiris.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnDestek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-11, 407</value>
-  </data>
-  <data name="btnDestek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 67</value>
-  </data>
-  <data name="btnDestek.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="btnDestek.Text" xml:space="preserve">
-    <value>Destek</value>
-  </data>
-  <data name="btnDestek.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;btnDestek.Name" xml:space="preserve">
-    <value>btnDestek</value>
-  </data>
-  <data name="&gt;&gt;btnDestek.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;btnDestek.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;btnDestek.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="chHatirla.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -508,7 +481,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;chHatirla.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblSifre.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -535,7 +508,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblSifre.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lblDil.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -562,7 +535,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblDil.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lblKullaniciAdi.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -589,7 +562,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblKullaniciAdi.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -628,7 +601,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtSifre.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="resource.Image1" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -667,7 +640,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txtKullaniciAdi.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cmbDil.ItemHeight" type="System.Int32, mscorlib">
     <value>23</value>
@@ -691,7 +664,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;cmbDil.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>

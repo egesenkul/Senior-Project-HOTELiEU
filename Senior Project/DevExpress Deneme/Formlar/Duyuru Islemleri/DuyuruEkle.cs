@@ -113,33 +113,6 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             }
         }
 
-        public void FiilComboboxMusteriAdi()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-
-                cmd.CommandText = "select musteriAdi,musteriSoyadi from Musteriler";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                SqlDataReader Dr;
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
-                {
-                    cmbMusteriAdi.Items.Add(Dr["musteriAdi"].ToString() + " " + Dr["musteriSoyadi"]);
-                }
-                connection.Close();
-                ortakFormIslemleri.cmbIlkDegerGetir(cmbMusteriAdi);
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
         private void BilgiDoldur()
         {
             try
@@ -241,8 +214,6 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 }
                 connection.Close();
 
-                //cmbMusteriAdi.DataSource = musteriListesi;
-
                 foreach (Musteri item in musteriListesi)
                 {
                     cmbMusteriAdi.Items.Add(item.Isim + " " + item.soyIsim);
@@ -283,7 +254,6 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             try
             {
                 FiilComboboxDuyuruKategori();
-                //FiilComboboxMusteriAdi();
                 MusteriListesiGetir();
                 FiilComboboxOdaGrubu();
                 CheckBoxOzelGonderim.Checked = true;
@@ -428,7 +398,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
         {
             try
             {
-                System.Diagnostics.Process.Start("osk.exe");
+                ortakFormIslemleri.KlavyeAc();
             }
             catch (Exception ex)
             {

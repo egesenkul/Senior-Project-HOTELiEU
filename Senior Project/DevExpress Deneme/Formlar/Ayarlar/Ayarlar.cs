@@ -61,7 +61,6 @@ namespace DevExpress_Deneme
                     tileItemSıcaklıkArdunio.Visible = false;
                     tileKategoriTanimlamari.Visible = false;
                     tileKatEkle.Visible = false;
-                    tileLisansIslemleri.Visible = false;
                     tileOtelTanimlamalari.Visible = false;
                     tileSalonTanimlamalari.Visible = false;
                     tileYetki.Visible = false;
@@ -78,7 +77,6 @@ namespace DevExpress_Deneme
             try
             {
                 tileKullaniciTercihleri.Text = Localization.tileKullaniciTercihleri;
-                tileLisansIslemleri.Text = Localization.tileLisans;
                 tileYetki.Text = Localization.tileYetki;
                 tileKapat.Text = Localization.btnKapat;
                 tileOtelTanimlamalari.Text = Localization.tileOtelTanimlamalari;
@@ -109,7 +107,7 @@ namespace DevExpress_Deneme
                 {
                     lightTema();
                 }
-                ortakFormIslemleri.tileRenkDegistir(tileBlokEkle, tileKategoriTanimlamari, tileKullaniciTercihleri, tileLisansIslemleri, tileOtelTanimlamalari,
+                ortakFormIslemleri.tileRenkDegistir(tileBlokEkle, tileKategoriTanimlamari, tileKullaniciTercihleri, tileOtelTanimlamalari,
                     tileSalonTanimlamalari, tileHavuzEkle, tileItemSıcaklıkArdunio, tileYetki, tileKatEkle);
                 //         Yetki();
             }
@@ -162,28 +160,6 @@ namespace DevExpress_Deneme
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
-
-        private void tileItem6_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
-        {
-            try
-            {
-                LisansIslemleri lisans = new LisansIslemleri();
-                lisans.Show();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-        //private void tileItem1_ItemClick_1(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
-        //{
-        //    if (temadark)
-        //    {
-        //        lightTema();
-        //    }
-        //    else { darkTema(); }
-        //}
 
         private void tileItem8_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {

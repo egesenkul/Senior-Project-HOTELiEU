@@ -79,7 +79,6 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 FiilCombobox();
                 FiilComboboxOdaGrubu();
                 FiilComboboxMusteriAdi();
-                //GridGuncelle();
                 Yetki();
                 ComboBoxKriter.Items.Add(Localization.OdaGrubu);
                 ComboBoxKriter.Items.Add(Localization.OzelMusteri);
@@ -260,26 +259,17 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 DataTable dtRecord = new DataTable();
                 sqlDataAdap.Fill(dtRecord);
                 metroGrid1.DataSource = dtRecord;
-
-                //GridView Column isimlerini değiştirmek için
-                //datatable boş değilse bunları yapsın 
-                if (dtRecord.Rows.Count > 0)
-                {
-                    metroGrid1.Columns[0].HeaderText = Localization.lblBaslik;
-                    metroGrid1.Columns[1].HeaderText = Localization.lblDuyuruGrubu;
-                    metroGrid1.Columns[2].HeaderText = Localization.lbliCerik;
-                    metroGrid1.Columns[3].HeaderText = Localization.KriterLabel;
-                    metroGrid1.Columns[4].Visible = false;
-                    metroGrid1.Columns[5].Visible = false;
-                    metroGrid1.Columns[6].Visible = false;
-                    metroGrid1.Columns[7].HeaderText = Localization.lblTarih;
-                    metroGrid1.Columns[8].Visible = false;
-                }
-                else
-                {
-                    HotelWarningForm.Show(Localization.NoResult, Localization.Tamam, 1);
-                }
-                //GridView yayılsın
+                metroGrid1.Columns[0].HeaderText = Localization.lblBaslik;
+                metroGrid1.Columns[1].HeaderText = Localization.lblDuyuruGrubu;
+                metroGrid1.Columns[2].HeaderText = Localization.lbliCerik;
+                metroGrid1.Columns[3].HeaderText = Localization.KriterLabel;
+                metroGrid1.Columns[4].Visible = false;
+                metroGrid1.Columns[5].Visible = false;
+                metroGrid1.Columns[6].Visible = false;
+                metroGrid1.Columns[7].HeaderText = Localization.lblTarih;
+                metroGrid1.Columns[8].Visible = false;
+                
+               
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)

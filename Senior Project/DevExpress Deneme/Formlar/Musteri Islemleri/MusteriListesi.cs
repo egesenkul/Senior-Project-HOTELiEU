@@ -58,7 +58,6 @@ namespace Otel_Uygulamasi.Formlar.Musteri_Islemleri
             try
             {
                 MultiLanguage();
-                //GridGuncelle();
                 EgeTablosu("");
                 RizaTablosu("");
                 GridGuncelleListeden();
@@ -134,41 +133,6 @@ namespace Otel_Uygulamasi.Formlar.Musteri_Islemleri
             }
         }
 
-        private void GridGuncelle()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
-
-                SqlCommand sqlCmd = new SqlCommand();
-                sqlCmd.Connection = connection;
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.CommandText = "select musteriAdi,musteriSoyadi,musteriTelefon,Aktif,musteriKullaniciAdi from Musteriler";
-                SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
-
-                DataTable dtRecord = new DataTable();
-                sqlDataAdap.Fill(dtRecord);
-                metroGrid1.DataSource = dtRecord;
-
-                //GridView Column isimlerini değiştirmek için
-                //datatable boş değilse bunları yapsın 
-
-                metroGrid1.Columns[0].HeaderText = Localization.MusteriAdi;
-                metroGrid1.Columns[1].HeaderText = Localization.MusteriSoyadi;
-                metroGrid1.Columns[2].HeaderText = Localization.MusteriTelefonNumarasi;
-                metroGrid1.Columns[4].HeaderText = "Müşteri Kullanıcı Adı";
-                metroGrid1.Columns[4].Visible = false;
-                metroGrid1.Columns[3].HeaderText = "Müşteri Otelde mi ?";
-                metroGrid1.Columns[3].Visible = false;
-
-                //GridView yayılsın
-                metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
 
         private void GridGuncelleListeden()
         {

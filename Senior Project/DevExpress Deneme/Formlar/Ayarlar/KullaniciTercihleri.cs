@@ -163,13 +163,12 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
 
                 }
                 else { formOnayi = false; }
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
+
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = connection;
                 connection.Open();
                 cmd.CommandText = "update Personel set onayFormlari='" + formOnayi + "' where personelKullaniciAdi='" + Kullanici.KullaniciAdi + "'";
-                // Personel türünü Rıza'ya sor.
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 Kullanici.BilgiGuncelle();
@@ -187,8 +186,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 if (tileBilgilendirmeFormu.Checked == true)
                 {
                     bilgilendirmeFormlari = true;
-                    //veritabanına yaz
-
                 }
                 else { bilgilendirmeFormlari = false; }
 
@@ -252,7 +249,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     tileKlavye.Checked = false;
                 }
                 else { tileKlavye.Checked = true; }
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = connection;
@@ -284,12 +280,9 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             try
             {
                 DialogResult result = colorDialog1.ShowDialog();
-                // See if user pressed ok.
                 if (result == DialogResult.OK)
                 {
-                    // Set form background to the selected color.
                     tileRenkDeğistir.AppearanceItem.Normal.BackColor = colorDialog1.Color;
-                    //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = connection;

@@ -56,7 +56,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
             connection.Close();
 
-            //cmbMusteriAdi.DataSource = musteriListesi;
 
             foreach (Musteri item in musteriListesi)
             {
@@ -66,27 +65,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         }
 
 
-        public void FiilComboboxMusteriAdi()
-        {
-            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "select musteriAdi,musteriSoyadi from Musteriler";
-            cmd.Connection = connection;
-            cmd.CommandType = CommandType.Text;
-
-            SqlDataReader Dr;
-            connection.Open();
-            Dr = cmd.ExecuteReader();
-            while (Dr.Read())
-            {
-                cmbMusteriAdi.Items.Add(Dr["musteriAdi"].ToString() + " " + Dr["musteriSoyadi"]);
-            }
-            connection.Close();
-            ortakFormIslemleri.cmbIlkDegerGetir(cmbMusteriAdi);
-        }
-
-        public void FiilComboboxKat()
+         public void FiilComboboxKat()
         {
             cmbKat.Items.Clear();
             cmbKat.Items.Add(Localization.Tümü);
@@ -197,7 +176,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             Dr = cmd.ExecuteReader();
             while (Dr.Read())
             {
-                //ListeOdalar.Items.Add(Dr["OdaNo"].ToString());
                 tumOdalar.Add(Dr["OdaNo"].ToString());
             }
             connection.Close();
@@ -343,7 +321,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 cmbKat.Items.Add(Localization.Tümü);
                 cmbOdaBlok.Items.Add(Localization.Tümü);
                 FiilCombobox();
-                //FiilComboboxMusteriAdi();
                 MusteriListesiGetir();
                 FiilComboboxBlok();
                 FiilComboboxKat();

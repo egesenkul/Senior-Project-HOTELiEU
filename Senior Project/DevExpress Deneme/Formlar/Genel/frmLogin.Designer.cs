@@ -43,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGiris = new MetroFramework.Controls.MetroButton();
-            this.btnDestek = new MetroFramework.Controls.MetroButton();
             this.chHatirla = new MetroFramework.Controls.MetroCheckBox();
             this.lblSifre = new MetroFramework.Controls.MetroLabel();
             this.lblDil = new MetroFramework.Controls.MetroLabel();
@@ -161,7 +160,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnGiris);
-            this.panel1.Controls.Add(this.btnDestek);
             this.panel1.Controls.Add(this.chHatirla);
             this.panel1.Controls.Add(this.lblSifre);
             this.panel1.Controls.Add(this.lblDil);
@@ -181,16 +179,6 @@
             this.btnGiris.UseCustomBackColor = true;
             this.btnGiris.UseSelectable = true;
             this.btnGiris.Click += new System.EventHandler(this.metroButton2_Click);
-            // 
-            // btnDestek
-            // 
-            this.btnDestek.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.btnDestek, "btnDestek");
-            this.btnDestek.Name = "btnDestek";
-            this.btnDestek.UseCustomBackColor = true;
-            this.btnDestek.UseCustomForeColor = true;
-            this.btnDestek.UseSelectable = true;
-            this.btnDestek.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // chHatirla
             // 
@@ -355,7 +343,6 @@
         private MetroFramework.Controls.MetroLabel lblSifre;
         private MetroFramework.Controls.MetroLabel lblKullaniciAdi;
         private MetroFramework.Controls.MetroTextBox txtSifre;
-        private MetroFramework.Controls.MetroButton btnDestek;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroCheckBox chHatirla;
         private System.Windows.Forms.PictureBox pictureBox1;

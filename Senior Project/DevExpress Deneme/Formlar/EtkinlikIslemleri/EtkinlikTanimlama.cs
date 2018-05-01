@@ -131,7 +131,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
         {
             try
             {
-                System.Diagnostics.Process.Start("osk.exe");
+                ortakFormIslemleri.KlavyeAc();
             }
             catch (Exception ex)
             {

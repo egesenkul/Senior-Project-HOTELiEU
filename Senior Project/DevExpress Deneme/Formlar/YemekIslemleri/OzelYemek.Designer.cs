@@ -543,7 +543,6 @@
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.PasswordChar = '\0';
-            this.txtAciklama.PromptText = "Yemek ile ilgili notlar";
             this.txtAciklama.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAciklama.SelectedText = "";
             this.txtAciklama.SelectionLength = 0;
@@ -555,7 +554,6 @@
             this.txtAciklama.UseCustomBackColor = true;
             this.txtAciklama.UseCustomForeColor = true;
             this.txtAciklama.UseSelectable = true;
-            this.txtAciklama.WaterMark = "Yemek ile ilgili notlar";
             this.txtAciklama.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAciklama.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 

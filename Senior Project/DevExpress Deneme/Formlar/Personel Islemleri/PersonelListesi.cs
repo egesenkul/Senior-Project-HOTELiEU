@@ -84,9 +84,6 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
         {
             try
             {
-                //MetroFramework.Controls.MetroGrid View = MetroFramework.Controls.MetroGrid.vi
-                //GridView View = GridControl.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
-                //if (View != null)
                 {
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                     saveFileDialog1.Filter = "Excel Dosyası|*.xls";
@@ -95,7 +92,6 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                     saveFileDialog1.ShowDialog();
                     if (saveFileDialog1.FileName != "")
                     {
-                        //View.ExportToXls(saveFileDialog1.FileName);
                         MetroMessageBox.Show(this, "", "Dışa Aktarım İşlemi Tamamlanmıştır.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

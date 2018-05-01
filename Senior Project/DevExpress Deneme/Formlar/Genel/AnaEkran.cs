@@ -216,19 +216,6 @@ namespace DevExpress_Deneme
             }
         }
 
-        private void tileItem10_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
-        {
-            try
-            {
-                Destek destek = new Destek();
-                destek.Show();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
         private void tileItem19_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             try
@@ -326,19 +313,6 @@ namespace DevExpress_Deneme
             {
                 DuyuruIslemleri duyuruislemleri = new DuyuruIslemleri();
                 duyuruislemleri.Show();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-        private void tileItem9_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
-        {
-            try
-            {
-                Guncelleme guncelleme = new Guncelleme();
-                guncelleme.Show();
             }
             catch (Exception ex)
             {

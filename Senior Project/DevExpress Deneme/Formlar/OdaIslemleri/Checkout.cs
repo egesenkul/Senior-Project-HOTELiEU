@@ -193,7 +193,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = connection;
                     connection.Open();
-                    //            cmd.CommandText = "update OdaHareket set islemTipi='Check-out', Onay=1, islemTarihii2='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where OdaNo='" + metroGrid1.SelectedCells[1].Value.ToString()+"' and musteriPersonel='"+metroGrid1.SelectedCells[4].Value.ToString()+"' and islemTipi='Check-in' and islemTarihi1='"+Convert.ToDateTime(metroGrid1.SelectedCells[2].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'";
                     musteriActiveGuncelle(metroGrid1.SelectedCells[7].Value.ToString(), TabloKontrol(metroGrid1.SelectedCells[7].Value.ToString()));
                     cmd.CommandText = "update OdaHareket set islemTipi='Check-out', Onay=1, islemTarihii2='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where OdaNo='" + metroGrid1.SelectedCells[1].Value.ToString() + "' and musteriPersonel='" + metroGrid1.SelectedCells[4].Value.ToString() + "' and islemTipi='Check-in' and islemTarihi1='" + Convert.ToDateTime(metroGrid1.SelectedCells[2].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "'";
                     cmd.ExecuteNonQuery();
