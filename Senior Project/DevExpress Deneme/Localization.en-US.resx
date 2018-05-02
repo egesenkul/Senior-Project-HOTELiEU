@@ -951,4 +951,7 @@
   <data name="kattaBulunanSalonlariSilin" xml:space="preserve">
     <value>Please first delete saloons which are in that room</value>
   </data>
+  <data name="odadaRezervasyonCheckinVar" xml:space="preserve">
+    <value>In that days there is a reservation {0}or checkin in that room</value>
+  </data>
 </root>

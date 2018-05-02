@@ -954,4 +954,7 @@
   <data name="kattaBulunanSalonlariSilin" xml:space="preserve">
     <value>Lütfen önce katta bulunan salonları siliniz</value>
   </data>
+  <data name="odadaRezervasyonCheckinVar" xml:space="preserve">
+    <value>Girilen tarih aralığında bu odada rezervasyon {0}ya da check-in işlemi bulunmaktadır</value>
+  </data>
 </root>

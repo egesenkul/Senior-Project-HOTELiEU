@@ -1537,6 +1537,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Girilen tarih aralığında bu odada rezervasyon {0}ya da check-in işlemi bulunmaktadır.
+        /// </summary>
+        internal static string odadaRezervasyonCheckinVar {
+            get {
+                return ResourceManager.GetString("odadaRezervasyonCheckinVar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başarılı bir şekilde oda düzenlenmiştir.
         /// </summary>
         internal static string OdaDuzenlemeBasarili {
