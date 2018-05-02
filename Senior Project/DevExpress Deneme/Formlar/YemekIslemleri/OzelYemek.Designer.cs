@@ -543,7 +543,6 @@
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.PasswordChar = '\0';
-            this.txtAciklama.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAciklama.SelectedText = "";
             this.txtAciklama.SelectionLength = 0;
             this.txtAciklama.SelectionStart = 0;
