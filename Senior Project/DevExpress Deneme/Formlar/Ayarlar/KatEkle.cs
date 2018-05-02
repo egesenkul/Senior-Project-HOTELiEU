@@ -257,14 +257,12 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             {
                 if (metroListView1.SelectedItems.Count > 0)
                 {
-                    //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
 
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = connection;
                     connection.Open();
-                    cmd.CommandText = "update Kat set Gorunur=0";
-                    //where ekle
+                    cmd.CommandText = "update Kat set Gorunur=0 where KatNo='"+metroListView1.SelectedItems[0].Text+"'";
                     cmd.ExecuteNonQuery();
                     connection.Close();
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
@@ -316,6 +314,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     connection.Close();
                     silinmişKayıtlarıGösterToolStripMenuItem.Text = Localization.SilinmisKayitlariGosterme;
                     silinmişKayıtlarıGösterToolStripMenuItem.BackColor = Color.YellowGreen;
+                    silinmişKaydıGeriAlToolStripMenuItem.Visible = true;
                 }
                 else
                 {
@@ -333,6 +332,37 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             try
             {
                 ortakFormIslemleri.KlavyeAc();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+        }
+
+        private void silinmişKaydıGeriAlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (metroListView1.SelectedItems.Count > 0)
+                {
+                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = connection;
+                    connection.Open();
+                    cmd.CommandText = "update Kat set Gorunur=1 where KatNo='" + metroListView1.SelectedItems[0].Text + "'";
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    {
+                        HotelWarningForm.Show(Localization.katGeriAlmaIslemiBasarili, Localization.Tamam, 0);
+                    }
+                    ListeGuncelle();
+                }
+                else
+                {
+                    HotelWarningForm.Show(Localization.geriAlinacakKatiSecin, Localization.Tamam, 1);
+                }
             }
             catch (Exception ex)
             {

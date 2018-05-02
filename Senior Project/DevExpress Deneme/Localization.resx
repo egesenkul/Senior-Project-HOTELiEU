@@ -939,4 +939,10 @@
   <data name="personelDahaOncedenTanimlanmis" xml:space="preserve">
     <value>Personel daha önceden tanımlanmış</value>
   </data>
+  <data name="geriAlinacakKatiSecin" xml:space="preserve">
+    <value>Lütfen geri almak istediğiniz katı seçiniz</value>
+  </data>
+  <data name="katGeriAlmaIslemiBasarili" xml:space="preserve">
+    <value>Kat başarılı bir şekilde geri alınmıştır</value>
+  </data>
 </root>

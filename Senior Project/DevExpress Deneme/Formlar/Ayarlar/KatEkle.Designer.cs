@@ -46,6 +46,7 @@
             this.silinmişKayıtlarıGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSecenekler = new MetroFramework.Controls.MetroButton();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.silinmişKaydıGeriAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
@@ -223,9 +224,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.düzenlePersoneliGeriAlToolStripMenuItem,
             this.silToolStripMenuItem,
-            this.silinmişKayıtlarıGösterToolStripMenuItem});
+            this.silinmişKayıtlarıGösterToolStripMenuItem,
+            this.silinmişKaydıGeriAlToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(246, 82);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(246, 130);
             // 
             // düzenlePersoneliGeriAlToolStripMenuItem
             // 
@@ -262,6 +264,14 @@
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = null;
+            // 
+            // silinmişKaydıGeriAlToolStripMenuItem
+            // 
+            this.silinmişKaydıGeriAlToolStripMenuItem.Name = "silinmişKaydıGeriAlToolStripMenuItem";
+            this.silinmişKaydıGeriAlToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.silinmişKaydıGeriAlToolStripMenuItem.Text = "Silinmiş Kaydı Geri Al";
+            this.silinmişKaydıGeriAlToolStripMenuItem.Visible = false;
+            this.silinmişKaydıGeriAlToolStripMenuItem.Click += new System.EventHandler(this.silinmişKaydıGeriAlToolStripMenuItem_Click);
             // 
             // KatEkle
             // 
@@ -311,5 +321,6 @@
         private System.Windows.Forms.ToolStripMenuItem silinmişKayıtlarıGösterToolStripMenuItem;
         private MetroFramework.Controls.MetroButton btnSecenekler;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
+        private System.Windows.Forms.ToolStripMenuItem silinmişKaydıGeriAlToolStripMenuItem;
     }
 }

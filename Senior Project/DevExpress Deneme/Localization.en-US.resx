@@ -936,4 +936,10 @@
   <data name="personelDahaOncedenTanimlanmis" xml:space="preserve">
     <value>Staff already defined</value>
   </data>
+  <data name="geriAlinacakKatiSecin" xml:space="preserve">
+    <value>Please select floor which you want to recover</value>
+  </data>
+  <data name="katGeriAlmaIslemiBasarili" xml:space="preserve">
+    <value>Floor succesfully recovered</value>
+  </data>
 </root>

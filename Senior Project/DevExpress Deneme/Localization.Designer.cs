@@ -646,6 +646,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lütfen geri almak istediğiniz katı seçiniz.
+        /// </summary>
+        internal static string geriAlinacakKatiSecin {
+            get {
+                return ResourceManager.GetString("geriAlinacakKatiSecin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lütfen önce geri alınacak odayı seçin.
         /// </summary>
         internal static string geriAlinacakOdayiSecin {
@@ -831,6 +840,15 @@ namespace Otel_Uygulamasi {
         internal static string KatEklemeBasarili {
             get {
                 return ResourceManager.GetString("KatEklemeBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kat başarılı bir şekilde geri alınmıştır.
+        /// </summary>
+        internal static string katGeriAlmaIslemiBasarili {
+            get {
+                return ResourceManager.GetString("katGeriAlmaIslemiBasarili", resourceCulture);
             }
         }
         
