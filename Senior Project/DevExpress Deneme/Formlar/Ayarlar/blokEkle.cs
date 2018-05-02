@@ -61,6 +61,34 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             }
         }
 
+        private bool blokBosKontrol()
+        {
+            try
+            {
+                SqlDataReader Dr3;
+                SqlConnection connection3 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd3 = new SqlCommand();
+                cmd3.CommandText = "select * from Kat where blokAdı = '" + metroListView1.SelectedItems[0].Text + "'";
+                cmd3.Connection = connection3;
+                cmd3.CommandType = CommandType.Text;
+
+                connection3.Open();
+                Dr3 = cmd3.ExecuteReader();
+                if (Dr3.HasRows)
+                {
+                    HotelWarningForm.Show(Localization.bloktaBulunanKatlarıSilin, Localization.Tamam, 1);
+                    return false;
+                }
+                connection3.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+            return false;
+        }
+
         private void MultiLanguage()
         {
             try
@@ -122,19 +150,22 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             {
                 if (metroListView1.SelectedItems.Count > 0)
                 {
-                    SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = connection;
-                    connection.Open();
-                    cmd.CommandText = "update Blok set Gorunur=0 where blokAdı='" + metroListView1.SelectedItems[0].Text + "'";
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                    if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                    if (blokBosKontrol())
                     {
-                        HotelWarningForm.Show(Localization.BlokSilmeBasarili, Localization.Tamam, 0);
+                        SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = connection;
+                        connection.Open();
+                        cmd.CommandText = "update Blok set Gorunur=0 where blokAdı='" + metroListView1.SelectedItems[0].Text + "'";
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                        if (Kullanici.BilgilendirmeFormlari.Equals("True"))
+                        {
+                            HotelWarningForm.Show(Localization.BlokSilmeBasarili, Localization.Tamam, 0);
+                        }
+                        BlokListesiGuncelle();
                     }
-                    BlokListesiGuncelle();
                 }
                 else
                 {

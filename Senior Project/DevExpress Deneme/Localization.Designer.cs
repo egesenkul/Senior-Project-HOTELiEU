@@ -151,6 +151,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lütfen önce blokta bulunan katları siliniz.
+        /// </summary>
+        internal static string bloktaBulunanKatlarıSilin {
+            get {
+                return ResourceManager.GetString("bloktaBulunanKatlarıSilin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Boş Odalar.
         /// </summary>
         internal static string BosOdalar {

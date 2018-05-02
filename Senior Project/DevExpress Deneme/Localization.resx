@@ -945,7 +945,13 @@
   <data name="katGeriAlmaIslemiBasarili" xml:space="preserve">
     <value>Kat başarılı bir şekilde geri alınmıştır</value>
   </data>
+  <data name="bloktaBulunanKatlarıSilin" xml:space="preserve">
+    <value>Lütfen önce blokta bulunan katları siliniz</value>
+  </data>
   <data name="kattaBulunanOdalariSilin" xml:space="preserve">
-    <value>Lütfen önce odada bulunan katları siliniz</value>
+    <value>Lütfen önce katta bulunan odaları siliniz</value>
+  </data>
+  <data name="kattaBulunanSalonlariSilin" xml:space="preserve">
+    <value>Lütfen önce katta bulunan salonları siliniz</value>
   </data>
 </root>
