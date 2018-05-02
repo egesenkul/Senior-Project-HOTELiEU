@@ -286,6 +286,34 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
         }
 
+        private bool HareketKontrol(string musteriAdi, DateTime girisTarihi, DateTime cikisTarihi)
+        {
+            try
+            {
+                SqlDataReader Dr3;
+                SqlConnection connection3 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd3 = new SqlCommand();
+                cmd3.CommandText = "select * from OdaHareket where musteriPersonel = '" + musteriAdi + "' and islemTarihi1 > '" + girisTarihi.ToString("yyyy-MM-dd HH:mm:ss") + "' and islemTarihii2 < '" + cikisTarihi.ToString("yyyy-MM-dd HH:mm:ss") + "' and islemTipi = 'Check-in'";
+                cmd3.Connection = connection3;
+                cmd3.CommandType = CommandType.Text;
+
+                connection3.Open();
+                Dr3 = cmd3.ExecuteReader();
+                if (Dr3.HasRows)
+                {
+                    return true;
+                }
+
+                connection3.Close();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+                return false;
+            }
+        }
+
         private void MultiLanguage()
         {
             lblGirisTarihi.Text = Localization.GirisTarihi;
@@ -401,7 +429,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
-                if (CheckinKontrol() && TarihKontrol())
+                if (CheckinKontrol() && TarihKontrol() && HareketKontrol(cmbMusteriAdi.SelectedItem.ToString(),Convert.ToDateTime(dtGirisTarihi.EditValue),Convert.ToDateTime(dtCikisTarihi.EditValue)))
                 {
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                     SqlCommand cmd = new SqlCommand();
@@ -431,7 +459,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
-                if (ListeRezerveOdalar.Items.Count > 0 && TarihKontrol())
+                if (ListeRezerveOdalar.Items.Count > 0 && TarihKontrol() && HareketKontrol(cmbMusteriAdi.SelectedItem.ToString(), Convert.ToDateTime(dtGirisTarihi.EditValue), Convert.ToDateTime(dtCikisTarihi.EditValue)))
                 {
 
                     string[] parcalar;
