@@ -942,4 +942,7 @@
   <data name="katGeriAlmaIslemiBasarili" xml:space="preserve">
     <value>Floor succesfully recovered</value>
   </data>
+  <data name="kattaBulunanOdalariSilin" xml:space="preserve">
+    <value>Please first delete rooms which are in that room</value>
+  </data>
 </root>

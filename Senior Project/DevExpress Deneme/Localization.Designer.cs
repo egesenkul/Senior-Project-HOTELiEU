@@ -862,6 +862,24 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lütfen önce katta bulunan odaları siliniz.
+        /// </summary>
+        internal static string kattaBulunanOdalariSilin {
+            get {
+                return ResourceManager.GetString("kattaBulunanOdalariSilin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lütfen önce katta bulunan salonları siliniz.
+        /// </summary>
+        internal static string kattaBulunanSalonlariSilin {
+            get {
+                return ResourceManager.GetString("kattaBulunanSalonlariSilin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kişi Limiti Var.
         /// </summary>
         internal static string KisiLimitiVar {
