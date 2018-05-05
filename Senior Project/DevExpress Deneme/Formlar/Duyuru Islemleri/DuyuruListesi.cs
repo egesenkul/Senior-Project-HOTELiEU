@@ -79,16 +79,19 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 FiilCombobox();
                 FiilComboboxOdaGrubu();
                 FiilComboboxMusteriAdi();
+                metroDateTime1.Value = DateTime.Now.AddDays(-1);
                 Yetki();
                 ComboBoxKriter.Items.Add(Localization.OdaGrubu);
                 ComboBoxKriter.Items.Add(Localization.OzelMusteri);
                 ComboBoxKriter.Items.Add(Localization.Personel);
                 ComboBoxKriter.SelectedIndex = 0;
+                FiilComboboxPersonelGrubu();
                 KriterLabel.Visible = false;
                 OdaGrupLabel.Visible = false;
                 ComboBoxKriter.Visible = false;
                 ComboBoxOdaGrubu.Visible = false;
                 ortakFormIslemleri.cmbIlkDegerGetir(cmbDuyuruTipi, cmbMusteriAdi, ComboBoxKriter, ComboBoxOdaGrubu, ComboBoxPersonelGrubu);
+                btnFiltrele.PerformClick();
             }
             catch (Exception ex)
             {
@@ -99,6 +102,33 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
         private void metroButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void FiilComboboxPersonelGrubu()
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "select KategoriAciklama from PeronelKategori";
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.Text;
+
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd.ExecuteReader();
+                while (Dr.Read())
+                {
+                    ComboBoxPersonelGrubu.Items.Add(Dr["KategoriAciklama"]);
+                }
+                connection.Close();
+                ComboBoxPersonelGrubu.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         public void FiilCombobox()
@@ -184,6 +214,8 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             try
             {
                 string sorgu = "";
+                string tarih = Convert.ToDateTime(metroDateTime1.Value).ToString("MM.dd.yyyy HH:mm:ss");
+                string tarih2 = Convert.ToDateTime(metroDateTime2.Value).ToString("MM.dd.yyyy HH:mm:ss");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 //duyuru tipini her türlü oku 
                 if (!CheckBoxOzelGonderim.Checked)
@@ -191,11 +223,11 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                     //özel gönderim değil direk tarihler arası ve türe göre select çek
                     if (cmbDuyuruTipi.SelectedIndex != 0)
                     {
-                        sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi >= '" + metroDateTime2.Value.ToString() + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "' and Gorunur=1";
+                        sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "' and Gorunur=1";
                     }
                     else
                     {
-                        sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi >= '" + metroDateTime2.Value.ToString() + "' and Gorunur=1";
+                        sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "' and Gorunur=1";
                     }
                 }
                 else
@@ -205,22 +237,22 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                     {
                         if (cmbDuyuruTipi.SelectedIndex != 0)
                         {
-                            sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi >= '" + metroDateTime2.Value.ToString() + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "'and OdaGrubu='" + ComboBoxOdaGrubu.SelectedItem.ToString() + "' and Gorunur=1";
+                            sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "'and OdaGrubu='" + ComboBoxOdaGrubu.SelectedItem.ToString() + "' and Gorunur=1";
                         }
                         else
                         {
-                            sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi >= '" + metroDateTime2.Value.ToString() + "'and OdaGrubu='" + ComboBoxOdaGrubu.SelectedItem.ToString() + "' and Gorunur=1";
+                            sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "'and OdaGrubu='" + ComboBoxOdaGrubu.SelectedItem.ToString() + "' and Gorunur=1";
                         }
                     }
                     else if (ComboBoxKriter.SelectedIndex == 1)
                     {
                         if (cmbDuyuruTipi.SelectedIndex != 0)
                         {
-                            sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi >= '" + metroDateTime2.Value.ToString() + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "'and MusteriAdi='" + cmbMusteriAdi.SelectedItem.ToString() + "' and Gorunur=1";
+                            sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih2 + "' and DuyuruTarihi <= '" + tarih2 + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "'and MusteriAdi='" + cmbMusteriAdi.SelectedItem.ToString() + "' and Gorunur=1";
                         }
                         else
                         {
-                            sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi >= '" + metroDateTime2.Value.ToString() + "'and MusteriAdi='" + cmbMusteriAdi.SelectedItem.ToString() + "' and Gorunur=1";
+                            sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "'and MusteriAdi='" + cmbMusteriAdi.SelectedItem.ToString() + "' and Gorunur=1";
                         }
                     }
                     else if (ComboBoxKriter.SelectedIndex == 2)
@@ -230,22 +262,22 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                             //tüm personellere giden duyurular
                             if (cmbDuyuruTipi.SelectedIndex != 0)
                             {
-                                sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi <= '" + metroDateTime2.Value.ToString() + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "'and MusteriAdi='" + cmbMusteriAdi.SelectedItem.ToString() + "'";
+                                sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "'and PersonelGrubu='" + ComboBoxPersonelGrubu.SelectedItem.ToString() + "'";
                             }
                             else
                             {
-                                sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi <= '" + metroDateTime2.Value.ToString() + "'and MusteriAdi='" + cmbMusteriAdi.SelectedItem.ToString() + "' and Gorunur=1";
+                                sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "'and Kriter='Personel"  + "' and Gorunur=1";
                             }
                         }
                         else
                         {
                             if (cmbDuyuruTipi.SelectedIndex != 0)
                             {
-                                sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi <= '" + metroDateTime2.Value.ToString() + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "'and MusteriAdi='" + cmbMusteriAdi.SelectedItem.ToString() + "' and Gorunur=1";
+                                sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "' and DuyuruGrubu='" + cmbDuyuruTipi.SelectedItem.ToString() + "'and PersonelGrubu='" + ComboBoxPersonelGrubu.SelectedItem.ToString() + "' and Gorunur=1";
                             }
                             else
                             {
-                                sorgu = "select * from Duyuru where DuyuruTarihi >= '" + metroDateTime1.Value.ToString() + "' and DuyuruTarihi <= '" + metroDateTime2.Value.ToString() + "'and MusteriAdi='" + cmbMusteriAdi.SelectedItem.ToString() + "' and Gorunur=1";
+                                sorgu = "select * from Duyuru where DuyuruTarihi >= '" + tarih + "' and DuyuruTarihi <= '" + tarih2 + "'and PersonelGrubu='" + ComboBoxPersonelGrubu.SelectedItem.ToString() + "' and Gorunur=1";
                             }
                         }
                     }
@@ -266,10 +298,9 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 metroGrid1.Columns[4].Visible = false;
                 metroGrid1.Columns[5].Visible = false;
                 metroGrid1.Columns[6].Visible = false;
-                metroGrid1.Columns[7].HeaderText = Localization.lblTarih;
-                metroGrid1.Columns[8].Visible = false;
+                metroGrid1.Columns[8].HeaderText = Localization.lblTarih;
+                metroGrid1.Columns[7].Visible = false;
                 
-               
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
