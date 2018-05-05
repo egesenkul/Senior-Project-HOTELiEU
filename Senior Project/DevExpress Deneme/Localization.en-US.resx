@@ -972,4 +972,7 @@
   <data name="havuzSicaklikBilgileri" xml:space="preserve">
     <value>Pool Temperature Informations</value>
   </data>
+  <data name="personelSilinmis" xml:space="preserve">
+    <value>That user removed from system</value>
+  </data>
 </root>

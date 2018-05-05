@@ -24,6 +24,7 @@ namespace DevExpress_Deneme
     {
 
         bool girisDogru = false;
+        bool personelSilinmis = false;
         public frmLogin()
         {
             InitializeComponent();
@@ -31,13 +32,14 @@ namespace DevExpress_Deneme
 
         private void KullaniciAdiSifreOku()
         {
-            try { 
-            txtKullaniciAdi.Text = Otel_Uygulamasi.Properties.Settings.Default.KullaniciAdi;
-            txtSifre.Text = Otel_Uygulamasi.Properties.Settings.Default.KullaniciSifre;
-            if (string.IsNullOrEmpty(txtKullaniciAdi.Text))
+            try
             {
-                chHatirla.Checked = false;
-            }
+                txtKullaniciAdi.Text = Otel_Uygulamasi.Properties.Settings.Default.KullaniciAdi;
+                txtSifre.Text = Otel_Uygulamasi.Properties.Settings.Default.KullaniciSifre;
+                if (string.IsNullOrEmpty(txtKullaniciAdi.Text))
+                {
+                    chHatirla.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -47,23 +49,24 @@ namespace DevExpress_Deneme
 
         private void KullaniciAdiSifreKaydet()
         {
-            try { 
-            Otel_Uygulamasi.Properties.Settings.Default.CheckDurum = chHatirla.Checked;
-            Otel_Uygulamasi.Properties.Settings.Default.Save();
-            if (chHatirla.Checked)
+            try
             {
-                Otel_Uygulamasi.Properties.Settings.Default.KullaniciAdi = txtKullaniciAdi.Text;
+                Otel_Uygulamasi.Properties.Settings.Default.CheckDurum = chHatirla.Checked;
                 Otel_Uygulamasi.Properties.Settings.Default.Save();
-                Otel_Uygulamasi.Properties.Settings.Default.KullaniciSifre = txtSifre.Text;
-                Otel_Uygulamasi.Properties.Settings.Default.Save();
-            }
-            else
-            {
-                Otel_Uygulamasi.Properties.Settings.Default.KullaniciAdi = "";
-                Otel_Uygulamasi.Properties.Settings.Default.Save();
-                Otel_Uygulamasi.Properties.Settings.Default.KullaniciSifre = "";
-                Otel_Uygulamasi.Properties.Settings.Default.Save();
-            }
+                if (chHatirla.Checked)
+                {
+                    Otel_Uygulamasi.Properties.Settings.Default.KullaniciAdi = txtKullaniciAdi.Text;
+                    Otel_Uygulamasi.Properties.Settings.Default.Save();
+                    Otel_Uygulamasi.Properties.Settings.Default.KullaniciSifre = txtSifre.Text;
+                    Otel_Uygulamasi.Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Otel_Uygulamasi.Properties.Settings.Default.KullaniciAdi = "";
+                    Otel_Uygulamasi.Properties.Settings.Default.Save();
+                    Otel_Uygulamasi.Properties.Settings.Default.KullaniciSifre = "";
+                    Otel_Uygulamasi.Properties.Settings.Default.Save();
+                }
             }
             catch (Exception ex)
             {
@@ -73,14 +76,15 @@ namespace DevExpress_Deneme
 
         private void MultiLanguage()
         {
-            try { 
-            lblKullaniciAdi.Text = Localization.lblKullaniciAdi;
-            lblSifre.Text = Localization.lblSifre;
-            lblDil.Text = Localization.lblDil;
-            btnGiris.Text = Localization.btnGiris;
-            btnKapat.Text = Localization.btnKapat;
-            btnKlavyeAc.Text = Localization.btnKlavyeAc;
-            chHatirla.Text = Localization.chHatirla;
+            try
+            {
+                lblKullaniciAdi.Text = Localization.lblKullaniciAdi;
+                lblSifre.Text = Localization.lblSifre;
+                lblDil.Text = Localization.lblDil;
+                btnGiris.Text = Localization.btnGiris;
+                btnKapat.Text = Localization.btnKapat;
+                btnKlavyeAc.Text = Localization.btnKlavyeAc;
+                chHatirla.Text = Localization.chHatirla;
             }
             catch (Exception ex)
             {
@@ -105,11 +109,11 @@ namespace DevExpress_Deneme
                     string EURO = xmlDoc.SelectSingleNode("Tarih_Date/Currency[@Kod='EUR']/BanknoteSelling").InnerXml;
                     string POUND = xmlDoc.SelectSingleNode("Tarih_Date/Currency[@Kod='GBP']/BanknoteSelling").InnerXml;
 
-                   
 
-                    label1.Text = (string.Format("USD: "+USD));
-                    label2.Text = (string.Format("EURO: "+EURO));
-                    label3.Text = (string.Format("POUND: "+POUND));
+
+                    label1.Text = (string.Format("USD: " + USD));
+                    label2.Text = (string.Format("EURO: " + EURO));
+                    label3.Text = (string.Format("POUND: " + POUND));
                     //webBrowser1.Navigate("http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=169&cad=rja&uact=8&ved=0ahUKEwiZzKSIxZ_UAhWDVhoKHVxrDnA4oAEQFghKMAg&url=http%3A%2F%2Fwww.zentekyazilim.net%2F&usg=AFQjCNHc2Df9xQjv-O16X96EJPC9xH4gUw&sig2=ovl3PoVp-vgX913SQBeYTw");
                 }
                 else
@@ -119,7 +123,7 @@ namespace DevExpress_Deneme
             }
             catch (Exception)
             {
-                HotelWarningForm.Show(Localization.internetYok, Localization.Tamam,1);
+                HotelWarningForm.Show(Localization.internetYok, Localization.Tamam, 1);
             }
         }
 
@@ -143,115 +147,130 @@ namespace DevExpress_Deneme
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            try { 
-            if (CheckForInternetConnection())
+            try
             {
-                DovizKuruGetir();
-                KullaniciAdiSifreOku();
-                this.StyleManager = metroStyleManager1;
-                ortakFormIslemleri.LogoGetir(pictureBox1);
-                if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7)
+                if (CheckForInternetConnection())
                 {
-                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblKullaniciAdi, lblSifre);
-                    ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtKullaniciAdi, txtSifre);
-                    ortakFormIslemleri.CheckBoxRenkDegistir(Color.White, chHatirla);
+                    DovizKuruGetir();
+                    KullaniciAdiSifreOku();
+                    this.StyleManager = metroStyleManager1;
+                    ortakFormIslemleri.LogoGetir(pictureBox1);
+                    if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7)
+                    {
+                        metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                        ortakFormIslemleri.LabelRenkDegistir(Color.White, lblKullaniciAdi, lblSifre);
+                        ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtKullaniciAdi, txtSifre);
+                        ortakFormIslemleri.CheckBoxRenkDegistir(Color.White, chHatirla);
+                    }
+                    else
+                    {
+                        metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+                    }
+                    cmbDil.Items.Add("Türkçe");
+                    cmbDil.Items.Add("English");
+                    if (string.Equals(Settings.Default.dil, "İngilizce"))
+                    {
+                        cmbDil.SelectedIndex = 1;
+                    }
+                    else
+                    {
+                        cmbDil.SelectedIndex = 0;
+                    }
+                    MultiLanguage();
+                    this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+                                  (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
                 }
                 else
                 {
-                    metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+                    HotelWarningForm.Show(Localization.internetYok, Localization.Tamam, 1);
+                    Environment.Exit(1);
                 }
-                cmbDil.Items.Add("Türkçe");
-                cmbDil.Items.Add("English");
-                if (string.Equals(Settings.Default.dil, "İngilizce"))
-                {
-                    cmbDil.SelectedIndex = 1;
-                }
-                else
-                {
-                    cmbDil.SelectedIndex = 0;
-                }
-                MultiLanguage();
-                this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                              (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
-            }
-            else
-            {
-                HotelWarningForm.Show(Localization.internetYok, Localization.Tamam,1);
-                Environment.Exit(1);
-            }
             }
             catch (Exception ex)
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
-        
+
 
         private void GirisKontrol()
         {
-            try { 
-            if (string.IsNullOrEmpty(txtKullaniciAdi.Text))
+            try
             {
-                HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam,1);
-                txtKullaniciAdi.Focus();
+                if (string.IsNullOrEmpty(txtKullaniciAdi.Text))
+                {
+                    HotelWarningForm.Show(Localization.KullaniciAdiHata, Localization.Tamam, 1);
+                    txtKullaniciAdi.Focus();
+                }
+                if (string.IsNullOrEmpty(txtSifre.Text))
+                {
+                    HotelWarningForm.Show(Localization.KullaniciSifreHata, Localization.Tamam, 1);
+                    txtSifre.Focus();
+                }
             }
-            if (string.IsNullOrEmpty(txtSifre.Text))
-            {
-                HotelWarningForm.Show(Localization.KullaniciSifreHata, Localization.Tamam,1);
-                txtSifre.Focus();
-            }
-        }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-}
+        }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            try { 
-            //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
-            SqlConnection connection= new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
+                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "select personelAdi,personelKullaniciAdi,personelSoyadi,onayFormlari,bilgilendirmeFormlari,otoGeceModu,klavyeButonu,tileItemColor,Yetki from Personel where personelKullaniciAdi = '" + txtKullaniciAdi.Text + "' and personelSifre='"+txtSifre.Text+"'";
-            cmd.Connection = connection;
-            cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select personelAdi,personelKullaniciAdi,personelSoyadi,onayFormlari,bilgilendirmeFormlari,otoGeceModu,Sil,klavyeButonu,tileItemColor,Yetki from Personel where personelKullaniciAdi = '" + txtKullaniciAdi.Text + "' and personelSifre='" + txtSifre.Text + "'";
+                cmd.Connection = connection;
+                cmd.CommandType = CommandType.Text;
 
-            SqlDataReader Dr;
-            connection.Open();
-            Dr = cmd.ExecuteReader();
-            while (Dr.Read())
-            {
-                Kullanici.isim = Dr["personelAdi"].ToString();
-                Kullanici.KullaniciAdi = Dr["personelKullaniciAdi"].ToString();
-                Kullanici.soyisim = Dr["personelSoyadi"].ToString();
-                Kullanici.OnayFormlari = Dr["onayFormlari"].ToString();
-                Kullanici.BilgilendirmeFormlari = Dr["bilgilendirmeFormlari"].ToString();
-                Kullanici.otoGeceModu = Dr["otoGeceModu"].ToString(); // Form içerisinde değerlendirilecek
-                Kullanici.klavye = Dr["klavyeButonu"].ToString();
-                Kullanici.tileItemRenk = Dr["tileItemColor"].ToString();
-                Kullanici.yetki = Dr["Yetki"].ToString();
-                girisDogru = true;
-            }
-            connection.Close();
-            if (!girisDogru)
-            {
-                HotelWarningForm.Show(Localization.HataliKullaniciAdiSifre, Localization.Tamam,1);
-            }
-            else
-            {
-                if (String.IsNullOrEmpty(Kullanici.KullaniciAdi))
+                SqlDataReader Dr;
+                connection.Open();
+                Dr = cmd.ExecuteReader();
+                while (Dr.Read())
                 {
-                    Application.Exit();
+                    Kullanici.isim = Dr["personelAdi"].ToString();
+                    Kullanici.KullaniciAdi = Dr["personelKullaniciAdi"].ToString();
+                    Kullanici.soyisim = Dr["personelSoyadi"].ToString();
+                    Kullanici.OnayFormlari = Dr["onayFormlari"].ToString();
+                    Kullanici.BilgilendirmeFormlari = Dr["bilgilendirmeFormlari"].ToString();
+                    Kullanici.otoGeceModu = Dr["otoGeceModu"].ToString(); // Form içerisinde değerlendirilecek
+                    Kullanici.klavye = Dr["klavyeButonu"].ToString();
+                    Kullanici.tileItemRenk = Dr["tileItemColor"].ToString();
+                    Kullanici.yetki = Dr["Yetki"].ToString();
+                    if (Dr["Sil"].ToString()== "True")
+                    {
+                        personelSilinmis = true;
+                        girisDogru = false;
+                    }
+                    else
+                    {
+                        girisDogru = true;
+                    }
                 }
-                this.Hide();
-                KullaniciAdiSifreKaydet();
-                AnaEkran anaEkran = new AnaEkran();
-                anaEkran.Show();
-                
-            }
+                connection.Close();
+                if (!girisDogru)
+                {
+                    if (personelSilinmis == true)
+                    {
+                        HotelWarningForm.Show(Localization.personelSilinmis, Localization.Tamam, 1);
+                    }
+                    else HotelWarningForm.Show(Localization.HataliKullaniciAdiSifre, Localization.Tamam, 1);
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(Kullanici.KullaniciAdi))
+                    {
+                        Application.Exit();
+                    }
+                    this.Hide();
+                    KullaniciAdiSifreKaydet();
+                    AnaEkran anaEkran = new AnaEkran();
+                    anaEkran.Show();
+
+                }
             }
             catch (Exception ex)
             {
@@ -261,18 +280,19 @@ namespace DevExpress_Deneme
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            try { 
-            DialogResult sonuc;
-            sonuc = HotelMessageBox.Show(Localization.ProgramCikisOnay, Localization.Evet, Localization.Hayır);
-            if (sonuc == DialogResult.No)
+            try
             {
-                //MessageBox.Show("");// hiçbir işlem yaptırmıyorum
-            }
-            if (sonuc == DialogResult.Yes)
-            {
-                this.Close();
-                Application.Exit();
-            }
+                DialogResult sonuc;
+                sonuc = HotelMessageBox.Show(Localization.ProgramCikisOnay, Localization.Evet, Localization.Hayır);
+                if (sonuc == DialogResult.No)
+                {
+                    //MessageBox.Show("");// hiçbir işlem yaptırmıyorum
+                }
+                if (sonuc == DialogResult.Yes)
+                {
+                    this.Close();
+                    Application.Exit();
+                }
             }
             catch (Exception ex)
             {
@@ -287,25 +307,27 @@ namespace DevExpress_Deneme
 
         private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try { 
-            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            try
             {
-                btnGiris.PerformClick();
+                if (e.KeyChar.Equals(Convert.ToChar(13)))
+                {
+                    btnGiris.PerformClick();
+                }
             }
-        }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-}
+        }
 
         private void txtSifre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try { 
-            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            try
             {
-                btnGiris.PerformClick();
-            }
+                if (e.KeyChar.Equals(Convert.ToChar(13)))
+                {
+                    btnGiris.PerformClick();
+                }
             }
             catch (Exception ex)
             {
@@ -331,10 +353,10 @@ namespace DevExpress_Deneme
                 }
                 MultiLanguage();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
-}
+        }
     }
 }

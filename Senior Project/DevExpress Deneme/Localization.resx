@@ -975,4 +975,7 @@
   <data name="havuzSicaklikBilgileri" xml:space="preserve">
     <value>Havuz Sıcaklık Bilgileri</value>
   </data>
+  <data name="personelSilinmis" xml:space="preserve">
+    <value>Bu personel sistemden silinmiş.</value>
+  </data>
 </root>

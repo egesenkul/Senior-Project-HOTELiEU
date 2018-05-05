@@ -1807,6 +1807,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bu personel sistemden silinmiş..
+        /// </summary>
+        internal static string personelSilinmis {
+            get {
+                return ResourceManager.GetString("personelSilinmis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personel silme işleminiz başarılı.
         /// </summary>
         internal static string personelSilmeBasarili {
