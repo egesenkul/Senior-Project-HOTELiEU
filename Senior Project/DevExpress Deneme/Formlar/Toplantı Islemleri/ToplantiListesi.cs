@@ -59,6 +59,7 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
                 Multilanguage();
                 this.Text = Localization.tileToplantiListesi;
                 FiilToplantiSalonu();
+                metroDateTime1.Value = DateTime.Now.AddDays(-1);
                 btnFiltrele.PerformClick();
             }
             catch (Exception ex)

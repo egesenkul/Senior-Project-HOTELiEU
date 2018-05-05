@@ -92,6 +92,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 ComboBoxKriter.Visible = false;
                 ComboBoxOdaGrubu.Visible = false;
                 ortakFormIslemleri.cmbIlkDegerGetir(cmbDuyuruTipi, cmbMusteriAdi, ComboBoxKriter, ComboBoxOdaGrubu, ComboBoxPersonelGrubu);
+                metroDateTime1.Value = DateTime.Now.AddDays(-1);
                 btnFiltrele.PerformClick();
             }
             catch (Exception ex)

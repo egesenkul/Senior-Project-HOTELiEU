@@ -71,6 +71,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
                 this.Text = Localization.personelKontrol;
                 TemizlikciListesiDoldur();
                 ortakFormIslemleri.cmbIlkDegerGetir(cmbPersonel);
+                metroDateTime1.Value = DateTime.Now.AddDays(-1);
                 btnFiltrele.PerformClick();
             }
             catch (Exception ex)

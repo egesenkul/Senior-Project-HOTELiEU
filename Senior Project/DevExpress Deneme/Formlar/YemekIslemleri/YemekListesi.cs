@@ -154,6 +154,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                     ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbPersonelKategorisi, cmbYemekSalonu, cmbYemekTur);
                     ortakFormIslemleri.ListViewRenkDegistir(Color.Black, listeGorevlenecekler, ListeGörevliler, listePersonel);
                 }
+                metroDateTime1.Value = DateTime.Now.AddDays(-1);
                 btnFiltrele.PerformClick();
             }
             catch (Exception ex)

@@ -55,6 +55,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
                     ortakFormIslemleri.LabelRenkDegistir(Color.White, metroLabel6);
                 }
+                metroDateTime1.Value = DateTime.Now.AddDays(-1);
                 btnFiltrele.PerformClick();
             }
             catch (Exception ex)
