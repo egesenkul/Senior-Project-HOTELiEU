@@ -257,7 +257,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 MusteriListesiGetir();
                 FiilComboboxOdaGrubu();
                 CheckBoxOzelGonderim.Checked = true;
-                ComboBoxKriter.Items.Add(Localization.OdaGrupLabel);
+                ComboBoxKriter.Items.Add(Localization.OdaGrubu);
                 ComboBoxKriter.Items.Add(Localization.OzelMusteri);
                 ComboBoxKriter.Items.Add(Localization.Personel);
                 ComboBoxKriter.SelectedIndex = 0;
@@ -448,19 +448,19 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 }
                 else if (CheckBoxOzelGonderim.Checked == true && ComboBoxKriter.SelectedIndex == 0)
                 {
-                    cmd.CommandText = "Insert into Duyuru (Baslik,DuyuruGrubu,Icerik,Kriter,OdaGrubu,DuyuruTarihi,Gorunur) values ('" + txtBaslik.Text + "','" + cmbDuyuruGrubu.SelectedItem.ToString() + "','" + txtIcerik.Text + "','" + ComboBoxKriter.SelectedItem.ToString() + "','" + ComboBoxOdaGrubu.SelectedItem.ToString() + "','" + tempdatetime + "',1)";
+                    cmd.CommandText = "Insert into Duyuru (Baslik,DuyuruGrubu,Icerik,Kriter,OdaGrubu,DuyuruTarihi,Gorunur) values ('" + txtBaslik.Text + "','" + cmbDuyuruGrubu.SelectedItem.ToString() + "','" + txtIcerik.Text + "','" + "Oda Grubu"+ "','" + ComboBoxOdaGrubu.SelectedItem.ToString() + "','" + tempdatetime + "',1)";
                 }
                 else if (CheckBoxOzelGonderim.Checked == true && ComboBoxKriter.SelectedIndex == 1)
                 {
-                    cmd.CommandText = "Insert into Duyuru (Baslik,DuyuruGrubu,Icerik,Kriter,MusteriAdi,DuyuruTarihi,Gorunur) values ('" + txtBaslik.Text + "','" + cmbDuyuruGrubu.SelectedItem.ToString() + "','" + txtIcerik.Text + "','" + ComboBoxKriter.SelectedItem.ToString() + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','" + tempdatetime + "',1)";
+                    cmd.CommandText = "Insert into Duyuru (Baslik,DuyuruGrubu,Icerik,Kriter,MusteriAdi,DuyuruTarihi,Gorunur) values ('" + txtBaslik.Text + "','" + cmbDuyuruGrubu.SelectedItem.ToString() + "','" + txtIcerik.Text + "','" + "Musteri" + "','" + cmbMusteriAdi.SelectedItem.ToString() + "','" + tempdatetime + "',1)";
                 }
                 else if (CheckBoxOzelGonderim.Checked == true && ComboBoxKriter.SelectedIndex == 2 && CheckBoxTumPersoneller.Checked == true)
                 {
-                    cmd.CommandText = "Insert into Duyuru (Baslik,DuyuruGrubu,Icerik,Kriter,PersonelGrubu,DuyuruTarihi,Gorunur) values ('" + txtBaslik.Text + "','" + cmbDuyuruGrubu.SelectedItem.ToString() + "','" + txtIcerik.Text + "','" + ComboBoxKriter.SelectedItem.ToString() + "','Tüm Personel','" + tempdatetime + "',1)";
+                    cmd.CommandText = "Insert into Duyuru (Baslik,DuyuruGrubu,Icerik,Kriter,PersonelGrubu,DuyuruTarihi,Gorunur) values ('" + txtBaslik.Text + "','" + cmbDuyuruGrubu.SelectedItem.ToString() + "','" + txtIcerik.Text + "','" + "Personel" + "','Tüm Personel','" + tempdatetime + "',1)";
                 }
                 else if (CheckBoxOzelGonderim.Checked == true && ComboBoxKriter.SelectedIndex == 2 && CheckBoxTumPersoneller.Checked == false)
                 {
-                    cmd.CommandText = "Insert into Duyuru (Baslik,DuyuruGrubu,Icerik,Kriter,PersonelGrubu,DuyuruTarihi,Gorunur) values ('" + txtBaslik.Text + "','" + cmbDuyuruGrubu.SelectedItem.ToString() + "','" + txtIcerik.Text + "','" + ComboBoxKriter.SelectedItem.ToString() + "','" + ComboBoxPersonelGrubu.SelectedItem.ToString() + "','" + tempdatetime + "',1)";
+                    cmd.CommandText = "Insert into Duyuru (Baslik,DuyuruGrubu,Icerik,Kriter,PersonelGrubu,DuyuruTarihi,Gorunur) values ('" + txtBaslik.Text + "','" + cmbDuyuruGrubu.SelectedItem.ToString() + "','" + txtIcerik.Text + "','" + "Personel" + "','" + ComboBoxPersonelGrubu.SelectedItem.ToString() + "','" + tempdatetime + "',1)";
                 }
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -495,6 +495,11 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
+        }
+
+        private void cmbDuyuruGrubu_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

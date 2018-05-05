@@ -123,6 +123,7 @@
             this.cmbDuyuruGrubu.Size = new System.Drawing.Size(298, 35);
             this.cmbDuyuruGrubu.TabIndex = 1;
             this.cmbDuyuruGrubu.UseSelectable = true;
+            this.cmbDuyuruGrubu.Click += new System.EventHandler(this.cmbDuyuruGrubu_Click);
             // 
             // lblDuyuruGrubu
             // 
