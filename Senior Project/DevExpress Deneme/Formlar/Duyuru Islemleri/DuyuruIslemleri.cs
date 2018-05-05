@@ -22,7 +22,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
         {
             try
             {
-                if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+                if (!string.Equals(Kullanici.yetki, "admin"))
                 {
                     tileDuyuruEkle.Visible = false;
                 }

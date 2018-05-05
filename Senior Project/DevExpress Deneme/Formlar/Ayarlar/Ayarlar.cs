@@ -54,7 +54,7 @@ namespace DevExpress_Deneme
         {
             try
             {
-                if (!string.Equals(Kullanici.yetki, "admin") || !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+                if (!string.Equals(Kullanici.yetki, "admin"))
                 {
                     tileBlokEkle.Visible = false;
                     tileHavuzEkle.Visible = false;
@@ -110,7 +110,7 @@ namespace DevExpress_Deneme
                 }
                 ortakFormIslemleri.tileRenkDegistir(tileBlokEkle, tileKategoriTanimlamari, tileKullaniciTercihleri, tileOtelTanimlamalari,
                     tileSalonTanimlamalari, tileHavuzEkle, tileItemSıcaklıkArdunio, tileYetki, tileKatEkle);
-                //         Yetki();
+                Yetki();
             }
             catch (Exception ex)
             {

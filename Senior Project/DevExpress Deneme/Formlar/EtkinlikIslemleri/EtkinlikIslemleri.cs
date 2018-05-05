@@ -22,7 +22,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
         {
             try
             {
-                if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
+                if (!string.Equals(Kullanici.yetki, "admin"))
                 {
                     tileItemEtkinlikOlustur.Visible = false;
                 }
@@ -59,7 +59,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
                 }
                 ortakFormIslemleri.tileRenkDegistir(tileItemEtkinlikListesi, tileItemEtkinlikOlustur);
-                //Yetki();
+                Yetki();
             }
             catch (Exception ex)
             {

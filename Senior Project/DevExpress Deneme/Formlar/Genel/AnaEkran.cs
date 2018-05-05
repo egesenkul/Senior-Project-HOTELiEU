@@ -71,6 +71,13 @@ namespace DevExpress_Deneme
                 if (!string.Equals(Kullanici.yetki, "admin"))
                 {
                     tilePersonelIslemleri.Visible = false;
+                    tileMusteriIslemleri.Visible = false;
+                    tileOdaIslemleri.Visible = false;
+                    tilePersonelIslemleri.Visible = false;
+                    tileTemizlikIslemleri.Visible = false;
+                    tileYemekIslemleri.ItemSize = TileItemSize.Wide;
+                    tileDuyuruIslemleri.ItemSize = TileItemSize.Large;
+                    tileYemekIslemleri.ItemSize = TileItemSize.Large;
                 }
             }
             catch (Exception ex)
@@ -119,6 +126,7 @@ namespace DevExpress_Deneme
                 }
                 metroLabel1.Text = Localization.Hoşgeldiniz + " " + Kullanici.isim;
                 tileKullaniciAdi.Text = Kullanici.isim;
+                tileKapat.ItemSize = TileItemSize.Large;
                 if (Kullanici.klavye.Equals("True"))
                 {
                     btnKlavye.Visible = true;
