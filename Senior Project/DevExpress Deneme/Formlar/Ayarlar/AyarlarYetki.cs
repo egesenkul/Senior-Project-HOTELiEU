@@ -83,6 +83,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
+                this.Text = Localization.yetkiAyarlari;
                 FiilComboboxDepartmanlar();
                 FiilComboBoxYetkiler();
                 if (Kullanici.klavye.Equals("True"))
@@ -101,6 +102,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbKullaniciDepartman, cmbYetki);
                 }
                 MultiLanguage();
+                KullaniciListesiGuncelleme();
             }
             catch (Exception ex)
             {

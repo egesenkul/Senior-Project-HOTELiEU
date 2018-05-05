@@ -81,6 +81,7 @@ namespace DevExpress_Deneme
             try
             {
                 MultiLanguage();
+                this.Text = Localization.musteriTanimlama;
                 this.WindowState = FormWindowState.Maximized;
                 float x = (Convert.ToInt32(this.Width) - Convert.ToInt32(metroPanel1.Width)) / 2;
                 float y = (Convert.ToInt32(this.Height) - Convert.ToInt32(metroPanel1.Height)) / 2;

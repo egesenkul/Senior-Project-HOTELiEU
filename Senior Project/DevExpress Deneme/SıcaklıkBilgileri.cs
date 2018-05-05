@@ -128,6 +128,7 @@ namespace DevExpress_Deneme
         private void Form3_Load(object sender, EventArgs e)
         {
             MultiLanguage();
+            this.Text = Localization.havuzSicaklikBilgileri;
             GridGuncelleListeden();
             this.WindowState = FormWindowState.Maximized;
             this.StyleManager = metroStyleManager1;

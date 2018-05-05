@@ -125,6 +125,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 }
                 BlokListesiGuncelle();
                 MultiLanguage();
+                this.Text = Localization.blokAyarlari;
             }
             catch (Exception ex)
             {

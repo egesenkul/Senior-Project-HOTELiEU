@@ -47,6 +47,10 @@ namespace Otel_Uygulamasi.Formlar.Genel
         {
             result = DialogResult.Yes; MsgBox.Close();
         }
-        
+
+        private void HotelWarningForm_Load(object sender, EventArgs e)
+        {
+            this.Text = Localization.uyari;
+        }
     }
 }

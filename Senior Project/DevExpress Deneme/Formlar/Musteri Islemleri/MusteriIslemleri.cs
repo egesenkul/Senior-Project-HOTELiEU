@@ -59,6 +59,7 @@ namespace DevExpress_Deneme
             try
             {
                 MultiLanguage();
+                this.Text = Localization.tileMusteri;
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {

@@ -39,7 +39,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45.25F);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(36, 46);
+            this.label1.Location = new System.Drawing.Point(36, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 70);
             this.label1.TabIndex = 25;
@@ -49,7 +49,7 @@
             // 
             this.metroButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroButton2.BackColor = System.Drawing.Color.Transparent;
-            this.metroButton2.Location = new System.Drawing.Point(237, 151);
+            this.metroButton2.Location = new System.Drawing.Point(237, 184);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(151, 45);
             this.metroButton2.TabIndex = 24;
@@ -64,7 +64,7 @@
             this.metrolbl.AutoSize = true;
             this.metrolbl.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metrolbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metrolbl.Location = new System.Drawing.Point(137, 69);
+            this.metrolbl.Location = new System.Drawing.Point(136, 79);
             this.metrolbl.Name = "metrolbl";
             this.metrolbl.Size = new System.Drawing.Size(163, 25);
             this.metrolbl.TabIndex = 22;
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 213);
+            this.ClientSize = new System.Drawing.Size(551, 252);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metrolbl);
@@ -86,6 +86,7 @@
             this.Name = "HotelWarningForm";
             this.Resizable = false;
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.HotelWarningForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

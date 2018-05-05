@@ -82,6 +82,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             try
             {
                 MultiLanguage();
+                this.Text = Localization.tileOtelTanimlamalari;
                 if (Kullanici.klavye.Equals("True"))
                 {
                     btnKlavye.Visible = true;

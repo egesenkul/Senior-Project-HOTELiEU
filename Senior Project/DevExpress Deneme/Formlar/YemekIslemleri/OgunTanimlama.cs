@@ -109,6 +109,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.ogunTanimlama;
                 btnGorevlendirme.Visible = false;
                 dtOgunBas.EditValue = DateTime.Now;
                 dtOgunBas.Properties.VistaDisplayMode = DefaultBoolean.True;

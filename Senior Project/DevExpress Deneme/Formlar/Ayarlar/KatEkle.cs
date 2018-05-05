@@ -47,6 +47,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             try
             {
                 MultiLanguage();
+                this.Text = Localization.katAyarlari;
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {

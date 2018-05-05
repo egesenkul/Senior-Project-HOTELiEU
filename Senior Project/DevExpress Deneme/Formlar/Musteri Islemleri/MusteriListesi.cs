@@ -58,6 +58,7 @@ namespace Otel_Uygulamasi.Formlar.Musteri_Islemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.musteriListesi;
                 EgeTablosu("");
                 RizaTablosu("");
                 GridGuncelleListeden();

@@ -121,6 +121,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             {
                 MultiLanguage();
                 FiilYemekSalonu();
+                this.Text = Localization.tileYemekListesi;
                 FiilYemekTuru();
                 silinmişPersoneliGeriAlToolStripMenuItem.Visible = false;
                 ListeGörevliler.Visible = false;

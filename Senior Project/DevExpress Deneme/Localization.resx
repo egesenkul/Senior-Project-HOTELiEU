@@ -957,4 +957,22 @@
   <data name="odadaRezervasyonCheckinVar" xml:space="preserve">
     <value>Girilen tarih aralığında bu odada rezervasyon {0}ya da check-in işlemi bulunmaktadır</value>
   </data>
+  <data name="blokAyarlari" xml:space="preserve">
+    <value>Blok Ayarları</value>
+  </data>
+  <data name="havuzAyarlari" xml:space="preserve">
+    <value>Havuz Ayarları</value>
+  </data>
+  <data name="katAyarlari" xml:space="preserve">
+    <value>Kat Ayarları</value>
+  </data>
+  <data name="uyari" xml:space="preserve">
+    <value>Uyarı</value>
+  </data>
+  <data name="yetkiAyarlari" xml:space="preserve">
+    <value>Yetki Ayarları</value>
+  </data>
+  <data name="havuzSicaklikBilgileri" xml:space="preserve">
+    <value>Havuz Sıcaklık Bilgileri</value>
+  </data>
 </root>

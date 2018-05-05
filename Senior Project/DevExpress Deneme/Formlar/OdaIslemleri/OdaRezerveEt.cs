@@ -213,6 +213,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.tileOdaRezerveEt;
                 cmbOdaTipi.Items.Add(Localization.Tümü);
                 FiilCombobox();
                 cmbOdaBlok.Items.Add(Localization.Tümü);

@@ -74,6 +74,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.tileToplantiOlustur;
                 FiilComboboxPersonelKategorisi();
                 cmbPersonelKategori.SelectedIndex = 0;
                 dtToplantiTarihSaat.EditValue = DateTime.Now;

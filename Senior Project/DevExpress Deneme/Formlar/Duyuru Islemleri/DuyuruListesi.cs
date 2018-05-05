@@ -84,6 +84,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 ComboBoxKriter.Items.Add(Localization.OdaGrubu);
                 ComboBoxKriter.Items.Add(Localization.OzelMusteri);
                 ComboBoxKriter.Items.Add(Localization.Personel);
+                this.Text = Localization.duyuruListesi;
                 ComboBoxKriter.SelectedIndex = 0;
                 FiilComboboxPersonelGrubu();
                 KriterLabel.Visible = false;

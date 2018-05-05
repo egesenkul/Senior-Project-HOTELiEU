@@ -157,6 +157,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.tilePersonelOlustur;
                 FiilCombobox();
                 BilgiDoldur();
                 EnableFalse();

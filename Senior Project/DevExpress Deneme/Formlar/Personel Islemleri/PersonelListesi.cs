@@ -164,6 +164,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.lblPersonelListesi;
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {

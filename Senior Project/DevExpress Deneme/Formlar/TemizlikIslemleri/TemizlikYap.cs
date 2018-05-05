@@ -77,6 +77,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
         {
             try
             {
+                this.Text = Localization.temizlikYap;
                 TemizlikciListesiDoldur();
                 cmbKat.Items.Add(Localization.Tümü); ;
                 cmbOdaBlok.Items.Add(Localization.Tümü);

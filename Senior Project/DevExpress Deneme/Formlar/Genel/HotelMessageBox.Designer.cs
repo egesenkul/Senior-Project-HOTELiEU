@@ -41,7 +41,7 @@
             this.metrolbl.AutoSize = true;
             this.metrolbl.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metrolbl.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metrolbl.Location = new System.Drawing.Point(115, 40);
+            this.metrolbl.Location = new System.Drawing.Point(119, 78);
             this.metrolbl.Name = "metrolbl";
             this.metrolbl.Size = new System.Drawing.Size(163, 25);
             this.metrolbl.TabIndex = 18;
@@ -52,7 +52,7 @@
             // 
             this.metroButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroButton1.BackColor = System.Drawing.Color.Transparent;
-            this.metroButton1.Location = new System.Drawing.Point(119, 145);
+            this.metroButton1.Location = new System.Drawing.Point(119, 175);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(151, 45);
             this.metroButton1.TabIndex = 19;
@@ -65,7 +65,7 @@
             // 
             this.metroButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroButton2.BackColor = System.Drawing.Color.Transparent;
-            this.metroButton2.Location = new System.Drawing.Point(303, 145);
+            this.metroButton2.Location = new System.Drawing.Point(303, 175);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(151, 45);
             this.metroButton2.TabIndex = 20;
@@ -79,7 +79,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45.25F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(23, 40);
+            this.label1.Location = new System.Drawing.Point(23, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 70);
             this.label1.TabIndex = 21;
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 213);
+            this.ClientSize = new System.Drawing.Size(551, 243);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);

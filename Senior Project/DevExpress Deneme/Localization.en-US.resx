@@ -954,4 +954,22 @@
   <data name="odadaRezervasyonCheckinVar" xml:space="preserve">
     <value>In that days there is a reservation {0}or checkin in that room</value>
   </data>
+  <data name="blokAyarlari" xml:space="preserve">
+    <value>Blok Settings</value>
+  </data>
+  <data name="havuzAyarlari" xml:space="preserve">
+    <value>Pool Settings</value>
+  </data>
+  <data name="katAyarlari" xml:space="preserve">
+    <value>Floor Settings</value>
+  </data>
+  <data name="uyari" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="yetkiAyarlari" xml:space="preserve">
+    <value>Authority Settings</value>
+  </data>
+  <data name="havuzSicaklikBilgileri" xml:space="preserve">
+    <value>Pool Temperature Informations</value>
+  </data>
 </root>

@@ -106,6 +106,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blok Ayarları.
+        /// </summary>
+        internal static string blokAyarlari {
+            get {
+                return ResourceManager.GetString("blokAyarlari", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blok başarılı bir şekilde düzenlenmiştir..
         /// </summary>
         internal static string BlokDuzenlendi {
@@ -736,6 +745,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Havuz Ayarları.
+        /// </summary>
+        internal static string havuzAyarlari {
+            get {
+                return ResourceManager.GetString("havuzAyarlari", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Havuz başarılı bir şekilde düzenlenmiştir..
         /// </summary>
         internal static string HavuzDuzenlendi {
@@ -759,6 +777,15 @@ namespace Otel_Uygulamasi {
         internal static string HavuzGeriAlmaBasarili {
             get {
                 return ResourceManager.GetString("HavuzGeriAlmaBasarili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Havuz Sıcaklık Bilgileri.
+        /// </summary>
+        internal static string havuzSicaklikBilgileri {
+            get {
+                return ResourceManager.GetString("havuzSicaklikBilgileri", resourceCulture);
             }
         }
         
@@ -813,6 +840,15 @@ namespace Otel_Uygulamasi {
         internal static string internetYok {
             get {
                 return ResourceManager.GetString("internetYok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kat Ayarları.
+        /// </summary>
+        internal static string katAyarlari {
+            get {
+                return ResourceManager.GetString("katAyarlari", resourceCulture);
             }
         }
         
@@ -2509,6 +2545,15 @@ namespace Otel_Uygulamasi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uyarı.
+        /// </summary>
+        internal static string uyari {
+            get {
+                return ResourceManager.GetString("uyari", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yardım.
         /// </summary>
         internal static string Yardim {
@@ -2568,6 +2613,15 @@ namespace Otel_Uygulamasi {
         internal static string yemekTuru {
             get {
                 return ResourceManager.GetString("yemekTuru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yetki Ayarları.
+        /// </summary>
+        internal static string yetkiAyarlari {
+            get {
+                return ResourceManager.GetString("yetkiAyarlari", resourceCulture);
             }
         }
         

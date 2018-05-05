@@ -68,6 +68,7 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.personelKontrol;
                 TemizlikciListesiDoldur();
                 ortakFormIslemleri.cmbIlkDegerGetir(cmbPersonel);
                 btnFiltrele.PerformClick();

@@ -52,6 +52,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.tileDuyuru;
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {

@@ -53,6 +53,7 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
             try
             {
                 this.StyleManager = metroStyleManager1;
+                this.Text = Localization.tileToplanti;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;

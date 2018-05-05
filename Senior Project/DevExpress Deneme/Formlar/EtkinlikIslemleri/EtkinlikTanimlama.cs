@@ -53,6 +53,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.etkinlikEkle;
                 if (Kullanici.klavye.Equals("True"))
                 {
                     btnKlavye.Visible = true;

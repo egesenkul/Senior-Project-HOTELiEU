@@ -154,6 +154,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.ozelYemekEkle;
                 cmbKatilimKriter.Items.Add(Localization.Personel);
                 cmbKatilimKriter.Items.Add(Localization.OdaGrubu);
                 cmbKatilimKriter.SelectedIndex = 0;

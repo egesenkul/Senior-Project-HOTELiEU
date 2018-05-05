@@ -47,6 +47,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = "Check-Out";
                 AutoDarkMode();
                 FillDataGridView("select * from OdaHareket where Onay=0 and islemTipi='Check-in'");
             }

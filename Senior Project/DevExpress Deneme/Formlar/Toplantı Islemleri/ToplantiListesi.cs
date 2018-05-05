@@ -57,6 +57,7 @@ namespace Otel_Uygulamasi.Formlar.Toplantı_Islemleri
             try
             {
                 Multilanguage();
+                this.Text = Localization.tileToplantiListesi;
                 FiilToplantiSalonu();
                 btnFiltrele.PerformClick();
             }

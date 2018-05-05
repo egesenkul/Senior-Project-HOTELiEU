@@ -145,6 +145,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 MultiLanguage();
                 this.StyleManager = metroStyleManager1;
+                this.Text = Localization.odaKontrol;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;

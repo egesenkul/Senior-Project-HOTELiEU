@@ -352,6 +352,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 MusteriListesiGetir();
                 FiilComboboxBlok();
                 FiilComboboxKat();
+                this.Text = "Check-in";
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {

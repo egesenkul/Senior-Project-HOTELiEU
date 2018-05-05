@@ -46,6 +46,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.etkinlikListesi;
                 silinenEtkinliğiGeriAlToolStripMenuItem.Visible = false;
                 metroLabel6.Visible = false;
                 this.StyleManager = metroStyleManager1;

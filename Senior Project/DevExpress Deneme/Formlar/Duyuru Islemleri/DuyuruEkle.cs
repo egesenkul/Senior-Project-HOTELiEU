@@ -262,6 +262,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 ComboBoxKriter.Items.Add(Localization.Personel);
                 ComboBoxKriter.SelectedIndex = 0;
                 MultiLanguage();
+                this.Text = Localization.duyuruEkle;
 
                 FiilComboboxPersonelGrubu();
                 ComboBoxPersonelGrubu.SelectedIndex = 0;

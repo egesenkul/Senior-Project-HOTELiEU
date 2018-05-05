@@ -58,6 +58,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.tileOda;
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {

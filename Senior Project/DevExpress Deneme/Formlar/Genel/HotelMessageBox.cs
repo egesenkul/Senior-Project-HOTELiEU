@@ -30,7 +30,7 @@ namespace Otel_Uygulamasi.Formlar.Genel
 
         private void HotelMessageBox_Load(object sender, EventArgs e)
         {
-
+            this.Text = Localization.uyari;
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

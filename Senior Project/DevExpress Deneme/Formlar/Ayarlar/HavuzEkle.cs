@@ -60,6 +60,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 }
                 HavuzListesiGuncelleme();
                 MultiLanguage();
+                this.Text = Localization.havuzAyarlari;
             }
             catch (Exception ex)
             {

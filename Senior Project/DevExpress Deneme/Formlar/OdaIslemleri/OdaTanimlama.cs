@@ -211,6 +211,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             try
             {
                 MultiLanguage();
+                this.Text = Localization.tileOdaTanimlama;
                 FiilComboboxOdaGrubu();
                 ortakFormIslemleri.cmbIlkDegerGetir(cmbOdaTürü);
                 FiilComboboxBlok();

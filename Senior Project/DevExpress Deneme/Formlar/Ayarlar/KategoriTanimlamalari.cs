@@ -60,10 +60,10 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     ortakFormIslemleri.ListViewRenkDegistir(Color.Black, metroListView1);
                 }
 
-                cmbKategoriBolum.Items.Add("Personel");
-                cmbKategoriBolum.Items.Add("Yemek Türü");
-                cmbKategoriBolum.Items.Add("Oda");
-                cmbKategoriBolum.Items.Add("Duyuru");
+                cmbKategoriBolum.Items.Add(Localization.Personel);
+                cmbKategoriBolum.Items.Add(Localization.yemekTuru);
+                cmbKategoriBolum.Items.Add(Localization.OdaGrubu);
+                cmbKategoriBolum.Items.Add(Localization.lblDuyuruGrubu.Substring(0,Localization.lblDuyuruGrubu.Length-1));
                 if (KategoriMod == 0)
                 {
                     cmbKategoriBolum.SelectedIndex = 0;
@@ -78,6 +78,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 }
                 else btnKlavye.Visible = false;
                 MultiLanguage();
+                this.Text = Localization.tileKategoriTanimlamalari;
             }
             catch (Exception ex)
             {
