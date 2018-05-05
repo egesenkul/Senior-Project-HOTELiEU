@@ -107,14 +107,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 metroGrid1.Columns[9].Visible = false;
                 metroGrid1.Columns[10].Visible = false;
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                if (dtRecord.Rows.Count == 0)
-                {
-                    if (!ilkAcilis)
-                    {
-                        HotelWarningForm.Show(String.Format(Localization.NoResult, "\n"), Localization.Tamam, 1);
-                    }
-                    ilkAcilis = false;
-                }
+              
             }
             catch (Exception ex)
             {
