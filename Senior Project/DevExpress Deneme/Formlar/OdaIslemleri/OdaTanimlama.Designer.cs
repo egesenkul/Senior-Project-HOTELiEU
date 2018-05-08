@@ -172,6 +172,7 @@
             this.cmbKat.UseCustomBackColor = true;
             this.cmbKat.UseCustomForeColor = true;
             this.cmbKat.UseSelectable = true;
+            this.cmbKat.Click += new System.EventHandler(this.cmbKat_Click);
             // 
             // txtTekKisilikYatakSayisi
             // 
@@ -256,6 +257,7 @@
             this.cmbSorumluPersonel.UseCustomBackColor = true;
             this.cmbSorumluPersonel.UseCustomForeColor = true;
             this.cmbSorumluPersonel.UseSelectable = true;
+            this.cmbSorumluPersonel.Click += new System.EventHandler(this.cmbSorumluPersonel_Click);
             // 
             // lblOdadanSorumluPersonel
             // 
@@ -284,6 +286,7 @@
             this.cmbOdaTürü.UseCustomBackColor = true;
             this.cmbOdaTürü.UseCustomForeColor = true;
             this.cmbOdaTürü.UseSelectable = true;
+            this.cmbOdaTürü.Click += new System.EventHandler(this.cmbOdaTürü_Click);
             // 
             // lblOdaGrup
             // 
@@ -327,6 +330,7 @@
             this.cmbBlok.UseCustomForeColor = true;
             this.cmbBlok.UseSelectable = true;
             this.cmbBlok.SelectedIndexChanged += new System.EventHandler(this.cmbBlok_SelectedIndexChanged);
+            this.cmbBlok.Click += new System.EventHandler(this.cmbBlok_Click);
             // 
             // btnTemizle
             // 

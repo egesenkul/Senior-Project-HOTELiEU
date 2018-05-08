@@ -164,6 +164,7 @@
             this.cmbYemekSalonu.UseCustomBackColor = true;
             this.cmbYemekSalonu.UseCustomForeColor = true;
             this.cmbYemekSalonu.UseSelectable = true;
+            this.cmbYemekSalonu.Click += new System.EventHandler(this.cmbYemekSalonu_Click);
             // 
             // lblYemekSalonu
             // 
@@ -543,6 +544,7 @@
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.PasswordChar = '\0';
+            this.txtAciklama.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAciklama.SelectedText = "";
             this.txtAciklama.SelectionLength = 0;
             this.txtAciklama.SelectionStart = 0;
@@ -569,6 +571,7 @@
             this.cmbYemekTürü.UseCustomBackColor = true;
             this.cmbYemekTürü.UseCustomForeColor = true;
             this.cmbYemekTürü.UseSelectable = true;
+            this.cmbYemekTürü.Click += new System.EventHandler(this.cmbYemekTürü_Click);
             // 
             // lblAciklama
             // 

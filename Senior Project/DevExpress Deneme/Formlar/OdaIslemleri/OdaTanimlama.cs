@@ -32,6 +32,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
+                cmbSorumluPersonel.Items.Clear();
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -58,6 +59,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
+                cmbBlok.Items.Clear();
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -84,6 +86,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
+                cmbOdaTürü.Items.Clear();
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -506,6 +509,26 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
+        }
+
+        private void cmbBlok_Click(object sender, EventArgs e)
+        {
+            FiilComboboxBlok();
+        }
+
+        private void cmbKat_Click(object sender, EventArgs e)
+        {
+            FiilComboboxKat();
+        }
+
+        private void cmbOdaTürü_Click(object sender, EventArgs e)
+        {
+            FiilComboboxOdaGrubu();
+        }
+
+        private void cmbSorumluPersonel_Click(object sender, EventArgs e)
+        {
+            FiilComboboxPersonel();
         }
     }
 }

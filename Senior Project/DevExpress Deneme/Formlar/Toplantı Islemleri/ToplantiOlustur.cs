@@ -26,6 +26,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
         {
             try
             {
+                cmbPersonelKategori.Items.Clear();
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -249,6 +250,16 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
+        }
+
+        private void cmbSalon_Click(object sender, EventArgs e)
+        {
+            FiilToplantiSalonu();
+        }
+
+        private void cmbPersonelKategori_Click(object sender, EventArgs e)
+        {
+            FiilComboboxPersonelKategorisi();
         }
     }
 }

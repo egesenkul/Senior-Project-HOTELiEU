@@ -437,6 +437,7 @@
             this.cmbYemekTürü.UseCustomBackColor = true;
             this.cmbYemekTürü.UseCustomForeColor = true;
             this.cmbYemekTürü.UseSelectable = true;
+            this.cmbYemekTürü.Click += new System.EventHandler(this.cmbYemekTürü_Click);
             // 
             // lblAciklama
             // 
@@ -556,6 +557,7 @@
             this.cmbYemekSalonu.UseCustomBackColor = true;
             this.cmbYemekSalonu.UseCustomForeColor = true;
             this.cmbYemekSalonu.UseSelectable = true;
+            this.cmbYemekSalonu.Click += new System.EventHandler(this.cmbYemekSalonu_Click);
             // 
             // txtOgunAdi
             // 

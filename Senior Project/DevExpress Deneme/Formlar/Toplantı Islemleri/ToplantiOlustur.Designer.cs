@@ -214,6 +214,7 @@
             this.cmbPersonelKategori.UseCustomBackColor = true;
             this.cmbPersonelKategori.UseCustomForeColor = true;
             this.cmbPersonelKategori.UseSelectable = true;
+            this.cmbPersonelKategori.Click += new System.EventHandler(this.cmbPersonelKategori_Click);
             // 
             // lblPersonelKategori
             // 
@@ -256,6 +257,7 @@
             this.cmbSalon.UseCustomBackColor = true;
             this.cmbSalon.UseCustomForeColor = true;
             this.cmbSalon.UseSelectable = true;
+            this.cmbSalon.Click += new System.EventHandler(this.cmbSalon_Click);
             // 
             // lblToplantiSalonu
             // 

@@ -26,6 +26,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             try
             {
+                cmbPersonelKategorisi.Items.Clear();
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -53,6 +54,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             try
             {
+                cmbYemekTürü.Items.Clear();
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -426,6 +428,16 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
+        }
+
+        private void cmbYemekSalonu_Click(object sender, EventArgs e)
+        {
+            FiilYemekSalonu();
+        }
+
+        private void cmbYemekTürü_Click(object sender, EventArgs e)
+        {
+            FiilComboboxYemekTuru();
         }
     }
 }
