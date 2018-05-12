@@ -145,16 +145,16 @@
     <value>Login Screen</value>
   </data>
   <data name="BlokDuzenlendi" xml:space="preserve">
-    <value>Blok successfully edited</value>
+    <value>Block successfully edited</value>
   </data>
   <data name="Blokeklendi" xml:space="preserve">
-    <value>Blok successfully added</value>
+    <value>Block successfully added</value>
   </data>
   <data name="BlokismiBosOlamaz" xml:space="preserve">
-    <value>Blok name can not be empty</value>
+    <value>Block name can not be empty</value>
   </data>
   <data name="BlokSilmeBasarili" xml:space="preserve">
-    <value>Succesfully deleted blok</value>
+    <value>Succesfully deleted block</value>
   </data>
   <data name="btnIptal" xml:space="preserve">
     <value>Cancel</value>
@@ -172,7 +172,7 @@
     <value>Edit</value>
   </data>
   <data name="DuzenlemekIcınBlokSec" xml:space="preserve">
-    <value>For edit any blok firstly please select it</value>
+    <value>For edit any block firstly please select it</value>
   </data>
   <data name="HataliKullaniciAdiSifre" xml:space="preserve">
     <value>Username or password is valid</value>
@@ -187,10 +187,10 @@
     <value>User password can not be empty</value>
   </data>
   <data name="lblBlokAdi" xml:space="preserve">
-    <value>Name of the Blok</value>
+    <value>Name of the Block</value>
   </data>
   <data name="lblBlokListesi" xml:space="preserve">
-    <value>List of Bloks</value>
+    <value>List of Blocks</value>
   </data>
   <data name="lblKullaniciDepartman" xml:space="preserve">
     <value>User Departmant</value>
@@ -214,7 +214,7 @@
     <value>Delete</value>
   </data>
   <data name="SilinecekBlokSec" xml:space="preserve">
-    <value>Please select the blok which you want to delete</value>
+    <value>Please select the block which you want to delete</value>
   </data>
   <data name="SilinenHavuzGeriAlindi" xml:space="preserve">
     <value>The deleted pool has been succesfully recovered</value>
@@ -259,7 +259,7 @@
     <value>Floor successfully deleted</value>
   </data>
   <data name="lblBloktakiKatlar" xml:space="preserve">
-    <value>Blok Has That Floors</value>
+    <value>Block Has That Floors</value>
   </data>
   <data name="lblBolumeAitKategori" xml:space="preserve">
     <value>Section Has That Categories</value>
@@ -859,13 +859,13 @@
     <value>Entered user:</value>
   </data>
   <data name="blokIsmiBosGecilmez" xml:space="preserve">
-    <value>Please first select a blok</value>
+    <value>Please first select a block</value>
   </data>
   <data name="ogunTanimlama" xml:space="preserve">
     <value>Create repeatly meal</value>
   </data>
   <data name="onceKatEkleyiniz" xml:space="preserve">
-    <value>Please first add a floor to that blok or select a floor</value>
+    <value>Please first add a floor to that block or select a floor</value>
   </data>
   <data name="salonIsmiBosGecilemez" xml:space="preserve">
     <value>Saloon name can not be empty</value>
@@ -877,7 +877,7 @@
     <value>Create Customer</value>
   </data>
   <data name="lblSorumluBlok" xml:space="preserve">
-    <value>Responsible Blok</value>
+    <value>Responsible Block</value>
   </data>
   <data name="lblSorumluKat" xml:space="preserve">
     <value>Responsible Floor</value>
@@ -943,7 +943,7 @@
     <value>Floor succesfully recovered</value>
   </data>
   <data name="bloktaBulunanKatlarıSilin" xml:space="preserve">
-    <value>Please first delete floors which are in that blok</value>
+    <value>Please first delete floors which are in that block</value>
   </data>
   <data name="kattaBulunanOdalariSilin" xml:space="preserve">
     <value>Please first delete rooms which are in that room</value>
@@ -955,7 +955,7 @@
     <value>In that days there is a reservation {0}or checkin in that room</value>
   </data>
   <data name="blokAyarlari" xml:space="preserve">
-    <value>Blok Settings</value>
+    <value>Block Settings</value>
   </data>
   <data name="havuzAyarlari" xml:space="preserve">
     <value>Pool Settings</value>

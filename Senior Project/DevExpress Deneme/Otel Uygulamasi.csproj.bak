@@ -11,6 +11,21 @@
     <AssemblyName>Otel Uygulamasi</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,15 +47,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -121,12 +137,6 @@
     <Compile Include="Formlar\Ayarlar\KullaniciTercihleri.Designer.cs">
       <DependentUpon>KullaniciTercihleri.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\Ayarlar\LisansIslemleri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\Ayarlar\LisansIslemleri.Designer.cs">
-      <DependentUpon>LisansIslemleri.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formlar\Ayarlar\OtelTanımlamaları.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,17 +197,23 @@
     <Compile Include="Formlar\Ayarlar\Ayarlar.Designer.cs">
       <DependentUpon>Ayarlar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\Genel\UyarıFormu.cs">
+    <Compile Include="Formlar\Genel\HotelMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\Genel\UyarıFormu.Designer.cs">
-      <DependentUpon>UyarıFormu.cs</DependentUpon>
+    <Compile Include="Formlar\Genel\HotelMessageBox.Designer.cs">
+      <DependentUpon>HotelMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\Login.cs">
+    <Compile Include="Formlar\Genel\HotelWarningForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Formlar\Genel\HotelWarningForm.Designer.cs">
+      <DependentUpon>HotelWarningForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\OdaIslemleri\OdaCheckin.cs">
       <SubType>Form</SubType>
@@ -210,6 +226,12 @@
     </Compile>
     <Compile Include="Formlar\OdaIslemleri\OdaRezerveEt.Designer.cs">
       <DependentUpon>OdaRezerveEt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\SureUzat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\OdaIslemleri\SureUzat.Designer.cs">
+      <DependentUpon>SureUzat.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\TemizlikIslemleri\TemizlikYap.cs">
       <SubType>Form</SubType>
@@ -238,18 +260,6 @@
     </Compile>
     <Compile Include="SıcaklıkBilgileri.Designer.cs">
       <DependentUpon>SıcaklıkBilgileri.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\Genel\Destek.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\Genel\Destek.Designer.cs">
-      <DependentUpon>Destek.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\Genel\Guncelleme.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formlar\Genel\Guncelleme.Designer.cs">
-      <DependentUpon>Guncelleme.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Musteri Islemleri\MusteriIslemleri.cs">
       <SubType>Form</SubType>
@@ -388,9 +398,6 @@
     <EmbeddedResource Include="Formlar\Ayarlar\KullaniciTercihleri.resx">
       <DependentUpon>KullaniciTercihleri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Ayarlar\LisansIslemleri.resx">
-      <DependentUpon>LisansIslemleri.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Ayarlar\OtelTanımlamaları.resx">
       <DependentUpon>OtelTanımlamaları.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,17 +431,23 @@
     <EmbeddedResource Include="Formlar\Genel\frmLogin.tr-TR.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Genel\UyarıFormu.resx">
-      <DependentUpon>UyarıFormu.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\Genel\HotelMessageBox.resx">
+      <DependentUpon>HotelMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\Genel\HotelWarningForm.resx">
+      <DependentUpon>HotelWarningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\OdaIslemleri\OdaCheckin.resx">
       <DependentUpon>OdaCheckin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\OdaIslemleri\OdaRezerveEt.resx">
       <DependentUpon>OdaRezerveEt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\OdaIslemleri\SureUzat.resx">
+      <DependentUpon>SureUzat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\TemizlikIslemleri\TemizlikYap.resx">
       <DependentUpon>TemizlikYap.cs</DependentUpon>
@@ -452,12 +465,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SıcaklıkBilgileri.resx">
       <DependentUpon>SıcaklıkBilgileri.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Genel\Destek.resx">
-      <DependentUpon>Destek.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\Genel\Guncelleme.resx">
-      <DependentUpon>Guncelleme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Musteri Islemleri\MusteriIslemleri.resx">
       <DependentUpon>MusteriIslemleri.cs</DependentUpon>
@@ -628,12 +635,17 @@
     <Content Include="bin\Debug\ru\DevExpress.XtraPrinting.v15.1.resources.dll" />
     <Content Include="bin\Debug\ru\DevExpress.XtraTreeList.v15.1.resources.dll" />
     <None Include="Resources\Euro.png" />
-    <EmbeddedResource Include="Localization\tr\MetroMessageBoxControl.xml" />
-    <EmbeddedResource Include="Localization\tr\MetroToggle.xml" />
     <None Include="Resources\HoteliEU.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

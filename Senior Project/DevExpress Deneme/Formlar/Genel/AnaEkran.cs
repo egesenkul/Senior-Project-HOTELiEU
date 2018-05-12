@@ -147,7 +147,6 @@ namespace DevExpress_Deneme
                 }
                 ortakFormIslemleri.tileRenkDegistir(tileKullaniciAdi, tileAyarlar, tileTarih, tileMusteriIslemleri, tileYemekIslemleri, tileEtkinlikIslemleri, tilePersonelIslemleri,
                     tileOdaIslemleri, tileTemizlikIslemleri, tileDuyuruIslemleri, tileToplantiIslemleri, tileSaat, tileGuncelleme, tileDestek, tileItemSicaklik);
-                ortakFormIslemleri.LogoGetir(pictureBox1);
                 AnaEkranYetki();
                 MultiLanguage();
             }

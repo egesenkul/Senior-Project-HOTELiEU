@@ -48,8 +48,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileKullaniciAdi = new DevExpress.XtraEditors.TileItem();
@@ -69,9 +67,9 @@
             this.tileToplantiIslemleri = new DevExpress.XtraEditors.TileItem();
             this.tileSaat = new DevExpress.XtraEditors.TileItem();
             this.tileGroup7 = new DevExpress.XtraEditors.TileGroup();
+            this.tileKapat = new DevExpress.XtraEditors.TileItem();
             this.tileGuncelleme = new DevExpress.XtraEditors.TileItem();
             this.tileDestek = new DevExpress.XtraEditors.TileItem();
-            this.tileKapat = new DevExpress.XtraEditors.TileItem();
             this.tileItem8 = new DevExpress.XtraEditors.TileItem();
             this.tileControl2 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup5 = new DevExpress.XtraEditors.TileGroup();
@@ -82,9 +80,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.tileItem12 = new DevExpress.XtraEditors.TileItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tileControl1
@@ -147,7 +143,7 @@
             this.tileAyarlar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileAyarlar.BackgroundImage")));
             this.tileAyarlar.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileAyarlar.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.NoScale;
-            tileItemElement2.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileItemElement2.Text = "Ayarlar";
             tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual;
             this.tileAyarlar.Elements.Add(tileItemElement2);
@@ -391,18 +387,26 @@
             this.tileKapat.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileKapat.AppearanceItem.Pressed.Options.UseBorderColor = true;
             this.tileKapat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileKapat.BackgroundImage")));
-            tileItemElement16.Text = "Kapat";
-            tileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileKapat.Elements.Add(tileItemElement16);
+            tileItemElement14.Text = "Kapat";
+            tileItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileKapat.Elements.Add(tileItemElement14);
             this.tileKapat.Id = 16;
             this.tileKapat.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileKapat.Name = "tileKapat";
             this.tileKapat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem14_ItemClick);
             // 
+            // tileGuncelleme
+            // 
+            this.tileGuncelleme.Name = "tileGuncelleme";
+            // 
+            // tileDestek
+            // 
+            this.tileDestek.Name = "tileDestek";
+            // 
             // tileItem8
             // 
-            tileItemElement17.Text = "tileItem8";
-            this.tileItem8.Elements.Add(tileItemElement17);
+            tileItemElement15.Text = "tileItem8";
+            this.tileItem8.Elements.Add(tileItemElement15);
             this.tileItem8.Id = 7;
             this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.tileItem8.Name = "tileItem8";
@@ -434,9 +438,9 @@
             this.btnKlavye.AppearanceItem.Normal.Options.UseBackColor = true;
             this.btnKlavye.AppearanceItem.Normal.Options.UseBorderColor = true;
             this.btnKlavye.AppearanceItem.Normal.Options.UseFont = true;
-            tileItemElement18.Text = "Klavye Aç ";
-            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            this.btnKlavye.Elements.Add(tileItemElement18);
+            tileItemElement16.Text = "Klavye Aç ";
+            tileItemElement16.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
+            this.btnKlavye.Elements.Add(tileItemElement16);
             this.btnKlavye.Id = 1;
             this.btnKlavye.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.btnKlavye.Name = "btnKlavye";
@@ -454,9 +458,9 @@
             this.tileItem1.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Red;
             this.tileItem1.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileItem1.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement19.Text = "tileItem1";
-            tileItemElement19.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            this.tileItem1.Elements.Add(tileItemElement19);
+            tileItemElement17.Text = "tileItem1";
+            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
+            this.tileItem1.Elements.Add(tileItemElement17);
             this.tileItem1.Id = 3;
             this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem1.Name = "tileItem1";
@@ -490,22 +494,13 @@
             // 
             this.tileItem12.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
             this.tileItem12.AppearanceItem.Normal.Options.UseFont = true;
-            tileItemElement20.Text = "Personel İşlemleri";
-            tileItemElement20.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem12.Elements.Add(tileItemElement20);
+            tileItemElement18.Text = "Personel İşlemleri";
+            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem12.Elements.Add(tileItemElement18);
             this.tileItem12.Id = 19;
             this.tileItem12.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem12.Name = "tileItem12";
             this.tileItem12.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem12_ItemClick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(1035, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 100);
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
             // 
             // AnaEkran
             // 
@@ -515,7 +510,6 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1378, 619);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.tileControl2);
             this.Controls.Add(this.tileControl1);
@@ -528,7 +522,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,7 +561,6 @@
         private DevExpress.XtraEditors.TileItem tileToplantiIslemleri;
         private DevExpress.XtraEditors.TileGroup tileGroup8;
         private DevExpress.XtraEditors.TileItem tileItem1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
