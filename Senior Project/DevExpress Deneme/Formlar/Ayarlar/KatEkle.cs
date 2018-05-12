@@ -133,10 +133,22 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                         cmd.CommandText = "update Kat set KatNo = '" + txtKatAdi.Text + "', blokAdı = '" + cmbBlok.SelectedItem.ToString() + "' where KatNo ='" + metroListView1.SelectedItems[0].Text + "'";
                         cmd.ExecuteNonQuery();
                         connection.Close();
+
+                        // oda tablosunu güncelle 
+                        SqlConnection connection2 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+
+                        SqlCommand cmd2 = new SqlCommand();
+                        cmd2.Connection = connection2;
+                        connection2.Open();
+                        cmd2.CommandText = "update Oda set katAdi='" + txtKatAdi.Text + "' where katAdi='" + metroListView1.SelectedItems[0].Text + "'";
+                        cmd2.ExecuteNonQuery();
+                        connection2.Close();
+
                         if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                         {
                             HotelWarningForm.Show(Localization.KatDuzenlemeBasarili, Localization.Tamam, 0);
                         }
+
                     }
                 }
                 btnTemizle.PerformClick();
