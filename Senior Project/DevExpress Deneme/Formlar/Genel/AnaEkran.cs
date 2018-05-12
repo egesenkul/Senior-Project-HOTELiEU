@@ -142,6 +142,7 @@ namespace DevExpress_Deneme
                     tileOdaIslemleri, tileTemizlikIslemleri, tileDuyuruIslemleri, tileToplantiIslemleri, tileSaat, tileGuncelleme, tileDestek, tileItemSicaklik);
                 AnaEkranYetki();
                 MultiLanguage();
+                this.Text = "HOTELiEU";
             }
             catch (Exception ex)
             {

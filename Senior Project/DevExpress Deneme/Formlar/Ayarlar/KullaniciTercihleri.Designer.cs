@@ -36,7 +36,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileRenkSec = new DevExpress.XtraEditors.TileGroup();
             this.tileOnayForm = new DevExpress.XtraEditors.TileItem();
@@ -44,7 +43,6 @@
             this.tileBilgilendirmeFormu = new DevExpress.XtraEditors.TileItem();
             this.tileKlavye = new DevExpress.XtraEditors.TileItem();
             this.tileRenkDeğistir = new DevExpress.XtraEditors.TileItem();
-            this.tileYardim = new DevExpress.XtraEditors.TileItem();
             this.tileKapat = new DevExpress.XtraEditors.TileItem();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
@@ -63,6 +61,7 @@
             this.tileControl1.MaxId = 9;
             this.tileControl1.Name = "tileControl1";
             this.tileControl1.Padding = new System.Windows.Forms.Padding(12);
+            this.tileControl1.Position = 851;
             this.tileControl1.Size = new System.Drawing.Size(1045, 515);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
@@ -74,7 +73,6 @@
             this.tileRenkSec.Items.Add(this.tileBilgilendirmeFormu);
             this.tileRenkSec.Items.Add(this.tileKlavye);
             this.tileRenkSec.Items.Add(this.tileRenkDeğistir);
-            this.tileRenkSec.Items.Add(this.tileYardim);
             this.tileRenkSec.Items.Add(this.tileKapat);
             this.tileRenkSec.Name = "tileRenkSec";
             // 
@@ -168,23 +166,6 @@
             this.tileRenkDeğistir.Name = "tileRenkDeğistir";
             this.tileRenkDeğistir.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileRenkDeğistir_ItemClick);
             // 
-            // tileYardim
-            // 
-            this.tileYardim.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.tileYardim.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileYardim.AppearanceItem.Pressed.BackColor = System.Drawing.Color.GreenYellow;
-            this.tileYardim.AppearanceItem.Pressed.BackColor2 = System.Drawing.Color.GreenYellow;
-            this.tileYardim.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.GreenYellow;
-            this.tileYardim.AppearanceItem.Pressed.Options.UseBackColor = true;
-            this.tileYardim.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            this.tileYardim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileYardim.BackgroundImage")));
-            tileItemElement6.Text = "Yardım";
-            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileYardim.Elements.Add(tileItemElement6);
-            this.tileYardim.Id = 4;
-            this.tileYardim.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileYardim.Name = "tileYardim";
-            // 
             // tileKapat
             // 
             this.tileKapat.AppearanceItem.Normal.BackColor = System.Drawing.Color.Red;
@@ -199,9 +180,9 @@
             this.tileKapat.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.GreenYellow;
             this.tileKapat.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileKapat.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement7.Text = "Kapat";
-            tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileKapat.Elements.Add(tileItemElement7);
+            tileItemElement6.Text = "Kapat";
+            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileKapat.Elements.Add(tileItemElement6);
             this.tileKapat.Id = 5;
             this.tileKapat.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileKapat.Name = "tileKapat";
@@ -239,7 +220,6 @@
         private DevExpress.XtraEditors.TileGroup tileRenkSec;
         private DevExpress.XtraEditors.TileItem tileOnayForm;
         private DevExpress.XtraEditors.TileItem tileBilgilendirmeFormu;
-        private DevExpress.XtraEditors.TileItem tileYardim;
         private DevExpress.XtraEditors.TileItem tileKapat;
         private DevExpress.XtraEditors.TileItem tileGeceModu;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;

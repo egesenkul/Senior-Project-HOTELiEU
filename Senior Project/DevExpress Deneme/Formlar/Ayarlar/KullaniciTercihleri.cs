@@ -88,7 +88,6 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 tileKlavye.Text = Localization.btnKlavyeAc;
                 tileOnayForm.Text = Localization.tileOnayForm;
                 tileRenkDeğistir.Text = Localization.tileRenkDegistir;
-                tileYardim.Text = Localization.Yardim;
             }
             catch (Exception ex)
             {
@@ -109,7 +108,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
                 }
                 ortakFormIslemleri.tileRenkDegistir(tileBilgilendirmeFormu, tileGeceModu, tileKlavye, tileOnayForm,
-                    tileRenkDeğistir, tileYardim);
+                    tileRenkDeğistir);
             }
             catch (Exception ex)
             {
