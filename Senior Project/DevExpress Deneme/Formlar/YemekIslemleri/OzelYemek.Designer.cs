@@ -68,10 +68,10 @@
             this.lblYemekAdi = new MetroFramework.Controls.MetroLabel();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtYemekBitis.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtYemekBitis.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtYemekTarihi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtYemekBitis.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtYemekTarihi.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtYemekTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,16 +187,10 @@
             this.dtYemekBitis.Location = new System.Drawing.Point(217, 154);
             this.dtYemekBitis.Margin = new System.Windows.Forms.Padding(2);
             this.dtYemekBitis.Name = "dtYemekBitis";
-            // 
-            // 
-            // 
             this.dtYemekBitis.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtYemekBitis.Properties.Appearance.Options.UseFont = true;
             this.dtYemekBitis.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtYemekBitis.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtYemekBitis.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -286,6 +280,8 @@
             this.listeGorevliler.UseCustomForeColor = true;
             this.listeGorevliler.UseSelectable = true;
             this.listeGorevliler.View = System.Windows.Forms.View.Tile;
+            this.listeGorevliler.ItemAdded += new System.Action<MetroFramework.Controls.MetroListView>(this.listeGorevliler_ItemAdded);
+            this.listeGorevliler.ItemsRemoved += new System.Action<MetroFramework.Controls.MetroListView>(this.listeGorevliler_ItemsRemoved);
             // 
             // lblPersoenlKategori
             // 
@@ -415,6 +411,8 @@
             this.listeKatilacaklar.UseCustomForeColor = true;
             this.listeKatilacaklar.UseSelectable = true;
             this.listeKatilacaklar.View = System.Windows.Forms.View.Tile;
+            this.listeKatilacaklar.ItemAdded += new System.Action<MetroFramework.Controls.MetroListView>(this.listeKatilacaklar_ItemAdded);
+            this.listeKatilacaklar.ItemsRemoved += new System.Action<MetroFramework.Controls.MetroListView>(this.listeKatilacaklar_ItemsRemoved);
             // 
             // ListeGrupUyeleri
             // 
@@ -441,16 +439,10 @@
             this.dtYemekTarihi.Location = new System.Drawing.Point(217, 111);
             this.dtYemekTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtYemekTarihi.Name = "dtYemekTarihi";
-            // 
-            // 
-            // 
             this.dtYemekTarihi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtYemekTarihi.Properties.Appearance.Options.UseFont = true;
             this.dtYemekTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtYemekTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtYemekTarihi.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";

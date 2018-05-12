@@ -362,6 +362,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     ortakFormIslemleri.ListViewRenkDegistir(Color.Black, ListeOdalar, ListeRezerveOdalar);
                     ortakFormIslemleri.DateEditRenkDegistir(Color.Black, dtCikisTarihi, dtGirisTarihi);
                 }
+                if (Kullanici.klavye.Equals("True"))
+                {
+                    btnKlavye.Visible = true;
+                }
+                else btnKlavye.Visible = false;
                 MultiLanguage();
             }
             catch (Exception ex)

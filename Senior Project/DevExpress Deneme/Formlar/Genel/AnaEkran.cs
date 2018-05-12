@@ -116,14 +116,7 @@ namespace DevExpress_Deneme
             {
                 Ardunio.Sicaklik1 = 0; // İlk değer işlemleri için
                                        //ArdunioKontrol();
-                if (Ardunio.ArdunioAktif == false)
-                {
-                    tileItem1.Text = Localization.ArdunioBagliDegil;
-                }
-                else
-                {
-                    tileGroup8.Visible = false;
-                }
+                
                 metroLabel1.Text = Localization.Hoşgeldiniz + " " + Kullanici.isim;
                 tileKullaniciAdi.Text = Kullanici.isim;
                 tileKapat.ItemSize = TileItemSize.Large;

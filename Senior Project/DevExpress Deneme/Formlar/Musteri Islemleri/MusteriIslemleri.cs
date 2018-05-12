@@ -28,7 +28,6 @@ namespace DevExpress_Deneme
                 if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
                 {
                     tileItemMusteriTanimlama.Visible = false;
-                    tileItemMusteriOdaIliskilendir.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -42,10 +41,8 @@ namespace DevExpress_Deneme
             try
             {
                 tileItemKapat.Text = Localization.btnKapat;
-                tileItemMusteriOdaIliskilendir.Text = Localization.musteriCheckin;
                 tileItemMusteriListesi.Text = Localization.musteriListesi;
                 tileItemKapat.Text = Localization.btnKapat;
-                tileSureUzat.Text = Localization.tileSureUzat;
                 tileItemMusteriTanimlama.Text = Localization.tileItemMusteriTanimlama;
             }
             catch (Exception ex)
@@ -65,7 +62,7 @@ namespace DevExpress_Deneme
                 {
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
                 }
-                ortakFormIslemleri.tileRenkDegistir(tileItemMusteriListesi, tileItemMusteriOdaIliskilendir, tileItemMusteriTanimlama, tileSureUzat);
+                ortakFormIslemleri.tileRenkDegistir(tileItemMusteriListesi,  tileItemMusteriTanimlama);
             }
             catch (Exception ex)
             {

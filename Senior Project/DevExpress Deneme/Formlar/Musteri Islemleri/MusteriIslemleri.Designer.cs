@@ -33,15 +33,11 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileItemMusteriTanimlama = new DevExpress.XtraEditors.TileItem();
             this.tileItemMusteriListesi = new DevExpress.XtraEditors.TileItem();
-            this.tileItemMusteriOdaIliskilendir = new DevExpress.XtraEditors.TileItem();
             this.tileItemKapat = new DevExpress.XtraEditors.TileItem();
-            this.tileSureUzat = new DevExpress.XtraEditors.TileItem();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
@@ -63,9 +59,7 @@
             // 
             this.tileGroup2.Items.Add(this.tileItemMusteriTanimlama);
             this.tileGroup2.Items.Add(this.tileItemMusteriListesi);
-            this.tileGroup2.Items.Add(this.tileItemMusteriOdaIliskilendir);
             this.tileGroup2.Items.Add(this.tileItemKapat);
-            this.tileGroup2.Items.Add(this.tileSureUzat);
             this.tileGroup2.Name = "tileGroup2";
             // 
             // tileItemMusteriTanimlama
@@ -104,24 +98,6 @@
             this.tileItemMusteriListesi.Name = "tileItemMusteriListesi";
             this.tileItemMusteriListesi.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem2_ItemClick);
             // 
-            // tileItemMusteriOdaIliskilendir
-            // 
-            this.tileItemMusteriOdaIliskilendir.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.tileItemMusteriOdaIliskilendir.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItemMusteriOdaIliskilendir.AppearanceItem.Pressed.BackColor = System.Drawing.Color.YellowGreen;
-            this.tileItemMusteriOdaIliskilendir.AppearanceItem.Pressed.BackColor2 = System.Drawing.Color.YellowGreen;
-            this.tileItemMusteriOdaIliskilendir.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
-            this.tileItemMusteriOdaIliskilendir.AppearanceItem.Pressed.Options.UseBackColor = true;
-            this.tileItemMusteriOdaIliskilendir.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            this.tileItemMusteriOdaIliskilendir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemMusteriOdaIliskilendir.BackgroundImage")));
-            tileItemElement3.Text = "Müşteri Check-in";
-            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItemMusteriOdaIliskilendir.Elements.Add(tileItemElement3);
-            this.tileItemMusteriOdaIliskilendir.Id = 9;
-            this.tileItemMusteriOdaIliskilendir.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItemMusteriOdaIliskilendir.Name = "tileItemMusteriOdaIliskilendir";
-            this.tileItemMusteriOdaIliskilendir.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem3_ItemClick);
-            // 
             // tileItemKapat
             // 
             this.tileItemKapat.AppearanceItem.Normal.BackColor = System.Drawing.Color.Red;
@@ -136,25 +112,13 @@
             this.tileItemKapat.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItemKapat.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItemKapat.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement4.Text = "Kapat";
-            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItemKapat.Elements.Add(tileItemElement4);
+            tileItemElement3.Text = "Kapat";
+            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItemKapat.Elements.Add(tileItemElement3);
             this.tileItemKapat.Id = 4;
             this.tileItemKapat.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItemKapat.Name = "tileItemKapat";
             this.tileItemKapat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem4_ItemClick);
-            // 
-            // tileSureUzat
-            // 
-            this.tileSureUzat.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.tileSureUzat.AppearanceItem.Normal.Options.UseFont = true;
-            tileItemElement5.Text = "Süre Uzat";
-            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileSureUzat.Elements.Add(tileItemElement5);
-            this.tileSureUzat.Id = 10;
-            this.tileSureUzat.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
-            this.tileSureUzat.Name = "tileSureUzat";
-            this.tileSureUzat.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileSureUzat_ItemClick);
             // 
             // metroStyleManager1
             // 
@@ -188,8 +152,6 @@
         private DevExpress.XtraEditors.TileItem tileItemKapat;
         private DevExpress.XtraEditors.TileItem tileItemMusteriTanimlama;
         private DevExpress.XtraEditors.TileItem tileItemMusteriListesi;
-        private DevExpress.XtraEditors.TileItem tileItemMusteriOdaIliskilendir;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
-        private DevExpress.XtraEditors.TileItem tileSureUzat;
     }
 }

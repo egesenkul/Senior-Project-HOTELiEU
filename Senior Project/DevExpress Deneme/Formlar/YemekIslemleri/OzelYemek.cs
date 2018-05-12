@@ -169,6 +169,8 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 FiilComboboxYemekTuru();
                 FiilYemekSalonu();
                 FiilComboboxPersonelKategori();
+                btnVazgec.Visible = false;
+                btnGorevlendirme.Visible = false;
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {
@@ -524,5 +526,82 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             FiilComboboxYemekTuru();
         }
+
+        private void listeKatilacaklar_ItemAdded(MetroFramework.Controls.MetroListView obj)
+        {
+            try
+            {
+                if (listeKatilacaklar.Items.Count != 0)
+                {
+                    btnVazgec.Visible = true;
+                }
+                else
+                {
+                    btnVazgec.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+        }
+
+        private void listeGorevliler_ItemsRemoved(MetroFramework.Controls.MetroListView obj)
+        {
+            try
+            {
+                if (listeGorevliler.Items.Count != 0)
+                {
+                    btnGorevlendirme.Visible = true;
+                }
+                else
+                {
+                    btnGorevlendirme.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+        }
+
+        private void listeKatilacaklar_ItemsRemoved(MetroFramework.Controls.MetroListView obj)
+        {
+            try
+            {
+                if (listeGorevliler.Items.Count != 0)
+                {
+                    btnVazgec.Visible = true;
+                }
+                else
+                {
+                    btnVazgec.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+        }
+
+        private void listeGorevliler_ItemAdded(MetroFramework.Controls.MetroListView obj)
+        {
+            try
+            {
+                if (listeGorevliler.Items.Count != 0)
+                {
+                    btnGorevlendirme.Visible = true;
+                }
+                else
+                {
+                    btnGorevlendirme.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
+        }
     }
-}
+    }
+
