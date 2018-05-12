@@ -233,8 +233,6 @@
             this.Movable = false;
             this.Name = "OdaIslemleri";
             this.Resizable = false;
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.OdaIslemleri_Load);

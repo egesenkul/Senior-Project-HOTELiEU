@@ -136,8 +136,6 @@
             this.Movable = false;
             this.Name = "Form4";
             this.Resizable = false;
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
