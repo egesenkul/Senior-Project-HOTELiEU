@@ -125,6 +125,11 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 FiilYemekSalonu();
                 FiilComboboxPersonelKategori();
                 FiilComboboxYemekTuru();
+                if (Kullanici.klavye.Equals("True"))
+                {
+                    btnKlavye.Visible = true;
+                }
+                else btnKlavye.Visible = false;
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {
