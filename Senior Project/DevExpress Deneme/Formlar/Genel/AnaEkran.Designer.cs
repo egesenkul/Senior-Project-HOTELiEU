@@ -47,7 +47,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileKullaniciAdi = new DevExpress.XtraEditors.TileItem();
@@ -74,8 +73,6 @@
             this.tileControl2 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup5 = new DevExpress.XtraEditors.TileGroup();
             this.btnKlavye = new DevExpress.XtraEditors.TileItem();
-            this.tileGroup8 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem1 = new DevExpress.XtraEditors.TileItem();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
@@ -416,7 +413,6 @@
             this.tileControl2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tileControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tileControl2.Groups.Add(this.tileGroup5);
-            this.tileControl2.Groups.Add(this.tileGroup8);
             this.tileControl2.Location = new System.Drawing.Point(20, 541);
             this.tileControl2.MaxId = 4;
             this.tileControl2.Name = "tileControl2";
@@ -446,26 +442,6 @@
             this.btnKlavye.Name = "btnKlavye";
             this.btnKlavye.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem11_ItemClick);
             // 
-            // tileGroup8
-            // 
-            this.tileGroup8.Items.Add(this.tileItem1);
-            this.tileGroup8.Name = "tileGroup8";
-            // 
-            // tileItem1
-            // 
-            this.tileItem1.AppearanceItem.Normal.BackColor = System.Drawing.Color.Red;
-            this.tileItem1.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.Red;
-            this.tileItem1.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Red;
-            this.tileItem1.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem1.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement17.Text = "tileItem1";
-            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            this.tileItem1.Elements.Add(tileItemElement17);
-            this.tileItem1.Id = 3;
-            this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem1.Name = "tileItem1";
-            this.tileItem1.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem1_ItemClick_1);
-            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -494,9 +470,9 @@
             // 
             this.tileItem12.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
             this.tileItem12.AppearanceItem.Normal.Options.UseFont = true;
-            tileItemElement18.Text = "Personel İşlemleri";
-            tileItemElement18.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileItem12.Elements.Add(tileItemElement18);
+            tileItemElement17.Text = "Personel İşlemleri";
+            tileItemElement17.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileItem12.Elements.Add(tileItemElement17);
             this.tileItem12.Id = 19;
             this.tileItem12.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem12.Name = "tileItem12";
@@ -559,8 +535,6 @@
         private DevExpress.XtraEditors.TileItem tileSaat;
         private DevExpress.XtraEditors.TileGroup tileGroup7;
         private DevExpress.XtraEditors.TileItem tileToplantiIslemleri;
-        private DevExpress.XtraEditors.TileGroup tileGroup8;
-        private DevExpress.XtraEditors.TileItem tileItem1;
     }
 }
 
