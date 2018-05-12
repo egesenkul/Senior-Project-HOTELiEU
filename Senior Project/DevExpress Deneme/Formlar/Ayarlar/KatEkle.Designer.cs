@@ -44,9 +44,9 @@
             this.düzenlePersoneliGeriAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silinmişKayıtlarıGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silinmişKaydıGeriAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSecenekler = new MetroFramework.Controls.MetroButton();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.silinmişKaydıGeriAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
@@ -227,7 +227,7 @@
             this.silinmişKayıtlarıGösterToolStripMenuItem,
             this.silinmişKaydıGeriAlToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(246, 130);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(246, 108);
             // 
             // düzenlePersoneliGeriAlToolStripMenuItem
             // 
@@ -250,6 +250,14 @@
             this.silinmişKayıtlarıGösterToolStripMenuItem.Text = "Silinmiş Kayıtları Göster";
             this.silinmişKayıtlarıGösterToolStripMenuItem.Click += new System.EventHandler(this.silinmişKayıtlarıGösterToolStripMenuItem_Click);
             // 
+            // silinmişKaydıGeriAlToolStripMenuItem
+            // 
+            this.silinmişKaydıGeriAlToolStripMenuItem.Name = "silinmişKaydıGeriAlToolStripMenuItem";
+            this.silinmişKaydıGeriAlToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.silinmişKaydıGeriAlToolStripMenuItem.Text = "Silinmiş Kaydı Geri Al";
+            this.silinmişKaydıGeriAlToolStripMenuItem.Visible = false;
+            this.silinmişKaydıGeriAlToolStripMenuItem.Click += new System.EventHandler(this.silinmişKaydıGeriAlToolStripMenuItem_Click);
+            // 
             // btnSecenekler
             // 
             this.btnSecenekler.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -264,14 +272,6 @@
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = null;
-            // 
-            // silinmişKaydıGeriAlToolStripMenuItem
-            // 
-            this.silinmişKaydıGeriAlToolStripMenuItem.Name = "silinmişKaydıGeriAlToolStripMenuItem";
-            this.silinmişKaydıGeriAlToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
-            this.silinmişKaydıGeriAlToolStripMenuItem.Text = "Silinmiş Kaydı Geri Al";
-            this.silinmişKaydıGeriAlToolStripMenuItem.Visible = false;
-            this.silinmişKaydıGeriAlToolStripMenuItem.Click += new System.EventHandler(this.silinmişKaydıGeriAlToolStripMenuItem_Click);
             // 
             // KatEkle
             // 

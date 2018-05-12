@@ -144,6 +144,16 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                         cmd2.ExecuteNonQuery();
                         connection2.Close();
 
+                        // odaHareket tablosunu güncelle 
+                        SqlConnection connection3 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+
+                        SqlCommand cmd3 = new SqlCommand();
+                        cmd3.Connection = connection3;
+                        connection3.Open();
+                        cmd3.CommandText = "update OdaHareket set Katno='" + txtKatAdi.Text + "' where Katno='" + metroListView1.SelectedItems[0].Text + "'";
+                        cmd3.ExecuteNonQuery();
+                        connection3.Close();
+
                         if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                         {
                             HotelWarningForm.Show(Localization.KatDuzenlemeBasarili, Localization.Tamam, 0);
