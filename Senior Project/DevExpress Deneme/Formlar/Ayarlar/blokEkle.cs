@@ -97,7 +97,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                 lblBlokListesi.Text = Localization.lblBlokListesi;
                 btnKlavye.Text = Localization.btnKlavyeAc;
                 btnSecenekler.Text = Localization.btnSecenekler;
-                btnTemizle.Text = Localization.lblYetki;
+                btnTemizle.Text = Localization.btnTemizle;
                 btnKapat.Text = Localization.btnIptal;
                 btnKaydet.Text = Localization.btnKaydet;
                 düzenlePersoneliGeriAlToolStripMenuItem.Text = Localization.Duzenle;
