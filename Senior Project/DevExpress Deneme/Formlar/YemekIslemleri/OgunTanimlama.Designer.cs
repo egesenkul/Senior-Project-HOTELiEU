@@ -53,7 +53,7 @@
             this.lblBitisZamani = new MetroFramework.Controls.MetroLabel();
             this.lbBaslangicZamani = new MetroFramework.Controls.MetroLabel();
             this.btnTemizle = new MetroFramework.Controls.MetroButton();
-            this.btnKlavyeAc = new MetroFramework.Controls.MetroButton();
+            this.btnKlavye = new MetroFramework.Controls.MetroButton();
             this.btnKapat = new MetroFramework.Controls.MetroButton();
             this.btnKaydet = new MetroFramework.Controls.MetroButton();
             this.cmbYemekSalonu = new MetroFramework.Controls.MetroComboBox();
@@ -62,12 +62,12 @@
             this.lblOgunAdi = new MetroFramework.Controls.MetroLabel();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtSonGun.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtSonGun.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtOgunBit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtSonGun.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtOgunBit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtOgunBas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtOgunBit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtOgunBas.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtOgunBas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +95,7 @@
             this.metroPanel1.Controls.Add(this.lblBitisZamani);
             this.metroPanel1.Controls.Add(this.lbBaslangicZamani);
             this.metroPanel1.Controls.Add(this.btnTemizle);
-            this.metroPanel1.Controls.Add(this.btnKlavyeAc);
+            this.metroPanel1.Controls.Add(this.btnKlavye);
             this.metroPanel1.Controls.Add(this.btnKapat);
             this.metroPanel1.Controls.Add(this.btnKaydet);
             this.metroPanel1.Controls.Add(this.cmbYemekSalonu);
@@ -123,16 +123,10 @@
             this.dtSonGun.Location = new System.Drawing.Point(871, 63);
             this.dtSonGun.Margin = new System.Windows.Forms.Padding(2);
             this.dtSonGun.Name = "dtSonGun";
-            // 
-            // 
-            // 
             this.dtSonGun.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtSonGun.Properties.Appearance.Options.UseFont = true;
             this.dtSonGun.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtSonGun.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtSonGun.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -170,16 +164,10 @@
             this.dtOgunBit.Location = new System.Drawing.Point(871, 21);
             this.dtOgunBit.Margin = new System.Windows.Forms.Padding(2);
             this.dtOgunBit.Name = "dtOgunBit";
-            // 
-            // 
-            // 
             this.dtOgunBit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtOgunBit.Properties.Appearance.Options.UseFont = true;
             this.dtOgunBit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtOgunBit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtOgunBit.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -339,16 +327,10 @@
             this.dtOgunBas.Location = new System.Drawing.Point(346, 65);
             this.dtOgunBas.Margin = new System.Windows.Forms.Padding(2);
             this.dtOgunBas.Name = "dtOgunBas";
-            // 
-            // 
-            // 
             this.dtOgunBas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtOgunBas.Properties.Appearance.Options.UseFont = true;
             this.dtOgunBas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtOgunBas.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtOgunBas.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -505,18 +487,18 @@
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseSelectable = true;
             // 
-            // btnKlavyeAc
+            // btnKlavye
             // 
-            this.btnKlavyeAc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnKlavyeAc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnKlavyeAc.Location = new System.Drawing.Point(411, 594);
-            this.btnKlavyeAc.Name = "btnKlavyeAc";
-            this.btnKlavyeAc.Size = new System.Drawing.Size(370, 36);
-            this.btnKlavyeAc.TabIndex = 22;
-            this.btnKlavyeAc.Text = "Klavye Aç";
-            this.btnKlavyeAc.UseCustomBackColor = true;
-            this.btnKlavyeAc.UseSelectable = true;
-            this.btnKlavyeAc.Click += new System.EventHandler(this.metroButton3_Click);
+            this.btnKlavye.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnKlavye.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnKlavye.Location = new System.Drawing.Point(411, 594);
+            this.btnKlavye.Name = "btnKlavye";
+            this.btnKlavye.Size = new System.Drawing.Size(370, 36);
+            this.btnKlavye.TabIndex = 22;
+            this.btnKlavye.Text = "Klavye Aç";
+            this.btnKlavye.UseCustomBackColor = true;
+            this.btnKlavye.UseSelectable = true;
+            this.btnKlavye.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // btnKapat
             // 
@@ -660,7 +642,7 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton btnTemizle;
-        private MetroFramework.Controls.MetroButton btnKlavyeAc;
+        private MetroFramework.Controls.MetroButton btnKlavye;
         private MetroFramework.Controls.MetroButton btnKapat;
         private MetroFramework.Controls.MetroButton btnKaydet;
         private MetroFramework.Controls.MetroComboBox cmbYemekSalonu;

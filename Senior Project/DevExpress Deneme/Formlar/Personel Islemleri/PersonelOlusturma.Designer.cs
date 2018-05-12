@@ -578,8 +578,6 @@
             this.Movable = false;
             this.Name = "PersonelOlusturma";
             this.Resizable = false;
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PersonelOlusturma_Load);
             this.metroPanel1.ResumeLayout(false);

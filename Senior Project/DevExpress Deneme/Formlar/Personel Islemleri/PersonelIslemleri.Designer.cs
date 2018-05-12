@@ -148,8 +148,6 @@
             this.Movable = false;
             this.Name = "PersonelIslemleri";
             this.Resizable = false;
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PersonelIslemleri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();

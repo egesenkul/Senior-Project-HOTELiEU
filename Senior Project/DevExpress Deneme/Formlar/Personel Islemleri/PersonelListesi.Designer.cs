@@ -278,8 +278,6 @@
             this.Movable = false;
             this.Name = "PersonelListesi";
             this.Resizable = false;
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PersonelListesi_Load);

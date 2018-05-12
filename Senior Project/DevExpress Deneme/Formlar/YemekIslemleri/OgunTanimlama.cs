@@ -96,7 +96,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 btnGorevlendir.Text = Localization.btnGorevlendir;
                 btnGorevlendirme.Text = Localization.btnGorevlendirme;
                 btnTemizle.Text = Localization.btnTemizle;
-                btnKlavyeAc.Text = Localization.btnKlavyeAc;
+                btnKlavye.Text = Localization.btnKlavyeAc;
                 btnKaydet.Text = Localization.btnKaydet;
                 btnKapat.Text = Localization.btnKapat;
             }
