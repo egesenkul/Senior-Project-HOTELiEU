@@ -158,6 +158,9 @@ namespace DevExpress_Deneme
                     if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7)
                     {
                         metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+                        metroPanel1.BackColor = Color.Black;
+                        panel1.BackColor = Color.Black;
+                        panel2.BackColor = Color.Black;
                         ortakFormIslemleri.LabelRenkDegistir(Color.White, lblKullaniciAdi, lblSifre);
                         ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtKullaniciAdi, txtSifre);
                         ortakFormIslemleri.CheckBoxRenkDegistir(Color.White, chHatirla);
@@ -218,7 +221,6 @@ namespace DevExpress_Deneme
         {
             try
             {
-                //SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-R5FHQ20;Initial Catalog=OtelOdev;Persist Security Info=True;User ID=sa;Password=14101410.,");
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -302,7 +304,14 @@ namespace DevExpress_Deneme
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("osk.exe");
+            try
+            {
+                ortakFormIslemleri.KlavyeAc();
+            }
+            catch (Exception ex)
+            {
+                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
+            }
         }
 
         private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)
