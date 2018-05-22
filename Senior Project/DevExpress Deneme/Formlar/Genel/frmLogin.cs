@@ -244,12 +244,12 @@ namespace DevExpress_Deneme
                     Kullanici.yetki = Dr["Yetki"].ToString();
                     if (Dr["Sil"].ToString()== "True")
                     {
-                        personelSilinmis = true;
-                        girisDogru = false;
+                        girisDogru = true;
                     }
                     else
                     {
-                        girisDogru = true;
+                        personelSilinmis = true;
+                        girisDogru = false;
                     }
                 }
                 connection.Close();
