@@ -91,6 +91,7 @@
             // 
             // txtAciklama
             // 
+            this.txtAciklama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -105,7 +106,7 @@
             this.txtAciklama.CustomButton.Visible = false;
             this.txtAciklama.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtAciklama.Lines = new string[0];
-            this.txtAciklama.Location = new System.Drawing.Point(1038, 277);
+            this.txtAciklama.Location = new System.Drawing.Point(896, 335);
             this.txtAciklama.MaxLength = 32767;
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";

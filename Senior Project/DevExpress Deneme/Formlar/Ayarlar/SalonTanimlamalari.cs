@@ -114,7 +114,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             {
                 lblSalonAdi.Text = Localization.lblSalonAdi;
                 lblSalonAdresi.Text = Localization.lblSalonAdresi;
-                lblSalonBulunduguBlok.Text = Localization.lblSalonBulunduguBlok;
+                lblSalonBulunduguBlok.Text = Localization.lblSalonBulunduguBlok+":";
                 btnKlavye.Text = Localization.btnKlavyeAc;
                 btnTemizle.Text = Localization.btnTemizle;
                 btnIptal.Text = Localization.btnIptal;
