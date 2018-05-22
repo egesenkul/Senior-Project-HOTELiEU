@@ -163,7 +163,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 dtYemekTarihi.EditValue = DateTime.Now;
                 dtYemekTarihi.Properties.VistaDisplayMode = DefaultBoolean.True;
                 dtYemekTarihi.Properties.VistaEditTime = DefaultBoolean.True;
-                dtYemekBitis.EditValue = DateTime.Now;
+                dtYemekBitis.EditValue = DateTime.Now.AddHours(2);
                 dtYemekBitis.Properties.VistaDisplayMode = DefaultBoolean.True;
                 dtYemekBitis.Properties.VistaEditTime = DefaultBoolean.True;
                 FiilComboboxYemekTuru();
@@ -440,6 +440,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             try
             {
+                cmbYemekSalonu.Items.Clear();
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 

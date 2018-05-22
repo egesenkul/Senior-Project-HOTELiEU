@@ -157,7 +157,7 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
         {
             try
             {
-                if (!String.IsNullOrEmpty(txtEtkinlikAdı.Text) && !String.IsNullOrEmpty(txtEtkinlikAciklama.Text) && Convert.ToDateTime(dtEtkinlik.EditValue) > DateTime.Now.AddMilliseconds(-1))
+                if (!String.IsNullOrEmpty(txtEtkinlikAdı.Text) && !String.IsNullOrEmpty(txtEtkinlikAciklama.Text))
                 {
                     return true;
                 }

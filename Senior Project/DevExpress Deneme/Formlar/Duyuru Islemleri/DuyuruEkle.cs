@@ -439,7 +439,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
-                string tempdatetime = DateTime.Now.ToString();
+                string tempdatetime = Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd hh:mm:ss");
 
                 cmd.Connection = connection;
                 connection.Open();

@@ -207,7 +207,7 @@ namespace DevExpress_Deneme
             try
             {
                 tileSaat.Text = DateTime.Now.ToShortTimeString();
-                tileTarih.Text = DateTime.Now.Date.ToString().Substring(0, 8);
+                tileTarih.Text = DateTime.Now.Date.ToString().Substring(0, 10);
                 //TileItem'de kullanıcı adı ve otel adının yazması için
                 tileKullaniciAdi.Text = Kullanici.isim + " " + Kullanici.soyisim;
             }

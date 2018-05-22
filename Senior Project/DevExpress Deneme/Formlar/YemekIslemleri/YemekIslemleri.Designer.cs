@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
@@ -69,8 +69,8 @@
             // 
             this.tileGroup2.Items.Add(this.tileOgunTanimla);
             this.tileGroup2.Items.Add(this.tileOzelYemekTanimla);
-            this.tileGroup2.Items.Add(this.tileKapat);
             this.tileGroup2.Items.Add(this.tileYemekListesi);
+            this.tileGroup2.Items.Add(this.tileKapat);
             this.tileGroup2.Name = "tileGroup2";
             // 
             // tileOgunTanimla
@@ -105,6 +105,7 @@
             this.tileOzelYemekTanimla.Id = 1;
             this.tileOzelYemekTanimla.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileOzelYemekTanimla.Name = "tileOzelYemekTanimla";
+            this.tileOzelYemekTanimla.Visible = false;
             this.tileOzelYemekTanimla.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem2_ItemClick);
             // 
             // tileKapat
@@ -122,9 +123,9 @@
             this.tileKapat.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileKapat.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileKapat.AppearanceItem.Pressed.Options.UseBorderColor = true;
-            tileItemElement3.Text = "Kapat";
-            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileKapat.Elements.Add(tileItemElement3);
+            tileItemElement4.Text = "Kapat";
+            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileKapat.Elements.Add(tileItemElement4);
             this.tileKapat.Id = 2;
             this.tileKapat.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileKapat.Name = "tileKapat";
@@ -134,9 +135,9 @@
             // 
             this.tileYemekListesi.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
             this.tileYemekListesi.AppearanceItem.Normal.Options.UseFont = true;
-            tileItemElement4.Text = "Yemek Listesi";
-            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileYemekListesi.Elements.Add(tileItemElement4);
+            tileItemElement3.Text = "Yemek Listesi";
+            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileYemekListesi.Elements.Add(tileItemElement3);
             this.tileYemekListesi.Id = 3;
             this.tileYemekListesi.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileYemekListesi.Name = "tileYemekListesi";
