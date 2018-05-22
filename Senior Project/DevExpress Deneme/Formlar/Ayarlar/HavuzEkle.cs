@@ -58,6 +58,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     ortakFormIslemleri.TextBoxRenkDegistir(Color.White, txtisim);
                     ortakFormIslemleri.ListViewRenkDegistir(Color.Black, ListeHavuzlar);
                 }
+                mod=0;
                 HavuzListesiGuncelleme();
                 MultiLanguage();
                 this.Text = Localization.havuzAyarlari;
@@ -181,7 +182,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
                     }
                     else
                     {
-                        cmd.CommandText = "Insert into Havuzlar values('" + txtisim.Text + "''" + DateTime.Now + "',1,'" + jsonUrl.Text + "')";
+                        cmd.CommandText = "Insert into Havuzlar values('" + txtisim.Text + "''" + DateTime.Now + "',1,'" + jsonUrl.Text + "',0)";
                         cmd.ExecuteNonQuery();
                         connection.Close();
                         txtisim.Clear();

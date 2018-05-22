@@ -85,7 +85,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             try
             {
                 cmbKat.Items.Clear();
-                cmbKat.Items.Add("Tümü");
+                cmbKat.Items.Add(Localization.Tümü);
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -383,31 +383,31 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 }
                 else if ((!string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü)) && string.Equals(cmbOdaBlok.SelectedItem.ToString(), (Localization.Tümü)) && string.Equals(cmbOdaTipi.SelectedItem.ToString(), (Localization.Tümü)))
                 {
-                    OdaListesiGuncelle("select * from Oda where katAdi ='" + cmbKat.SelectedItem.ToString() + "'");
+                    OdaListesiGuncelle("select * from Oda where katAdi ='" + cmbKat.SelectedIndex.ToString() + "'");
                 }
                 else if (string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaBlok.SelectedItem.ToString(), (Localization.Tümü)) && string.Equals(cmbOdaTipi.SelectedItem.ToString(), (Localization.Tümü)))
                 {
-                    OdaListesiGuncelle("select * from Oda where blok ='" + cmbOdaBlok.SelectedItem.ToString() + "'");
+                    OdaListesiGuncelle("select * from Oda where blok ='" + cmbOdaBlok.SelectedIndex.ToString() + "'");
                 }
                 else if (string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbOdaBlok.SelectedItem.ToString(), (Localization.Tümü)) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), (Localization.Tümü)))
                 {
-                    OdaListesiGuncelle("select * from Oda where odaTip ='" + cmbOdaTipi.SelectedItem.ToString() + "'");
+                    OdaListesiGuncelle("select * from Oda where odaTip ='" + cmbOdaTipi.SelectedIndex.ToString() + "'");
                 }
                 else if (!string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaBlok.SelectedItem.ToString(), (Localization.Tümü)) && string.Equals(cmbOdaTipi.SelectedItem.ToString(), (Localization.Tümü)))
                 {
-                    OdaListesiGuncelle("select * from Oda where katAdi ='" + cmbKat.SelectedItem.ToString() + "'and blok='" + cmbOdaBlok.SelectedItem.ToString() + "'");
+                    OdaListesiGuncelle("select * from Oda where katAdi ='" + cmbKat.SelectedIndex.ToString() + "'and blok='" + cmbOdaBlok.SelectedIndex.ToString() + "'");
                 }
                 else if (!string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && string.Equals(cmbOdaBlok.SelectedItem.ToString(), (Localization.Tümü)) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), (Localization.Tümü)))
                 {
-                    OdaListesiGuncelle("select * from Oda where katAdi ='" + cmbKat.SelectedItem.ToString() + "'and odaTip='" + cmbOdaTipi.SelectedItem.ToString() + "'");
+                    OdaListesiGuncelle("select * from Oda where katAdi ='" + cmbKat.SelectedIndex.ToString() + "'and odaTip='" + cmbOdaTipi.SelectedIndex.ToString() + "'");
                 }
                 else if (string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaBlok.SelectedItem.ToString(), (Localization.Tümü)) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), (Localization.Tümü)))
                 {
-                    OdaListesiGuncelle("select * from Oda where blok ='" + cmbOdaBlok.SelectedItem.ToString() + "'and odaTip='" + cmbOdaTipi.SelectedItem.ToString() + "'");
+                    OdaListesiGuncelle("select * from Oda where blok ='" + cmbOdaBlok.SelectedIndex.ToString() + "'and odaTip='" + cmbOdaTipi.SelectedIndex.ToString() + "'");
                 }
-                else if (!string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaBlok.SelectedItem.ToString(), (Localization.Tümü)) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), (Localization.Tümü)))
+                else if (!string.Equals(cmbKat.SelectedItem.ToString(), Localization.Tümü) && !string.Equals(cmbOdaBlok.SelectedIndex.ToString(), (Localization.Tümü)) && !string.Equals(cmbOdaTipi.SelectedItem.ToString(), (Localization.Tümü)))
                 {
-                    OdaListesiGuncelle("select * from Oda where katAdi ='" + cmbKat.SelectedItem.ToString() + "'and odaTip='" + cmbOdaTipi.SelectedItem.ToString() + "' and blok='" + cmbOdaBlok.SelectedItem.ToString() + "'");
+                    OdaListesiGuncelle("select * from Oda where katAdi ='" + cmbKat.SelectedIndex.ToString() + "'and odaTip='" + cmbOdaTipi.SelectedIndex.ToString() + "' and blok='" + cmbOdaBlok.SelectedIndex.ToString() + "'");
                 }
             }
             catch (Exception ex)

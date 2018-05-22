@@ -133,6 +133,7 @@
             this.tileItem1.Id = 7;
             this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Large;
             this.tileItem1.Name = "tileItem1";
+            this.tileItem1.Visible = false;
             this.tileItem1.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem1_ItemClick_1);
             // 
             // metroStyleManager1

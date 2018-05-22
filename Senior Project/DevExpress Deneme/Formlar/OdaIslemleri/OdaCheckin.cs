@@ -435,7 +435,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
-                if (CheckinKontrol() && TarihKontrol() && HareketKontrol(cmbMusteriAdi.SelectedItem.ToString(),Convert.ToDateTime(dtGirisTarihi.EditValue),Convert.ToDateTime(dtCikisTarihi.EditValue)))
+                if (CheckinKontrol() && TarihKontrol() && !HareketKontrol(cmbMusteriAdi.SelectedItem.ToString(),Convert.ToDateTime(dtGirisTarihi.EditValue),Convert.ToDateTime(dtCikisTarihi.EditValue)))
                 {
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                     SqlCommand cmd = new SqlCommand();

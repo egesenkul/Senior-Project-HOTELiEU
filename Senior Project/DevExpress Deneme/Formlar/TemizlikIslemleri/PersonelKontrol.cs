@@ -115,6 +115,8 @@ namespace Otel_Uygulamasi.Formlar.TemizlikIslemleri
                 metroGrid1.Columns[6].Visible = false;
                 metroGrid1.Columns[7].Visible = false;
                 metroGrid1.Columns[8].HeaderText = Localization.OdaGrubu;
+                metroGrid1.Columns[9].Visible = false;
+                metroGrid1.Columns[10].Visible = false;
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 if (dtRecord.Rows.Count == 0)
