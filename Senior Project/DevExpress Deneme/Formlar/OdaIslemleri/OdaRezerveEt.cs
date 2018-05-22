@@ -457,11 +457,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 Dr3 = cmd3.ExecuteReader();
                 if (Dr3.HasRows)
                 {
-                    return true;
+                    return false;
                 }
 
                 connection3.Close();
-                return false;
+                return true;
             }
             catch (Exception ex)
             {

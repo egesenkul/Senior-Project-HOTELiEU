@@ -116,10 +116,10 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 dtOgunBas.EditValue = DateTime.Now;
                 dtOgunBas.Properties.VistaDisplayMode = DefaultBoolean.True;
                 dtOgunBas.Properties.VistaEditTime = DefaultBoolean.True;
-                dtSonGun.EditValue = DateTime.Now;
+                dtSonGun.EditValue = DateTime.Now.AddDays(3);
                 dtSonGun.Properties.VistaDisplayMode = DefaultBoolean.True;
                 dtSonGun.Properties.VistaEditTime = DefaultBoolean.True;
-                dtOgunBit.EditValue = DateTime.Now;
+                dtOgunBit.EditValue = DateTime.Now.AddHours(1);
                 dtOgunBit.Properties.VistaDisplayMode = DefaultBoolean.True;
                 dtOgunBit.Properties.VistaEditTime = DefaultBoolean.True;
                 FiilYemekSalonu();
@@ -194,6 +194,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             try
             {
+                cmbYemekSalonu.Items.Clear();
                 SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                 SqlCommand cmd = new SqlCommand();
 
@@ -394,7 +395,6 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             try
             {
-
                 if (OgunKontrol())
                 {
                     //PersonelYemekGorevli ve Yemek tablosune veri eklenecek
@@ -408,12 +408,12 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = connection;
                         connection.Open();
-                        cmd.CommandText = "Insert into Yemek values ('" + txtOgunAdi.Text + "','" + txtAciklama.Text + "' , '" + Convert.ToDateTime(GeciciTarihBaslangic) + "' , '" + Convert.ToDateTime(GeciciTarihBitis) + "' , '" + 0 + "' , '" + cmbYemekSalonu.SelectedItem.ToString() + "' , '" + cmbYemekTürü.SelectedItem.ToString() + "' , '" + "YOK" + "' , '" + "Herkes" + "','" + 1 + ") ";
+                        cmd.CommandText = "Insert into Yemek values ('" + txtOgunAdi.Text + "','" + txtAciklama.Text + "' , '" + Convert.ToDateTime(GeciciTarihBaslangic).ToString("yyyy-MM-dd hh:mm:ss") + "' , '" + Convert.ToDateTime(GeciciTarihBitis).ToString("yyyy-MM-dd hh:mm:ss") + "' , '" + 0 + "' , '" + cmbYemekSalonu.SelectedItem.ToString() + "' , '" + "YOK" + "' , '" + "Herkes" + "','" + 1 + "','"+(Convert.ToInt32(cmbYemekTürü.SelectedIndex)+1)+"'"+") ";
                         cmd.ExecuteNonQuery();
                         //tüm personeller için döngü yap 
                         for (int i = 0; i < listeGorevliler.Items.Count; i++)
                         {
-                            cmd.CommandText = "Insert into PersonelYemekGorevli values ('" + txtOgunAdi.Text + "','" + Convert.ToDateTime(GeciciTarihBaslangic) + "' , '" + listeGorevliler.Items[i].Text + "') ";
+                            cmd.CommandText = "Insert into PersonelYemekGorevli values ('" + txtOgunAdi.Text + "','" + Convert.ToDateTime(GeciciTarihBaslangic).ToString("yyyy-MM-dd hh:mm:ss") + "' , '" + listeGorevliler.Items[i].Text + "') ";
                             cmd.ExecuteNonQuery();
 
                         }

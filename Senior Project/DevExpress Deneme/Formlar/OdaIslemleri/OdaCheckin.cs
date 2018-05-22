@@ -20,6 +20,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         public List<int> rezerveOdalar = new List<int>();
         public List<int> checkinOdalar = new List<int>();
         List<Musteri> musteriListesi = new List<Musteri>();
+        public string mail;
 
 
         public OdaCheckin()
@@ -65,7 +66,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         }
 
 
-         public void FiilComboboxKat()
+        public void FiilComboboxKat()
         {
             cmbKat.Items.Clear();
             cmbKat.Items.Add(Localization.Tümü);
@@ -137,28 +138,36 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         private void MusteriActiveGuncelle()
         {
             //Rıza'nn mobil programda giriş kontrolü yapabilmesi için müşteri tablolarında bulunan müşteriactive column update et 
-            if (CheckinKontrol() && TarihKontrol())
-            {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
 
-                string tempdatetime = DateTime.Now.ToString();
+            SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            SqlCommand cmd = new SqlCommand();
 
-                cmd.Connection = connection;
-                connection.Open();
-                if (string.Equals(musteriListesi[cmbMusteriAdi.SelectedIndex].tablo, "riza"))
-                {
-                    //DenemeMusteriler tablosunda update işlemi yap
-                    cmd.CommandText = "update DenemeMusteriler set musteriActive='1' where MusteriAdi='" + musteriListesi[cmbMusteriAdi.SelectedIndex].Isim + "' and MusteriSoyadi='" + musteriListesi[cmbMusteriAdi.SelectedIndex].soyIsim + "' and MusteriMail='" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "'";
-                }
-                else
-                {
-                    cmd.CommandText = "update Musteriler set musteriActive='1' where musteriAdi='" + musteriListesi[cmbMusteriAdi.SelectedIndex].Isim + "' and musteriSoyadi='" + musteriListesi[cmbMusteriAdi.SelectedIndex].soyIsim + "' and musteriMail='" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "'";
-                }
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
+            string tempdatetime = DateTime.Now.ToString();
 
+            cmd.Connection = connection;
+            connection.Open();
+
+            //DenemeMusteriler tablosunda update işlemi yap
+            cmd.CommandText = "update DenemeMusteriler set musteriActive='1' where MusteriMail= " + "'" + mail + "'";
+
+            cmd.ExecuteNonQuery();
+            connection.Close();
+
+
+            SqlConnection connection2 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            SqlCommand cmd2 = new SqlCommand();
+
+            string tempdatetime2 = DateTime.Now.ToString();
+
+            cmd2.Connection = connection2;
+            connection2.Open();
+
+            //DenemeMusteriler tablosunda update işlemi yap
+
+            cmd2.CommandText = "update Musteriler set musteriActive='1' where musteriMail='" + mail + "'";
+
+            cmd2.ExecuteNonQuery();
+            connection2.Close();
         }
 
         private void OdaListesiGuncelle(string sorgu)
@@ -301,11 +310,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 Dr3 = cmd3.ExecuteReader();
                 if (Dr3.HasRows)
                 {
-                    return true;
+                    return false;
                 }
 
                 connection3.Close();
-                return false;
+                return true;
             }
             catch (Exception ex)
             {
@@ -435,7 +444,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
-                if (CheckinKontrol() && TarihKontrol() && !HareketKontrol(cmbMusteriAdi.SelectedItem.ToString(),Convert.ToDateTime(dtGirisTarihi.EditValue),Convert.ToDateTime(dtCikisTarihi.EditValue)))
+                if (CheckinKontrol() && TarihKontrol() && !HareketKontrol(cmbMusteriAdi.SelectedItem.ToString(), Convert.ToDateTime(dtGirisTarihi.EditValue), Convert.ToDateTime(dtCikisTarihi.EditValue)))
                 {
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                     SqlCommand cmd = new SqlCommand();
@@ -467,12 +476,29 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 if (ListeRezerveOdalar.Items.Count > 0 && TarihKontrol() && HareketKontrol(cmbMusteriAdi.SelectedItem.ToString(), Convert.ToDateTime(dtGirisTarihi.EditValue), Convert.ToDateTime(dtCikisTarihi.EditValue)))
                 {
+                    SqlConnection connection2 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    SqlCommand cmd2 = new SqlCommand();
 
                     string[] parcalar;
                     parcalar = ListeRezerveOdalar.SelectedItems[0].Text.Split(' ');
                     //parcalar[0]=oda bilgisi
                     //parcalar[1]=müşteri adı
                     //parcalar[2]=müşteri soyadı
+                    cmd2.CommandText = "select mail from OdaHareket where musteriPersonel='" + parcalar[1] + " " + parcalar[2] + "'";
+                    cmd2.Connection = connection2;
+                    cmd2.CommandType = CommandType.Text;
+
+                    //isim isim soyisim oda oda için
+                    SqlDataReader Dr;
+
+                    connection2.Open();
+                    Dr = cmd2.ExecuteReader();
+                    while (Dr.Read())
+                    {
+                        mail = Dr["mail"].ToString();
+                    }
+
+                    connection2.Close();
 
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                     SqlCommand cmd = new SqlCommand();
@@ -482,43 +508,44 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                     cmd.Connection = connection;
                     connection.Open();
                     //isim soyisim oda oda için
-                    cmd.CommandText = "update OdaHareket set islemTipi='Check-in' where OdaNo='" + parcalar[0] + " " + parcalar[1] + "'and musteriPersonel='" + parcalar[2] + " " + parcalar[3] + "' ";
+                    cmd.CommandText = "update OdaHareket set islemTipi='Check-in' where OdaNo='" + parcalar[0] + "'and mail='" + mail + "'";
+
 
                     cmd.ExecuteNonQuery();
                     connection.Close();
 
-                    SqlConnection connection2 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                    SqlCommand cmd2 = new SqlCommand();
+                    //SqlConnection connection2 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    //SqlCommand cmd2 = new SqlCommand();
 
-                    cmd2.Connection = connection2;
-                    connection2.Open();
-                    //isim isim soyisim oda oda için
-                    cmd2.CommandText = "update OdaHareket set islemTipi='Check-in' where OdaNo='" + parcalar[0] + " " + parcalar[1] + "'and musteriPersonel='" + parcalar[2] + " " + parcalar[3] + " " + parcalar[4] + "' ";
+                    //cmd2.Connection = connection2;
+                    //connection2.Open();
+                    ////isim isim soyisim oda oda için
+                    //cmd2.CommandText = "update OdaHareket set islemTipi='Check-in' where OdaNo='" + parcalar[0]  + "'and musteriPersonel='"  + parcalar[1]+" "+parcalar[2] + " " + parcalar[3] + " " + parcalar[4] + "' ";
 
-                    cmd2.ExecuteNonQuery();
-                    connection2.Close();
+                    //cmd2.ExecuteNonQuery();
+                    //connection2.Close();
 
-                    SqlConnection connection3 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                    SqlCommand cmd3 = new SqlCommand();
+                    //SqlConnection connection3 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    //SqlCommand cmd3 = new SqlCommand();
 
-                    cmd3.Connection = connection3;
-                    connection3.Open();
-                    //isim soyisim oda için
-                    cmd3.CommandText = "update OdaHareket set islemTipi='Check-in' where OdaNo='" + parcalar[0] + "'and musteriPersonel='" + parcalar[2] + " " + parcalar[3] + " " + parcalar[4] + "' ";
+                    //cmd3.Connection = connection3;
+                    //connection3.Open();
+                    ////isim soyisim oda için
+                    //cmd3.CommandText = "update OdaHareket set islemTipi='Check-in' where OdaNo='" + parcalar[0] + "'and musteriPersonel='" + parcalar[2] + " " + parcalar[3] + " " + parcalar[4] + "' ";
 
-                    cmd3.ExecuteNonQuery();
-                    connection3.Close();
+                    //cmd3.ExecuteNonQuery();
+                    //connection3.Close();
 
-                    SqlConnection connection4 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                    SqlCommand cmd4 = new SqlCommand();
+                    //SqlConnection connection4 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                    //SqlCommand cmd4 = new SqlCommand();
 
-                    cmd4.Connection = connection4;
-                    connection4.Open();
-                    //isim isim soyisim oda için
-                    cmd4.CommandText = "update OdaHareket set islemTipi='Check-in' where OdaNo='" + parcalar[0] + " " + parcalar[1] + "'and musteriPersonel='" + parcalar[2] + " " + parcalar[3] + " " + parcalar[4] + "' ";
+                    //cmd4.Connection = connection4;
+                    //connection4.Open();
+                    ////isim isim soyisim oda için
+                    //cmd4.CommandText = "update OdaHareket set islemTipi='Check-in' where OdaNo='" + parcalar[0] + " " + parcalar[1] + "'and musteriPersonel='" + parcalar[2] + " " + parcalar[3] + " " + parcalar[4] + "' ";
 
-                    cmd4.ExecuteNonQuery();
-                    connection4.Close();
+                    //cmd4.ExecuteNonQuery();
+                    //connection4.Close();
                     MusteriActiveGuncelle();
 
                     if (Kullanici.BilgilendirmeFormlari.Equals("True"))
@@ -537,6 +564,6 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
-        
+
     }
 }
