@@ -95,19 +95,11 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
         {
             try
             {
-                lblGorevliPersoneller.Text = Localization.lblGorevliPersoneller;
-                lblPersonelGorevlendir.Text = Localization.personelGorevlendir;
-                lblPersonelKategorisi.Text = Localization.lblPersonelGrubu;
-                lblPersonelSecimi.Text = Localization.personelSecimi;
                 lblYemekSalonu.Text = Localization.yemekSalonu;
                 lblYemekTuru.Text = Localization.yemekTuru;
                 btnFiltrele.Text = Localization.btnFiltrele;
-                btnGorevlendir.Text = Localization.btnGorevlendir;
-                btnGorevlendirme.Text = Localization.btnGorevlendirme;
                 btnTemizle.Text = Localization.btnTemizle;
                 btnKapat.Text = Localization.btnKapat;
-                btnSecenekler.Text = Localization.btnSecenekler;
-                btnOnayla.Text = Localization.btnOnayla;
             }
             catch (Exception ex)
             {
@@ -124,66 +116,17 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 this.Text = Localization.tileYemekListesi;
                 FiilYemekTuru();
                 silinmişPersoneliGeriAlToolStripMenuItem.Visible = false;
-                ListeGörevliler.Visible = false;
-                lblGorevliPersoneller.Visible = false;
-                lblGorevliPersoneller.Enabled = false;
-                lblPersonelGorevlendir.Visible = false;
-                lblPersonelGorevlendir.Enabled = false;
-                lblPersonelKategorisi.Visible = false;
-                lblPersonelKategorisi.Enabled = false;
-                lblPersonelSecimi.Visible = false;
-                lblPersonelSecimi.Enabled = false;
-                cmbPersonelKategorisi.Visible = false;
-                cmbPersonelKategorisi.Enabled = false;
-                btnGorevlendir.Visible = false;
-                btnGorevlendir.Enabled = false;
-                btnGorevlendirme.Visible = false;
-                btnGorevlendirme.Enabled = false;
-                listeGorevlenecekler.Visible = false;
-                listeGorevlenecekler.Enabled = false;
-                listePersonel.Visible = false;
-                listePersonel.Enabled = false;
-                btnOnayla.Enabled = false;
-                btnOnayla.Visible = false;
                 Yetki();
                 this.StyleManager = metroStyleManager1;
                 if (Convert.ToInt32(DateTime.Now.Hour.ToString()) < 7 && Kullanici.otoGeceModu.Equals("True"))
                 {
                     metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
-                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblYemekTuru, lblYemekSalonu, lblGorevliPersoneller, lblPersonelGorevlendir, lblPersonelKategorisi, lblPersonelSecimi);
-                    ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray, cmbPersonelKategorisi, cmbYemekSalonu, cmbYemekTur);
-                    ortakFormIslemleri.ListViewRenkDegistir(Color.Black, listeGorevlenecekler, ListeGörevliler, listePersonel);
+                    ortakFormIslemleri.LabelRenkDegistir(Color.White, lblYemekTuru, lblYemekSalonu);
+                    ortakFormIslemleri.ComboBoxRenkDegistir(Color.Gray,  cmbYemekSalonu, cmbYemekTur);
+                    ortakFormIslemleri.ListViewRenkDegistir(Color.Black);
                 }
                 metroDateTime1.Value = DateTime.Now.AddDays(-1);
                 btnFiltrele.PerformClick();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-        private void GorevliListeGuncelle()
-        {
-            try
-            {
-                string tarih = Convert.ToDateTime(metroGrid1.SelectedCells[2].Value).ToString("yyyy-MM-dd");
-
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-                ListeGörevliler.Items.Clear();
-                SqlDataReader Dr;
-                cmd.CommandText = "select * from PersonelYemekGorevli where YemekAdı = '" + metroGrid1.SelectedCells[0].Value.ToString() + "' and YemekTarihi='" + tarih + " '";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
-                {
-                    ListeGörevliler.Items.Add(Dr["personel"].ToString());
-                }
-                connection.Close();
             }
             catch (Exception ex)
             {
@@ -285,34 +228,7 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
         }
-
-        public void FiilComboboxPersonelKategori()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-
-                cmd.CommandText = "select KategoriAciklama from PeronelKategori";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                SqlDataReader Dr;
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                while (Dr.Read())
-                {
-                    cmbPersonelKategorisi.Items.Add(Dr["KategoriAciklama"]);
-                }
-                connection.Close();
-                cmbPersonelKategorisi.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
+        
         private bool OgunKontrol(string yemekAdı, string yemekAciklama)
         {
             try
@@ -502,30 +418,6 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             }
         }
 
-        private void tümBilgileriGösterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (string.Equals(tümBilgileriGösterToolStripMenuItem.Text, "Görevlileri Gösterme"))
-                {
-                    tümBilgileriGösterToolStripMenuItem.Text = "Görevlileri Göster";
-                    ListeGörevliler.Visible = false;
-                    metroGrid1.Visible = true;
-                }
-                else
-                {
-                    tümBilgileriGösterToolStripMenuItem.Text = "Görevlileri Gösterme";
-                    GorevliListeGuncelle();
-                    ListeGörevliler.Visible = true;
-                    metroGrid1.Visible = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
         private void ListeGörevliler_MouseClick(object sender, MouseEventArgs e)
         {
             try
@@ -541,215 +433,8 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             }
         }
 
-        private void gorevliIptal_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                cmd.Connection = connection;
-                connection.Open();
-                cmd.CommandText = "delete from PersonelYemekGorevli where YemekAdı='" + metroGrid1.SelectedCells[0].Value.ToString() + "' and YemekTarihi='" + metroGrid1.SelectedCells[2].Value.ToString() + "' and personel='" + ListeGörevliler.SelectedItems[0].Text + "'";
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                HotelWarningForm.Show(Localization.personelSilmeBasarili, Localization.Tamam, 0);
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-        private void gorevliEkle_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lblGorevliPersoneller.Visible = true;
-                lblGorevliPersoneller.Enabled = true;
-                lblPersonelGorevlendir.Visible = true;
-                lblPersonelGorevlendir.Enabled = true;
-                lblPersonelKategorisi.Visible = true;
-                lblPersonelKategorisi.Enabled = true;
-                lblPersonelSecimi.Visible = true;
-                lblPersonelSecimi.Enabled = true;
-                cmbPersonelKategorisi.Visible = true;
-                cmbPersonelKategorisi.Enabled = true;
-                btnGorevlendir.Visible = true;
-                btnGorevlendir.Enabled = true;
-                btnGorevlendirme.Visible = true;
-                btnGorevlendirme.Enabled = true;
-                listeGorevlenecekler.Visible = true;
-                listeGorevlenecekler.Enabled = true;
-                listePersonel.Visible = true;
-                listePersonel.Enabled = true;
-                btnOnayla.Enabled = true;
-                btnOnayla.Visible = true;
-                FiilComboboxPersonelKategori();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-        private void metroButton3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = connection;
-                connection.Open();
-                for (int i = 0; i < listeGorevlenecekler.Items.Count; i++)
-                {
-                    cmd.CommandText = "Insert into PersonelYemekGorevli values ('" + metroGrid1.SelectedCells[0].Value.ToString() + "','" + metroGrid1.SelectedCells[2].Value.ToString() + "' , '" + listeGorevlenecekler.Items[i].Text + "') ";
-                    cmd.ExecuteNonQuery();
-                }
-                connection.Close();
-
-                lblGorevliPersoneller.Visible = false;
-                lblGorevliPersoneller.Enabled = false;
-                lblPersonelGorevlendir.Visible = false;
-                lblPersonelGorevlendir.Enabled = false;
-                lblPersonelKategorisi.Visible = false;
-                lblPersonelKategorisi.Enabled = false;
-                lblPersonelSecimi.Visible = false;
-                lblPersonelSecimi.Enabled = false;
-                cmbPersonelKategorisi.Visible = false;
-                cmbPersonelKategorisi.Enabled = false;
-                btnGorevlendir.Visible = false;
-                btnGorevlendir.Enabled = false;
-                btnGorevlendirme.Visible = false;
-                btnGorevlendirme.Enabled = false;
-                listeGorevlenecekler.Visible = false;
-                listeGorevlenecekler.Enabled = false;
-                listePersonel.Visible = false;
-                listePersonel.Enabled = false;
-                btnOnayla.Enabled = false;
-                btnOnayla.Visible = false;
-                GorevliListeGuncelle();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-        private void PersonelListesiGuncelleme()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
-                SqlCommand cmd = new SqlCommand();
-                listePersonel.Items.Clear();
-                SqlDataReader Dr;
-                cmd.CommandText = "select * from Personel where personelDepartman='" + cmbPersonelKategorisi.SelectedItem.ToString() + "' and Sil=0";
-                cmd.Connection = connection;
-                cmd.CommandType = CommandType.Text;
-
-                connection.Open();
-                Dr = cmd.ExecuteReader();
-                listePersonel.Items.Clear();
-                while (Dr.Read())
-                {
-                    bool listedevar = false;
-                    if (listeGorevlenecekler.Items.Count != 0)
-                    {
-                        for (int i = 0; i < listeGorevlenecekler.Items.Count; i++)
-                        {
-                            if (string.Equals(Dr["personelAdi"].ToString() + " " + Dr["personelSoyadi"].ToString(), listeGorevlenecekler.Items[i].Text))
-                            {
-                                listedevar = true;
-                            }
-                            if (!listedevar)
-                            {
-                                if (ListeGörevliler.Items.Count != 0)
-                                {
-                                    for (int j = 0; j < ListeGörevliler.Items.Count; i++)
-                                    {
-                                        if (string.Equals(Dr["personelAdi"].ToString() + " " + Dr["personelSoyadi"].ToString(), ListeGörevliler.Items[j].Text))
-                                        {
-                                            listedevar = true;
-                                        }
-                                    }
-                                }
-                                if (!listedevar)
-                                {
-                                    listePersonel.Items.Add(Dr["personelAdi"].ToString() + " " + Dr["personelSoyadi"].ToString());
-                                }
-                            }
-
-                        }
-                    }
-                    else
-                    {
-                        if (ListeGörevliler.Items.Count != 0)
-                        {
-                            for (int i = 0; i < ListeGörevliler.Items.Count; i++)
-                            {
-                                if (string.Equals(Dr["personelAdi"].ToString() + " " + Dr["personelSoyadi"].ToString(), ListeGörevliler.Items[i].Text))
-                                {
-                                    listedevar = true;
-                                }
-                            }
-                        }
-                        if (!listedevar)
-                        {
-                            listePersonel.Items.Add(Dr["personelAdi"].ToString() + " " + Dr["personelSoyadi"].ToString());
-                        }
-                    }
-
-                }
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-
-        private void btnGorevlendir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                for (int i = 0; i < listePersonel.SelectedItems.Count; i++)
-                {
-                    listeGorevlenecekler.Items.Add(listePersonel.SelectedItems[i].Text);
-                    listePersonel.Items.RemoveAt(i);
-                }
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-        private void btnGorevlendirme_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                listeGorevlenecekler.Items.Remove(listeGorevlenecekler.SelectedItems[0]);
-                PersonelListesiGuncelleme();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-        private void cmbPersonelKategorisi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PersonelListesiGuncelleme();
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
-        private void düzenleToolStripMenuItem_Click(object sender, EventArgs e)
+ 
+         private void düzenleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {

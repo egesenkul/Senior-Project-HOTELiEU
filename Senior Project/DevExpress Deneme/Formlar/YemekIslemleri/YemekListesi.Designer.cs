@@ -35,20 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YemekListesi));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.btnOnayla = new MetroFramework.Controls.MetroButton();
-            this.btnGorevlendirme = new MetroFramework.Controls.MetroButton();
-            this.lblGorevliPersoneller = new MetroFramework.Controls.MetroLabel();
-            this.lblPersonelSecimi = new MetroFramework.Controls.MetroLabel();
-            this.listeGorevlenecekler = new MetroFramework.Controls.MetroListView();
-            this.lblPersonelKategorisi = new MetroFramework.Controls.MetroLabel();
-            this.btnGorevlendir = new MetroFramework.Controls.MetroButton();
-            this.lblPersonelGorevlendir = new MetroFramework.Controls.MetroLabel();
-            this.cmbPersonelKategorisi = new MetroFramework.Controls.MetroComboBox();
-            this.listePersonel = new MetroFramework.Controls.MetroListView();
-            this.ListeGörevliler = new MetroFramework.Controls.MetroListView();
             this.lblYemekTuru = new MetroFramework.Controls.MetroLabel();
             this.cmbYemekTur = new MetroFramework.Controls.MetroComboBox();
-            this.btnSecenekler = new MetroFramework.Controls.MetroButton();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.lblYemekSalonu = new MetroFramework.Controls.MetroLabel();
             this.cmbYemekSalonu = new MetroFramework.Controls.MetroComboBox();
@@ -76,20 +64,8 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.btnOnayla);
-            this.metroPanel1.Controls.Add(this.btnGorevlendirme);
-            this.metroPanel1.Controls.Add(this.lblGorevliPersoneller);
-            this.metroPanel1.Controls.Add(this.lblPersonelSecimi);
-            this.metroPanel1.Controls.Add(this.listeGorevlenecekler);
-            this.metroPanel1.Controls.Add(this.lblPersonelKategorisi);
-            this.metroPanel1.Controls.Add(this.btnGorevlendir);
-            this.metroPanel1.Controls.Add(this.lblPersonelGorevlendir);
-            this.metroPanel1.Controls.Add(this.cmbPersonelKategorisi);
-            this.metroPanel1.Controls.Add(this.listePersonel);
-            this.metroPanel1.Controls.Add(this.ListeGörevliler);
             this.metroPanel1.Controls.Add(this.lblYemekTuru);
             this.metroPanel1.Controls.Add(this.cmbYemekTur);
-            this.metroPanel1.Controls.Add(this.btnSecenekler);
             this.metroPanel1.Controls.Add(this.metroGrid1);
             this.metroPanel1.Controls.Add(this.lblYemekSalonu);
             this.metroPanel1.Controls.Add(this.cmbYemekSalonu);
@@ -111,172 +87,6 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // btnOnayla
-            // 
-            this.btnOnayla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOnayla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnOnayla.Location = new System.Drawing.Point(612, 514);
-            this.btnOnayla.Name = "btnOnayla";
-            this.btnOnayla.Size = new System.Drawing.Size(392, 40);
-            this.btnOnayla.TabIndex = 53;
-            this.btnOnayla.Text = "ONAYLA";
-            this.btnOnayla.UseCustomBackColor = true;
-            this.btnOnayla.UseCustomForeColor = true;
-            this.btnOnayla.UseSelectable = true;
-            this.btnOnayla.Click += new System.EventHandler(this.metroButton3_Click);
-            // 
-            // btnGorevlendirme
-            // 
-            this.btnGorevlendirme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGorevlendirme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGorevlendirme.Location = new System.Drawing.Point(737, 392);
-            this.btnGorevlendirme.Name = "btnGorevlendirme";
-            this.btnGorevlendirme.Size = new System.Drawing.Size(125, 40);
-            this.btnGorevlendirme.TabIndex = 52;
-            this.btnGorevlendirme.Text = "GÖREVLENDİRME";
-            this.btnGorevlendirme.UseCustomBackColor = true;
-            this.btnGorevlendirme.UseCustomForeColor = true;
-            this.btnGorevlendirme.UseSelectable = true;
-            this.btnGorevlendirme.Click += new System.EventHandler(this.btnGorevlendirme_Click);
-            // 
-            // lblGorevliPersoneller
-            // 
-            this.lblGorevliPersoneller.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGorevliPersoneller.AutoSize = true;
-            this.lblGorevliPersoneller.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblGorevliPersoneller.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblGorevliPersoneller.Location = new System.Drawing.Point(958, 192);
-            this.lblGorevliPersoneller.Name = "lblGorevliPersoneller";
-            this.lblGorevliPersoneller.Size = new System.Drawing.Size(275, 25);
-            this.lblGorevliPersoneller.TabIndex = 51;
-            this.lblGorevliPersoneller.Text = "GÖREVLENECEK PERSONELLER";
-            this.lblGorevliPersoneller.UseCustomBackColor = true;
-            this.lblGorevliPersoneller.UseCustomForeColor = true;
-            // 
-            // lblPersonelSecimi
-            // 
-            this.lblPersonelSecimi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPersonelSecimi.AutoSize = true;
-            this.lblPersonelSecimi.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblPersonelSecimi.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblPersonelSecimi.Location = new System.Drawing.Point(498, 192);
-            this.lblPersonelSecimi.Name = "lblPersonelSecimi";
-            this.lblPersonelSecimi.Size = new System.Drawing.Size(167, 25);
-            this.lblPersonelSecimi.TabIndex = 50;
-            this.lblPersonelSecimi.Text = "PERSONEL SEÇİMİ";
-            this.lblPersonelSecimi.UseCustomBackColor = true;
-            this.lblPersonelSecimi.UseCustomForeColor = true;
-            // 
-            // listeGorevlenecekler
-            // 
-            this.listeGorevlenecekler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.listeGorevlenecekler.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.listeGorevlenecekler.FullRowSelect = true;
-            this.listeGorevlenecekler.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listeGorevlenecekler.Location = new System.Drawing.Point(889, 244);
-            this.listeGorevlenecekler.MultiSelect = false;
-            this.listeGorevlenecekler.Name = "listeGorevlenecekler";
-            this.listeGorevlenecekler.OwnerDraw = true;
-            this.listeGorevlenecekler.Size = new System.Drawing.Size(333, 224);
-            this.listeGorevlenecekler.TabIndex = 49;
-            this.listeGorevlenecekler.UseCompatibleStateImageBehavior = false;
-            this.listeGorevlenecekler.UseCustomBackColor = true;
-            this.listeGorevlenecekler.UseCustomForeColor = true;
-            this.listeGorevlenecekler.UseSelectable = true;
-            this.listeGorevlenecekler.View = System.Windows.Forms.View.Tile;
-            // 
-            // lblPersonelKategorisi
-            // 
-            this.lblPersonelKategorisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPersonelKategorisi.AutoSize = true;
-            this.lblPersonelKategorisi.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblPersonelKategorisi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblPersonelKategorisi.Location = new System.Drawing.Point(248, 245);
-            this.lblPersonelKategorisi.Name = "lblPersonelKategorisi";
-            this.lblPersonelKategorisi.Size = new System.Drawing.Size(171, 25);
-            this.lblPersonelKategorisi.TabIndex = 47;
-            this.lblPersonelKategorisi.Text = "Personel Kategorisi :";
-            this.lblPersonelKategorisi.UseCustomBackColor = true;
-            this.lblPersonelKategorisi.UseCustomForeColor = true;
-            // 
-            // btnGorevlendir
-            // 
-            this.btnGorevlendir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGorevlendir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGorevlendir.Location = new System.Drawing.Point(737, 335);
-            this.btnGorevlendir.Name = "btnGorevlendir";
-            this.btnGorevlendir.Size = new System.Drawing.Size(125, 40);
-            this.btnGorevlendir.TabIndex = 48;
-            this.btnGorevlendir.Text = "GÖREVLENDİR";
-            this.btnGorevlendir.UseSelectable = true;
-            this.btnGorevlendir.Click += new System.EventHandler(this.btnGorevlendir_Click);
-            // 
-            // lblPersonelGorevlendir
-            // 
-            this.lblPersonelGorevlendir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPersonelGorevlendir.AutoSize = true;
-            this.lblPersonelGorevlendir.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblPersonelGorevlendir.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblPersonelGorevlendir.Location = new System.Drawing.Point(683, 151);
-            this.lblPersonelGorevlendir.Name = "lblPersonelGorevlendir";
-            this.lblPersonelGorevlendir.Size = new System.Drawing.Size(232, 25);
-            this.lblPersonelGorevlendir.TabIndex = 46;
-            this.lblPersonelGorevlendir.Text = "PERSONEL GÖREVLENDİR";
-            this.lblPersonelGorevlendir.UseCustomBackColor = true;
-            this.lblPersonelGorevlendir.UseCustomForeColor = true;
-            // 
-            // cmbPersonelKategorisi
-            // 
-            this.cmbPersonelKategorisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbPersonelKategorisi.FontSize = MetroFramework.MetroComboBoxSize.Tall;
-            this.cmbPersonelKategorisi.FormattingEnabled = true;
-            this.cmbPersonelKategorisi.ItemHeight = 29;
-            this.cmbPersonelKategorisi.Location = new System.Drawing.Point(460, 244);
-            this.cmbPersonelKategorisi.Name = "cmbPersonelKategorisi";
-            this.cmbPersonelKategorisi.Size = new System.Drawing.Size(238, 35);
-            this.cmbPersonelKategorisi.TabIndex = 45;
-            this.cmbPersonelKategorisi.UseCustomBackColor = true;
-            this.cmbPersonelKategorisi.UseCustomForeColor = true;
-            this.cmbPersonelKategorisi.UseSelectable = true;
-            this.cmbPersonelKategorisi.SelectedIndexChanged += new System.EventHandler(this.cmbPersonelKategorisi_SelectedIndexChanged);
-            // 
-            // listePersonel
-            // 
-            this.listePersonel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.listePersonel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.listePersonel.FullRowSelect = true;
-            this.listePersonel.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listePersonel.Location = new System.Drawing.Point(368, 305);
-            this.listePersonel.Name = "listePersonel";
-            this.listePersonel.OwnerDraw = true;
-            this.listePersonel.Size = new System.Drawing.Size(330, 163);
-            this.listePersonel.TabIndex = 44;
-            this.listePersonel.UseCompatibleStateImageBehavior = false;
-            this.listePersonel.UseCustomBackColor = true;
-            this.listePersonel.UseCustomForeColor = true;
-            this.listePersonel.UseSelectable = true;
-            this.listePersonel.View = System.Windows.Forms.View.Tile;
-            // 
-            // ListeGörevliler
-            // 
-            this.ListeGörevliler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListeGörevliler.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ListeGörevliler.FullRowSelect = true;
-            this.ListeGörevliler.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.ListeGörevliler.Location = new System.Drawing.Point(18, 193);
-            this.ListeGörevliler.MultiSelect = false;
-            this.ListeGörevliler.Name = "ListeGörevliler";
-            this.ListeGörevliler.OwnerDraw = true;
-            this.ListeGörevliler.Size = new System.Drawing.Size(224, 294);
-            this.ListeGörevliler.TabIndex = 29;
-            this.ListeGörevliler.UseCompatibleStateImageBehavior = false;
-            this.ListeGörevliler.UseCustomBackColor = true;
-            this.ListeGörevliler.UseCustomForeColor = true;
-            this.ListeGörevliler.UseSelectable = true;
-            this.ListeGörevliler.View = System.Windows.Forms.View.Tile;
-            this.ListeGörevliler.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListeGörevliler_MouseClick);
             // 
             // lblYemekTuru
             // 
@@ -302,18 +112,6 @@
             this.cmbYemekTur.UseCustomBackColor = true;
             this.cmbYemekTur.UseCustomForeColor = true;
             this.cmbYemekTur.UseSelectable = true;
-            // 
-            // btnSecenekler
-            // 
-            this.btnSecenekler.BackColor = System.Drawing.Color.SandyBrown;
-            this.btnSecenekler.Location = new System.Drawing.Point(813, 17);
-            this.btnSecenekler.Name = "btnSecenekler";
-            this.btnSecenekler.Size = new System.Drawing.Size(120, 70);
-            this.btnSecenekler.TabIndex = 18;
-            this.btnSecenekler.Text = "SEÇENKLER";
-            this.btnSecenekler.UseCustomBackColor = true;
-            this.btnSecenekler.UseSelectable = true;
-            this.btnSecenekler.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroGrid1
             // 
@@ -447,7 +245,7 @@
             // btnFiltrele
             // 
             this.btnFiltrele.BackColor = System.Drawing.Color.Silver;
-            this.btnFiltrele.Location = new System.Drawing.Point(678, 17);
+            this.btnFiltrele.Location = new System.Drawing.Point(810, 17);
             this.btnFiltrele.Name = "btnFiltrele";
             this.btnFiltrele.Size = new System.Drawing.Size(120, 70);
             this.btnFiltrele.TabIndex = 3;
@@ -488,7 +286,6 @@
             this.tümBilgileriGösterToolStripMenuItem.Name = "tümBilgileriGösterToolStripMenuItem";
             this.tümBilgileriGösterToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.tümBilgileriGösterToolStripMenuItem.Text = "Görevlileri Göster";
-            this.tümBilgileriGösterToolStripMenuItem.Click += new System.EventHandler(this.tümBilgileriGösterToolStripMenuItem_Click);
             // 
             // silinmişPersonelleriGösterToolStripMenuItem
             // 
@@ -519,14 +316,12 @@
             this.gorevliEkle.Name = "gorevliEkle";
             this.gorevliEkle.Size = new System.Drawing.Size(164, 26);
             this.gorevliEkle.Text = "Görevli Ekle";
-            this.gorevliEkle.Click += new System.EventHandler(this.gorevliEkle_Click);
             // 
             // gorevliIptal
             // 
             this.gorevliIptal.Name = "gorevliIptal";
             this.gorevliIptal.Size = new System.Drawing.Size(164, 26);
             this.gorevliIptal.Text = "Görevli İptal";
-            this.gorevliIptal.Click += new System.EventHandler(this.gorevliIptal_Click);
             // 
             // metroStyleManager1
             // 
@@ -567,7 +362,6 @@
         private MetroFramework.Controls.MetroDateTime metroDateTime2;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
         private MetroFramework.Controls.MetroButton btnFiltrele;
-        private MetroFramework.Controls.MetroButton btnSecenekler;
         private MetroFramework.Controls.MetroLabel lblYemekTuru;
         private MetroFramework.Controls.MetroComboBox cmbYemekTur;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -576,20 +370,9 @@
         private System.Windows.Forms.ToolStripMenuItem tümBilgileriGösterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem silinmişPersonelleriGösterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem silinmişPersoneliGeriAlToolStripMenuItem;
-        private MetroFramework.Controls.MetroListView ListeGörevliler;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem gorevliEkle;
         private System.Windows.Forms.ToolStripMenuItem gorevliIptal;
-        private MetroFramework.Controls.MetroButton btnGorevlendirme;
-        private MetroFramework.Controls.MetroLabel lblGorevliPersoneller;
-        private MetroFramework.Controls.MetroLabel lblPersonelSecimi;
-        private MetroFramework.Controls.MetroListView listeGorevlenecekler;
-        private MetroFramework.Controls.MetroLabel lblPersonelKategorisi;
-        private MetroFramework.Controls.MetroButton btnGorevlendir;
-        private MetroFramework.Controls.MetroLabel lblPersonelGorevlendir;
-        private MetroFramework.Controls.MetroComboBox cmbPersonelKategorisi;
-        private MetroFramework.Controls.MetroListView listePersonel;
-        private MetroFramework.Controls.MetroButton btnOnayla;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }
