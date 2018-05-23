@@ -229,7 +229,7 @@
             this.txtmail.ShortcutsEnabled = true;
             this.txtmail.ShowClearButton = true;
             this.txtmail.Size = new System.Drawing.Size(159, 30);
-            this.txtmail.TabIndex = 13;
+            this.txtmail.TabIndex = 12;
             this.txtmail.UseCustomBackColor = true;
             this.txtmail.UseCustomForeColor = true;
             this.txtmail.UseSelectable = true;
@@ -264,7 +264,7 @@
             this.txtadres.ShortcutsEnabled = true;
             this.txtadres.ShowClearButton = true;
             this.txtadres.Size = new System.Drawing.Size(159, 105);
-            this.txtadres.TabIndex = 12;
+            this.txtadres.TabIndex = 13;
             this.txtadres.UseCustomBackColor = true;
             this.txtadres.UseCustomForeColor = true;
             this.txtadres.UseSelectable = true;

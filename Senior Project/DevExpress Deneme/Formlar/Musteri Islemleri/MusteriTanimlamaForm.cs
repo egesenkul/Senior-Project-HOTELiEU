@@ -392,7 +392,7 @@ namespace DevExpress_Deneme
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = connection;
                         connection.Open();
-                        cmd.CommandText = "Insert into Musteriler values ('" + txtisim.Text + "','" + txtsoyisim.Text + "' , '" + txttelefon.Text + "' , '" + txtadres.Text + "' , '" + txtmail.Text + "' , '" + txtKullaniciAdi.Text + "' , '" + txtSifre.Text + "',0,0)";
+                        cmd.CommandText = "Insert into Musteriler values ('" + txtisim.Text + "','" + txtsoyisim.Text + "' , '" + txttelefon.Text + "' , '" + txtadres.Text + "' , '" + txtmail.Text + "' , '" + txtKullaniciAdi.Text + "' , '" + txtSifre.Text + "',0)";
                         cmd.ExecuteNonQuery();
                         connection.Close();
                         if (Kullanici.BilgilendirmeFormlari.Equals("True"))

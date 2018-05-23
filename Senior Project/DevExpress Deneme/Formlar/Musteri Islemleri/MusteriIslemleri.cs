@@ -21,21 +21,6 @@ namespace DevExpress_Deneme
             InitializeComponent();
         }
 
-        private void Yetki()
-        {
-            try
-            {
-                if (!string.Equals(Kullanici.yetki, "admin") && !string.Equals(Kullanici.yetki, "Resepsiyon'"))
-                {
-                    tileItemMusteriTanimlama.Visible = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
-            }
-        }
-
         private void MultiLanguage()
         {
             try

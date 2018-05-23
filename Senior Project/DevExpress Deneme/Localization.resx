@@ -877,7 +877,7 @@
     <value>Lütfen salon sorumlusu seçiniz</value>
   </data>
   <data name="tileItemMusteriTanimlama" xml:space="preserve">
-    <value>Müşteri tanımlama</value>
+    <value>Müşteri Tanımlama</value>
   </data>
   <data name="lblSorumluBlok" xml:space="preserve">
     <value>Sorumlu Olduğu Blok:</value>
