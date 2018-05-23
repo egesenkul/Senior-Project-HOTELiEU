@@ -114,11 +114,11 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                lblKullaniciDepartman.Text = Localization.lblKullaniciDepartman;
-                lblKullanıcıListesi.Text = Localization.lblKullanıcıListesi;
-                lblTanımlıYetki.Text = Localization.lblTanımlıYetki;
-                lblYetkiler.Text = Localization.lblYetkiler;
-                lblYetki.Text = Localization.lblYetki;
+                lblKullaniciDepartman.Text = Localization.lblKullaniciDepartman+":";
+                lblKullanıcıListesi.Text = Localization.lblKullanıcıListesi + ":";
+                lblTanımlıYetki.Text = Localization.lblTanımlıYetki + ":";
+                lblYetkiler.Text = Localization.lblYetkiler + ":";
+                lblYetki.Text = Localization.lblYetki + ":";
                 btnIptal.Text = Localization.btnIptal;
                 btnKaydet.Text = Localization.btnKaydet;
                 btnKlavye.Text = Localization.btnKlavyeAc;

@@ -167,6 +167,7 @@
             this.btnKlavye.Text = "Klavye Aç";
             this.btnKlavye.UseCustomBackColor = true;
             this.btnKlavye.UseSelectable = true;
+            this.btnKlavye.Click += new System.EventHandler(this.btnKlavye_Click);
             // 
             // btnKapat
             // 

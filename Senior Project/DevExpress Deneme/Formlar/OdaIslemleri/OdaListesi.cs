@@ -85,7 +85,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 lblBlok.Text = Localization.lblBlokAdi;
                 lblKat.Text = Localization.lblKatAdi;
-                lblOdaGrup.Text = Localization.OdaGrupLabel;
+                lblOdaGrup.Text = Localization.OdaGrubu;
                 btnFiltrele.Text = Localization.btnFiltrele;
                 btnKapat.Text = Localization.btnKapat;
                 btnSecenekler.Text = Localization.btnSecenekler;

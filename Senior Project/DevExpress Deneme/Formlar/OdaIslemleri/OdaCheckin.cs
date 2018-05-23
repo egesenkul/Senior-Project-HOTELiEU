@@ -325,14 +325,14 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
         private void MultiLanguage()
         {
-            lblGirisTarihi.Text = Localization.GirisTarihi;
-            lblCikisTarihi.Text = Localization.CikisTarihi;
-            lblBlok.Text = Localization.lblBlokAdi;
-            lblKat.Text = Localization.lblKatAdi;
-            lblOdaTipi.Text = Localization.OdaGrubu;
+            lblGirisTarihi.Text = Localization.GirisTarihi + ":";
+            lblCikisTarihi.Text = Localization.CikisTarihi + ":";
+            lblBlok.Text = Localization.lblBlokAdi + ":";
+            lblKat.Text = Localization.lblKatAdi + ":";
+            lblOdaTipi.Text = Localization.OdaGrubu + ":";
             btnListeGuncelle.Text = Localization.ListeGuncelle;
-            lblBosOdalar.Text = Localization.BosOdalar;
-            lblRezerveEdilmisOdalar.Text = Localization.RezerveEdilmisOdalar;
+            lblBosOdalar.Text = Localization.BosOdalar + ":";
+            lblRezerveEdilmisOdalar.Text = Localization.RezerveEdilmisOdalar + ":";
             MusteriAdLabel.Text = Localization.MusteriAdLabel;
             metroButton1.Text = Localization.checkinYap;
             metroButton5.Text = Localization.checkinYap;
@@ -565,5 +565,9 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             }
         }
 
+        private void btnKlavye_Click(object sender, EventArgs e)
+        {
+            ortakFormIslemleri.KlavyeAc();
+        }
     }
 }

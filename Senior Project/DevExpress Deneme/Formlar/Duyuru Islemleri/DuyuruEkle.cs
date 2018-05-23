@@ -235,7 +235,7 @@ namespace Otel_Uygulamasi.Formlar.Duyuru_Islemleri
                 lblDuyuruGrubu.Text = Localization.lblDuyuruGrubu;
                 lblIcerik.Text = Localization.lbliCerik;
                 KriterLabel.Text = Localization.KriterLabel;
-                LabelPersonelGrup.Text = Localization.lblPersonelGrubu;
+                LabelPersonelGrup.Text = Localization.lblPersonelGrubu + ":";
                 MusteriAdLabel.Text = Localization.MusteriAdLabel;
                 CheckBoxTumPersoneller.Text = Localization.chechBoxTümPersoneller;
                 btnGonder.Text = Localization.btnGonder;

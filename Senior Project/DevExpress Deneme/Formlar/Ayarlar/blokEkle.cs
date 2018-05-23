@@ -93,8 +93,8 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                lblBlokAdı.Text = Localization.lblBlokAdi;
-                lblBlokListesi.Text = Localization.lblBlokListesi;
+                lblBlokAdı.Text = Localization.lblBlokAdi + ":";
+                lblBlokListesi.Text = Localization.lblBlokListesi + ":";
                 btnKlavye.Text = Localization.btnKlavyeAc;
                 btnSecenekler.Text = Localization.btnSecenekler;
                 btnTemizle.Text = Localization.btnTemizle;

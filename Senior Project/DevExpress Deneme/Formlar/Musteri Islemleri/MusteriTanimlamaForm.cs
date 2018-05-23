@@ -60,7 +60,7 @@ namespace DevExpress_Deneme
             {
                 lblAdres.Text = Localization.lblAdres;
                 lblKullaniciAdi.Text = Localization.lblKullaniciAdi;
-                lblMail.Text = Localization.lblMail;
+                lblMail.Text = Localization.lblMail + ":";
                 lblMusteriAdi.Text = Localization.lblMusteriAdi;
                 lblMusteriSoyadi.Text = Localization.lblMusteriSoyadi;
                 lblSifre.Text = Localization.lblSifre;

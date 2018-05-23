@@ -192,13 +192,13 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
-                lblBlok.Text = Localization.lblBlokAdi;
-                lblCiftKisilikYatak.Text = Localization.CiftKisilikYatakSayisi;
-                lblKat.Text = Localization.lblKatAdi;
-                lblOdadanSorumluPersonel.Text = Localization.OdadanSorumluPersonel;
-                lblOdaGrup.Text = Localization.OdaGrubu;
-                lblOdaNumarasi.Text = Localization.OdaNumarasi;
-                lblTekKisilikYatak.Text = Localization.tekKisilikYatakSayisi;
+                lblBlok.Text = Localization.lblBlokAdi + ":";
+                lblCiftKisilikYatak.Text = Localization.CiftKisilikYatakSayisi + ":";
+                lblKat.Text = Localization.lblKatAdi + ":";
+                lblOdadanSorumluPersonel.Text = Localization.OdadanSorumluPersonel + ":";
+                lblOdaGrup.Text = Localization.OdaGrubu + ":";
+                lblOdaNumarasi.Text = Localization.OdaNumarasi + ":";
+                lblTekKisilikYatak.Text = Localization.tekKisilikYatakSayisi + ":";
                 btnIptal.Text = Localization.btnIptal;
                 btnKaydet.Text = Localization.btnKaydet;
                 btnKlavye.Text = Localization.btnKlavyeAc;

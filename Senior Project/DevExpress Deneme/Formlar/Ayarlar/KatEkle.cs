@@ -25,8 +25,9 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                lblBloktakiKatlar.Text = Localization.lblBloktakiKatlar;
-                lblKatAdi.Text = Localization.lblKatAdi;
+                lblBlok.Text = Localization.lblBlokAdi + ":";
+                lblBloktakiKatlar.Text = Localization.lblBloktakiKatlar + ":";
+                lblKatAdi.Text = Localization.lblKatAdi + ":";
                 btnKatEkle.Text = Localization.btnKatEkle;
                 btnKlavye.Text = Localization.btnKlavyeAc;
                 btnSecenekler.Text = Localization.btnSecenekler;

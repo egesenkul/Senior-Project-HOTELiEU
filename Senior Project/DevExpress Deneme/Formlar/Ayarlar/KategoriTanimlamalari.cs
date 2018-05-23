@@ -32,10 +32,10 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                lblBolumeAitKategori.Text = Localization.lblKatAdi;
-                lblKategoriAdi.Text = Localization.lblKategoriAdi;
+                lblBolumeAitKategori.Text = Localization.lblKatAdi+":";
+                lblKategoriAdi.Text = Localization.lblKategoriAdi + ":";
                 btnKlavye.Text = Localization.btnKlavyeAc;
-                lblKategoriAitBolum.Text = Localization.lblKategoriAitBolum;
+                lblKategoriAitBolum.Text = Localization.lblKategoriAitBolum + ":";
                 btnTemizle.Text = Localization.btnTemizle;
                 btnIptal.Text = Localization.btnIptal;
                 btnKaydet.Text = Localization.btnKaydet;

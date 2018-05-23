@@ -28,8 +28,8 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
         {
             try
             {
-                lblHavuzAdı.Text = Localization.lblHavuzAdi;
-                lblHavuzlar.Text = Localization.lblHavuzlar;
+                lblHavuzAdı.Text = Localization.lblHavuzAdi + ":";
+                lblHavuzlar.Text = Localization.lblHavuzlar + ":";
                 btnKlavye.Text = Localization.btnKlavyeAc;
                 btnSecenekler.Text = Localization.btnSecenekler;
                 btnTemizle.Text = Localization.btnTemizle;

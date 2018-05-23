@@ -127,6 +127,7 @@
             // 
             // lblAciklama
             // 
+            this.lblAciklama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAciklama.AutoSize = true;
             this.lblAciklama.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblAciklama.FontWeight = MetroFramework.MetroLabelWeight.Regular;

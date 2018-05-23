@@ -83,16 +83,16 @@ namespace Otel_Uygulamasi.Formlar.YemekIslemleri
             try
             {
                 lblAciklama.Text = Localization.lblAciklama;
-                lblBitisZamani.Text = Localization.lblBitisZamani;
-                lblGorevliPersoneller.Text = Localization.lblGorevliPersoneller;
-                lblOgunAdi.Text = Localization.yemekAdi;
-                lblOgunSonGunu.Text = Localization.sonGun;
+                lblBitisZamani.Text = Localization.lblBitisZamani + ":";
+                lblGorevliPersoneller.Text = Localization.lblGorevliPersoneller + ":";
+                lblOgunAdi.Text = Localization.yemekAdi + ":";
+                lblOgunSonGunu.Text = Localization.sonGun + ":";
                 lblPersonelGorevlendir.Text = Localization.personelGorevlendir;
-                lblPersonelKategorisi.Text = Localization.lblPersonelGrubu;
+                lblPersonelKategorisi.Text = Localization.lblPersonelGrubu + ":";
                 lblPersonelSecimi.Text = Localization.personelSecimi;
-                lblYemekSalonu.Text = Localization.yemekSalonu;
-                lblYemekTuru.Text = Localization.yemekTuru;
-                lbBaslangicZamani.Text = Localization.baslangicZamani;
+                lblYemekSalonu.Text = Localization.yemekSalonu + ":";
+                lblYemekTuru.Text = Localization.yemekTuru + ":";
+                lbBaslangicZamani.Text = Localization.baslangicZamani + ":";
                 btnGorevlendir.Text = Localization.btnGorevlendir;
                 btnGorevlendirme.Text = Localization.btnGorevlendirme;
                 btnTemizle.Text = Localization.btnTemizle;

@@ -135,9 +135,9 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
                 lblSoyad.Text = Localization.lblMusteriSoyadi;
                 lblAdres.Text = Localization.lblAdres;
                 lblKullaniciAdi.Text = Localization.lblKullaniciAdi;
-                lblMail.Text = Localization.lblMail;
-                lblPersonelGrubu.Text = Localization.lblPersonelGrubu;
-                lblPersonelYetkisi.Text = Localization.lblPersonelYetkisi;
+                lblMail.Text = Localization.lblMail + ":";
+                lblPersonelGrubu.Text = Localization.lblPersonelGrubu + ":";
+                lblPersonelYetkisi.Text = Localization.lblPersonelYetkisi + ":";
                 lblSifre.Text = Localization.lblSifre;
                 lblTelefon.Text = Localization.lblTelefon;
                 btnKlavye.Text = Localization.btnKlavyeAc;

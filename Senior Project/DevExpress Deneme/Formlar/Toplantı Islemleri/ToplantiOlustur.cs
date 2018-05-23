@@ -53,7 +53,7 @@ namespace Otel_Uygulamasi.Formlar.Personel_Islemleri
         {
             try
             {
-                lblPersonelKategori.Text = Localization.lblPersonelGrubu;
+                lblPersonelKategori.Text = Localization.lblPersonelGrubu + ":";
                 lblToplantiKonusu.Text = Localization.lblToplantiKonusu;
                 lblToplantiTarihi.Text = Localization.lblToplantiTarihi;
                 chechBoxTümPersoneller.Text = Localization.chechBoxTümPersoneller;

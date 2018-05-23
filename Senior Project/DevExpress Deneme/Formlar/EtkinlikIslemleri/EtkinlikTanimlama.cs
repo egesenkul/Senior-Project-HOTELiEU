@@ -38,8 +38,8 @@ namespace Otel_Uygulamasi.Formlar.EtkinlikIslemleri
                 btnTemizle.Text = Localization.btnTemizle;
                 lblAciklama.Text = Localization.lblAciklama;
                 lblEtkinlikismi.Text = Localization.lblEtkinlikismi;
-                lblKisiLimit.Text = Localization.lblKisiLimiti;
-                lblTarih.Text = Localization.lblTarih;
+                lblKisiLimit.Text = Localization.lblKisiLimiti + ":";
+                lblTarih.Text = Localization.lblTarih + ":";
                 CheckBoxKisiLimiti.Text = Localization.KisiLimitiVar;
             }
             catch (Exception ex)

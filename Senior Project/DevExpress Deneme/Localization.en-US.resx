@@ -613,7 +613,7 @@
     <value>Add Customer</value>
   </data>
   <data name="ogunEkle" xml:space="preserve">
-    <value>Add Repeatly Meal</value>
+    <value>Add Meal</value>
   </data>
   <data name="ozelYemekEkle" xml:space="preserve">
     <value>Add Special Meal</value>
@@ -730,7 +730,7 @@
     <value>Successfully check-ined</value>
   </data>
   <data name="CiftKisilikYatakSayisi" xml:space="preserve">
-    <value>Number of two size bed</value>
+    <value>Number of Two Size Bed</value>
   </data>
   <data name="EksikCheckinBilgisi" xml:space="preserve">
     <value>Please check informations</value>
@@ -745,7 +745,7 @@
     <value>Please check informations about room</value>
   </data>
   <data name="OdadanSorumluPersonel" xml:space="preserve">
-    <value>Responsible of room</value>
+    <value>Responsible of Room</value>
   </data>
   <data name="OdaDuzenlemeBasarili" xml:space="preserve">
     <value>Succesfully eddited room</value>
@@ -862,7 +862,7 @@
     <value>Please first select a block</value>
   </data>
   <data name="ogunTanimlama" xml:space="preserve">
-    <value>Create Repeatly Meal</value>
+    <value>Create Meal</value>
   </data>
   <data name="onceKatEkleyiniz" xml:space="preserve">
     <value>Please first add a floor to that block or select a floor</value>

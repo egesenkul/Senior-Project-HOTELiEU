@@ -60,7 +60,7 @@ namespace Otel_Uygulamasi.Formlar.Ayarlar
             try
             {
                 lblAdres.Text = Localization.lblAdres;
-                lblMail.Text = Localization.lblMail;
+                lblMail.Text = Localization.lblMail + ":";
                 lblTelefon.Text = Localization.lblTelefon;
                 lblOtelAdı.Text = Localization.lblOtelAdi;
                 btnKlavye.Text = Localization.btnKlavyeAc;

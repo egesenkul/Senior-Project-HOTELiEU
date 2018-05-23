@@ -189,12 +189,12 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             try
             {
                 lblBlok.Text = Localization.lblBlokAdi;
-                lblBosOdalar.Text = Localization.BosOdalar;
-                lblCikisTarihi.Text = Localization.CikisTarihi;
-                lblGirisTarihi.Text = Localization.GirisTarihi;
+                lblBosOdalar.Text = Localization.BosOdalar+":";
+                lblCikisTarihi.Text = Localization.CikisTarihi + ":";
+                lblGirisTarihi.Text = Localization.GirisTarihi + ":";
                 lblKat.Text = Localization.lblKatAdi;
                 lblOdaTipi.Text = Localization.OdaGrubu;
-                lblRezerveEdilmisOdalar.Text = Localization.RezerveEdilmisOdalar;
+                lblRezerveEdilmisOdalar.Text = Localization.RezerveEdilmisOdalar + ":";
                 btnKapat.Text = Localization.btnKapat;
                 btnKaydet.Text = Localization.btnKaydet;
                 btnKlavye.Text = Localization.btnKlavyeAc;
@@ -549,6 +549,11 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             {
                 HotelWarningForm.Show(ex.ToString(), Localization.Tamam, 1);
             }
+        }
+
+        private void btnKlavye_Click(object sender, EventArgs e)
+        {
+            ortakFormIslemleri.KlavyeAc();
         }
     }
 }
