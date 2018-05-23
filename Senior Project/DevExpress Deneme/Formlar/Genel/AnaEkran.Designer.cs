@@ -93,6 +93,7 @@
             this.tileControl1.Location = new System.Drawing.Point(20, 60);
             this.tileControl1.MaxId = 27;
             this.tileControl1.Name = "tileControl1";
+            this.tileControl1.Position = 362;
             this.tileControl1.ShowGroupText = true;
             this.tileControl1.Size = new System.Drawing.Size(1338, 539);
             this.tileControl1.TabIndex = 0;
@@ -158,6 +159,7 @@
             this.tileItemSicaklik.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItemSicaklik.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItemSicaklik.AppearanceItem.Pressed.Options.UseBorderColor = true;
+            this.tileItemSicaklik.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemSicaklik.BackgroundImage")));
             tileItemElement3.Text = "Sıcaklık Bilgileri";
             tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileItemSicaklik.Elements.Add(tileItemElement3);
@@ -175,6 +177,7 @@
             this.tileTarih.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileTarih.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileTarih.AppearanceItem.Pressed.Options.UseBorderColor = true;
+            this.tileTarih.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileTarih.BackgroundImage")));
             tileItemElement4.Text = "Tarih";
             tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileTarih.Elements.Add(tileItemElement4);
@@ -358,6 +361,7 @@
             this.tileSaat.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileSaat.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileSaat.AppearanceItem.Pressed.Options.UseBorderColor = true;
+            this.tileSaat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileSaat.BackgroundImage")));
             tileItemElement13.Text = "Saat";
             tileItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileSaat.Elements.Add(tileItemElement13);

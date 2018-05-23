@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OdaIslemleri));
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
@@ -37,7 +38,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OdaIslemleri));
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileItemOdaTanimlama = new DevExpress.XtraEditors.TileItem();
@@ -63,6 +63,7 @@
             this.tileControl1.Location = new System.Drawing.Point(20, 60);
             this.tileControl1.MaxId = 9;
             this.tileControl1.Name = "tileControl1";
+            this.tileControl1.Position = 188;
             this.tileControl1.Size = new System.Drawing.Size(1016, 608);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
@@ -84,6 +85,7 @@
             this.tileItemOdaTanimlama.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItemOdaTanimlama.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItemOdaTanimlama.AppearanceItem.Pressed.Options.UseBorderColor = true;
+            this.tileItemOdaTanimlama.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemOdaTanimlama.BackgroundImage")));
             tileItemElement1.Text = "Oda Tanimlama";
             tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileItemOdaTanimlama.Elements.Add(tileItemElement1);
@@ -101,6 +103,7 @@
             this.tileItemOdaMusteriIliskilendir.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItemOdaMusteriIliskilendir.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItemOdaMusteriIliskilendir.AppearanceItem.Pressed.Options.UseBorderColor = true;
+            this.tileItemOdaMusteriIliskilendir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemOdaMusteriIliskilendir.BackgroundImage")));
             tileItemElement2.Text = "Oda Check-in";
             tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileItemOdaMusteriIliskilendir.Elements.Add(tileItemElement2);
@@ -118,6 +121,7 @@
             this.tileItemOdaListesi.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItemOdaListesi.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItemOdaListesi.AppearanceItem.Pressed.Options.UseBorderColor = true;
+            this.tileItemOdaListesi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemOdaListesi.BackgroundImage")));
             tileItemElement3.Text = "Oda Listesi";
             tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileItemOdaListesi.Elements.Add(tileItemElement3);
@@ -130,6 +134,7 @@
             // 
             this.tileSureUzat.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
             this.tileSureUzat.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileSureUzat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileSureUzat.BackgroundImage")));
             tileItemElement4.Text = "Süre Uzat";
             tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileSureUzat.Elements.Add(tileItemElement4);
@@ -155,6 +160,7 @@
             this.tileItemOdaRezerveEt.AppearanceItem.Pressed.BorderColor = System.Drawing.Color.YellowGreen;
             this.tileItemOdaRezerveEt.AppearanceItem.Pressed.Options.UseBackColor = true;
             this.tileItemOdaRezerveEt.AppearanceItem.Pressed.Options.UseBorderColor = true;
+            this.tileItemOdaRezerveEt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItemOdaRezerveEt.BackgroundImage")));
             tileItemElement5.Text = "Oda Rezerve Et";
             tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileItemOdaRezerveEt.Elements.Add(tileItemElement5);
@@ -185,6 +191,7 @@
             // 
             this.tileItem1.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 15F);
             this.tileItem1.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileItem1.BackgroundImage")));
             tileItemElement7.Text = "Check-Out";
             tileItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileItem1.Elements.Add(tileItemElement7);
