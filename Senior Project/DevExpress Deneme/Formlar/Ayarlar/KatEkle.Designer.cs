@@ -124,6 +124,7 @@
             this.cmbBlok.Location = new System.Drawing.Point(552, 197);
             this.cmbBlok.Name = "cmbBlok";
             this.cmbBlok.Size = new System.Drawing.Size(176, 35);
+            this.cmbBlok.Sorted = true;
             this.cmbBlok.TabIndex = 1;
             this.cmbBlok.UseCustomBackColor = true;
             this.cmbBlok.UseCustomForeColor = true;

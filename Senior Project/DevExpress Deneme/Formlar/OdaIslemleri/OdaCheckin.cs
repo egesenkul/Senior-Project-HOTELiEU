@@ -148,7 +148,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
             connection.Open();
 
             //DenemeMusteriler tablosunda update işlemi yap
-            cmd.CommandText = "update DenemeMusteriler set musteriActive='1' where MusteriMail= " + "'" + mail + "'";
+            cmd.CommandText = "update DenemeMusteriler set musteriActive='1' where MusteriMail= " + "'" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "'";
 
             cmd.ExecuteNonQuery();
             connection.Close();
@@ -164,7 +164,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
 
             //DenemeMusteriler tablosunda update işlemi yap
 
-            cmd2.CommandText = "update Musteriler set musteriActive='1' where musteriMail='" + mail + "'";
+            cmd2.CommandText = "update Musteriler set musteriActive='1' where musteriMail='" + musteriListesi[cmbMusteriAdi.SelectedIndex].email + "'";
 
             cmd2.ExecuteNonQuery();
             connection2.Close();
@@ -444,7 +444,7 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
         {
             try
             {
-                if (CheckinKontrol() && TarihKontrol() && !HareketKontrol(cmbMusteriAdi.SelectedItem.ToString(), Convert.ToDateTime(dtGirisTarihi.EditValue), Convert.ToDateTime(dtCikisTarihi.EditValue)))
+                if (CheckinKontrol() && TarihKontrol())
                 {
                     SqlConnection connection = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
                     SqlCommand cmd = new SqlCommand();

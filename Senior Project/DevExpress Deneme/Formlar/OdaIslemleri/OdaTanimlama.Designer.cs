@@ -107,7 +107,7 @@
             // btnKatEkle
             // 
             this.btnKatEkle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnKatEkle.Location = new System.Drawing.Point(705, 207);
+            this.btnKatEkle.Location = new System.Drawing.Point(733, 211);
             this.btnKatEkle.Name = "btnKatEkle";
             this.btnKatEkle.Size = new System.Drawing.Size(35, 35);
             this.btnKatEkle.TabIndex = 40;
@@ -118,7 +118,7 @@
             // btnCiftKisilikYatakAzalt
             // 
             this.btnCiftKisilikYatakAzalt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCiftKisilikYatakAzalt.Location = new System.Drawing.Point(746, 361);
+            this.btnCiftKisilikYatakAzalt.Location = new System.Drawing.Point(774, 365);
             this.btnCiftKisilikYatakAzalt.Name = "btnCiftKisilikYatakAzalt";
             this.btnCiftKisilikYatakAzalt.Size = new System.Drawing.Size(35, 35);
             this.btnCiftKisilikYatakAzalt.TabIndex = 39;
@@ -129,7 +129,7 @@
             // btnCiftKisilikYatakArttır
             // 
             this.btnCiftKisilikYatakArttır.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCiftKisilikYatakArttır.Location = new System.Drawing.Point(705, 361);
+            this.btnCiftKisilikYatakArttır.Location = new System.Drawing.Point(733, 365);
             this.btnCiftKisilikYatakArttır.Name = "btnCiftKisilikYatakArttır";
             this.btnCiftKisilikYatakArttır.Size = new System.Drawing.Size(35, 35);
             this.btnCiftKisilikYatakArttır.TabIndex = 38;
@@ -140,7 +140,7 @@
             // btnTekKisiYatakAzalt
             // 
             this.btnTekKisiYatakAzalt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTekKisiYatakAzalt.Location = new System.Drawing.Point(746, 306);
+            this.btnTekKisiYatakAzalt.Location = new System.Drawing.Point(774, 310);
             this.btnTekKisiYatakAzalt.Name = "btnTekKisiYatakAzalt";
             this.btnTekKisiYatakAzalt.Size = new System.Drawing.Size(35, 35);
             this.btnTekKisiYatakAzalt.TabIndex = 37;
@@ -151,7 +151,7 @@
             // btnTekKisilikYatakArttır
             // 
             this.btnTekKisilikYatakArttır.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTekKisilikYatakArttır.Location = new System.Drawing.Point(705, 306);
+            this.btnTekKisilikYatakArttır.Location = new System.Drawing.Point(733, 310);
             this.btnTekKisilikYatakArttır.Name = "btnTekKisilikYatakArttır";
             this.btnTekKisilikYatakArttır.Size = new System.Drawing.Size(35, 35);
             this.btnTekKisilikYatakArttır.TabIndex = 36;
@@ -165,9 +165,10 @@
             this.cmbKat.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbKat.FormattingEnabled = true;
             this.cmbKat.ItemHeight = 29;
-            this.cmbKat.Location = new System.Drawing.Point(520, 207);
+            this.cmbKat.Location = new System.Drawing.Point(475, 211);
             this.cmbKat.Name = "cmbKat";
-            this.cmbKat.Size = new System.Drawing.Size(164, 35);
+            this.cmbKat.Size = new System.Drawing.Size(230, 35);
+            this.cmbKat.Sorted = true;
             this.cmbKat.TabIndex = 35;
             this.cmbKat.UseCustomBackColor = true;
             this.cmbKat.UseCustomForeColor = true;
@@ -181,7 +182,7 @@
             // 
             // 
             this.txtTekKisilikYatakSayisi.CustomButton.Image = null;
-            this.txtTekKisilikYatakSayisi.CustomButton.Location = new System.Drawing.Point(136, 2);
+            this.txtTekKisilikYatakSayisi.CustomButton.Location = new System.Drawing.Point(202, 2);
             this.txtTekKisilikYatakSayisi.CustomButton.Name = "";
             this.txtTekKisilikYatakSayisi.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtTekKisilikYatakSayisi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -192,7 +193,7 @@
             this.txtTekKisilikYatakSayisi.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtTekKisilikYatakSayisi.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtTekKisilikYatakSayisi.Lines = new string[0];
-            this.txtTekKisilikYatakSayisi.Location = new System.Drawing.Point(520, 309);
+            this.txtTekKisilikYatakSayisi.Location = new System.Drawing.Point(475, 313);
             this.txtTekKisilikYatakSayisi.MaxLength = 32767;
             this.txtTekKisilikYatakSayisi.Name = "txtTekKisilikYatakSayisi";
             this.txtTekKisilikYatakSayisi.PasswordChar = '\0';
@@ -202,7 +203,7 @@
             this.txtTekKisilikYatakSayisi.SelectionStart = 0;
             this.txtTekKisilikYatakSayisi.ShortcutsEnabled = true;
             this.txtTekKisilikYatakSayisi.ShowClearButton = true;
-            this.txtTekKisilikYatakSayisi.Size = new System.Drawing.Size(164, 30);
+            this.txtTekKisilikYatakSayisi.Size = new System.Drawing.Size(230, 30);
             this.txtTekKisilikYatakSayisi.TabIndex = 34;
             this.txtTekKisilikYatakSayisi.UseCustomBackColor = true;
             this.txtTekKisilikYatakSayisi.UseCustomForeColor = true;
@@ -214,7 +215,7 @@
             // btnBlokEkle
             // 
             this.btnBlokEkle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBlokEkle.Location = new System.Drawing.Point(705, 148);
+            this.btnBlokEkle.Location = new System.Drawing.Point(733, 152);
             this.btnBlokEkle.Name = "btnBlokEkle";
             this.btnBlokEkle.Size = new System.Drawing.Size(35, 35);
             this.btnBlokEkle.TabIndex = 33;
@@ -225,7 +226,7 @@
             // btnPersonelEkle
             // 
             this.btnPersonelEkle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnPersonelEkle.Location = new System.Drawing.Point(705, 416);
+            this.btnPersonelEkle.Location = new System.Drawing.Point(733, 420);
             this.btnPersonelEkle.Name = "btnPersonelEkle";
             this.btnPersonelEkle.Size = new System.Drawing.Size(35, 35);
             this.btnPersonelEkle.TabIndex = 32;
@@ -236,7 +237,7 @@
             // btnOdaTuruEkle
             // 
             this.btnOdaTuruEkle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOdaTuruEkle.Location = new System.Drawing.Point(705, 257);
+            this.btnOdaTuruEkle.Location = new System.Drawing.Point(733, 261);
             this.btnOdaTuruEkle.Name = "btnOdaTuruEkle";
             this.btnOdaTuruEkle.Size = new System.Drawing.Size(35, 35);
             this.btnOdaTuruEkle.TabIndex = 31;
@@ -250,9 +251,10 @@
             this.cmbSorumluPersonel.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbSorumluPersonel.FormattingEnabled = true;
             this.cmbSorumluPersonel.ItemHeight = 29;
-            this.cmbSorumluPersonel.Location = new System.Drawing.Point(522, 416);
+            this.cmbSorumluPersonel.Location = new System.Drawing.Point(477, 420);
             this.cmbSorumluPersonel.Name = "cmbSorumluPersonel";
-            this.cmbSorumluPersonel.Size = new System.Drawing.Size(164, 35);
+            this.cmbSorumluPersonel.Size = new System.Drawing.Size(230, 35);
+            this.cmbSorumluPersonel.Sorted = true;
             this.cmbSorumluPersonel.TabIndex = 30;
             this.cmbSorumluPersonel.UseCustomBackColor = true;
             this.cmbSorumluPersonel.UseCustomForeColor = true;
@@ -265,7 +267,7 @@
             this.lblOdadanSorumluPersonel.AutoSize = true;
             this.lblOdadanSorumluPersonel.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblOdadanSorumluPersonel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblOdadanSorumluPersonel.Location = new System.Drawing.Point(274, 416);
+            this.lblOdadanSorumluPersonel.Location = new System.Drawing.Point(229, 420);
             this.lblOdadanSorumluPersonel.Name = "lblOdadanSorumluPersonel";
             this.lblOdadanSorumluPersonel.Size = new System.Drawing.Size(229, 25);
             this.lblOdadanSorumluPersonel.TabIndex = 29;
@@ -279,9 +281,10 @@
             this.cmbOdaTürü.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbOdaTürü.FormattingEnabled = true;
             this.cmbOdaTürü.ItemHeight = 29;
-            this.cmbOdaTürü.Location = new System.Drawing.Point(521, 257);
+            this.cmbOdaTürü.Location = new System.Drawing.Point(476, 261);
             this.cmbOdaTürü.Name = "cmbOdaTürü";
-            this.cmbOdaTürü.Size = new System.Drawing.Size(164, 35);
+            this.cmbOdaTürü.Size = new System.Drawing.Size(230, 35);
+            this.cmbOdaTürü.Sorted = true;
             this.cmbOdaTürü.TabIndex = 28;
             this.cmbOdaTürü.UseCustomBackColor = true;
             this.cmbOdaTürü.UseCustomForeColor = true;
@@ -294,7 +297,7 @@
             this.lblOdaGrup.AutoSize = true;
             this.lblOdaGrup.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblOdaGrup.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblOdaGrup.Location = new System.Drawing.Point(273, 257);
+            this.lblOdaGrup.Location = new System.Drawing.Point(228, 261);
             this.lblOdaGrup.Name = "lblOdaGrup";
             this.lblOdaGrup.Size = new System.Drawing.Size(95, 25);
             this.lblOdaGrup.TabIndex = 27;
@@ -308,7 +311,7 @@
             this.lblKat.AutoSize = true;
             this.lblKat.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblKat.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblKat.Location = new System.Drawing.Point(274, 209);
+            this.lblKat.Location = new System.Drawing.Point(229, 213);
             this.lblKat.Name = "lblKat";
             this.lblKat.Size = new System.Drawing.Size(137, 25);
             this.lblKat.TabIndex = 25;
@@ -322,9 +325,10 @@
             this.cmbBlok.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.cmbBlok.FormattingEnabled = true;
             this.cmbBlok.ItemHeight = 29;
-            this.cmbBlok.Location = new System.Drawing.Point(521, 154);
+            this.cmbBlok.Location = new System.Drawing.Point(476, 158);
             this.cmbBlok.Name = "cmbBlok";
-            this.cmbBlok.Size = new System.Drawing.Size(164, 35);
+            this.cmbBlok.Size = new System.Drawing.Size(230, 35);
+            this.cmbBlok.Sorted = true;
             this.cmbBlok.TabIndex = 24;
             this.cmbBlok.UseCustomBackColor = true;
             this.cmbBlok.UseCustomForeColor = true;
@@ -389,7 +393,7 @@
             // 
             // 
             this.txtCiftKisiYatakSayisi.CustomButton.Image = null;
-            this.txtCiftKisiYatakSayisi.CustomButton.Location = new System.Drawing.Point(136, 2);
+            this.txtCiftKisiYatakSayisi.CustomButton.Location = new System.Drawing.Point(202, 2);
             this.txtCiftKisiYatakSayisi.CustomButton.Name = "";
             this.txtCiftKisiYatakSayisi.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtCiftKisiYatakSayisi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -400,7 +404,7 @@
             this.txtCiftKisiYatakSayisi.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCiftKisiYatakSayisi.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtCiftKisiYatakSayisi.Lines = new string[0];
-            this.txtCiftKisiYatakSayisi.Location = new System.Drawing.Point(521, 361);
+            this.txtCiftKisiYatakSayisi.Location = new System.Drawing.Point(476, 365);
             this.txtCiftKisiYatakSayisi.MaxLength = 32767;
             this.txtCiftKisiYatakSayisi.Name = "txtCiftKisiYatakSayisi";
             this.txtCiftKisiYatakSayisi.PasswordChar = '\0';
@@ -410,7 +414,7 @@
             this.txtCiftKisiYatakSayisi.SelectionStart = 0;
             this.txtCiftKisiYatakSayisi.ShortcutsEnabled = true;
             this.txtCiftKisiYatakSayisi.ShowClearButton = true;
-            this.txtCiftKisiYatakSayisi.Size = new System.Drawing.Size(164, 30);
+            this.txtCiftKisiYatakSayisi.Size = new System.Drawing.Size(230, 30);
             this.txtCiftKisiYatakSayisi.TabIndex = 8;
             this.txtCiftKisiYatakSayisi.UseCustomBackColor = true;
             this.txtCiftKisiYatakSayisi.UseCustomForeColor = true;
@@ -426,7 +430,7 @@
             // 
             // 
             this.txtOdaNo.CustomButton.Image = null;
-            this.txtOdaNo.CustomButton.Location = new System.Drawing.Point(136, 2);
+            this.txtOdaNo.CustomButton.Location = new System.Drawing.Point(202, 2);
             this.txtOdaNo.CustomButton.Name = "";
             this.txtOdaNo.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtOdaNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -437,7 +441,7 @@
             this.txtOdaNo.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtOdaNo.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtOdaNo.Lines = new string[0];
-            this.txtOdaNo.Location = new System.Drawing.Point(521, 106);
+            this.txtOdaNo.Location = new System.Drawing.Point(476, 110);
             this.txtOdaNo.MaxLength = 32767;
             this.txtOdaNo.Name = "txtOdaNo";
             this.txtOdaNo.PasswordChar = '\0';
@@ -447,7 +451,7 @@
             this.txtOdaNo.SelectionStart = 0;
             this.txtOdaNo.ShortcutsEnabled = true;
             this.txtOdaNo.ShowClearButton = true;
-            this.txtOdaNo.Size = new System.Drawing.Size(164, 30);
+            this.txtOdaNo.Size = new System.Drawing.Size(230, 30);
             this.txtOdaNo.TabIndex = 6;
             this.txtOdaNo.UseCustomBackColor = true;
             this.txtOdaNo.UseCustomForeColor = true;
@@ -461,7 +465,7 @@
             this.lblCiftKisilikYatak.AutoSize = true;
             this.lblCiftKisilikYatak.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblCiftKisilikYatak.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblCiftKisilikYatak.Location = new System.Drawing.Point(274, 361);
+            this.lblCiftKisilikYatak.Location = new System.Drawing.Point(229, 365);
             this.lblCiftKisilikYatak.Name = "lblCiftKisilikYatak";
             this.lblCiftKisilikYatak.Size = new System.Drawing.Size(193, 25);
             this.lblCiftKisilikYatak.TabIndex = 5;
@@ -475,7 +479,7 @@
             this.lblTekKisilikYatak.AutoSize = true;
             this.lblTekKisilikYatak.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblTekKisilikYatak.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblTekKisilikYatak.Location = new System.Drawing.Point(274, 309);
+            this.lblTekKisilikYatak.Location = new System.Drawing.Point(229, 313);
             this.lblTekKisilikYatak.Name = "lblTekKisilikYatak";
             this.lblTekKisilikYatak.Size = new System.Drawing.Size(193, 25);
             this.lblTekKisilikYatak.TabIndex = 4;
@@ -489,7 +493,7 @@
             this.lblBlok.AutoSize = true;
             this.lblBlok.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblBlok.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblBlok.Location = new System.Drawing.Point(274, 154);
+            this.lblBlok.Location = new System.Drawing.Point(229, 158);
             this.lblBlok.Name = "lblBlok";
             this.lblBlok.Size = new System.Drawing.Size(146, 25);
             this.lblBlok.TabIndex = 3;
@@ -503,7 +507,7 @@
             this.lblOdaNumarasi.AutoSize = true;
             this.lblOdaNumarasi.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblOdaNumarasi.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.lblOdaNumarasi.Location = new System.Drawing.Point(274, 106);
+            this.lblOdaNumarasi.Location = new System.Drawing.Point(229, 110);
             this.lblOdaNumarasi.Name = "lblOdaNumarasi";
             this.lblOdaNumarasi.Size = new System.Drawing.Size(135, 25);
             this.lblOdaNumarasi.TabIndex = 2;

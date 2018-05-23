@@ -55,10 +55,10 @@
             this.btnKaydet = new MetroFramework.Controls.MetroButton();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtCikisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCikisTarihi.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGirisTarihi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCikisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGirisTarihi.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGirisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,16 +171,10 @@
             this.dtCikisTarihi.Location = new System.Drawing.Point(410, 513);
             this.dtCikisTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtCikisTarihi.Name = "dtCikisTarihi";
-            // 
-            // 
-            // 
             this.dtCikisTarihi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtCikisTarihi.Properties.Appearance.Options.UseFont = true;
             this.dtCikisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtCikisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtCikisTarihi.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
@@ -204,16 +198,10 @@
             this.dtGirisTarihi.Location = new System.Drawing.Point(410, 467);
             this.dtGirisTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtGirisTarihi.Name = "dtGirisTarihi";
-            // 
-            // 
-            // 
             this.dtGirisTarihi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtGirisTarihi.Properties.Appearance.Options.UseFont = true;
             this.dtGirisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dtGirisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtGirisTarihi.Properties.CalendarTimeProperties.EditFormat.FormatString = "G";
