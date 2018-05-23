@@ -379,6 +379,16 @@ namespace Otel_Uygulamasi.Formlar.OdaIslemleri
                         cmd2.ExecuteNonQuery();
                         connection2.Close();
 
+                        //oda hareket tablosuna update at 
+                        SqlConnection connection3 = new SqlConnection(@"Server = tcp:hotelieu.database.windows.net,1433; Initial Catalog = HotelProject; Persist Security Info = False; User ID = hotelieu; Password = Hotelproject35; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+                        SqlCommand cmd3 = new SqlCommand();
+                        cmd3.Connection = connection3;
+                        connection3.Open(); //BLOK ID EKLE
+                        cmd3.CommandText = "Update OdaHareket set OdaNo='" + txtOdaNo.Text +  "'where OdaNo='" + mevcutOdaNo + "'";
+                        cmd3.ExecuteNonQuery();
+                        connection3.Close();
+
+
                         if (Kullanici.BilgilendirmeFormlari.Equals("True"))
                         {
                             HotelWarningForm.Show(Localization.OdaDuzenlemeBasarili, Localization.Tamam, 0);
